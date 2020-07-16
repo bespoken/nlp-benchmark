@@ -3,7 +3,7 @@ name: process
 on:
   workflow_dispatch:
     inputs:
-      name:
+      limit:
         description: Limit
         required: true
         default: 100
