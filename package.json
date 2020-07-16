@@ -1,6 +1,7 @@
 {
   "author": "Bespoken",
   "dependencies": {
+    "bespoken-batch-tester": "^0.9.6",
     "csv": "^5.3.2",
     "lodash": "^4.17.19"
   },
