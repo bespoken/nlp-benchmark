@@ -1,0 +1,7 @@
+- [ ] Setup initial records
+- [ ] Setup test protocol - how to run, how to evaluate true/false
+- [ ] Setup open repo
+- [ ] Setup online execution process
+- [ ] Document process
+- [ ] Analyze results
+- [ ] Publish results with text

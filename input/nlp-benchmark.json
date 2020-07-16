@@ -1,0 +1,19 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/benchmark-interceptor",
+  "job": "nlp-benchmark",
+  "limit": 1,
+  "source": "src/benchmark-source",
+  "sourceFile": "input/datasets/wikiqa.json",
+  "virtualDevices": {
+    "robot-2": {
+      "tags": ["alexa"]
+    }
+  },
+  "virtualDevices.bak": {
+    "robot-5": {
+      "tags": ["google"]
+    }
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-robot-dev.bespoken.io"
+}
