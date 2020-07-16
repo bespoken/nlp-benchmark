@@ -1,14 +1,24 @@
 name: process
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      name:
+        description: Limit
+        required: true
+        default: 100
 
 jobs:
   process:
     runs-on: ubuntu-latest
+    env:
+      LIMIT: ${{ github.event.inputs.limit }}
     steps:
     - uses: actions/checkout@v2
     
+    - name: Check environment
+      run: echo $LIMIT
+
     - name: Install Dependencies
       run: npm install 
 
