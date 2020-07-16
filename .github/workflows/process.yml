@@ -14,3 +14,9 @@ jobs:
 
     - name: Benchmark
       run: npm run process
+
+    - name: Save results
+      uses: actions/upload-artifact@v1
+      with:
+        name: results
+        path: output/results.csv
