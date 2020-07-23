@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "batch-tester",
+			"path": "..\\batch-tester"
+		},
+		{
+			"name": "nlp-benchmark",
+			"path": "."
+		}
+	],
+	"settings": {
+		"javascript.validate.enable": false
+	}
+}
