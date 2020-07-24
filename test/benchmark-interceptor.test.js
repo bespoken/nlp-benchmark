@@ -1,6 +1,7 @@
 const BenchmarkInterceptor = require('../src/benchmark-interceptor')
 const Question = require('../src/question')
 const { Record, Result } = require('bespoken-batch-tester')
+
 describe('interceptor works correctly', async () => {
   test('matches a date which is exactly the same', () => {
     const question = new Question()
@@ -16,6 +17,7 @@ describe('interceptor works correctly', async () => {
     }])
     interceptor.interceptResult(record, result)
     expect(result.success).toBe(true)
+    expect(result.outputField('CLOSEST_ANSWER')).toBe('1970-10-04')
   })
 
   test('matches a date by year only', () => {

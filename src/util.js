@@ -6,7 +6,6 @@ module.exports = {
       return false
     }
 
-    console.info('I includesphrases: ' + phrases.join(','))
     for (const phrase of phrases) {
       if (s.toLowerCase().includes(phrase.toString().toLowerCase())) {
         return true

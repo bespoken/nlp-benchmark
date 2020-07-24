@@ -25,6 +25,7 @@ class Question {
     if (!answer) {
       return
     }
+    const raw = answer
 
     if (answer.includes('wikipedia')) {
       answer = _.nth(answer.split('/'), -1)
@@ -36,7 +37,7 @@ class Question {
       // Remove sequential spaces
       answer = answer.replace(/\s+/g, ' ')
     } else if (answer.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
-      answer = moment(answer).format()
+      answer = moment.utc(answer).toISOString()
       this.answerType = 'DATE'
     } else if (Util.isNumber(answer)) {
       answer = Util.toNumber(answer)
@@ -47,18 +48,23 @@ class Question {
       return
     }
 
-    this.answers.push(new Answer(answer, this.answerType))
+    this.answers.push(new Answer(answer, raw, this.answerType))
   }
 }
 
 class Answer {
-  constructor (value, type) {
+  constructor (value, rawValue, type) {
     this.value = value
+    this.rawValue = rawValue
     this.type = type
   }
 
+  dateAsSpoken () {
+    return this.value.format('MMMM Do YYYY')
+  }
+
   includes (actual) {
-    return Util.includes(actual, this.cleanValue())
+    return Util.includes(actual, this.text())
   }
 
   isDate () {
@@ -69,15 +75,15 @@ class Answer {
     return this.type === 'NUMBER'
   }
 
-  cleanValue () {
+  raw () {
+    return this.rawValue
+  }
+
+  text () {
     if (this.value.toString().indexOf('(')) {
       return this.value.toString().split('(')[0].trim()
     }
     return this.value
-  }
-
-  dateAsSpoken () {
-    return this.value.format('MMMM Do YYYY')
   }
 
   year () {

@@ -14,10 +14,10 @@ class BenchmarkInterceptor extends Interceptor {
 
     const display = _.join(_.get(result, 'lastResponse.card.content'), ' ')
 
-    result.addOutputField('answers', answers.map(a => a.value).join(','))
-    result.addOutputField('transcript', this.clean(result.lastResponse.transcript))
+    result.addOutputField('ANSWERS', answers.map(a => a.value).join(','))
+    result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
     // result.addOutputField('transcriptScore', transcriptScore)
-    result.addOutputField('display', _.join(_.get(result, 'lastResponse.card.content'), ' '))
+    result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
 
     // console.info(result.lastResponse.transcript)
     result.success = false
@@ -25,38 +25,56 @@ class BenchmarkInterceptor extends Interceptor {
     if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
       result.success = false
     } else {
+      // 1 is the worst score, 0 is the best
+      // We take this system from our fuzzy search library
+      let closest = {
+        score: 1
+      }
       for (const answer of answers) {
-        result.success = this.checkAnswer(transcript, display, answer)
-        if (result.success) {
+        const evaluation = this.checkAnswer(transcript, display, answer)
+        // Save the closest answer
+        if (!closest || evaluation.score < closest.score) {
+          closest = evaluation
+        }
+
+        if (evaluation.matchType) {
           break
         }
       }
+
+      result.success = closest.matchType !== undefined
+      result.addOutputField('CLOSEST_ANSWER', closest.answer)
+      result.addOutputField('CLOSEST_SCORE', closest.score)
+      result.addOutputField('CLOSEST_MATCH', closest.matchType)
     }
 
     // result.addOutputField('displayScore', displayScore)
-    result.addOutputField('imageURL', _.get(result, 'lastResponse.raw.imageURL'))
+    result.addOutputField('IMAGE_URL', _.get(result, 'lastResponse.raw.imageURL'))
   }
 
   checkAnswer (transcript, display, answer) {
-    let success = false
+    const evaluation = {
+      answer: answer.raw(),
+      score: 1,
+      matchType: undefined
+    }
     const transcriptScore = this.search(transcript, answer)
     const displayScore = this.search(display, answer)
 
-    console.info(`INTERCEPTOR CHECK answer: ${answer.cleanValue()} transcript: ${transcriptScore} display ${displayScore}`)
     if (answer.includes(transcript)) {
-      success = true
-      console.info('Transcript matches')
+      evaluation.score = 0
+      evaluation.matchType = 'TRANSCRIPT_INCLUDES'
     } else if (answer.includes(display)) {
-      success = true
-      console.info('Display matches')
+      evaluation.score = 0
+      evaluation.matchType = 'DISPLAY_INCLUDES'
     } else if (transcriptScore < 0.2) {
-      success = true
-      console.info('transcript fuzzy matches')
+      evaluation.score = transcriptScore
+      evaluation.matchType = 'TRANSCRIPT_FUZZY'
     } else if (displayScore < 0.2) {
-      success = true
-      console.info('Display fuzzy matches')
+      evaluation.score = displayScore
+      evaluation.matchType = 'DISPLAY_FUZZY'
     }
-    return success
+    return evaluation
   }
 
   search (actualAnswer, expectedAnswer) {
@@ -81,7 +99,7 @@ class BenchmarkInterceptor extends Interceptor {
       }
     } else {
       // Process each term in the includes phrase one by one
-      const expectedAnswerWords = expectedAnswer.cleanValue().split(' ')
+      const expectedAnswerWords = expectedAnswer.text().split(' ')
       let score = 0
       // Check each expected word one-by-one
       for (const expectedAnswerWord of expectedAnswerWords) {
