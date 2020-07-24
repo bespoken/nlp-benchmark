@@ -18,6 +18,7 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
     // result.addOutputField('transcriptScore', transcriptScore)
     result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
+    result.addOutputField('PLATFORM', record.deviceTags[0])
 
     // console.info(result.lastResponse.transcript)
     result.success = false
