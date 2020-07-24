@@ -87,7 +87,6 @@ class Answer {
   }
 
   year () {
-    console.info('Thisvalue: ' + this.value)
     return moment(this.value).year()
   }
 }
