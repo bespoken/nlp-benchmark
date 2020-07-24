@@ -9,6 +9,7 @@
   },
   "description": "This repository analyzes the performance of popular NLP/Voice Assistant solutions using Bespoken's software and test robots",
   "devDependencies": {
+    "jest": "^26.1.0",
     "standard": "^14.3.4"
   },
   "homepage": "https://github.com/snipsco/nlu-benchmark#readme",
@@ -24,7 +25,8 @@
     "parse-wikiqa": "node src/wikiqa-parser.js parse",
     "process": "bbt process input/nlp-benchmark.json",
     "reprocess": "bbt reprocess input/nlp-benchmark.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
+  "standard": { "env": [ "jest" ] },
   "version": "1.0.0"
 }

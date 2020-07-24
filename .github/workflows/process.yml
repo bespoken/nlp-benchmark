@@ -1,4 +1,4 @@
-name: process
+name: Process
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
       limit:
         description: Limit
         required: true
-        default: 100
+        default: '100'
 
 jobs:
   process:

@@ -1,7 +1,6 @@
 const _ = require('lodash')
 const fs = require('fs')
 const Question = require('./question')
-const moment = require('moment')
 
 class ComQAParser {
   constructor () {
@@ -16,8 +15,7 @@ class ComQAParser {
     const questions = []
     for (const rawQuestion of this.rawQuestions) {
       const question = new Question(_.nth(rawQuestion.questions, -1), undefined, undefined, rawQuestion)
-      for (const rawAnswer of rawQuestion.answers) {
-        const answer = this._cleanAnswer(rawAnswer)
+      for (const answer of rawQuestion.answers) {
         question.addAnswer(answer)
       }
 
@@ -36,27 +34,6 @@ class ComQAParser {
     const json = JSON.parse(fileContents)
     this.rawQuestions = this.rawQuestions.concat(json)
     // console.info(JSON.stringify(json, null, 2))
-  }
-
-  _cleanAnswer (answer) {
-    if (answer.includes('wikipedia')) {
-      answer = _.nth(answer.split('/'), -1)
-      answer = answer.split('_').join(' ')
-
-      // Clean any URL-encoded characters
-      answer = answer.split(/%../).join(' ')
-
-      // Remove sequential spaces
-      answer = answer.replace(/\s+/g, ' ')
-    } else if (answer.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
-      answer = moment(answer).format('MMM Do YYYY')
-    }
-
-    if (answer.length === 0) {
-      return undefined
-    }
-
-    return answer
   }
 }
 

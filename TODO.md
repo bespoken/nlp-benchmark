@@ -2,6 +2,9 @@
 - [ ] Setup test protocol - how to run, how to evaluate true/false
 - [ ] Setup open repo
 - [ ] Setup online execution process
-- [ ] Document process
+- [ ] Document process - update readme info, badges, roadmap
 - [ ] Analyze results
 - [ ] Publish results with text
+- [ ] Create results dashboard
+- [ ] Set max time limit for github action https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
+https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

@@ -3,6 +3,7 @@ const fs = require('fs')
 const Fuse = require('fuse.js')
 const { Interceptor } = require('bespoken-batch-tester')
 const Question = require('./question')
+const Util = require('./util')
 
 class BenchmarkInterceptor extends Interceptor {
   interceptResult (record, result) {
@@ -13,7 +14,7 @@ class BenchmarkInterceptor extends Interceptor {
 
     const display = _.join(_.get(result, 'lastResponse.card.content'), ' ')
 
-    result.addOutputField('answers', answers.join(','))
+    result.addOutputField('answers', answers.map(a => a.value).join(','))
     result.addOutputField('transcript', this.clean(result.lastResponse.transcript))
     // result.addOutputField('transcriptScore', transcriptScore)
     result.addOutputField('display', _.join(_.get(result, 'lastResponse.card.content'), ' '))
@@ -21,7 +22,7 @@ class BenchmarkInterceptor extends Interceptor {
     // console.info(result.lastResponse.transcript)
     result.success = false
 
-    if (this.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
+    if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
       result.success = false
     } else {
       for (const answer of answers) {
@@ -38,34 +39,29 @@ class BenchmarkInterceptor extends Interceptor {
 
   checkAnswer (transcript, display, answer) {
     let success = false
-    const cleanAnswer = this.cleanAnswer(answer)
-    const transcriptScore = this.search(transcript, cleanAnswer, 0.3)
-    const displayScore = this.search(display, cleanAnswer, 0.3)
+    const transcriptScore = this.search(transcript, answer)
+    const displayScore = this.search(display, answer)
 
-    if (this.includes(transcript, cleanAnswer)) {
+    console.info(`INTERCEPTOR CHECK answer: ${answer.cleanValue()} transcript: ${transcriptScore} display ${displayScore}`)
+    if (answer.includes(transcript)) {
       success = true
-    } else if (this.includes(display, cleanAnswer)) {
+      console.info('Transcript matches')
+    } else if (answer.includes(display)) {
       success = true
-    } else if (transcriptScore < 0.3) {
+      console.info('Display matches')
+    } else if (transcriptScore < 0.2) {
       success = true
-    } else if (displayScore < 0.3) {
+      console.info('transcript fuzzy matches')
+    } else if (displayScore < 0.2) {
       success = true
+      console.info('Display fuzzy matches')
     }
     return success
   }
 
-  cleanAnswer (s) {
-    // Remove parentheses from the subject, as it confuses things
-    // The part in paretheses seems to be for disambiguation
-    if (s.indexOf('(')) {
-      return s.split('(')[0].trim()
-    }
-    return s
-  }
-
-  search (s, includesPhrase, threshold) {
-    if (!s) {
-      return false
+  search (actualAnswer, expectedAnswer) {
+    if (!actualAnswer) {
+      return 1
     }
 
     const options = {
@@ -74,34 +70,49 @@ class BenchmarkInterceptor extends Interceptor {
       minMatchCharLength: 1
     }
 
-    const fuse = new Fuse(s.split(' '), options)
+    const fuse = new Fuse(actualAnswer.split(' '), options)
 
-    // Process each term in the includes phrase one by one
-    const terms = includesPhrase.split(' ')
-    let score = 0
-    for (const term of terms) {
-      const results = fuse.search(term)
-      console.info('Result: ' + JSON.stringify(results, null, 2))
-      if (results.length > 0) {
-        score += results[0].score
+    if (expectedAnswer.isDate()) {
+      // Search for the year - we consider that passing
+      if (Util.includes(actualAnswer, expectedAnswer.year())) {
+        return 0
       } else {
-        score += 1
+        return 1
       }
-    }
-    return score / terms.length
-  }
+    } else {
+      // Process each term in the includes phrase one by one
+      const expectedAnswerWords = expectedAnswer.cleanValue().split(' ')
+      let score = 0
+      // Check each expected word one-by-one
+      for (const expectedAnswerWord of expectedAnswerWords) {
+        // We do NOT do fuzzy matching on numbers
+        if (Util.isNumber(expectedAnswerWord)) {
+          let lowestScore = 1
+          const expectedNumber = Util.toNumber(expectedAnswerWord)
+          for (const actualWord of actualAnswer.split(' ')) {
+            // If this word is a number, see how close it is to expected
+            if (Util.isNumber(actualWord)) {
+              const actualNumber = Util.toNumber(actualWord)
+              const difference = Math.abs(expectedNumber - actualNumber) / expectedNumber
+              if (difference < lowestScore) {
+                lowestScore = difference
+              }
+            }
+          }
 
-  includes (s, ...includesPhrases) {
-    if (!s) {
-      return false
-    }
-
-    for (const phrase of includesPhrases) {
-      if (s.toLowerCase().includes(phrase.toLowerCase())) {
-        return true
+          score += lowestScore
+        } else {
+          // Do a fuzzy match on the indivudal word
+          const results = fuse.search(expectedAnswerWord)
+          if (results.length > 0) {
+            score += results[0].score
+          } else {
+            score += 1
+          }
+        }
       }
+      return score / expectedAnswerWords.length
     }
-    return false
   }
 
   clean (s) {
