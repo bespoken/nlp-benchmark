@@ -1,5 +1,6 @@
 const fs = require('fs')
 const { Config, Record, Source } = require('bespoken-batch-tester')
+const Question = require('./question')
 
 const platforms = ['alexa']
 
@@ -8,7 +9,8 @@ class QuerySource extends Source {
     const questionsJSON = fs.readFileSync(Config.get('sourceFile'))
     const questionsData = JSON.parse(questionsJSON)
     const records = []
-    for (const question of questionsData.questions) {
+    for (const questionJSON of questionsData.questions) {
+      const question = Question.fromJSON(questionJSON)
       const baseUtterance = question.question
 
       for (const platform of platforms) {

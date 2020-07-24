@@ -4,15 +4,10 @@ const Fuse = require('fuse.js')
 const { Interceptor } = require('bespoken-batch-tester')
 const Question = require('./question')
 
-// Turn the dataset into a map of questions
-const dataset = fs.readFileSync('input/datasets/wikiqa.json')
-const questions = {}
-JSON.parse(dataset).questions.forEach(q => { questions[q.question] = Question.fromJSON(q) })
-
 class BenchmarkInterceptor extends Interceptor {
   interceptResult (record, result) {
     // Get the original question this corresponds to
-    const question = questions[record.meta.question.question]
+    const question = record.meta.question
     const transcript = result.lastResponse.transcript
     const answers = question.answers
 

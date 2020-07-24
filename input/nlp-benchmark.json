@@ -4,7 +4,7 @@
   "job": "nlp-benchmark",
   "limit": 100,
   "source": "src/benchmark-source",
-  "sourceFile": "input/datasets/wikiqa.json",
+  "sourceFile": "input/datasets/comqa.json",
   "virtualDevices": {
     "robot-2": {
       "tags": ["alexa"]
