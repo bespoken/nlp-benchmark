@@ -13,6 +13,9 @@
     "standard": "^14.3.4"
   },
   "homepage": "https://github.com/snipsco/nlu-benchmark#readme",
+  "jest": {
+    "collectCoverage": true
+  },
   "license": "ISC",
   "main": "index.js",
   "name": "nlp-benchmark",
