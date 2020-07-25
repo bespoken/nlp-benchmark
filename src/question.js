@@ -17,46 +17,67 @@ class Question {
     if (answer) {
       this.addAnswer(answer)
     }
-    this.raw = raw
-    this.answerType = 'TEXT'
   }
 
   addAnswer (answer) {
     if (!answer) {
       return
     }
-    const raw = answer
-
-    if (answer.includes('wikipedia')) {
-      answer = _.nth(answer.split('/'), -1)
-      answer = answer.split('_').join(' ')
-
-      // Clean any URL-encoded characters
-      answer = answer.split(/%../).join(' ')
-
-      // Remove sequential spaces
-      answer = answer.replace(/\s+/g, ' ')
-    } else if (answer.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
-      answer = moment.utc(answer).toISOString()
-      this.answerType = 'DATE'
-    } else if (Util.isNumber(answer)) {
-      answer = Util.toNumber(answer)
-      this.answerType = 'NUMBER'
-    }
 
     if (answer.length === 0) {
       return
     }
 
-    this.answers.push(new Answer(answer, raw, this.answerType))
+    this.answers.push(new Answer(answer))
+  }
+
+  type () {
+    if (this.answers.length > 0) {
+      return this.answers[0].type()
+    }
+    return 'TEXT'
+  }
+
+  toJSON () {
+    const dto = {}
+    Object.assign(dto, this)
+    // We want to do shallow version of our answer objects
+    dto.answers = dto.answers.map(answer => answer.toJSON())
+    return dto
   }
 }
 
 class Answer {
-  constructor (value, rawValue, type) {
+  constructor (raw) {
+    this.raw = raw
+    this.parse()
+  }
+
+  parse () {
+    let value = this.raw
+    this.type = 'TEXT'
+
+    if (value.includes('wikipedia')) {
+      value = _.nth(value.split('/'), -1)
+      value = value.split('_').join(' ')
+
+      // Clean any URL-encoded characters
+      value = value.split(/%../).join(' ')
+
+      // Remove sequential spaces
+      value = value.replace(/\s+/g, ' ')
+    } else if (value.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
+      value = moment.utc(value).toISOString()
+      this.type = 'DATE'
+    } else if (Util.isNumber(value)) {
+      value = Util.toNumber(value)
+      this.type = 'NUMBER'
+    }
     this.value = value
-    this.rawValue = rawValue
-    this.type = type
+  }
+
+  toJSON () {
+    return this.raw
   }
 
   dateAsSpoken () {
@@ -75,15 +96,15 @@ class Answer {
     return this.type === 'NUMBER'
   }
 
-  raw () {
-    return this.rawValue
-  }
-
   text () {
     if (this.value.toString().indexOf('(')) {
       return this.value.toString().split('(')[0].trim()
     }
     return this.value
+  }
+
+  type () {
+    return this.answerType
   }
 
   year () {

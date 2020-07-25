@@ -24,9 +24,7 @@ class ComQAParser {
       }
     }
 
-    fs.writeFileSync('input/datasets/comqa.json', JSON.stringify({
-      questions: questions
-    }, null, 2))
+    return questions
   }
 
   _read (file) {
@@ -41,5 +39,8 @@ module.exports = ComQAParser
 
 if (_.nth(process.argv, 2) === 'parse') {
   const parser = new ComQAParser()
-  parser.parse()
+  const questions = parser.parse()
+  fs.writeFileSync('input/datasets/comqa.json', JSON.stringify({
+    questions: questions.map(question => question.toJSON())
+  }, null, 2))
 }

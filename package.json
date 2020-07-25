@@ -14,7 +14,10 @@
   },
   "homepage": "https://github.com/snipsco/nlu-benchmark#readme",
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.js"
+    ]
   },
   "license": "ISC",
   "main": "index.js",

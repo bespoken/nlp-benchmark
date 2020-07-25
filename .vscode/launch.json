@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\node_modules\\bespoken-batch-tester\\bin\\bbt",
+      "args": ["reprocess", "input/nlp-benchmark.json", "93badc0563f24c67a4b1f2f50a9e16f51ada83b9c68d2185207f23f2dded149e2b203b02b8569813b4417c89b95f80a6"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Unit Test",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}\\node_modules\\jest\\bin\\jest",
+      "args": []
+    },
+  ]
+}

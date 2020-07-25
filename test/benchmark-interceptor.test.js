@@ -2,7 +2,7 @@ const BenchmarkInterceptor = require('../src/benchmark-interceptor')
 const Question = require('../src/question')
 const { Record, Result } = require('bespoken-batch-tester')
 
-describe('interceptor works correctly', async () => {
+describe('interceptor works correctly', () => {
   test('matches a date which is exactly the same', () => {
     const question = new Question()
     question.addAnswer('1970-10-04')
@@ -12,7 +12,7 @@ describe('interceptor works correctly', async () => {
     const result = new Result(record, undefined, [{
       transcript: 'Janis Joplin died on October 4th 1970 at the age of 27 due to heroin overdose',
       card: {
-        content: 'Getty Janis Joplin Jan 19, 1943- Oct 4, 1970 Died at 27 years old Due to heroin overdose Show Photos'
+        content: ['Getty Janis Joplin Jan 19, 1943- Oct 4, 1970 Died at 27 years old Due to heroin overdose Show Photos']
       }
     }])
     interceptor.interceptResult(record, result)

@@ -1,24 +1,39 @@
 const _ = require('lodash')
 const fs = require('fs')
 const Fuse = require('fuse.js')
-const { Interceptor } = require('bespoken-batch-tester')
+const { Config, Interceptor } = require('bespoken-batch-tester')
 const Question = require('./question')
 const Util = require('./util')
+
+// We read back in the questions from our file, in case we have changed something in our logic
+const questions = {}
+if (Config.has('sourceFile')) {
+  const questionsString = fs.readFileSync(Config.get('sourceFile'))
+  const questionsJSON = JSON.parse(questionsString)
+  questionsJSON.questions.forEach(question => {
+    questions[question.question] = Question.fromJSON(question)
+  })
+}
 
 class BenchmarkInterceptor extends Interceptor {
   interceptResult (record, result) {
     // Get the original question this corresponds to
-    const question = record.meta.question
+    let question = record.meta.question
+
+    // If this a rerun, need to turn question JSON into an object
+    if (record.rerun) {
+      question = questions[question.question]
+    }
+
     const transcript = result.lastResponse.transcript
     const answers = question.answers
 
     const display = _.join(_.get(result, 'lastResponse.card.content'), ' ')
 
-    result.addOutputField('ANSWERS', answers.map(a => a.value).join(','))
+    result.addOutputField('ANSWERS', answers.map(a => a.raw).join(','))
     result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
     // result.addOutputField('transcriptScore', transcriptScore)
     result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
-    result.addOutputField('PLATFORM', record.deviceTags[0])
 
     // console.info(result.lastResponse.transcript)
     result.success = false
@@ -55,7 +70,7 @@ class BenchmarkInterceptor extends Interceptor {
 
   checkAnswer (transcript, display, answer) {
     const evaluation = {
-      answer: answer.raw(),
+      answer: answer.raw,
       score: 1,
       matchType: undefined
     }

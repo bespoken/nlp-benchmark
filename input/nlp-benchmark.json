@@ -2,7 +2,6 @@
   "customer": "Bespoken",
   "interceptor": "src/benchmark-interceptor",
   "job": "nlp-benchmark",
-  "limit": 100,
   "source": "src/benchmark-source",
   "sourceFile": "input/datasets/comqa.json",
   "virtualDevices": {
