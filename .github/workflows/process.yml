@@ -16,11 +16,14 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LIMIT: ${{ github.event.inputs.limit }}
+      RUN_KEY: ${{ github.event.inputs.runKey }}
     steps:
     - uses: actions/checkout@v2
     
     - name: Check environment
-      run: echo $LIMIT
+      run: |
+        echo 'Limit: ' $LIMIT
+        echo 'Run Key: ' $RUN_KEY
 
     - name: Install Dependencies
       run: npm install 
