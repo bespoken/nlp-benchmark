@@ -1,6 +1,7 @@
 - [ ] Setup initial records
 - [ ] Setup test protocol - how to run, how to evaluate true/false
 - [ ] Setup open repo
+- [ ] Update license
 - [ ] Setup online execution process
 - [ ] Document process - update readme info, badges, roadmap
 - [ ] Analyze results

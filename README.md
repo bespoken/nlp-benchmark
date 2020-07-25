@@ -19,10 +19,10 @@ Results are published on a monthly basis. The table below summarizes our tests a
 | 7/26/2020 | General Knowledge | ComQA | Alexa, Google Assistant, Siri | LINK TBA
 | 8/26/2020 | Speech Recognition | Commmon Voice | TBD | LINK TBA
 
-The detailed results are viewable here:
-URL: https://metabase.bespoken.io
-Username: guest@bespoken.io
-Password: Bespoken2020
+The detailed results are viewable here:  
+URL: https://metabase.bespoken.io  
+Username: guest@bespoken.io  
+Password: Bespoken2020  
 
 ## Methodology
 ### General Knowledge
