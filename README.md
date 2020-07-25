@@ -1,18 +1,42 @@
-# Natural Language Understanding benchmark
+![unit-test](https://github.com/bespoken/nlp-benchmark/workflows/unit-test/badge.svg)
 
-This repository contains the results of three benchmarks that compare natural language understanding services offering:
-1. **built-in intents** (Apple’s SiriKit, Amazon’s Alexa, Microsoft’s Luis,
-Google’s API.ai, and [Snips.ai](https://snips.ai/)) on a selection of
-various intents. This benchmark was performed in December 2016. Its results
-are described in length in the [following post](https://medium.com/snips-ai/benchmarking-natural-language-understanding-systems-d35be6ce568d).
-2. **custom intent engines** (Google's API.ai, Facebook's Wit, Microsoft's Luis, Amazon's Alexa, and Snips' NLU) for seven chosen intents. This benchmark was performed in June 2017. Its results are described in a [paper](https://arxiv.org/abs/1805.10190) and a [blog post](https://medium.com/@alicecoucke/benchmarking-natural-language-understanding-systems-google-facebook-microsoft-and-snips-2b8ddcf9fb19).
-3. **extension of Braun et al., 2017** (Google's API.AI, Microsoft's Luis, IBM's Watson, Rasa)
-This experiment replicates the analysis made by Braun et al., 2017, published in Evaluating Natural Language Understanding Services for Conversational Question Answering Systems as part of SIGDIAL 2017 proceedings. Snips and Rasa are added. Details are available in a [paper](https://arxiv.org/abs/1805.10190) and a [blog post](https://medium.com/snips-ai/an-introduction-to-snips-nlu-the-open-source-library-behind-snips-embedded-voice-platform-b12b1a60a41a).
+# Natural Language Processing benchmark
+This is Bespoken's open-source NLP benchmarking project.
 
-The data is provided for each benchmark and more details about the methods are available in the README file in each folder.
+This provides a general mechanism for testing and evaluating NLP platforms.
 
-**Any publication based on these datasets must include a full citation to the following paper in which the results were published by Snips:** 
+## Datasets
+This repository contains the following datasets:
+* ComQA - [[Source](https://arxiv.org/abs/1809.09528)]
+* Snips
+* WikiQA
 
-["Snips Voice Platform: an embedded Spoken Language Understanding system 
-for private-by-design voice interfaces"](https://arxiv.org/abs/1805.10190)
+## Benchmark Results
+Results are published on a monthly basis. The table below summarizes our tests and results to-date:
+
+| Date | Test Type | Data Set | Platforms | Results
+|---|---|---|---|---
+| 7/26/2020 | General Knowledge | ComQA | Alexa, Google Assistant, Siri | LINK TBA
+| 8/26/2020 | Speech Recognition | Commmon Voice | TBD | LINK TBA
+
+The detailed results are viewable here:
+URL: https://metabase.bespoken.io
+Username: guest@bespoken.io
+Password: Bespoken2020
+
+## Methodology
+### General Knowledge
+We classify answers as correct or not by the presence of the answer from the dataset.
+
+In the case where the dataset has multiple answers, if anyone is present we include it.
+
+Tests are executed using the Bespoken Test Robots - which allow us to interact exactly as a real person would with an actual device. [Read more here](https://bespoken.io/test-robot).
+
+### Speech Recognition Accuracy
+TBC
+
+## Contact
+We appreciate all feedback. Open an issue to suggest additional datasets as well as improvements to our methodology.
+
+Contact us at [support@bespoken.io](mailto:support@bespoken.io)
 

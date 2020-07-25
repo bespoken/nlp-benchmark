@@ -30,7 +30,7 @@ class BenchmarkInterceptor extends Interceptor {
 
     const display = _.join(_.get(result, 'lastResponse.card.content'), ' ')
 
-    result.addOutputField('ANSWERS', answers.map(a => a.raw).join(','))
+    result.addOutputField('ANSWERS', answers.map(a => a.text()).join(','))
     result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
     // result.addOutputField('transcriptScore', transcriptScore)
     result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
