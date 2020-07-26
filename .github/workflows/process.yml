@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       platform:
-        description: Platform (alexa, google, or siri)
+        description: Platform (alexa or google)
         required: true
         default: 'alexa'
       limit:
