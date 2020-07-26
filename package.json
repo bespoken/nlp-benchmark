@@ -1,7 +1,7 @@
 {
   "author": "Bespoken",
   "dependencies": {
-    "bespoken-batch-tester": "^0.9.7",
+    "bespoken-batch-tester": "^0.9.9",
     "csv": "^5.3.2",
     "fuse.js": "^6.4.0",
     "lodash": "^4.17.19",
@@ -29,8 +29,10 @@
   "scripts": {
     "parse-comqa": "node src/comqa-parser.js parse",
     "parse-wikiqa": "node src/wikiqa-parser.js parse",
-    "process": "bbt process input/nlp-benchmark.json",
-    "reprocess": "bbt reprocess input/nlp-benchmark.json",
+    "process:alexa": "bbt process input/nlp-benchmark-alexa.json",
+    "process:google": "bbt process input/nlp-benchmark-google.json",
+    "reprocess:alexa": "bbt reprocess input/nlp-benchmark-alexa.json",
+    "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
     "test": "jest"
   },
   "standard": { "env": [ "jest" ] },

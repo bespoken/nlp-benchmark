@@ -2,10 +2,19 @@ const fs = require('fs')
 const { Config, Record, Source } = require('bespoken-batch-tester')
 const Question = require('./question')
 
-const platforms = ['alexa']
-
 class QuerySource extends Source {
   async loadAll () {
+    const jobName = Config.get('job')
+    let platform
+    let utterancePrefix
+    if (jobName.includes('alexa')) {
+      platform = 'alexa'
+      utterancePrefix = 'alexa'
+    } else if (jobName.includes('google')) {
+      platform = 'google'
+      utterancePrefix = 'hey google'
+    }
+
     const questionsJSON = fs.readFileSync(Config.get('sourceFile'))
     const questionsData = JSON.parse(questionsJSON)
     const records = []
@@ -13,16 +22,14 @@ class QuerySource extends Source {
       const question = Question.fromJSON(questionJSON)
       const baseUtterance = question.question
 
-      for (const platform of platforms) {
-        const utterance = `${platform} ${baseUtterance}`
-        const record = new Record(utterance)
-        record.meta = {
-          question: question
-        }
-        record.addOutputField('platform', platform)
-        record.addDeviceTag(platform)
-        records.push(record)
+      const utterance = `${utterancePrefix} ${baseUtterance}`
+      const record = new Record(utterance)
+      record.meta = {
+        question: question
       }
+      record.addOutputField('platform', platform)
+      record.addDeviceTag(platform)
+      records.push(record)
     }
     return records
   }

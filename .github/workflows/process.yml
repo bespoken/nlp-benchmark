@@ -3,6 +3,10 @@ name: Process
 on:
   workflow_dispatch:
     inputs:
+      platform:
+        description: Platform (alexa, google, or siri)
+        required: true
+        default: 'alexa'
       limit:
         description: Limit
         required: true
@@ -16,6 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LIMIT: ${{ github.event.inputs.limit }}
+      MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+      MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      MYSQL_USER: ${{ secrets.MYSQL_USER }}
+      PLATFORM: ${{ github.event.inputs.platform }} 
       RUN_KEY: ${{ github.event.inputs.runKey }}
     steps:
     - uses: actions/checkout@v2
@@ -23,13 +32,14 @@ jobs:
     - name: Check environment
       run: |
         echo 'Limit: ' $LIMIT
+        echo 'Platform: ' $PLATFORM
         echo 'Run Key: ' $RUN_KEY
 
     - name: Install Dependencies
       run: npm install 
 
     - name: Benchmark
-      run: npm run process
+      run: npm run process:${PLATFORM}
 
     - name: Save results
       uses: actions/upload-artifact@v1

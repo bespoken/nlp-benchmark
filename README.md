@@ -1,13 +1,14 @@
 ![unit-test](https://github.com/bespoken/nlp-benchmark/workflows/unit-test/badge.svg)
+[![codecov](https://codecov.io/gh/bespoken/nlp-benchmark/branch/master/graph/badge.svg?token=WD9586ROEQ)](https://codecov.io/gh/bespoken/nlp-benchmark)
 
-# Natural Language Processing benchmark
+# Bespoken NLP Benchmarking Project
 This is Bespoken's open-source NLP benchmarking project.
 
 This provides a general mechanism for testing and evaluating NLP platforms.
 
 ## Datasets
 This repository contains the following datasets:
-* ComQA - [[Source](https://arxiv.org/abs/1809.09528)]
+* ComQA - [[Source](http://qa.mpi-inf.mpg.de/comqa/)]
 * Snips
 * WikiQA
 

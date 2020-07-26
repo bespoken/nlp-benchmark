@@ -1,15 +1,10 @@
 {
   "customer": "Bespoken",
   "interceptor": "src/benchmark-interceptor",
-  "job": "nlp-benchmark",
+  "job": "nlp-benchmark-google",
   "source": "src/benchmark-source",
   "sourceFile": "input/datasets/comqa.json",
   "virtualDevices": {
-    "robot-2": {
-      "tags": ["alexa"]
-    }
-  },
-  "virtualDevices.bak": {
     "robot-5": {
       "tags": ["google"]
     }
