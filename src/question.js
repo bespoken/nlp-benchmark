@@ -31,6 +31,10 @@ class Question {
     this.answers.push(new Answer(answer))
   }
 
+  hasNoAnswer () {
+    return this.answers.length === 0
+  }
+
   type () {
     if (this.answers.length > 0) {
       return this.answers[0].type()

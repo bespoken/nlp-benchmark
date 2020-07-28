@@ -15,6 +15,9 @@
 - [ ] Miscellaneous
   - [ ] Set max time limit for github action https://docs.github.com/en/actions/reference/
   - [ ] Add back questions that do not have an answer for the next run
+- [ ] Add classifications per ComQA paper
+  - [ ] https://nlp.stanford.edu/software/CRF-NER.html
+  - [ ] https://nlp.stanford.edu/software/sutime.shtml
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

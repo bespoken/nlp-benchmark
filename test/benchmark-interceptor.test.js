@@ -71,4 +71,16 @@ describe('interceptor works correctly', () => {
     interceptor.interceptResult(record, result)
     expect(result.success).toBe(false)
   })
+
+  test('checks a question without an answer', () => {
+    const question = new Question()
+
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: 'i don\'t know'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
 })

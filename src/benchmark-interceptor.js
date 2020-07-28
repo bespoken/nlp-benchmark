@@ -32,14 +32,22 @@ class BenchmarkInterceptor extends Interceptor {
 
     result.addOutputField('ANSWERS', answers.map(a => a.text()).join(','))
     result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
-    // result.addOutputField('transcriptScore', transcriptScore)
     result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
 
     // console.info(result.lastResponse.transcript)
     result.success = false
 
-    if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
+    // Handle questions that don't have answers - e.g., who was the first man to walk on Mars?
+    if (question.hasNoAnswer()) {
+      if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
+        result.success = true
+      }
+
+    // I don't know or I'm not sure means definitely did not get it
+    } else if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
       result.success = false
+
+    // Evaluate the actual answer against the valid answer(s) - uses a scoring methodoloy based on fuzzy string comparison
     } else {
       // 1 is the worst score, 0 is the best
       // We take this system from our fuzzy search library

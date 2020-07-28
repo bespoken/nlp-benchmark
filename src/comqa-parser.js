@@ -9,19 +9,22 @@ class ComQAParser {
 
   parse () {
     this._read('datasets/ComQA/comqa_dev.json')
-    this._read('datasets/ComQA/comqa_test.json')
-    this._read('datasets/ComQA/comqa_train.json')
 
     const questions = []
     for (const rawQuestion of this.rawQuestions) {
-      const question = new Question(_.nth(rawQuestion.questions, -1), undefined, undefined, rawQuestion)
+      let questionText
+      // Some times the questions are an array, some times just a single question
+      if (rawQuestion.questions) {
+        questionText = _.nth(rawQuestion.questions, -1)
+      } else {
+        questionText = rawQuestion.question
+      }
+
+      const question = new Question(questionText, undefined, undefined, rawQuestion)
       for (const answer of rawQuestion.answers) {
         question.addAnswer(answer)
       }
-
-      if (question.answers.length > 0) {
-        questions.push(question)
-      }
+      questions.push(question)
     }
 
     return questions

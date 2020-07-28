@@ -1,7 +1,7 @@
 {
   "author": "Bespoken",
   "dependencies": {
-    "bespoken-batch-tester": "^0.9.9",
+    "bespoken-batch-tester": "^0.9.10",
     "csv": "^5.3.2",
     "fuse.js": "^6.4.0",
     "lodash": "^4.17.19",
@@ -36,5 +36,5 @@
     "test": "jest"
   },
   "standard": { "env": [ "jest" ] },
-  "version": "1.0.0"
+  "version": "0.1.0"
 }
