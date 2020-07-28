@@ -35,6 +35,10 @@
     "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
     "test": "jest"
   },
-  "standard": { "env": [ "jest" ] },
-  "version": "0.1.0"
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "version": "0.1.1"
 }
