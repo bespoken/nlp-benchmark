@@ -13,6 +13,7 @@ describe('datasource works correctly', () => {
   test('counts platforms by success and failure', async () => {
     const dataSource = new DataSource()
     const results = await dataSource.successFailureByPlatform()
-    console.info(JSON.stringify(results, null, 2))
+    expect(results.alexa.successCount).toBeDefined()
+    expect(results.alexa.successPercentage).toBeDefined()
   })
 })

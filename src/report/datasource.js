@@ -46,7 +46,8 @@ class DataSource {
         successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
       }
     })
-    return successByPlatform
+    console.info('SuccesBy: ' + JSON.stringify(successByPlatform, null, 2))
+    return _.keyBy(successByPlatform, 'platform')
   }
 }
 

@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script>
+
+		window.onload = async function() {
+      var ctx = document.getElementById('canvas').getContext('2d');
+      const response = await axios.get('/successByPlatform')
+      console.log('DATA: ' + JSON.stringify(response.data))
+      
+      const rawData = response.data
+      const chartData = {
+        labels: ['Alexa', 'Google'],
+        datasets: [{
+          labels: ['Amazon Alexa', 'Google Assistant'],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)'
+          ],
+          borderWidth: 1,
+          data: [rawData.alexa.successPercentage, rawData.google.successPercentage]
+        }]
+      }
+
+      const options = {
+        type: 'bar',
+        data: chartData,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top'
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Bar Chart'
+          }
+        }
+      }
+
+      window.myBar = new Chart(ctx, options)
+		};
+    </script>
+  </body>
+</html>

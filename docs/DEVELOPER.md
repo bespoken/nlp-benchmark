@@ -1,0 +1,1 @@
+docker run -v C:/Users/jpk/bspk/nlp-benchmark:/opt/data -it --entrypoint sh geekduck/node-canvas
