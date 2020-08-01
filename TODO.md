@@ -18,6 +18,11 @@
 - [ ] Add classifications per ComQA paper
   - [ ] https://nlp.stanford.edu/software/CRF-NER.html
   - [ ] https://nlp.stanford.edu/software/sutime.shtml
+- [ ] Add results as webpage
+  - [ ] Add custom charts to a webpage of results
+  - [ ] Make downloadable
+  - [ ] Display results over time
+  - [ ] https://npmcompare.com/compare/chart.js,chartist
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

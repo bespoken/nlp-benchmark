@@ -1,4 +1,4 @@
-const BenchmarkSource = require('../src/benchmark-source')
+const BenchmarkSource = require('../src/process/benchmark-source')
 const { Config } = require('bespoken-batch-tester')
 
 describe('souce loads records', () => {

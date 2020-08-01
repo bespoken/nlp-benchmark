@@ -1,5 +1,5 @@
-const BenchmarkInterceptor = require('../src/benchmark-interceptor')
-const Question = require('../src/question')
+const BenchmarkInterceptor = require('../src/process/benchmark-interceptor')
+const Question = require('../src/process/question')
 const { Record, Result } = require('bespoken-batch-tester')
 
 describe('interceptor works correctly', () => {

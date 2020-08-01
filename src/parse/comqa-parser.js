@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const fs = require('fs')
-const Question = require('./question')
+const Question = require('../process/question')
 
 class ComQAParser {
   constructor () {
