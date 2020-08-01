@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const mysql = require('promise-mysql')
 
 class DataSource {
@@ -13,7 +14,7 @@ class DataSource {
     return connection
   }
 
-  async results (query) {
+  async query (query) {
     let connection
     try {
       connection = await this.connection()
@@ -26,6 +27,26 @@ class DataSource {
         console.error('DATASOURCE RESULTS error closing connection: ' + e)
       }
     }
+  }
+
+  async successFailureByPlatform () {
+    const rawData = await this.query(`select count(*) COUNT, PLATFORM, SUCCESS from NLP_BENCHMARK 
+      where SUCCESS in ('true', 'false')
+      group by PLATFORM, SUCCESS order by PLATFORM, SUCCESS desc`)
+    // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
+    const successByPlatform = Object.keys(resultsByPlatform).map(platform => {
+      const array = resultsByPlatform[platform]
+      const successCount = parseInt(array[0].COUNT)
+      const failureCount = parseInt(array[1].COUNT)
+      return {
+        platform,
+        successCount: successCount,
+        failureCount: failureCount,
+        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
+      }
+    })
+    return successByPlatform
   }
 }
 

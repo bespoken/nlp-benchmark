@@ -1,0 +1,90 @@
+const _ = require('lodash')
+const ChartJS = require('chartjs-node')
+const DataSource = require('./datasource')
+
+class Reporter {
+  async successFailureByPlatform () {
+    const dataSource = new DataSource()
+    const rawData = await dataSource.query('select count(*) COUNT, PLATFORM, SUCCESS from NLP_BENCHMARK group by PLATFORM order by SUCCESS desc')
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
+    const successByPlatform = resultsByPlatform.map(platform => {
+      const array = resultsByPlatform[platform]
+      return {
+        plaform,
+        successCount: array[0],
+        failureCount: array[1],
+        successPercentage: _.round(array[0] / (array[0] + array[1]), 2)
+      }
+    })
+    const chartjs = new ChartJS(600, 600)
+
+
+    var barChartData = {
+			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			const datasets: [{
+				label: 'Dataset 1',
+				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.red,
+				borderWidth: 1,
+				data: [
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()
+				]
+			}, {
+				label: 'Dataset 2',
+				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
+				borderColor: window.chartColors.blue,
+				borderWidth: 1,
+				data: [
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor(),
+					randomScalingFactor()
+				]
+			}]
+
+		};
+
+    const options = {
+      type: 'bar',
+      data: 
+      options: myChartOptions
+    }
+
+    return chartjs.drawChart(chartJsOptions)
+      .then(() => {
+        // chart is created
+
+        // get image as png buffer
+        return chartNode.getImageBuffer('image/png')
+      })
+      .then(buffer => {
+        Array.isArray(buffer) // => true
+        // as a stream
+        return chartNode.getImageStream('image/png')
+      })
+      .then(streamResult => {
+        // using the length property you can do things like
+        // directly upload the image to s3 by using the
+        // stream and length properties
+        streamResult.stream // => Stream object
+        streamResult.length // => Integer length of stream
+        // write to a file
+        return chartNode.writeImageToFile('image/png', './testimage.png')
+      })
+      .then(() => {
+        // chart is now written to the file path
+        // ./testimage.png
+      })
+  }
+}
+
+module.exports = Reporter

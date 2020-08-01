@@ -23,6 +23,7 @@
   - [ ] Make downloadable
   - [ ] Display results over time
   - [ ] https://npmcompare.com/compare/chart.js,chartist
+  - [ ] Make content embeddable
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits
