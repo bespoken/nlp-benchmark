@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   </head>
   <body>
-    <canvas id="canvas" height="75%"></canvas>
+    <canvas id="canvas" height="400" width="600"></canvas>
     <script>
 
 		window.onload = async function() {
@@ -25,7 +25,7 @@
             'rgba(93, 188, 210, 1.0)',
             'rgba(250, 189, 3, 1.0)'
           ],
-          borderWidth: 1,
+          borderWidth: 0,
           data: [rawData.alexa.successPercentage, rawData.google.successPercentage],
           label: "Success By Platform"
         }]
@@ -55,11 +55,12 @@
                 textAlign: 'top'
             }
           }, 
-          responsive: true,
+          responsive: false,
           scales: {
             yAxes: [{
               display: true,
               gridLines: {
+                color: 'rgb(0,0,0)',
                 display: true,
                 drawOnChartArea: false,
                 drawTicks: false
@@ -73,6 +74,7 @@
             }],
             xAxes: [{
               gridLines: {
+                color: 'rgb(0,0,0)',
                 display: true,
                 drawOnChartArea: false,
                 drawTicks: false
@@ -93,6 +95,7 @@
 
       Chart.defaults.global.defaultFontFamily = 'Roboto Condensed';
       Chart.defaults.global.defaultFontSize = 16;
+      Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)';
       window.myBar = new Chart(ctx, options)
 		};
     </script>
