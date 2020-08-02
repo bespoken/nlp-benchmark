@@ -1,10 +1,15 @@
 <html>
+  <title>Bespoken NLP Benchmark - Success By Platform</title>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   </head>
   <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" height="75%"></canvas>
     <script>
 
 		window.onload = async function() {
@@ -14,15 +19,15 @@
       
       const rawData = response.data
       const chartData = {
-        labels: ['Alexa', 'Google'],
+        labels: ['Amazon Alexa', 'Google Assistant'],
         datasets: [{
-          labels: ['Amazon Alexa', 'Google Assistant'],
           backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)'
+            'rgba(93, 188, 210, 1.0)',
+            'rgba(250, 189, 3, 1.0)'
           ],
           borderWidth: 1,
-          data: [rawData.alexa.successPercentage, rawData.google.successPercentage]
+          data: [rawData.alexa.successPercentage, rawData.google.successPercentage],
+          label: "Success By Platform"
         }]
       }
 
@@ -30,17 +35,64 @@
         type: 'bar',
         data: chartData,
         options: {
-          responsive: true,
           legend: {
-            position: 'top'
+            display: false,
+            position: 'end'
+          },
+          plugins: {
+            // Change options for ALL labels of THIS CHART
+            datalabels: {
+                align: 'top',
+                anchor: 'end',
+                font: {
+                  family: 'Roboto Condensed',
+                  size: 14,
+                  weight: 'bold'
+                },
+                formatter: (s) => {
+                  return s + '%'
+                },
+                textAlign: 'top'
+            }
+          }, 
+          responsive: true,
+          scales: {
+            yAxes: [{
+              display: true,
+              gridLines: {
+                display: true,
+                drawOnChartArea: false,
+                drawTicks: false
+              },
+              ticks: {
+                  beginAtZero: true,
+                  padding: 10,
+                  max: 100,
+                  stepSize: 50
+              }
+            }],
+            xAxes: [{
+              gridLines: {
+                display: true,
+                drawOnChartArea: false,
+                drawTicks: false
+              },
+              ticks: {
+                  padding: 10
+              }
+            }]
           },
           title: {
             display: true,
-            text: 'Chart.js Bar Chart'
+            fontFamily: 'Khand',
+            fontSize: 20,
+            text: 'Success By Platform'
           }
         }
       }
 
+      Chart.defaults.global.defaultFontFamily = 'Roboto Condensed';
+      Chart.defaults.global.defaultFontSize = 16;
       window.myBar = new Chart(ctx, options)
 		};
     </script>

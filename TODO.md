@@ -25,5 +25,13 @@
   - [ ] https://npmcompare.com/compare/chart.js,chartist
   - [ ] Make content embeddable
 
+
+## Server
+- [ ] Dockerize server
+- [ ] Deploy server
+- [ ] Add favicon
+- [ ] Add watermark
+- [ ] Add logos inside charts
+
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits
