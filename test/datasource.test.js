@@ -2,7 +2,8 @@ const DataSource = require('../src/report/datasource')
 
 require('dotenv').config()
 
-describe('datasource works correctly', () => {
+const describeIf = process.env.MYSQL_HOST ? describe : describe.skip
+describeIf('datasource works correctly', () => {
   test('loads records from the mysql database', async () => {
     const dataSource = new DataSource()
     const results = await dataSource.query('select * from NLP_BENCHMARK LIMIT 1')

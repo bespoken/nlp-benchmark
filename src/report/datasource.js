@@ -22,7 +22,7 @@ class DataSource {
       return results
     } finally {
       try {
-        await connection.destroy()
+        if (connection) await connection.destroy()
       } catch (e) {
         console.error('DATASOURCE RESULTS error closing connection: ' + e)
       }
