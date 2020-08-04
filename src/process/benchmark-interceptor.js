@@ -1,4 +1,5 @@
 const _ = require('lodash')
+const AnnotationManager = require('../parse/annotation-manager')
 const fs = require('fs')
 const Fuse = require('fuse.js')
 const { Config, Interceptor } = require('bespoken-batch-tester')
@@ -7,12 +8,17 @@ const Util = require('./util')
 
 // We read back in the questions from our file, in case we have changed something in our logic
 const questions = {}
+const annotationManager = new AnnotationManager()
+
 if (Config.has('sourceFile')) {
   const questionsString = fs.readFileSync(Config.get('sourceFile'))
   const questionsJSON = JSON.parse(questionsString)
   questionsJSON.questions.forEach(question => {
     questions[question.question] = Question.fromJSON(question)
   })
+
+  // Add the annotations
+  annotationManager.applyAnnotations(Object.values(questions), 'input/datasets/comqa-annotations.csv')
 }
 
 class BenchmarkInterceptor extends Interceptor {
@@ -23,15 +29,18 @@ class BenchmarkInterceptor extends Interceptor {
     // If this a rerun, need to turn question JSON into an object
     if (record.rerun) {
       question = questions[question.question]
+      if (!question) {
+        return false
+      }
     }
 
-    const transcript = result.lastResponse.transcript
+    const transcript = _.get(result, 'lastResponse.transcript')
     const answers = question.answers
 
     const display = _.join(_.get(result, 'lastResponse.card.content'), ' ')
 
     result.addOutputField('ANSWERS', answers.map(a => a.text()).join(','))
-    result.addOutputField('TRANSCRIPT', this.clean(result.lastResponse.transcript))
+    result.addOutputField('TRANSCRIPT', this.clean(transcript))
     result.addOutputField('DISPLAY', _.join(_.get(result, 'lastResponse.card.content'), ' '))
 
     // console.info(result.lastResponse.transcript)
@@ -70,6 +79,12 @@ class BenchmarkInterceptor extends Interceptor {
       result.addOutputField('CLOSEST_ANSWER', closest.answer)
       result.addOutputField('CLOSEST_SCORE', closest.score)
       result.addOutputField('CLOSEST_MATCH', closest.matchType)
+
+      // Add the annotations
+      for (const field of Object.keys(question.annotations)) {
+        const value = question.annotations[field]
+        result.addOutputField(field, value)
+      }
     }
 
     // result.addOutputField('displayScore', displayScore)

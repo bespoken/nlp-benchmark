@@ -1,0 +1,13 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/process/benchmark-interceptor",
+  "job": "nlp-benchmark-siri",
+  "source": "src/process/benchmark-source",
+  "sourceFile": "input/datasets/comqa.json",
+  "virtualDevices": {
+    "robot-6": {
+      "tags": ["siri"]
+    }
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-robot-dev.bespoken.io"
+}

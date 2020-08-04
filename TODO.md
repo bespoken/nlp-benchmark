@@ -30,7 +30,7 @@
 - [ ] Dockerize server
 - [ ] Deploy server
 - [ ] Add favicon
-- [ ] Add watermark
+- [ ] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
 - [ ] Add logos inside charts
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes

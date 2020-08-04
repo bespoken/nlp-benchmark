@@ -30,12 +30,15 @@
     "url": "git+https://github.com/snipsco/nlu-benchmark.git"
   },
   "scripts": {
-    "parse-comqa": "node src/comqa-parser.js parse",
-    "parse-wikiqa": "node src/wikiqa-parser.js parse",
+    "annotate": "node src/parse/annotation-manager.js annotate",
+    "parse-comqa": "node src/parse/comqa-parser.js parse",
+    "parse-wikiqa": "node src/parse/wikiqa-parser.js parse",
     "process:alexa": "bbt process input/nlp-benchmark-alexa.json",
     "process:google": "bbt process input/nlp-benchmark-google.json",
+    "process:siri": "bbt process input/nlp-benchmark-siri.json",
     "reprocess:alexa": "bbt reprocess input/nlp-benchmark-alexa.json",
     "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
+    "reprocess:siri": "bbt reprocess input/nlp-benchmark-siri.json",
     "test": "jest"
   },
   "standard": {
