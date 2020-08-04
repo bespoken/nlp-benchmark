@@ -6,7 +6,9 @@ class Question {
   static fromJSON (json) {
     const question = new Question()
     Object.assign(question, json)
-    question.answers = question.answers.map(json => new Answer(json))
+    if (question.answers) {
+      question.answers = question.answers.map(json => new Answer(json))
+    }
     return question
   }
 
@@ -14,9 +16,14 @@ class Question {
     this.question = question
     this.subject = subject
     this.answers = []
+    this.annotations = {}
     if (answer) {
       this.addAnswer(answer)
     }
+  }
+
+  addAnnotation (key, value) {
+    this.annotations[key] = value
   }
 
   addAnswer (answer) {
@@ -32,7 +39,7 @@ class Question {
   }
 
   hasNoAnswer () {
-    return this.answers.length === 0
+    return !this.answers || this.answers.length === 0
   }
 
   type () {
