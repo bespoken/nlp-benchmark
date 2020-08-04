@@ -1,7 +1,7 @@
 {
   "author": "Bespoken",
   "dependencies": {
-    "bespoken-batch-tester": "^0.9.10",
+    "bespoken-batch-tester": "^0.9.11",
     "csv": "^5.3.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

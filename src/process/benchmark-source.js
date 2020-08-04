@@ -13,6 +13,9 @@ class QuerySource extends Source {
     } else if (jobName.includes('google')) {
       platform = 'google'
       utterancePrefix = 'hey google'
+    } else if (jobName.includes('siri')) {
+      platform = 'siri'
+      utterancePrefix = 'hey siri'
     }
 
     const questionsJSON = fs.readFileSync(Config.get('sourceFile'))
