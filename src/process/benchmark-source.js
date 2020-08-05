@@ -16,7 +16,7 @@ class QuerySource extends Source {
       utterancePrefix = 'hey google'
     } else if (jobName.includes('siri')) {
       platform = 'siri'
-      utterancePrefix = '<speak> hey siri <break time="4s"/> '
+      utterancePrefix = '<speak> hey siri <break time="3s"/> '
       utteranceSuffix = '</speak>'
     }
 

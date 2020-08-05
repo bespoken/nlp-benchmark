@@ -43,7 +43,8 @@ module.exports = ComQAParser
 if (_.nth(process.argv, 2) === 'parse') {
   const parser = new ComQAParser()
   const questions = parser.parse()
-  fs.writeFileSync('input/datasets/comqa.json', JSON.stringify({
-    questions: questions.map(question => question.toJSON())
+  const noAnswer = questions.filter(question => question.hasNoAnswer())
+  fs.writeFileSync('input/datasets/comqa-noanswer.json', JSON.stringify({
+    questions: noAnswer.map(question => question.toJSON())
   }, null, 2))
 }
