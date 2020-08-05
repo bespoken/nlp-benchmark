@@ -7,7 +7,7 @@ class QuerySource extends Source {
     const jobName = Config.get('job')
     let platform
     let utterancePrefix
-    let utteranceSuffix = ''
+    let utteranceSuffix
     if (jobName.includes('alexa')) {
       platform = 'alexa'
       utterancePrefix = 'alexa'
@@ -27,7 +27,10 @@ class QuerySource extends Source {
       const question = Question.fromJSON(questionJSON)
       const baseUtterance = question.question
 
-      const utterance = `${utterancePrefix} ${baseUtterance} ${utteranceSuffix}`
+      let utterance = `${utterancePrefix} ${baseUtterance}`
+      if (utteranceSuffix) {
+        utterance += ' ' + utteranceSuffix
+      }
       const record = new Record(utterance)
       record.meta = {
         question: question
