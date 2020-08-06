@@ -1,1 +1,15 @@
-docker run -v C:/Users/jpk/bspk/nlp-benchmark:/opt/data -it --entrypoint sh geekduck/node-canvas
+# SQL Queries
+## NLP_BENCHMARK view
+CREATE OR REPLACE
+ALGORITHM = UNDEFINED VIEW `bespoken`.`NLP_BENCHMARK` AS
+select
+    *
+from
+    `bespoken`.`NLP_BENCHMARK_GOOGLE`
+union
+select
+    *
+from
+    `bespoken`.`NLP_BENCHMARK_ALEXA`
+from
+    `bespoken`.`NLP_BENCHMARK_ALEXA`

@@ -32,6 +32,7 @@ jobs:
     - name: Check environment
       run: |
         echo 'Limit: ' $LIMIT
+        echo 'MySQL: ' $MYSQL_HOST
         echo 'Platform: ' $PLATFORM
         echo 'Run Key: ' $RUN_KEY
 

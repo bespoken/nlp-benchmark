@@ -22,6 +22,17 @@ if (Config.has('sourceFile')) {
 }
 
 class BenchmarkInterceptor extends Interceptor {
+  interceptPreProcess (job) {
+    // Fix some early bad data
+    if (job.run === 'nlp-benchmark_2020-07-24T19-28-12') {
+      job.run = 'nlp-benchmark-alexa_2020-07-24T19-28-12'
+    }
+
+    if (job.name === 'nlp-benchmark') {
+      job._name = 'nlp-benchmark-alexa'
+    }
+  }
+
   interceptResult (record, result) {
     // Get the original question this corresponds to
     let question = record.meta.question
@@ -79,12 +90,12 @@ class BenchmarkInterceptor extends Interceptor {
       result.addOutputField('CLOSEST_ANSWER', closest.answer)
       result.addOutputField('CLOSEST_SCORE', closest.score)
       result.addOutputField('CLOSEST_MATCH', closest.matchType)
+    }
 
-      // Add the annotations
-      for (const field of Object.keys(question.annotations)) {
-        const value = question.annotations[field]
-        result.addOutputField(field, value)
-      }
+    // Add the annotations
+    for (const field of Object.keys(question.annotations)) {
+      const value = question.annotations[field]
+      result.addOutputField(field, value)
     }
 
     // result.addOutputField('displayScore', displayScore)

@@ -3,7 +3,7 @@
   "interceptor": "src/process/benchmark-interceptor",
   "job": "nlp-benchmark-google",
   "source": "src/process/benchmark-source",
-  "sourceFile": "input/datasets/comqa-noanswer.json",
+  "sourceFile": "input/datasets/comqa.json",
   "virtualDevices": {
     "robot-5": {
       "tags": ["google"]

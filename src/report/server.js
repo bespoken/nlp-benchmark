@@ -1,14 +1,22 @@
 const DataSource = require('./datasource')
 const express = require('express')
+const handlebars = require('express-handlebars')
 
 require('dotenv').config()
 
 const app = express()
 const port = 3000
 
-app.use(express.static('static'))
+app.engine('handlebars', handlebars())
+app.set('view engine', 'handlebars')
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use('/static', express.static('static'))
+
+app.get('/', (req, res) => res.render('home', {
+  helpers: {
+    title: () => 'My Title'
+  }
+}))
 
 app.get('/successByPlatform', async (req, res) => {
   const dataSource = new DataSource()

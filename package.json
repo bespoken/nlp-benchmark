@@ -5,6 +5,7 @@
     "csv": "^5.3.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
     "fuse.js": "^6.4.0",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
@@ -39,6 +40,7 @@
     "reprocess:alexa": "bbt reprocess input/nlp-benchmark-alexa.json",
     "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
     "reprocess:siri": "bbt reprocess input/nlp-benchmark-siri.json",
+    "server": "node src/report/server.js",
     "test": "jest"
   },
   "standard": {

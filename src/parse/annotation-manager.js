@@ -38,6 +38,7 @@ class AnnotationManager {
    */
   applyAnnotations (questions, filename) {
     const annotations = this._readAnnotations(filename)
+    console.info('Annotation count: ' + questions.length)
     for (const question of questions) {
       // Check if there are annotations for this question
       const annotationSet = annotations[question.question]
@@ -48,6 +49,8 @@ class AnnotationManager {
           const annotationValue = annotationSet[annotationField]
           question.addAnnotation(annotationField, annotationValue)
         }
+      } else {
+        console.info('No annotations for: ' + question.question)
       }
     }
   }

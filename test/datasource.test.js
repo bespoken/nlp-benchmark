@@ -17,4 +17,11 @@ describeIf('datasource works correctly', () => {
     expect(results.alexa.successCount).toBeDefined()
     expect(results.alexa.successPercentage).toBeDefined()
   })
+
+  test('counts success and failure by complexity and platform', async () => {
+    const dataSource = new DataSource()
+    const results = await dataSource.successFailureByComplexity()
+    expect(results.alexa1.successCount).toBeDefined()
+    expect(results.alexa1.successPercentage).toBeDefined()
+  })
 })
