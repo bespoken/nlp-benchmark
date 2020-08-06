@@ -3,26 +3,26 @@
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('canvas').getContext('2d')
     const response = await axios.get('/successByComplexity')
-    const chartData = response.data
+    const rawData = response.data
 
-    const chartDataset = {
+    const chartData = {
       labels: ['Simple Questions', 'Complex Questions'],
       datasets: [
         {
           backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorAlexa()],
           borderWidth: 0,
-          data: [chartData.alexa0.successPercentage, chartData.alexa1.successPercentage],
+          data: [rawData.alexa0.successPercentage, rawData.alexa1.successPercentage],
           label: 'Amazon Alexa'
         },
         {
           backgroundColor: [ChartHelper.colorGoogle(), ChartHelper.colorGoogle()],
           borderWidth: 0,
-          data: [chartData.google0.successPercentage, chartData.google1.successPercentage],
+          data: [rawData.google0.successPercentage, rawData.google1.successPercentage],
           label: 'Google Assistant'
         }
       ]
     }
-    const options = ChartHelper.bar('Success By Question Complexity', chartDataset)
+    const options = ChartHelper.bar('% Success By Question Complexity', chartData)
     window.successByComplexityChart = new Chart(canvas, options)
   })
 </script>

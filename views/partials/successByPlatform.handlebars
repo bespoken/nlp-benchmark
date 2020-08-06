@@ -2,9 +2,9 @@
 <script>
   window.addEventListener('load', async () => {
     const response = await axios.get('/successByPlatform')
-    const chartData = response.data
+    const rawData = response.data
 
-    const datasets = {
+    const chartData = {
       labels: ['Amazon Alexa', 'Google Assistant'],
       datasets: [{
         backgroundColor: [
@@ -12,10 +12,10 @@
           ChartHelper.colorGoogle()
         ],
         borderWidth: 0,
-        data: [chartData.alexa.successPercentage, chartData.google.successPercentage]
+        data: [rawData.alexa.successPercentage, rawData.google.successPercentage]
       }]
     }
-    const options = ChartHelper.bar('Success By Platform', datasets)
+    const options = ChartHelper.bar('% Success By Platform', chartData)
     const context = document.getElementById('successByPlatformCanvas').getContext('2d')
     window.successByPlatformChart = new Chart(context, options)
   })
