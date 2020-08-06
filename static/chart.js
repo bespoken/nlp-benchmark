@@ -1,11 +1,13 @@
+/* global Chart */
+
 const ChartHelper = {
-  bar: () => {
+  bar: (title, datasets) => {
     const options = {
-      type: 'bar',
+      data: datasets,
       options: {
         legend: {
-          display: false,
-          position: 'end'
+          display: datasets.length > 1, // Show the legend if there is more than one dataset
+          position: 'top'
         },
         plugins: {
           // Change options for ALL labels of THIS CHART
@@ -56,9 +58,10 @@ const ChartHelper = {
           display: true,
           fontFamily: 'Khand',
           fontSize: 20,
-          text: 'Success By Platform'
+          text: title
         }
-      }
+      },
+      type: 'bar'
     }
 
     Chart.defaults.global.defaultFontFamily = 'Roboto Condensed'
@@ -67,8 +70,8 @@ const ChartHelper = {
     return options
   },
 
-  colorAlexa: 'rgba(93, 188, 210, 1.0)',
-  colorGoogle: ''
+  colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
+  colorGoogle: () => 'rgba(250, 189, 3, 1.0)'
 }
 
 window.ChartHelper = ChartHelper

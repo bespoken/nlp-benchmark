@@ -1,27 +1,23 @@
-    <canvas id="canvas" height="400" width="600"></canvas>
-    <script>
-      window.onload = async function() {
-        var ctx = document.getElementById('canvas').getContext('2d')
-    
-        const response = await axios.get('/successByPlatform')
-        console.log('DATA: ' + JSON.stringify(response.data))
-        const rawData = response.data
+<canvas id="successByPlatformCanvas" height="{{height}}" width="{{width}}"></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const response = await axios.get('/successByPlatform')
+    const chartData = response.data
 
-        const chartData = {
-          labels: ['Amazon Alexa', 'Google Assistant'],
-          datasets: [{
-            backgroundColor: [
-              'rgba(93, 188, 210, 1.0)',
-              'rgba(250, 189, 3, 1.0)'
-            ],
-            borderWidth: 0,
-            data: [rawData.alexa.successPercentage, rawData.google.successPercentage],
-            label: 'Success By Platform'
-          }]
-        }
-        const options = ChartHelper.bar()
-        options.data = chartData
-        window.successByPlatformChart = new Chart(ctx, options)
-      }
-    </script>
-''
+    const datasets = {
+      labels: ['Amazon Alexa', 'Google Assistant'],
+      datasets: [{
+        backgroundColor: [
+          ChartHelper.colorAlexa(),
+          ChartHelper.colorGoogle()
+        ],
+        borderWidth: 0,
+        data: [chartData.alexa.successPercentage, chartData.google.successPercentage]
+      }]
+    }
+    const options = ChartHelper.bar('Success By Platform', datasets)
+    const context = document.getElementById('successByPlatformCanvas').getContext('2d')
+    window.successByPlatformChart = new Chart(context, options)
+  })
+</script>
+

@@ -13,14 +13,14 @@ describeIf('datasource works correctly', () => {
 
   test('counts platforms by success and failure', async () => {
     const dataSource = new DataSource()
-    const results = await dataSource.successFailureByPlatform()
+    const results = await dataSource.successByPlatform()
     expect(results.alexa.successCount).toBeDefined()
     expect(results.alexa.successPercentage).toBeDefined()
   })
 
   test('counts success and failure by complexity and platform', async () => {
     const dataSource = new DataSource()
-    const results = await dataSource.successFailureByComplexity()
+    const results = await dataSource.successByComplexity()
     expect(results.alexa1.successCount).toBeDefined()
     expect(results.alexa1.successPercentage).toBeDefined()
   })

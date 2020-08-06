@@ -20,7 +20,13 @@ app.get('/', (req, res) => res.render('home', {
 
 app.get('/successByPlatform', async (req, res) => {
   const dataSource = new DataSource()
-  const data = await dataSource.successFailureByPlatform()
+  const data = await dataSource.successByPlatform()
+  res.send(data)
+})
+
+app.get('/successByComplexity', async (req, res) => {
+  const dataSource = new DataSource()
+  const data = await dataSource.successByComplexity()
   res.send(data)
 })
 

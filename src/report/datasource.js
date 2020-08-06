@@ -29,7 +29,7 @@ class DataSource {
     }
   }
 
-  async successFailureByPlatform () {
+  async successByPlatform () {
     const rawData = await this.query(`select count(*) COUNT, PLATFORM, SUCCESS from NLP_BENCHMARK 
       where SUCCESS in ('true', 'false')
       group by PLATFORM, SUCCESS order by PLATFORM, SUCCESS desc`)
@@ -50,7 +50,7 @@ class DataSource {
     return _.keyBy(successByPlatform, 'platform')
   }
 
-  async successFailureByComplexity () {
+  async successByComplexity () {
     const rawData = await this.query(`select count(*) COUNT, PLATFORM, (COMPARISON = 'true' || COMPOSITIONAL = 'true' || TEMPORAL = 'true') COMPLEX, SUCCESS 
       from NLP_BENCHMARK 
       where SUCCESS in ('true', 'false')

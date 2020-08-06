@@ -14,6 +14,7 @@
   "description": "This repository analyzes the performance of popular NLP/Voice Assistant solutions using Bespoken's software and test robots",
   "devDependencies": {
     "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
     "standard": "^14.3.4"
   },
   "homepage": "https://github.com/snipsco/nlu-benchmark#readme",
@@ -41,7 +42,8 @@
     "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
     "reprocess:siri": "bbt reprocess input/nlp-benchmark-siri.json",
     "server": "node src/report/server.js",
-    "test": "jest"
+    "test": "jest",
+    "watch": "nodemon src/report/server.js"
   },
   "standard": {
     "env": [
