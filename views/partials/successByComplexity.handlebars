@@ -1,7 +1,7 @@
-<canvas id="canvas" height="{{height}}" width="{{width}}"></canvas>
+<canvas id="successByComplexityCanvas" height="{{height}}" width="{{width}}"></canvas>
 <script>
   window.addEventListener('load', async () => {
-    const canvas = document.getElementById('canvas').getContext('2d')
+    const canvas = document.getElementById('successByComplexityCanvas').getContext('2d')
     const response = await axios.get('/successByComplexity')
     const rawData = response.data
 

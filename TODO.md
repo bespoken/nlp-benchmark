@@ -13,6 +13,9 @@
 - [ ] Figure out how to change handlebars root view directory
 - [ ] Cache queries
 - [ ] Add tooltips on question type table
+- [ ] responsive design with bootstrap
+- [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
+- [ ] add drilldown reports
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

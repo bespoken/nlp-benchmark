@@ -35,4 +35,10 @@ app.get('/successByAnnotations', async (req, res) => {
   const data = await dataSource.successByAnnotations()
   res.send(data)
 })
+
+app.get('/successByTopics', async (req, res) => {
+  const dataSource = new DataSource()
+  const data = await dataSource.successByTopics()
+  res.send(data)
+})
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

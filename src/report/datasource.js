@@ -77,6 +77,37 @@ class DataSource {
     return _.keyBy(results, 'key')
   }
 
+  async successByTopics () {
+    let rawData = await this.query(`select count(*) COUNT, PLATFORM, TOPIC, SUCCESS 
+      from NLP_BENCHMARK 
+      where SUCCESS in ('true', 'false')
+      group by PLATFORM, TOPIC, SUCCESS 
+      order by PLATFORM, TOPIC, SUCCESS desc`)
+    // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+
+    rawData = rawData.filter(row => row.TOPIC !== undefined && row.TOPIC !== null && row.TOPIC.length > 0)
+    const resultsMap = _.groupBy(rawData, (row) => {
+      return row.PLATFORM + row.TOPIC
+    })
+    const results = Object.keys(resultsMap).map(key => {
+      const array = resultsMap[key]
+      console.info(JSON.stringify(array, null, 2))
+      const successCount = parseInt(_.get(_.nth(array, 0), 'COUNT', 0))
+      const failureCount = parseInt(_.get(_.nth(array, 1), 'COUNT', 0))
+      return {
+        key: key,
+        platform: array[0].PLATFORM,
+        topic: _.startCase(array[0].TOPIC),
+        successCount: successCount,
+        failureCount: failureCount,
+        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
+      }
+    })
+
+    console.info(JSON.stringify(results, null, 2))
+    return _.keyBy(results, 'key')
+  }
+
   async successByAnnotations () {
     const rawData = await this.query(`select *
       from NLP_BENCHMARK LIMIT 10`)

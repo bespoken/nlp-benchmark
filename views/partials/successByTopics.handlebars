@@ -1,0 +1,37 @@
+<canvas id="successByTopicsCanvas" height="{{height}}" width="{{width}}"></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('successByTopicsCanvas').getContext('2d')
+    const response = await axios.get('/successByTopics')
+    const rawData = response.data
+    const topics = ['Geography', 'History', 'Music', 'Movies', 'Politics', 'Sports']
+    console.info(JSON.stringify(rawData, null, 2))
+    
+    const chartData = {
+      labels: topics,
+      datasets: [
+        {
+          backgroundColor: topics.map(t => ChartHelper.colorAlexa()),
+          borderWidth: 0,
+          data: filterByTopics(rawData, 'alexa', topics),
+          label: 'Amazon Alexa'
+        },
+        {
+          backgroundColor: topics.map(t => ChartHelper.colorGoogle()),
+          borderWidth: 0,
+          data: filterByTopics(rawData, 'google', topics),
+          label: 'Google Assistant'
+        }
+      ]
+    }
+    const options = ChartHelper.bar('% Success By Topics', chartData)
+    window.successByComplexityChart = new Chart(canvas, options)
+  })
+
+  function filterByTopics(resultsForPlatform, platform, topics) {
+    return topics.map((topic) => {
+    
+      return resultsForPlatform[platform + _.upperCase(topic)].successPercentage
+    })
+  }
+</script>
