@@ -9,6 +9,7 @@ const ChartHelper = {
           display: (data.datasets.length > 1), // Show the legend if there is more than one dataset
           position: 'top'
         },
+        maintainAspectRatio: false,
         plugins: {
           // Change options for ALL labels of THIS CHART
           datalabels: {
@@ -25,7 +26,7 @@ const ChartHelper = {
             textAlign: 'top'
           }
         },
-        responsive: false,
+        responsive: true,
         scales: {
           yAxes: [{
             display: true,

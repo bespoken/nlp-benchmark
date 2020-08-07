@@ -110,7 +110,7 @@ class DataSource {
 
   async successByAnnotations () {
     const rawData = await this.query(`select *
-      from NLP_BENCHMARK LIMIT 10`)
+      from NLP_BENCHMARK`)
 
     // Get the results sorted by platform
     const platformMap = _.groupBy(rawData, (row) => {

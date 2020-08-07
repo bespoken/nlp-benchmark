@@ -1,15 +1,23 @@
-<div>
-  <h1>Bespoken NLP Benchmark</h1>
+<div class='container-fluid' >
+  <div class='row'>
+    <div>
+      <h1 style='color: black; font-family: Khand; margin-top: 20px'>Bespoken NLP Benchmark</h1>
+    </div>
+  </div>
+  <div class='row' style="">
+    <div class='col-12 col-md-6' >
+      {{> successByPlatform }}
+    </div>
+    <div  class='col-12 col-md-6'>
+      {{> successByComplexity }}
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12 col-md-6'>
+      {{> successByAnnotations }}
+    </div>
+    <div class='col-12 col-md-6'>
+      {{> successByTopics }}
+    </div> 
+  </div>
 </div>
-<div>
-  {{> successByPlatform height=400 width=600 }}
-</div>
-<div>
-  {{> successByComplexity height=400 width=600 }}
-</div>
-<div>
-  {{> successByAnnotations height=400 width=600 }}
-</div>
-<div>
-  {{> successByTopics height=400 width=600 }}
-</div> 

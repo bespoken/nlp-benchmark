@@ -5,15 +5,20 @@
 - [ ] roadmap
 
 ## UI + Server
+### For Teaser
+- [ ] Siri
+- [ ] responsive design with bootstrap
 - [ ] Dockerize server
 - [ ] Deploy server
+- [ ] Finish annotations
+- [ ] Cache queries
+
+### For Final
 - [ ] Add favicon
 - [ ] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
 - [ ] Add logos inside charts
 - [ ] Figure out how to change handlebars root view directory
-- [ ] Cache queries
 - [ ] Add tooltips on question type table
-- [ ] responsive design with bootstrap
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] add drilldown reports
 
