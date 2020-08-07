@@ -1,0 +1,35 @@
+<div>
+   <p class='title'>Success By Question Type</p>
+   <table id='annotationsTable'>
+      
+   </table>
+
+</div>
+<script>
+   window.addEventListener('load', async () => {
+      const response = await axios.get('/successByAnnotations')
+      const rawData = response.data
+      const table = $('#annotationsTable')
+      const annotations = Object.values(_.find(rawData)).map(v => v.name)
+      const headerRow = $('<tr class="headerRow"><th>Platform</th>')
+      console.info(JSON.stringify(rawData, null, 2))
+      for (const field of annotations) {
+         headerRow.append(`<th>${field}</th>`)
+      }
+      headerRow.append('</tr>')
+      table.append(headerRow)
+
+      
+      for (const platform of Object.keys(rawData)) {
+         const summary = rawData[platform]
+         const platformRow = $(`<tr class="dataRow"><td>${summary.TEMPORAL.platform}</td>`)
+         
+         for (const field of Object.keys(summary)) {
+            const value = summary[field]
+            platformRow.append(`<td>${value.successPercentage}%</td>`)
+         }
+         platformRow.append('</tr>')
+         table.append(platformRow)
+      }
+   })
+</script>

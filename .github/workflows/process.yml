@@ -1,4 +1,4 @@
-name: Process
+name: process
 
 on:
   workflow_dispatch:

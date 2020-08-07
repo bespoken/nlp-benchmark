@@ -12,7 +12,7 @@ app.set('view engine', 'handlebars')
 
 app.use('/static', express.static('static'))
 
-app.get('/', (req, res) => res.render('home', {
+app.get('/', (req, res) => res.render('reports', {
   helpers: {
     title: () => 'My Title'
   }
@@ -30,4 +30,9 @@ app.get('/successByComplexity', async (req, res) => {
   res.send(data)
 })
 
+app.get('/successByAnnotations', async (req, res) => {
+  const dataSource = new DataSource()
+  const data = await dataSource.successByAnnotations()
+  res.send(data)
+})
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

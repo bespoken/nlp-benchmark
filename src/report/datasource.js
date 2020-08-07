@@ -76,6 +76,79 @@ class DataSource {
     console.info('Success By Complexity: ' + JSON.stringify(results, null, 2))
     return _.keyBy(results, 'key')
   }
+
+  async successByAnnotations () {
+    const rawData = await this.query(`select *
+      from NLP_BENCHMARK LIMIT 10`)
+
+    // Get the results sorted by platform
+    const platformMap = _.groupBy(rawData, (row) => {
+      return row.PLATFORM
+    })
+
+    // For each annotation, summarize how it did for a particular annotation
+    Object.keys(platformMap).forEach(key => {
+      const resultsArray = platformMap[key]
+      const summaries = {}
+      this.successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
+      this.successByAnnotation(summaries, resultsArray, 'COMPARISON')
+      this.successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
+      this.successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
+      this.successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
+      this.successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
+      this.successByAnnotation(summaries, resultsArray, 'TEMPORAL')
+      _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
+      platformMap[key] = summaries
+    })
+    return platformMap
+  }
+
+  successByAnnotation (summaries, results, annotation) {
+    console.info('Results: ' + results.length)
+    const summaryByAnnotation = _.reduce(results,
+      (summary, row) => {
+        if (row[annotation] === 'TRUE') {
+          if (row.SUCCESS === 'true') {
+            summary.successCount++
+          } else {
+            summary.failureCount++
+          }
+        }
+        return summary
+      },
+      {
+        annotation: annotation,
+        failureCount: 0,
+        successCount: 0
+      }
+    )
+    console.info('SuumaryByAnnotation: ' + JSON.stringify(summaryByAnnotation, null, 2))
+    const totalCount = (summaryByAnnotation.successCount + summaryByAnnotation.failureCount)
+    let successPercentage = 100
+    if (totalCount > 0) {
+      successPercentage = _.round(summaryByAnnotation.successCount / totalCount * 100, 2)
+    }
+    summaryByAnnotation.successPercentage = successPercentage
+    summaryByAnnotation.name = this._annotationName(annotation)
+    summaryByAnnotation.platform = this._platformName(annotation)
+    summaries[annotation] = summaryByAnnotation
+  }
+
+  _annotationName (name) {
+    name = _.replace(name, '_', ' ')
+    name = _.startCase(_.lowerCase(name))
+    return name
+  }
+
+  _platformName (name) {
+    if (name === 'alexa') {
+      return 'Amazon Alexa'
+    } else if (name === 'google') {
+      return 'Google Assistant'
+    } else if (name === 'siri') {
+      return 'Apple Siri'
+    }
+  }
 }
 
 module.exports = DataSource

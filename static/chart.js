@@ -56,22 +56,26 @@ const ChartHelper = {
         },
         title: {
           display: true,
-          fontFamily: 'Khand',
-          fontSize: 20,
+          fontFamily: ChartHelper.titleFont(),
+          fontSize: ChartHelper.titleFontSize(),
           text: title
         }
       },
       type: 'bar'
     }
 
-    Chart.defaults.global.defaultFontFamily = 'Roboto Condensed'
-    Chart.defaults.global.defaultFontSize = 16
+    Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
+    Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
     Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
     return options
   },
 
   colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
-  colorGoogle: () => 'rgba(250, 189, 3, 1.0)'
+  colorGoogle: () => 'rgba(250, 189, 3, 1.0)',
+  defaultFont: () => 'Roboto Condensed',
+  defaultFontSize: () => 16,
+  titleFont: () => 'Khand',
+  titleFontSize: () => 20
 }
 
 window.ChartHelper = ChartHelper

@@ -5,19 +5,47 @@
     <link href='http://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4/lodash.min.js"></script>
     <script src="/static/chart.js"></script>
+
+    <style>
+      canvas {
+        padding: 0;
+        margin: auto;
+        display: block;
+        width: 800px;
+      }
+
+      div {
+        margin: auto;
+        text-align: center;
+      }
+
+      h1 {
+        text-align: center
+      }
+
+      table {
+        margin: auto
+      }
+    </style>
+    <script>
+      // We set certain style programmatically because they are shared between charts generated in JS and HTML
+      window.addEventListener('load', () => {
+        $('body').css('font-family', ChartHelper.defaultFont())
+        $('body').css('font-size', ChartHelper.defaultFontSize())
+        $('.title').css('font-family', ChartHelper.titleFont())
+        $('.title').css('font-size', ChartHelper.titleFontSize())
+        $('.title').css('font-weight', 'bold')
+      })
+    </script>
   </head>
   <body>
  
     {{{body}}}
     
-    <div>
-      {{> successByPlatform height=400 width=600 }}
-    </div>
-    <div>
-      {{> successByComplexity height=400 width=600 }}
-    </div>
   </body>
 </html>
