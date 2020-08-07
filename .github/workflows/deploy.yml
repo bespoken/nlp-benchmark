@@ -6,7 +6,7 @@ on:
      - 'prod-*'
 
 jobs:
-  process:
+  deploy:
     runs-on: ubuntu-latest
     env:
       MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
@@ -42,7 +42,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
       run: |
         fargate service \
-        --command "node src/server/server.js" \
+        --command "node src/report/server.js" \
         --name benchmark \
         --containerPort 3000 \
         --image bespoken/benchmark:${GIT_TAG_NAME} \
