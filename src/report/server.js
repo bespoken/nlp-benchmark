@@ -8,9 +8,10 @@ const app = express()
 const port = 3000
 
 app.engine('handlebars', handlebars())
+app.set('views', './web/views/')
 app.set('view engine', 'handlebars')
 
-app.use('/static', express.static('static'))
+app.use('/web', express.static('web'))
 
 const dataSource = new DataSource()
 

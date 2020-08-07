@@ -1,0 +1,57 @@
+name: deploy
+
+on:
+  push:
+    tags: 
+     - 'prod-*'
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    env:
+      MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
+      MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      MYSQL_USER: ${{ secrets.MYSQL_USER }}
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Check environment
+      run: |
+        echo 'MySQL: ' $MYSQL_HOST
+        
+    # Need to parse the github ref, which is in the form refs/heads/TAG_NAME - this little action does that
+    - uses: olegtarasov/get-tag@v2
+      id: tagName
+        
+    - name: Create docker image
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: conf/Dockerfile
+        repository: bespoken/test-robot
+        tag_with_ref: true
+      
+    - name: Install Fargate Helper
+      run: sudo npm install fargate-helper -g
+    
+    - name: Update the test-robot service
+      env: # Set the AWS credentials for performing the deployment
+          AWS_ACCESS_KEY_ID: ${{ secrets.DEPLOY_AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.DEPLOY_AWS_SECRET_ACCESS_KEY }}
+      run: |
+        fargate service \
+        --command "node src/server/server.js" \
+        --name benchmark \
+        --containerPort 3000 \
+        --image bespoken/benchmark:${GIT_TAG_NAME} \
+        --hostname benchmark.bespoken.io \
+        --launchType EC2 \
+        --memory 128 \
+        --cpu 5 \
+        --env MYSQL_DATABASE=$MYSQL_DATABASE \
+        --env MYSQL_HOST=$MYSQL_HOST \
+        --env MYSQL_USER=$MYSQL_USER \
+        --env MYSQL_PASSWORD=$MYSQL_PASSWORD 
+        
