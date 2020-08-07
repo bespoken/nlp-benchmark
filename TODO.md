@@ -8,10 +8,10 @@
 ### For Teaser
 - [X] Siri
 - [X] responsive design with bootstrap
-- [ ] Dockerize server
+- [X] Dockerize server
+- [X] Cache queries
 - [ ] Deploy server
 - [ ] Finish annotations
-- [ ] Cache queries
 
 ### For Final
 - [ ] Add favicon
