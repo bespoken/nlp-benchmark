@@ -5,17 +5,14 @@
     const rawData = response.data
 
     const chartData = {
-      labels: ['Amazon Alexa', 'Google Assistant'],
+      labels: ['Amazon Alexa', 'Apple Siri', 'Google Assistant'],
       datasets: [{
-        backgroundColor: [
-          ChartHelper.colorAlexa(),
-          ChartHelper.colorGoogle()
-        ],
+        backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorSiri(), ChartHelper.colorGoogle()],
         borderWidth: 0,
-        data: [rawData.alexa.successPercentage, rawData.google.successPercentage]
+        data: [rawData.alexa.successPercentage,  rawData.siri.successPercentage, rawData.google.successPercentage]
       }]
     }
-    const options = ChartHelper.bar('% Success By Platform', chartData)
+    const options = ChartHelper.bar('Success By Platform', chartData)
     const context = document.getElementById('successByPlatformCanvas').getContext('2d')
     window.successByPlatformChart = new Chart(context, options)
   })

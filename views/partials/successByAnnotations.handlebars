@@ -1,7 +1,14 @@
 <div>
    <p class='title'>Success By Question Type</p>
-   <table id='annotationsTable'>
-      
+   <table id='annotationsTable' class='table' style='width: 100%'>
+      <thead class="thead-light">
+         <tr class="headerRow">
+            <th align="left"></th>
+            <th align="left">Amazon Alexa</th>
+            <th align="left">Apple Siri</th>
+            <th align="left">Google Assistant</th>
+         </tr>
+      </thead>
    </table>
 
 </div>
@@ -10,26 +17,21 @@
       const response = await axios.get('/successByAnnotations')
       const rawData = response.data
       const table = $('#annotationsTable')
-      const annotations = Object.values(_.find(rawData)).map(v => v.name)
-      const headerRow = $('<tr class="headerRow"><th align="left">Platform</th>')
-      console.info(JSON.stringify(rawData, null, 2))
-      for (const field of annotations) {
-         headerRow.append(`<th>${field}</th>`)
-      }
-      headerRow.append('</tr>')
-      table.append(headerRow)
-
+      // Create a list of annotations by key and name - e.g, { TELEGRAPHIC: "Telegraphic" }
+      const annotations = _.mapValues(_.find(rawData), 'name')
       
-      for (const platform of Object.keys(rawData)) {
-         const summary = rawData[platform]
-         const platformRow = $(`<tr class="dataRow"><td>${summary.TEMPORAL.platform}</td>`)
+      
+      for (const field of Object.keys(annotations)) {
+         const fieldRow = $(`<tr class="dataRow"><td style='font-style: italic'>${annotations[field]}</td>`)
          
-         for (const field of Object.keys(summary)) {
+         for (const platform of Object.keys(rawData)) {
+            const summary = rawData[platform]
+            
             const value = summary[field]
-            platformRow.append(`<td>${value.successPercentage}%</td>`)
+            fieldRow.append(`<td>${value.successPercentage}%</td>`)
          }
-         platformRow.append('</tr>')
-         table.append(platformRow)
+         fieldRow.append('</tr>')
+         table.append(fieldRow)
       }
    })
 </script>

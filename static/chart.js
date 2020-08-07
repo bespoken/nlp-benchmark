@@ -5,8 +5,16 @@ const ChartHelper = {
     const options = {
       data: data,
       options: {
+        layout: {
+          padding: {
+            top: 0
+          }
+        },
         legend: {
           display: (data.datasets.length > 1), // Show the legend if there is more than one dataset
+          labels: {
+            padding: 10
+          },
           position: 'top'
         },
         maintainAspectRatio: false,
@@ -29,7 +37,7 @@ const ChartHelper = {
         responsive: true,
         scales: {
           yAxes: [{
-            display: true,
+            display: false,
             gridLines: {
               color: 'rgb(0,0,0)',
               display: true,
@@ -38,6 +46,7 @@ const ChartHelper = {
             },
             ticks: {
               beginAtZero: true,
+              display: false,
               padding: 10,
               max: 100,
               stepSize: 50
@@ -46,7 +55,7 @@ const ChartHelper = {
           xAxes: [{
             gridLines: {
               color: 'rgb(0,0,0)',
-              display: true,
+              display: false,
               drawOnChartArea: false,
               drawTicks: false
             },
@@ -73,10 +82,70 @@ const ChartHelper = {
 
   colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
   colorGoogle: () => 'rgba(250, 189, 3, 1.0)',
+  colorSiri: () => 'rgb(193, 193, 193)',
   defaultFont: () => 'Roboto Condensed',
   defaultFontSize: () => 16,
   titleFont: () => 'Khand',
-  titleFontSize: () => 20
+  titleFontSize: () => 20,
+
+  createNewLegendAndAttach: (chartInstance, legendOpts) => {
+    var legend = new Chart.NewLegend({
+      ctx: chartInstance.chart.ctx,
+      options: legendOpts,
+      chart: chartInstance
+    })
+
+    if (chartInstance.legend) {
+      Chart.layoutService.removeBox(chartInstance, chartInstance.legend)
+      delete chartInstance.newLegend
+    }
+
+    chartInstance.newLegend = legend
+    Chart.layoutService.addBox(chartInstance, legend)
+  }
+
 }
+
+// Got this code from here:
+// https://stackoverflow.com/questions/42585861/chart-js-increase-spacing-between-legend-and-chart
+// To increase the distance between the chart area and the legend
+Chart.NewLegend = Chart.Legend.extend({
+  afterFit: function () {
+    this.height = this.height + 10
+  }
+})
+
+// Register the legend plugin
+Chart.plugins.register({
+  beforeInit: function (chartInstance) {
+    var legendOpts = chartInstance.options.legend
+
+    if (legendOpts) {
+      ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
+    }
+  },
+  beforeUpdate: function (chartInstance) {
+    var legendOpts = chartInstance.options.legend
+
+    if (legendOpts) {
+      legendOpts = Chart.helpers.configMerge(Chart.defaults.global.legend, legendOpts)
+
+      if (chartInstance.newLegend) {
+        chartInstance.newLegend.options = legendOpts
+      } else {
+        ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
+      }
+    } else {
+      Chart.layoutService.removeBox(chartInstance, chartInstance.newLegend)
+      delete chartInstance.newLegend
+    }
+  },
+  afterEvent: function (chartInstance, e) {
+    var legend = chartInstance.newLegend
+    if (legend) {
+      legend.handleEvent(e)
+    }
+  }
+})
 
 window.ChartHelper = ChartHelper

@@ -6,8 +6,8 @@
 
 ## UI + Server
 ### For Teaser
-- [ ] Siri
-- [ ] responsive design with bootstrap
+- [X] Siri
+- [X] responsive design with bootstrap
 - [ ] Dockerize server
 - [ ] Deploy server
 - [ ] Finish annotations
@@ -21,6 +21,7 @@
 - [ ] Add tooltips on question type table
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] add drilldown reports
+- [ ] links to underlying data
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

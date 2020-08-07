@@ -12,6 +12,8 @@ app.set('view engine', 'handlebars')
 
 app.use('/static', express.static('static'))
 
+const dataSource = new DataSource()
+
 app.get('/', (req, res) => res.render('reports', {
   helpers: {
     title: () => 'My Title'
@@ -19,26 +21,19 @@ app.get('/', (req, res) => res.render('reports', {
 }))
 
 app.get('/successByPlatform', async (req, res) => {
-  const dataSource = new DataSource()
-  const data = await dataSource.successByPlatform()
-  res.send(data)
+  res.send(await dataSource.successByPlatform())
 })
 
 app.get('/successByComplexity', async (req, res) => {
-  const dataSource = new DataSource()
-  const data = await dataSource.successByComplexity()
-  res.send(data)
+  res.send(await dataSource.successByComplexity())
 })
 
 app.get('/successByAnnotations', async (req, res) => {
-  const dataSource = new DataSource()
-  const data = await dataSource.successByAnnotations()
-  res.send(data)
+  res.send(await dataSource.successByAnnotations())
 })
 
 app.get('/successByTopics', async (req, res) => {
-  const dataSource = new DataSource()
-  const data = await dataSource.successByTopics()
-  res.send(data)
+  res.send(await dataSource.successByTopics())
 })
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

@@ -100,7 +100,7 @@ class DataSource {
         topic: _.startCase(array[0].TOPIC),
         successCount: successCount,
         failureCount: failureCount,
-        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
+        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 0)
       }
     })
 
@@ -109,29 +109,31 @@ class DataSource {
   }
 
   async successByAnnotations () {
-    const rawData = await this.query(`select *
+    if (!this.annotationsByPlatform) {
+      const rawData = await this.query(`select *
       from NLP_BENCHMARK`)
 
-    // Get the results sorted by platform
-    const platformMap = _.groupBy(rawData, (row) => {
-      return row.PLATFORM
-    })
+      // Get the results sorted by platform
+      this.annotationsByPlatform = _.groupBy(rawData, (row) => {
+        return row.PLATFORM
+      })
 
-    // For each annotation, summarize how it did for a particular annotation
-    Object.keys(platformMap).forEach(key => {
-      const resultsArray = platformMap[key]
-      const summaries = {}
-      this.successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
-      this.successByAnnotation(summaries, resultsArray, 'COMPARISON')
-      this.successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
-      this.successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
-      this.successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
-      this.successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
-      this.successByAnnotation(summaries, resultsArray, 'TEMPORAL')
-      _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
-      platformMap[key] = summaries
-    })
-    return platformMap
+      // For each annotation, summarize how it did for a particular annotation
+      Object.keys(this.annotationsByPlatform).forEach(key => {
+        const resultsArray = this.annotationsByPlatform[key]
+        const summaries = {}
+        this.successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
+        this.successByAnnotation(summaries, resultsArray, 'COMPARISON')
+        this.successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
+        this.successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
+        this.successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
+        this.successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
+        this.successByAnnotation(summaries, resultsArray, 'TEMPORAL')
+        _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
+        this.annotationsByPlatform[key] = summaries
+      })
+    }
+    return this.annotationsByPlatform
   }
 
   successByAnnotation (summaries, results, annotation) {

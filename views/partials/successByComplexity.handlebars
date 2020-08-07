@@ -15,6 +15,12 @@
           label: 'Amazon Alexa'
         },
         {
+          backgroundColor: [ChartHelper.colorSiri(), ChartHelper.colorSiri()],
+          borderWidth: 0,
+          data: [rawData.siri0.successPercentage, rawData.siri1.successPercentage],
+          label: 'Apple Siri'
+        },
+        {
           backgroundColor: [ChartHelper.colorGoogle(), ChartHelper.colorGoogle()],
           borderWidth: 0,
           data: [rawData.google0.successPercentage, rawData.google1.successPercentage],
@@ -22,7 +28,7 @@
         }
       ]
     }
-    const options = ChartHelper.bar('% Success By Question Complexity', chartData)
+    const options = ChartHelper.bar('Success By Question Complexity', chartData)
     window.successByComplexityChart = new Chart(canvas, options)
   })
 </script>

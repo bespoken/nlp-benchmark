@@ -17,6 +17,12 @@
           label: 'Amazon Alexa'
         },
         {
+          backgroundColor: topics.map(t => ChartHelper.colorSiri()),
+          borderWidth: 0,
+          data: filterByTopics(rawData, 'siri', topics),
+          label: 'Apple Siri'
+        },
+        {
           backgroundColor: topics.map(t => ChartHelper.colorGoogle()),
           borderWidth: 0,
           data: filterByTopics(rawData, 'google', topics),
@@ -24,8 +30,10 @@
         }
       ]
     }
-    const options = ChartHelper.bar('% Success By Topics', chartData)
-    window.successByComplexityChart = new Chart(canvas, options)
+    const chartConfiguration = ChartHelper.bar('Success By Topic', chartData)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.successByComplexityChart = new Chart(canvas, chartConfiguration)
   })
 
   function filterByTopics(resultsForPlatform, platform, topics) {
