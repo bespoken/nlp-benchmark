@@ -10,14 +10,15 @@
 - [X] responsive design with bootstrap
 - [X] Dockerize server
 - [X] Cache queries
-- [ ] Deploy server
+- [X] Deploy server
 - [ ] Finish annotations
 
 ### For Final
+- [X] Figure out how to change handlebars root view directory
+- [ ] Add text around reports
 - [ ] Add favicon
 - [ ] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
 - [ ] Add logos inside charts
-- [ ] Figure out how to change handlebars root view directory
 - [ ] Add tooltips on question type table
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] add drilldown reports

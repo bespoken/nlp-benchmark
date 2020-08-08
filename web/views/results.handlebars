@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
+
+<script>
+  window.addEventListener('load', async () => {
+    const response = await axios.get('/results')
+    const results = response.data
+    console.info(JSON.stringify(results, null, 2))
+    $('#resultsTable').bootstrapTable({
+      columns: [{
+        field: 'QUESTION',
+        title: 'Question'
+      }, 
+      {
+        field: 'PLATFORM',
+        title: 'Platform'
+      },
+      {
+        field: 'SUCCESS',
+        title: 'Success'
+      }, 
+      {
+        field: 'TRANSCRIPT',
+        title: 'Transcript'
+      },
+      {
+        field: 'ANSWERS',
+        title: 'Answers'
+      }],
+      data: results,
+      search: true
+    })
+  })
+</script>
+
+<table id='resultsTable' />

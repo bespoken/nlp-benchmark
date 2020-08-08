@@ -29,6 +29,20 @@ class DataSource {
     }
   }
 
+  async results () {
+    if (!this._results) {
+      this._results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE')
+      this._results.forEach(result => {
+        result.QUESTION = this._strip(result.UTTERANCE, 'alexa')
+        result.QUESTION = this._strip(result.QUESTION, 'hey siri')
+        result.QUESTION = this._strip(result.QUESTION, 'hey google')
+      })
+
+      this._results = _.sortBy(this._results, ['QUESTION', 'PLATFORM'])
+    }
+    return this._results
+  }
+
   async successByPlatform () {
     const rawData = await this.query(`select count(*) COUNT, PLATFORM, SUCCESS from NLP_BENCHMARK 
       where SUCCESS in ('true', 'false')
@@ -181,6 +195,15 @@ class DataSource {
     } else if (name === 'siri') {
       return 'Apple Siri'
     }
+  }
+
+  _strip (utterance, phrase) {
+    if (utterance.includes(phrase)) {
+      utterance = utterance.split(phrase)[1]
+    }
+
+    // Remove HTML code
+    return utterance.replace(/<[^>]*>?/gm, '').trim()
   }
 }
 

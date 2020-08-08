@@ -21,6 +21,16 @@ app.get('/', (req, res) => res.render('reports', {
   }
 }))
 
+app.get('/details', (req, res) => res.render('results'))
+
+app.get('/results', async (req, res) => {
+  res.send(await dataSource.results())
+})
+
+app.get('/successByTopics', async (req, res) => {
+  res.send(await dataSource.successByTopics())
+})
+
 app.get('/successByPlatform', async (req, res) => {
   res.send(await dataSource.successByPlatform())
 })
