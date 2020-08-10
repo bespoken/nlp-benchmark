@@ -59,7 +59,7 @@ class BenchmarkInterceptor extends Interceptor {
 
     // Handle questions that don't have answers - e.g., who was the first man to walk on Mars?
     if (question.hasNoAnswer()) {
-      if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
+      if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure', 'I don\'t understand', '')) {
         result.success = true
       }
 
