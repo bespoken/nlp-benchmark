@@ -1,5 +1,5 @@
 Question,Answer Tuple,Comparison,Compositional,Grammatical Errors,Named Entities,No Answer,Telegraphic,Temporal,Topic,Answer Type
-when did bear bryant coach kentucky?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,SPORTS,PERSON
+when did bear bryant coach kentucky?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,SPORTS,DATE
 which sea separates britain from scandinavia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,SEA
 what is the most recent wars in israel?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,WAR
 what are the two newest member countries of the united nations?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,COUNTRY
@@ -98,405 +98,405 @@ when did michael jackson write leave you alone?,FALSE,FALSE,FALSE,FALSE,2,FALSE,
 what is the second x men the movie called?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,MOVIE
 what is the biggest city in romania?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
 roster for university of arizona mens basketball team in 1988?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,SPORTS,PERSON
-who played dumbledore in the first harry potter movie?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which religion do most of the people in israel follow?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-languages of netherlands?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was elected president of the us in 1860?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-witch country is located on the border between france and spain?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who married king charles the 1 and when?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what school does ryan butler go to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-at what age did van gogh live until he died?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what city was the first capital of the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-trinidad and tobago zip code?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is thomas jefferson's kids name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which religion came first judaism or islam?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the five major cities of poland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what did marcus garvey think of society?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did george hw bush go against during his election?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movies has kathy bates starred in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was president of the us for 14th amendment?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the currency in new mexico?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the river that borders texas?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the second indian oscar winner?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what age did jane seymour die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when is jason earls birthday?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what jehovah witnesses believe in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-country and place of death for marco polo?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who starred as paul drake on tv show perry mason?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the money in the maldives?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the name of alexander gramham daughter?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did allama iqbal die and born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what lands did bernardo de galvez in north america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is constace marie married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was taylor swifts second song?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what mountain range separates india from china?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what borders brazil argentina and bolivia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of the sea separating denmark and sweden?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country has the most population in the whole wide world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where does justin bieber's dad live?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was ozzy osbournes first job?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is the most extensive mountain system in the world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-president of south africa in 1989?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the king in thailand?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who plays mindy in drake and josh?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-this country separates pakistan and russia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are three biggest cities in rhode island?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the capitol of the country whose northern border is poland and germany?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the main languages spoken in wales?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did jane seymour die in tudor times?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the major religions in ghana?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is manager of wigan football club?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the highest point of kansa's elevation?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what song was given the grammy award for best song of 1988?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what between wisconsin and michigan?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-from where did dr ben carson graduate?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the first city of the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which countries touch both the atlantic and the pacific oceans?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was married to michael jackson?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the least populated county in the state of georgia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which actress is in movie sweet home alabama?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what other state or oceans border georgia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the names of all the black eyed peas albums?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who wrote the song beautiful by christina aguilera?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was the toilet invented and who invented it?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did nebuchadnezzar the second die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the ship charles darwin took?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the deepest lake in the united states?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what river forms texas border on the southwest?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the mississippi creates boundaries for what state?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did the beatles get there first album?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which world company has the most employees?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the population of india in 2011?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the city and country of where saint elizbeth ann seton was born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did andrew clements publish his first book?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was yogi berras wifes name before she got married?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-whose parents were leah and jacob?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when john xxiii died?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what uk country is the smallest?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-any update on danny gans death?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did denzel washington win his first oscar?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first african american woman to win the nobel peace prize?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what did emily bronte die of?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which state is the largest lake of okeechobee in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who won the battle of saratoga freemans farm?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of the king in thailand in 2009?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what age is luke bailey?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what the biggest city in scotland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what age did alexander graham ball die at?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is congress of louisisana?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year did mary ingalls die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is washingtons highest mountain?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what religions are commonly practiced in argentina?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was michael jacksons first album out?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what years did john f kennedy serve as president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what tv show was leonardo dicaprio on?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what do the people that live in estonia do for fun?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-interesting facts on edgar allan poes death?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which state has the longer border with canada new york or montana?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is vanessa-ann-hudgens sister?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what instrument did frank sinatra play?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what state is the west of new hampshire and east of new york?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is edgar allan poe's cousin that he married name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the tallest masonry structure in the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the name of the first secretary of the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are england's three biggest cities?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the language in burkina faso?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country invaded poland in september 1939 setting off world war two?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the first chief minister woman of india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what month was julian opie born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did george handel get married?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-what is the worlds longest river ever?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest mountain in india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what us president was the first born in ohio?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-countries that speak french,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the capital of louisisana?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what show are aislinn paul and munro chambers on?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-lady gaga's latest cd title was?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is africas largest mountain ranges?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the american naval leader during world war ii?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the king or troy during the trojan war?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which state is due southwest of south carolina?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country produces the most rice?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was lilly depp born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is tamela j mann married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the commander of the union forces at the battle of gettysburg?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first african-american yankee?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the horse power on a 2000 honda civic si?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what borders are in colorado?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what did bill clinton do before he was the governor of arkansas?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was ludwig beethoven born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-first battle between the us and germany?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-how many years has obama been married to michelle?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the border between piedmont and the coastal plains?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did hitler invade holland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is england's population and capital city?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what team does mike bibby play on?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-who did barack obama run against for election of president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first movie produced in 1903?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was tom hanks 3rd oscar nomination?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the major religion of india under the gupta rulers?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did desi arnaz die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country borders the gulf of california?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what did harry s truman job before president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when fa cup final 2010?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did the first super man come out?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-on the mary tyler moore show what was murrays wife name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is capital of new york?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is king julian's voice from penguins of madagascar?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what album was fever by ella fitzgerald on?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-what years did henry ford's siblings live?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when is justine jones simmons birthday?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was thomas becket killed?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was the 25th amendment used?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is only country to border portugal?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what city hosted the 1980 winter olympics?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was toni morrison's childrens names?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-a counting of the people living in the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is ella fitzgerald?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what musicians have died in 2007?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was judy garlins first husband?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was chris browns first album?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what male actors won an oscar in 1990's?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was war of the worlds published?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what college did captain james cook go to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movie garnered tom hanks his third oscar nomination?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what party supported abraham lincoln in 1860?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was peyton born in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what caused richard harris death?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was the 25th amendment ratified?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what films were nominated for best picture in 2009?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the amazon river in south america flows in what direction?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the government in charge of the first fleet?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did alex rodriguez join the seattle marnors?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is drew seeley from?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was joseph's jobs?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-what are john cabot's 3 sons names?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did chris bention die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was silas wife?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first president in asia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first governor of connecticut?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-whose mariah carey's husband?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what language do icelanders speak?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of bruce wills first movie?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-designer of the american flag?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-famous singers who were born in california?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was karrem abdul-jabbar born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what european country borders portrugal and france?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did hitler die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first film julie andrews starred in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what ocean separates denmark from sweden?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are india's largest cities and towns?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the sculptor that created the merlion in singapore?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where any president from new hampshire?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was frank lucas mother?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the very first president of america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which team won the 2010 f1 world championship?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who invent jordan brand?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which layer of earth is the coolest temperature?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the forty-forth president of the us of america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what 3 seas boarder the philippines?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did firework by katy perry come out?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did jane addams receive the noble peace prize?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did martin luther graduated from?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did ella fitgerald go to school?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the name of adam and eve's son and daughter?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when is ti's birthday?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the longest river in northern ireland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did anna nichole smith die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which rivers flow south across iraq through a region once known as mesopotamia and into the persian gulf?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the main language for chile?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-major rivers of new zealand?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the winner of first filmfare best actor award?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what state is alabama university in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did lucille ball marry after her divorce?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is sean paul?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first job of the prophet muhammed?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is an coordnate from manchester?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-georgia currently has how many state senators?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-robert shaw portrayed what colorful charter in jaws?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-kristen stewart is ugly?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-where does the orange river flow into?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who played shmuel in the boy in the striped pajamas?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the leader of the mickey mouse club band?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what element is named after niels bohr?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the grandmother of lee's wife mary custis?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did karl friedrich benz invent the first car?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is prince williams mom called?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the population of cobb county georgia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what river forms part of the border between texas and oklahoma?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what war established america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what place was jackie robinson born in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the date for george washinton's running mate?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-fabio capello what product does he promote?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-when did napoleon die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did eli win the superbowl?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which films are nominated for the oscar for best picture in 2009?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is the largest country in the world located?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did king arthur get married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did isaac newton die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was robert e lees first battle?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the first animal that was sent to space?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was vera lynn's husband called?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was edna st vincent millay married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is largest city in us by population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the japenese naval leader during world war 2?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the name of ben franklin wifes name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the first chairman of sbi?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what capital city of australia and singapore?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what continents are in both eastern and southern hemisphere?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did alexander die on?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what did john steinbeck do while he was in the university?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the principal religion of russia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which river flows through the cities of smolensk and kiev and empties into black sea?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who are evonne goolagongs brothers and sisters names?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-who plays marty on life with derek?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who wrote the song 'i believe' performed by brooks and dunn?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first yankees manager?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movies has jack black been in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year did the first setters arrive in australia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first secretary of the treasury?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-this president is the first african american elected president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what school did henry ford go to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-according to the census of 1991 what was india's population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-terms of woodward wilson?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the sea that separates europe and africa?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year did martin luther king receive his doctorate degree from boston university?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first space shuttle to fly?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is tenacious d first album?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is the wife of bruce lee?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was liz talyor's second husband?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was rick riordain's first book he had write?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-first indian to get an oscar for lifetime achievement?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the first ever alex rider book?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what team does wayne rooney play for?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which mountain range isolates the siberian peninsula from europe?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what were the four wars that israel was in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what language does the myanmars speak?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did crispus he die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what gpa did george bush have at phillips?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what 4 players have played for manchester united and leeds united?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the full name of andrew jackson?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what jay-z's newest album?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what films has sam elliott acted in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was john wilkes booth married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is billy ray cyrus wife and kids?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what nba team won the back to back championship in 1989 and 1990?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did david beckham play for manchester united?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was ike and tina turners first hit?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was johnny wilkinson born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-macaulay culkin's character in home alone?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was king khufu like?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the highest mountain in the us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which men was the reform party candidate in the 1996 election?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the sea between sweden and russia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is zeus's oldest sister?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what mountain range separates georgia from russia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did curtis jackson go to school?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first us citizen in space?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is trinidad and toboago located?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was king of england in 1782?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first african american mlb player in the world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the main products in saudi arabia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which us president is a former ffa member?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first person to climb the mckinley denali?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the capital city of venezuela?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who george h bush marry?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was abigail adams's father?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the american first president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the youngest actress to win an oscar for best supporting actress?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is between columbia and peru?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was st maria goretti born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-in which years did new zealand hosted in the olympic games?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movie was keanu reeves and patrick swayze in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the size of saudi arabia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first person to develop the theory of evolution?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the largest city in new mexico?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was born in california that is famous?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the smallest country in the greater antilles?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the tallest dog in the whole world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which river is in northern india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country is larger than australia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did william howard taft go to college?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what books did roosevelt write?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what gender is wendy williams?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which county in georgia has the least black population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what us president was born in ohio?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-adam sandlers acting school is?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is jason scot lee?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-for what film did marlon brando win his first oscar?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what 2 cities is on the west coast of australia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what river forms the border of arkansas and tennessee?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what range separates europe and asia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was george bush before politics?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is bordered by colmbia in the north and peru in the south?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was isaac newton's wifes name?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-where was george lopez born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who are jason aldean's stepbrothers and sister?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is india population at present?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what were the name of jane austens books that she wrote?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what were the children names of nixon?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what oceans border iceland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what countries border china on the northeast?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the capital of greece?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-largest organ of the digestive system?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the current senators of georgia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-richard gere and julia roberts starred in pretty woman and?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which side won during first battle of bull run?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of nicole kidman daughter?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is erin andrews religion?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the colony that first colonized vietnam?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did diana and prince charles marry?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is paul rodriguez jr's mom?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-great britain past leader?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was the first gas-powered motorcycle invented?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was neil armstrong's wife?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what the smallest state in the united states?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the zip code of san francisco ca?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was anne franks' grandmother's name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who played ellie may clampett in movie the beverly hillbillies?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is on the north of china and separates it from russia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first team win in the nba finals?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-highest population distribution in latin america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of michael jacson new album?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is lydia marie francis child husbands name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when does india win world cup cricket?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what kenny chesney albums hit the charts?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who launched the first space station?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest mountain range in the united states?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first black woman to win a nobel prize in 1993 in literature?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what large body of water surrounds the east side of texas?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did jean armour and robert burns get married?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the 2nd most largest mountain in the world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the highest goal scorer in the 2002 world cup?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was diggy simmons first song?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was hans holbein's children called?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did johnny depp play in pirate caribbean?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which ocean borders kenya?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what languages do they speak in brazil?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first battle between the us and the germans in world war 2?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which city was rebuilt after 1871 fire?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which language do people from zurich in switzerland speak?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was robert patisons 1st film?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was mariah carey married to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which movies has clint eastwood appeared?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was adam's 3rd son's name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-first lady governor of india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what does danielle cambell star in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what date was kevin rudolf born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which city is the louisiana university in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the the first ever tudor king of england?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which side won the first battle of bull run?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did berlie dorhety write street child?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did ww1 take place?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was justin bieber's parents born in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what nationality is richard harris?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did sebastian viscaino die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-political party abraham lincoln into?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was henrys age when he got married to catherine of aragon?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-us president's during vietnam war?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-name amitabh bachchan's first film?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the largest 3 cities in georgia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what countries was not an enemy of the us during world war 2?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
+who played dumbledore in the first harry potter movie?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,MOVIES,ACTOR
+which religion do most of the people in israel follow?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,RELIGION
+languages of netherlands?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,DEMOGRAPHICS,LANGUAGE
+who was elected president of the us in 1860?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PRESIDENT
+witch country is located on the border between france and spain?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+who married king charles the 1 and when?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,"PERSON, DATE"
+what school does ryan butler go to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,SCHOOL
+at what age did van gogh live until he died?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,ART,AGE
+what city was the first capital of the us?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,CITY
+trinidad and tobago zip code?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,GEOGRAPHY,ZIP CODE
+what is thomas jefferson's kids name?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+which religion came first judaism or islam?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,RELIGION,RELIGION
+what are the five major cities of poland?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what did marcus garvey think of society?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,OPEN-ENDED
+who did george hw bush go against during his election?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what movies has kathy bates starred in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,MOVIE
+who was president of the us for 14th amendment?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+what is the currency in new mexico?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FINANCE,CURRENCY
+what is the river that borders texas?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+who is the second indian oscar winner?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTOR
+what age did jane seymour die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MOVIES,ACTRESS
+when is jason earls birthday?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,TELEVISION,ACTOR
+what jehovah witnesses believe in?,FALSE,FALSE,FALSE,TRUE,0,FALSE,FALSE,FALSE,RELIGION,OPEN-ENDED
+country and place of death for marco polo?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,"COUNTRY, PLACE"
+who starred as paul drake on tv show perry mason?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,TELEVISION,ACTOR
+what is the money in the maldives?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CURRENCY,CURRENCY
+what was the name of alexander gramham daughter?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+when did allama iqbal die and born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,LITERATURE,DATE
+what lands did bernardo de galvez in north america?,FALSE,FALSE,FALSE,TRUE,2,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+who is constace marie married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,ACTRESS
+what was taylor swifts second song?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SONG
+what mountain range separates india from china?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN RANGE
+what borders brazil argentina and bolivia?,FALSE,FALSE,FALSE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what is the name of the sea separating denmark and sweden?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,SEA
+which country has the most population in the whole wide world?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,DEMOGRAPHICS,COUNTRY
+where does justin bieber's dad live?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,CITY
+what was ozzy osbournes first job?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,JOB
+where is the most extensive mountain system in the world?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN RANGE
+president of south africa in 1989?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PRESIDENT
+who was the king in thailand?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,KING
+who plays mindy in drake and josh?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,TELEVISION,ACTRESS
+this country separates pakistan and russia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what are three biggest cities in rhode island?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what is the capitol of the country whose northern border is poland and germany?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what are the main languages spoken in wales?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LANGUAGE,LANGUAGE
+when did jane seymour die in tudor times?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,DATE
+what is the major religions in ghana?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,RELIGION
+who is manager of wigan football club?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,COACH
+the highest point of kansa's elevation?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,PLACE
+what song was given the grammy award for best song of 1988?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MUSIC,SONG
+what between wisconsin and michigan?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+from where did dr ben carson graduate?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,UNIVERSITY
+what is the first city of the us?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,CITY
+which countries touch both the atlantic and the pacific oceans?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+who was married to michael jackson?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,PERSON
+what is the least populated county in the state of georgia?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,COUNTY
+which actress is in movie sweet home alabama?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTRESS
+what other state or oceans border georgia?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,"OCEAN, STATE"
+what are the names of all the black eyed peas albums?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+who wrote the song beautiful by christina aguilera?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,PERSON
+what year was the toilet invented and who invented it?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,TRUE,HISTORY,"DATE, PERSON"
+when did nebuchadnezzar the second die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what was the ship charles darwin took?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,SHIP
+what is the deepest lake in the united states?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LAKE
+what river forms texas border on the southwest?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+the mississippi creates boundaries for what state?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+when did the beatles get there first album?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,DATE
+which world company has the most employees?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,BUSINESS,COMPANY
+what is the population of india in 2011?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,DEMOGRAPHICS,POPULATION
+what was the city and country of where saint elizbeth ann seton was born?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,"CITY, COUNTRY"
+when did andrew clements publish his first book?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,DATE
+what was yogi berras wifes name before she got married?,FALSE,TRUE,TRUE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PERSON
+whose parents were leah and jacob?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,RELIGION,PERSON
+when john xxiii died?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what uk country is the smallest?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+any update on danny gans death?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,OPEN-ENDED
+when did denzel washington win his first oscar?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MOVIES,DATE
+who was the first african american woman to win the nobel peace prize?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what did emily bronte die of?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,DISEASE
+which state is the largest lake of okeechobee in?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+who won the battle of saratoga freemans farm?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+what is the name of the king in thailand in 2009?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,KING
+what age is luke bailey?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,TELEVISION,ACTOR
+what the biggest city in scotland?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,CITY
+what age did alexander graham ball die at?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,AGE
+who is congress of louisisana?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PERSON
+what year did mary ingalls die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,DATE
+what is washingtons highest mountain?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+what religions are commonly practiced in argentina?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,RELIGION
+what was michael jacksons first album out?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+what years did john f kennedy serve as president?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,YEAR
+what tv show was leonardo dicaprio on?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,SHOW
+what do the people that live in estonia do for fun?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,FALSE,CULTURE,ACTIVITY
+interesting facts on edgar allan poes death?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,OPEN-ENDED
+which state has the longer border with canada new york or montana?,FALSE,FALSE,TRUE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+who is vanessa-ann-hudgens sister?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,PERSON
+what instrument did frank sinatra play?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,INSTRUMENT
+what state is the west of new hampshire and east of new york?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+what is edgar allan poe's cousin that he married name?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,PERSON
+what is the tallest masonry structure in the us?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,PLACE
+what was the name of the first secretary of the us?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,PERSON
+what are england's three biggest cities?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what is the language in burkina faso?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LANGUAGE,LANGUAGE
+which country invaded poland in september 1939 setting off world war two?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,TRUE,GEOGRAPHY,COUNTRY
+who is the first chief minister woman of india?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what month was julian opie born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,CULTURE,PERSON
+when did george handel get married?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,FALSE,CULTURE,PERSON
+what is the worlds longest river ever?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+what is the largest mountain in india?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+what us president was the first born in ohio?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+countries that speak french,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,COUNTRY
+what is the capital of louisisana?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what show are aislinn paul and munro chambers on?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,TELEVISION,SHOW
+lady gaga's latest cd title was?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,MUSIC,ALBUM
+what is africas largest mountain ranges?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+who was the american naval leader during world war ii?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PERSON
+who was the king or troy during the trojan war?,FALSE,FALSE,FALSE,TRUE,2,FALSE,FALSE,TRUE,HISTORY,PERSON
+which state is due southwest of south carolina?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+which country produces the most rice?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+when was lilly depp born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,CULTURE,PERSON
+who is tamela j mann married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+who was the commander of the union forces at the battle of gettysburg?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,PERSON
+who was the first african-american yankee?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what is the horse power on a 2000 honda civic si?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,AUTOMOTIVE,STATISTIC
+what borders are in colorado?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+what did bill clinton do before he was the governor of arkansas?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,JOB
+where was ludwig beethoven born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,COUNTRY
+first battle between the us and germany?,FALSE,FALSE,FALSE,TRUE,2,FALSE,TRUE,TRUE,HISTORY,BATTLE
+how many years has obama been married to michelle?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,CULTURE,TIMESPAN
+what is the border between piedmont and the coastal plains?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,REGION
+when did hitler invade holland?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,YEAR
+what is england's population and capital city?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,"NUMBER, CITY"
+what team does mike bibby play on?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,FALSE,SPORTS,TEAM
+who did barack obama run against for election of president?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what was the first movie produced in 1903?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,FILM,MOVIE
+what was tom hanks 3rd oscar nomination?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,MOVIE
+what was the major religion of india under the gupta rulers?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,RELIGION
+when did desi arnaz die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,DATE
+which country borders the gulf of california?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what did harry s truman job before president?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,JOB
+when fa cup final 2010?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,SPORTS,DATE
+when did the first super man come out?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FILM,DATE
+on the mary tyler moore show what was murrays wife name?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,TELEVISION,PERSON
+what is capital of new york?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+who is king julian's voice from penguins of madagascar?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,FILM,PERSON
+what album was fever by ella fitzgerald on?,FALSE,FALSE,FALSE,FALSE,2,TRUE,FALSE,FALSE,MUSIC,ALBUM
+what years did henry ford's siblings live?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,YEARS
+when is justine jones simmons birthday?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,CULTURE,DATE
+when was thomas becket killed?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what year was the 25th amendment used?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+what is only country to border portugal?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what city hosted the 1980 winter olympics?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+what was toni morrison's childrens names?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+a counting of the people living in the us?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,DEMOGRAPHIC,NUMBER
+who is ella fitzgerald?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+what musicians have died in 2007?,FALSE,FALSE,FALSE,TRUE,0,FALSE,FALSE,TRUE,HISTORY,PERSON
+who was judy garlins first husband?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+what was chris browns first album?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+what male actors won an oscar in 1990's?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+when was war of the worlds published?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,DATE
+what college did captain james cook go to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,SCHOOL
+what movie garnered tom hanks his third oscar nomination?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,FILM,FILM TITLE
+what party supported abraham lincoln in 1860?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,POLITICAL PARTY
+what year was peyton born in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,SPORTS,YEAR
+what caused richard harris death?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,CAUSE OF DEATH
+what year was the 25th amendment ratified?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,YEAR
+what films were nominated for best picture in 2009?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,FILM,FILM TITLE
+the amazon river in south america flows in what direction?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,DIRECTION
+who was the government in charge of the first fleet?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+when did alex rodriguez join the seattle marnors?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,SPORTS,DATE
+where is drew seeley from?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,ACTOR,COUNTRY
+what was joseph's jobs?,FALSE,FALSE,FALSE,TRUE,1,TRUE,FALSE,FALSE,RELIGION,JOB
+what are john cabot's 3 sons names?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+when did chris bention die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+who was silas wife?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was the first president in asia?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was the first governor of connecticut?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+whose mariah carey's husband?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+what language do icelanders speak?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LANGUAGE
+what is the name of bruce wills first movie?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FILM,FILM TITLE
+designer of the american flag?,FALSE,FALSE,FALSE,TRUE,0,FALSE,TRUE,FALSE,HISTORY,PERSON
+famous singers who were born in california?,FALSE,FALSE,TRUE,TRUE,1,FALSE,TRUE,FALSE,MUSIC,PERSON
+where was karrem abdul-jabbar born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,LOCATION
+what european country borders portrugal and france?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+when did hitler die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what was the first film julie andrews starred in?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FILM,FILM TITLE
+what ocean separates denmark from sweden?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,OCEAN
+what are india's largest cities and towns?,TRUE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+who was the sculptor that created the merlion in singapore?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,CULTURE,PERSON
+where any president from new hampshire?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,YES/NO
+who was frank lucas mother?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+who was the very first president of america?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+which team won the 2010 f1 world championship?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,TEAM
+who invent jordan brand?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+which layer of earth is the coolest temperature?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,PART OF ATMOSPHERE
+who is the forty-forth president of the us of america?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what 3 seas boarder the philippines?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,SEA
+when did firework by katy perry come out?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,MUSIC,DATE
+when did jane addams receive the noble peace prize?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,DATE
+where did martin luther graduated from?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,TRUE,HISTORY,SCHOOL
+where did ella fitgerald go to school?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,TRUE,HISTORY,SCHOOL
+what was the name of adam and eve's son and daughter?,FALSE,FALSE,FALSE,TRUE,2,FALSE,TRUE,FALSE,RELIGION,PERSON
+when is ti's birthday?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,DATE
+what is the longest river in northern ireland?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,GEOGRAPHY,RIVER
+where did anna nichole smith die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,LOCATION
+which rivers flow south across iraq through a region once known as mesopotamia and into the persian gulf?,FALSE,FALSE,TRUE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+what is the main language for chile?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,DEMOGRAPHIC,LANGUAGE
+major rivers of new zealand?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,RIVER
+who is the winner of first filmfare best actor award?,FALSE,FALSE,FALSE,TRUE,0,FALSE,TRUE,TRUE,MOVIES,ACTOR
+what state is alabama university in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,EDUCATION,STATE
+who did lucille ball marry after her divorce?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,TELEVISION,PERSON
+what is sean paul?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,MUSIC,PERSON
+what was the first job of the prophet muhammed?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,TRUE,RELIGION,JOB
+what is an coordnate from manchester?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,COORDINATE
+georgia currently has how many state senators?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,TRUE,POLITICS,SENATOR
+robert shaw portrayed what colorful charter in jaws?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,MOVIES,CHARACTER
+kristen stewart is ugly?,FALSE,FALSE,FALSE,TRUE,1,TRUE,TRUE,TRUE,MOVIES,YES/NO
+where does the orange river flow into?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,OCEAN
+who played shmuel in the boy in the striped pajamas?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTOR
+who was the leader of the mickey mouse club band?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,TRUE,TELEVISION,PERSON
+what element is named after niels bohr?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,CHEMISTRY,ELEMENT
+who was the grandmother of lee's wife mary custis?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,PERSON
+when did karl friedrich benz invent the first car?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,LOCATION
+who is prince williams mom called?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,PERSON
+what is the population of cobb county georgia?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,TRUE,DEMOGRAPHIC,NUMBER
+what river forms part of the border between texas and oklahoma?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+what war established america?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,WAR
+what place was jackie robinson born in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,LOCATION
+the date for george washinton's running mate?,FALSE,FALSE,FALSE,TRUE,1,TRUE,FALSE,FALSE,HISTORY,DATE
+fabio capello what product does he promote?,FALSE,FALSE,FALSE,TRUE,1,TRUE,FALSE,FALSE,SPORTS,PRODUCT
+when did napoleon die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+when did eli win the superbowl?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,DATE
+which films are nominated for the oscar for best picture in 2009?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,TRUE,MOVIES,FILM
+where is the largest country in the world located?,FALSE,TRUE,FALSE,FALSE,0,FALSE,TRUE,FALSE,GEOGRAPHY,COUNTRY
+who did king arthur get married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+when did isaac newton die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+where was robert e lees first battle?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,HISTORY,LOCATION
+what is the first animal that was sent to space?,FALSE,TRUE,FALSE,FALSE,0,FALSE,TRUE,FALSE,HISTORY,ANIMAL
+what was vera lynn's husband called?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MUSIC,PERSON
+who was edna st vincent millay married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,PERSON
+what is largest city in us by population?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,DEMOGRAPHICS,CITY
+who was the japenese naval leader during world war 2?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,TRUE,HISTORY,PERSON
+what was the name of ben franklin wifes name?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,PERSON
+who is the first chairman of sbi?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,BUSINESS,PERSON
+what capital city of australia and singapore?,FALSE,FALSE,FALSE,TRUE,2,FALSE,TRUE,FALSE,GEOGRAPHY,CITY
+what continents are in both eastern and southern hemisphere?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,CONTINENT
+when did alexander die on?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+what did john steinbeck do while he was in the university?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,ACTIVITY
+what is the principal religion of russia?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,DEMOGRAPHIC,RELIGION
+which river flows through the cities of smolensk and kiev and empties into black sea?,FALSE,FALSE,TRUE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+who are evonne goolagongs brothers and sisters names?,FALSE,FALSE,FALSE,TRUE,1,TRUE,TRUE,FALSE,SPORTS,PERSON
+who plays marty on life with derek?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTOR
+who wrote the song 'i believe' performed by brooks and dunn?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,PERSON
+who was the first yankees manager?,FALSE,TRUE,FALSE,FALSE,0,FALSE,TRUE,FALSE,SPORTS,PERSON
+what movies has jack black been in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MOVIES,MOVIE
+what year did the first setters arrive in australia?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+who was the first secretary of the treasury?,FALSE,TRUE,FALSE,FALSE,0,FALSE,TRUE,FALSE,HISTORY,PERSON
+this president is the first african american elected president?,FALSE,TRUE,FALSE,TRUE,0,FALSE,FALSE,FALSE,HISTORY,YES/NO
+what school did henry ford go to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,BUSINESS,SCHOOL
+according to the census of 1991 what was india's population?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,NUMBER
+terms of woodward wilson?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,POLITICS,TERMS
+what is the sea that separates europe and africa?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,SEA
+what year did martin luther king receive his doctorate degree from boston university?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,YEAR
+what was the first space shuttle to fly?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,SCIENCE,SPACESHIP
+what is tenacious d first album?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MUSIC,ALBUM
+where is the wife of bruce lee?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,LOCATION
+who was liz talyor's second husband?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MOVIES,PERSON
+what was rick riordain's first book he had write?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,LITERATURE,BOOK
+first indian to get an oscar for lifetime achievement?,FALSE,TRUE,FALSE,TRUE,0,FALSE,TRUE,FALSE,MOVIES,PERSON
+what is the first ever alex rider book?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,LITERATURE,BOOK
+what team does wayne rooney play for?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,SPORTS,SOCCER TEAM
+which mountain range isolates the siberian peninsula from europe?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+what were the four wars that israel was in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,HISTORY,WAR
+what language does the myanmars speak?,FALSE,FALSE,FALSE,FALSE,0,FALSE,TRUE,FALSE,DEMOGRAPHICS,LANGUAGE
+when did crispus he die?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+what gpa did george bush have at phillips?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,HISTORY,GPA
+what 4 players have played for manchester united and leeds united?,FALSE,FALSE,FALSE,FALSE,2,FALSE,TRUE,FALSE,SPORTS,SOCCER PLAYER
+what was the full name of andrew jackson?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,HISTORY,PERSON
+what jay-z's newest album?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,MUSIC,ALBUM
+what films has sam elliott acted in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MOVIES,FILM
+who was john wilkes booth married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who is billy ray cyrus wife and kids?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MUSIC,PERSON
+what nba team won the back to back championship in 1989 and 1990?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,SPORTS,BASKETBALL TEAM
+when did david beckham play for manchester united?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,SPORTS,DATE
+what was ike and tina turners first hit?,FALSE,TRUE,FALSE,FALSE,2,FALSE,TRUE,FALSE,MUSIC,SONG
+where was johnny wilkinson born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,LOCATION
+macaulay culkin's character in home alone?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,MOVIES,CHARACTER
+what was king khufu like?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,KING
+what is the highest mountain in the us?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,GEOGRAPHY,MOUNTAIN
+which men was the reform party candidate in the 1996 election?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,POLITICS,PERSON
+what is the sea between sweden and russia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,TRUE,FALSE,GEOGRAPHY,SEA
+who is zeus's oldest sister?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,MYTHOLOGY,GODDESS
+what mountain range separates georgia from russia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,TRUE,FALSE,GEOGRAPHY,MOUNTAIN
+where did curtis jackson go to school?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,LOCATION
+who was the first us citizen in space?,FALSE,FALSE,FALSE,FALSE,0,FALSE,TRUE,FALSE,HISTORY,PERSON
+where is trinidad and toboago located?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LOCATION
+who was king of england in 1782?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PERSON
+who was the first african american mlb player in the world?,FALSE,TRUE,FALSE,FALSE,0,FALSE,TRUE,FALSE,SPORTS,PERSON
+what are the main products in saudi arabia?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,ECONOMY,PRODUCT
+which us president is a former ffa member?,FALSE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+who was the first person to climb the mckinley denali?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what is the capital city of venezuela?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+who george h bush marry?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was abigail adams's father?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was the american first president?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+who was the youngest actress to win an oscar for best supporting actress?,FALSE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,MOVIES,ACTRESS
+what country is between columbia and peru?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+when was st maria goretti born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PERSON
+in which years did new zealand hosted in the olympic games?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,TRUE,SPORTS,DATE
+what movie was keanu reeves and patrick swayze in?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,MOVIES,MOVIE
+what is the size of saudi arabia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,MEASUREMENT
+who was the first person to develop the theory of evolution?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PERSON
+the largest city in new mexico?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+who was born in california that is famous?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PERSON
+what is the smallest country in the greater antilles?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+who is the tallest dog in the whole world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,CULTURE,ANIMAL
+which river is in northern india?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+which country is larger than australia?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+where did william howard taft go to college?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,SCHOOL
+what books did roosevelt write?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,BOOK
+what gender is wendy williams?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,GENDER
+which county in georgia has the least black population?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,COUNTY
+what us president was born in ohio?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+adam sandlers acting school is?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,MOVIES,SCHOOL
+who is jason scot lee?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTOR
+for what film did marlon brando win his first oscar?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,FILM
+what 2 cities is on the west coast of australia?,TRUE,FALSE,FALSE,TRUE,0,FALSE,FALSE,FALSE,GEOGRAPHY,"CITY, CITY"
+what river forms the border of arkansas and tennessee?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+what range separates europe and asia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+what was george bush before politics?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,HISTORY,JOB
+what country is bordered by colmbia in the north and peru in the south?,FALSE,FALSE,TRUE,TRUE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what was isaac newton's wifes name?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,FALSE,HISTORY,PERSON
+where was george lopez born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,ACTOR
+who are jason aldean's stepbrothers and sister?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,PERSON
+what is india population at present?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,DEMOGRAPHICS,NUMBER
+what were the name of jane austens books that she wrote?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,LITERATURE,BOOK
+what were the children names of nixon?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what oceans border iceland?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,OCEAN
+what countries border china on the northeast?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what is the capital of greece?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+largest organ of the digestive system?,FALSE,FALSE,FALSE,TRUE,0,FALSE,TRUE,FALSE,ANATOMY,ORGAN
+what are the current senators of georgia?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,POLITICS,PERSON
+richard gere and julia roberts starred in pretty woman and?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,MOVIES,FILM
+which side won during first battle of bull run?,FALSE,FALSE,TRUE,TRUE,0,FALSE,FALSE,TRUE,HISTORY,ARMY
+what is the name of nicole kidman daughter?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,PERSON
+what is erin andrews religion?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,RELIGION
+what was the colony that first colonized vietnam?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+where did diana and prince charles marry?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,CITY
+who is paul rodriguez jr's mom?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PERSON
+great britain past leader?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,TRUE,HISTORY,PERSON
+when was the first gas-powered motorcycle invented?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,TRUE,HISTORY,DATE
+what was neil armstrong's wife?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what the smallest state in the united states?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+what is the zip code of san francisco ca?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,ZIP CODE
+what was anne franks' grandmother's name?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who played ellie may clampett in movie the beverly hillbillies?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,ACTRESS
+what country is on the north of china and separates it from russia?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+who was the first team win in the nba finals?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,TEAM
+highest population distribution in latin america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,DEMOGRAPHICS,NUMBER
+what is the name of michael jacson new album?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MUSIC,ALBUM
+who is lydia marie francis child husbands name?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+when does india win world cup cricket?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,TRUE,SPORTS,DATE
+what kenny chesney albums hit the charts?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+who launched the first space station?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+what is the largest mountain range in the united states?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+who was the first black woman to win a nobel prize in 1993 in literature?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,LITERATURE,PERSON
+what large body of water surrounds the east side of texas?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,PLACE
+when did jean armour and robert burns get married?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,LITERATURE,DATE
+what is the 2nd most largest mountain in the world?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN
+who was the highest goal scorer in the 2002 world cup?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,TRUE,SPORTS,PERSON
+what was diggy simmons first song?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SONG
+what was hans holbein's children called?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who did johnny depp play in pirate caribbean?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,MOVIES,CHARACTER
+which ocean borders kenya?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,OCEAN
+what languages do they speak in brazil?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,LANGUAGE
+what was the first battle between the us and the germans in world war 2?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,BATTLE
+which city was rebuilt after 1871 fire?,FALSE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,CITY
+which language do people from zurich in switzerland speak?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,DEMOGRAPHICS,LANGUAGE
+what was robert patisons 1st film?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MOVIES,FILM
+who was mariah carey married to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MUSIC,PERSON
+which movies has clint eastwood appeared?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,MOVIES,FILM
+what was adam's 3rd son's name?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,PERSON
+first lady governor of india?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what does danielle cambell star in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MOVIES,ACTRESS
+what date was kevin rudolf born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MUSIC,DATE
+which city is the louisiana university in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+who was the the first ever tudor king of england?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PERSON
+which side won the first battle of bull run?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,ARMY
+when did berlie dorhety write street child?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,BOOK
+when did ww1 take place?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what year was justin bieber's parents born in?,TRUE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,MUSIC,"DATE, DATE"
+what nationality is richard harris?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,COUNTRY
+when did sebastian viscaino die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,DATE
+political party abraham lincoln into?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,POLITICAL PARTY
+what was henrys age when he got married to catherine of aragon?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,DATE
+us president's during vietnam war?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,TRUE,HISTORY,PRESIDENT
+name amitabh bachchan's first film?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,MOVIES,FILM
+the largest 3 cities in georgia?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what countries was not an enemy of the us during world war 2?,FALSE,FALSE,TRUE,TRUE,2,FALSE,FALSE,FALSE,HISTORY,COUNTRY
 where can death valley be found?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 when was ashley risdale born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what is the name of real madrids manager?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
@@ -597,106 +597,106 @@ when did the dalles cowboys win the super bowl?,FALSE,FALSE,FALSE,FALSE,0,FALSE,
 what is the government and leader of algeria?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what is george w bush's children?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 who is the environment minister of 2010 in india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is avi married to now?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was spongebob first aired?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was julius caesar's dad name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was before elizabeth ii?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did brazil gain it's independence?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the first award that julia roberts won?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what sea is on the border of croatia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was bill clinton's job before he became president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest mountain region in south america?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what role did hernan cortes play in he fall of tenochtitlan?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what date did lucille ball and desi arnaz meet?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest city of india according to area?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was mark dean born and where was he born at?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what currency used in denmark?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-japan third largest city?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what were ray bradburys parents jobs?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-first president in maine?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was zimbabwe's first president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was odysseus and penelope's son?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what nation shares a southern border with china?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the second largest state of south canada?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of james maslow's mother?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the first president of republic of india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what state is east of new hampshire and east of new york?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when will the 8th book of the house of night series come out?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was brian johnson born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-name of ceo of indian software company?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-where did king lowis xiv die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the first malyalee governor in kerala?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what team does wayne rooney play 4?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is rihanna's current song on the radio?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was the fifa world cup 2010 held?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-current names of nigeria ministers?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what three countries were major allied during ww2?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the small country that is located between brazil and argentina name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is obamas second daughter birthday?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the capital of germany in 1914?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was nelson mandela first wife?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was 17th amendment passed?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who became president of south africa in 1889?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did the civil war break out?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who were king john's children?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is the headquarter of saarc?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was louis armstrong's children?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the current population of japan?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did emily dickinsons father die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did mahalia jackson got buried?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what religion does ramadan belong to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did adolfo hitler become chancellor of germany?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of kristen stewart adopted brother?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of the highest mountain in nepal?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the 16th us president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who played indiana jones in the raiders of lost ark?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which british players have played for barcelona?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where can belize be found in the world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-duke is from blank city north carolina?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which lake borders ohio pennsylvania and new york?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did the nz all blacks first play?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did michael jackson get married the first time?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what province is salzburg in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was ben stiller's first movie?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is henrys viii second wife?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first actress to win back to back in oscars?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what happen to robert todd lincoln?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-mark dean when was he born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what time zone is phoenix arizona?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is bosnia leader?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year was the first spongebob squarepants made?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who were demeter's brothers and sisters oldest to the youngest?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the worlds highest mountain peak?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the four names of the neighbours of the south central states?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the 5 cities in alaska with the highest population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is worlds biggest dams?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is president of great britain?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the third largest island in japan?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what territories did israel gain in the six day war?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did sir arthur conan doyle's mom die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did john edwards marry?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is sir richard grenville born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what major river runs through eygpt?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did robert e lee live when he was little?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who were first people to land on moon?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was jude watson born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country are the jura mountains located in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did canada join the unite nations?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was alfred wegener born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-name of the current first minister of scotland?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is sidney crosby's mother's name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which states border virginia the west?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what makes michaelv jackson interested in music?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country has belgrade as its city?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is the most rice eaten?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the prime minister of italy?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest city in alaska?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was dave robinson born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did henry 8th marry cathrin of aragon?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did john booth get married?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the largest city on australias north coast?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are zimbabwe's leaders?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first president to run against a woman?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
+who is avi married to now?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,AUTHOR
+when was spongebob first aired?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,DATE
+what was julius caesar's dad name?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was before elizabeth ii?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,MONARCH
+when did brazil gain it's independence?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,COUNTRY
+what was the first award that julia roberts won?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FILM,ACTRESS
+what sea is on the border of croatia?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,SEA
+what was bill clinton's job before he became president?,FALSE,TRUE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+what is the largest mountain region in south america?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAINS
+what role did hernan cortes play in he fall of tenochtitlan?,FALSE,TRUE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,PERSON
+what date did lucille ball and desi arnaz meet?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,FILM,DATE
+what is the largest city of india according to area?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+when was mark dean born and where was he born at?,TRUE,FALSE,FALSE,TRUE,1,FALSE,FALSE,TRUE,HISTORY,PERSON
+what currency used in denmark?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,ECONOMICS,CURRENCY
+japan third largest city?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,CITY
+what were ray bradburys parents jobs?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,PERSONS
+first president in maine?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,PRESIDENT
+who was zimbabwe's first president?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+who was odysseus and penelope's son?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,LITERATURE,MYTHOLOGY
+what nation shares a southern border with china?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what is the second largest state of south canada?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATE
+what is the name of james maslow's mother?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,FILM,ACTOR
+who is the first president of republic of india?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+what state is east of new hampshire and east of new york?,FALSE,TRUE,FALSE,TRUE,2,FALSE,TRUE,FALSE,GEOGRAPHY,STATE
+when will the 8th book of the house of night series come out?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,BOOK
+where was brian johnson born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,MUSICIAN
+name of ceo of indian software company?,FALSE,TRUE,FALSE,TRUE,1,TRUE,TRUE,FALSE,BUSINESS,PERSON
+where did king lowis xiv die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PLACE
+who is the first malyalee governor in kerala?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,HISTORY,POLITICS
+what team does wayne rooney play 4?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,SPORTS,ATHLETE
+what is rihanna's current song on the radio?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SINGER
+where was the fifa world cup 2010 held?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PLACE
+current names of nigeria ministers?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GOVERNMENT,POLITICIANS
+what three countries were major allied during ww2?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,COUNTRIES
+what is the small country that is located between brazil and argentina name?,FALSE,TRUE,FALSE,TRUE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what is obamas second daughter birthday?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PERSON
+what was the capital of germany in 1914?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,GEOGRAPHY,CITY
+who was nelson mandela first wife?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,PRESIDENT,PERSON
+what year was 17th amendment passed?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+who became president of south africa in 1889?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,PERSON
+when did the civil war break out?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+who were king john's children?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSONS
+where is the headquarter of saarc?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GOVERNMENT,PLACE
+who was louis armstrong's children?,FALSE,FALSE,TRUE,TRUE,1,FALSE,FALSE,FALSE,MUSIC,PERSONS
+what was the current population of japan?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GEOGRAPHY,POPULATION
+when did emily dickinsons father die?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,TRUE,LITERATURE,DATE
+when did mahalia jackson got buried?,FALSE,TRUE,TRUE,TRUE,1,FALSE,FALSE,TRUE,MUSIC,DATE
+what religion does ramadan belong to?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,ISLAM
+when did adolfo hitler become chancellor of germany?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,DATE
+what is the name of kristen stewart adopted brother?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,FILM,PERSON
+what is the name of the highest mountain in nepal?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAIN 
+who was the 16th us president?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+who played indiana jones in the raiders of lost ark?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,FILM,PERSON
+which british players have played for barcelona?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,SPORTS,PERSONS
+where can belize be found in the world?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LOCATION
+duke is from blank city north carolina?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,LOCATION
+which lake borders ohio pennsylvania and new york?,FALSE,TRUE,FALSE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,LAKE
+when did the nz all blacks first play?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,SPORTS,DATE
+where did michael jackson get married the first time?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,MUSIC,PLACE
+what province is salzburg in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,PROVINCE
+what was ben stiller's first movie?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FILM,MOVIE
+who is henrys viii second wife?,FALSE,FALSE,TRUE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was the first actress to win back to back in oscars?,FALSE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,FILM,ACTRESS
+what happen to robert todd lincoln?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+mark dean when was he born?,FALSE,FALSE,FALSE,TRUE,1,FALSE,FALSE,TRUE,TECHNOLOGY,INVENTOR
+what time zone is phoenix arizona?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,TIME ZONE
+who is bosnia leader?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,TRUE,GOVERNMENT,POLITICIAN
+what year was the first spongebob squarepants made?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,TELEVISION,DATE
+who were demeter's brothers and sisters oldest to the youngest?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,MYTHOLOGY
+what is the worlds highest mountain peak?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAINS
+what are the four names of the neighbours of the south central states?,FALSE,TRUE,FALSE,TRUE,0,FALSE,FALSE,FALSE,GEOGRAPHY,STATES
+what are the 5 cities in alaska with the highest population?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITIES
+what is worlds biggest dams?,FALSE,TRUE,FALSE,TRUE,0,FALSE,FALSE,FALSE,GEOGRAPHY,DAMS
+who is president of great britain?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GOVERNMENT,LEADER
+the third largest island in japan?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,ISLAND
+what territories did israel gain in the six day war?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,TERRITORIES
+when did sir arthur conan doyle's mom die?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,DATE
+who did john edwards marry?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PERSON
+what country is sir richard grenville born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,COUNTRY
+what major river runs through eygpt?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+where did robert e lee live when he was little?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PLACE
+who were first people to land on moon?,FALSE,TRUE,FALSE,FALSE,1,FALSE,TRUE,FALSE,HISTORY,ASTRONAUTS
+where was jude watson born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATURE,AUTHOR
+what country are the jura mountains located in?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+when did canada join the unite nations?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,DATE
+where was alfred wegener born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,METEOROLOGY,PLACE
+name of the current first minister of scotland?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GOVERNMENT/ HISTORY,MINISTER
+what is sidney crosby's mother's name?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PERSON
+which states border virginia the west?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATES
+what makes michaelv jackson interested in music?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SINGER
+what country has belgrade as its city?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what country is the most rice eaten?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,ECONOMICS,COUNTRY
+who is the prime minister of italy?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GOVERNMENT,PRIME MINISTER
+what is the largest city in alaska?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+when was dave robinson born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,SPORTS,DATE
+when did henry 8th marry cathrin of aragon?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,DATE
+when did john booth get married?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what is the largest city on australias north coast?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,CITY
+what are zimbabwe's leaders?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GOVERNMENT,POLITICIANS
+who was the first president to run against a woman?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
 what areas of california have the greatest population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 led china in the second sino-japanese war?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what is the greatest city in the great lakes region?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
@@ -797,24 +797,24 @@ where was the soccer world cup held in 1998?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FAL
 second women to climb mount everest?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 american city to have first skyscraper was?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 who plays carmen lopez's boyfriend?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-zachary taylor's siblings?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did sean paul go to america?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-who did holly marie combs marry?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movies was bon jovi in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was michael jackson first hit?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country was the pope benedict xvi born in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the desert that crosses botswana and south africa?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the postal code for surulere in nigeria?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what team does christiano ronaldo play for in fifa 10?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who were the first 2 astronauts on the moon?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where did bo jackson go to college?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did canada become a commonwealth country?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did fabio capello manage before england?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who designed the first american flag?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what year did francis bellamy write the pledge of allegiance?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what civilization was the first to build an irrigation system of ditches?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which florida county has the lowest population?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was first governor of india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
+zachary taylor's siblings?,FALSE,FALSE,TRUE,TRUE,1,FALSE,TRUE,FALSE,HISTORY,PRESIDENT
+when did sean paul go to america?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,TRUE,MUSICIAN,YEAR
+who did holly marie combs marry?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CELEBRITY,PERSON
+what movies was bon jovi in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSICIAN,MOVIES
+when was michael jackson first hit?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSICIAN,MUSIC
+what country was the pope benedict xvi born in?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,PLACE
+what is the desert that crosses botswana and south africa?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,GEOGRAPHY
+what is the postal code for surulere in nigeria?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POSTAL CODE,COUNTRIES
+what team does christiano ronaldo play for in fifa 10?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,SOCCER
+who were the first 2 astronauts on the moon?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,SPACE,ASTROUNATS
+where did bo jackson go to college?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,UNIVERSITY
+when did canada become a commonwealth country?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,COUNTRIES,SOCIOPOLITICAL
+who did fabio capello manage before england?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,SPORTS,FOOTBALL
+who designed the first american flag?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,HISTORICAL FIGURE
+what year did francis bellamy write the pledge of allegiance?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what civilization was the first to build an irrigation system of ditches?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,HISTORY
+which florida county has the lowest population?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,GEOGRAPHY,POPULATION
+who was first governor of india?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,HISTORY
 which nation was a founding member of nato and seato?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what happen to king henry viii 3rd wife?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what are zachary taylor's children's name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
@@ -897,71 +897,71 @@ who was the president when the lousiana territory was purchased?,FALSE,FALSE,FAL
 who did chris perez marry after selena quintanilla died?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 what was the name of the city dr martin luther king killed in?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
 name a president born in ohio?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-the biggest island in britain?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was president bill cliton's vice president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what age is justin bieber parents?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is greenland currency?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is wayne roones brother called?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which narrow body of water goes through sicily and italy?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did henry s truman get married?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-zip code of sta rosa laguna?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the first african american to win nobel prize?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the slogan for north dakota?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-michael jackson and lisa marie married?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-largest cities in washington?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what secondary school did alexandra burke go to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who won champion league most?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who plays jake ryan in hannah montana?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of barbara windsors eastenders character?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is michael jackson's oldest son name?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where is the highest point in st lucia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the highest elevation of massachusetts?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what religion was dany thomas?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what day did albert namatjira die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the school colors of miami university?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did arkansas becomes the twenty-fifth state?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the dominican republic first president?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did london become the uk capital?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the occupation of gandhi?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is frank lucas son mother?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who was the first vice president of india?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who won heisman award the years peyton manning was nominated?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did francis marion die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who did john quincy adams run against fro the presidency?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is fred perry's headquarters?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of the airport in sydney australia?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is between germany and spain?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of jennifer nettles boyfriend?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the post code of ibadan in oyo state of nigeria?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did napoleon become dead?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when was george bernard born?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is adobe ceo?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what landform is made up of finland norway and sweden?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-where was hinduism begin?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-first beatles album in us?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what has the longest wavelengths the lowest frequencies and the lowest energies?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-schools clara barton attend during her childhood?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the field called where vincent van gogh died?,FALSE,FALSE,FALSE,FALSE,0,TRUE,FALSE,FALSE,,
-what is the latitude and latitude of port albany?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the total population of timbuktu today?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which austalian city is most populous?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the highest point in france?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are finlands largest rivers?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what us presidents spoke at national ffa conventions?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the year that gunsmoke was first broadcasted?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what public company has the most employees in the world?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what country is switzerland next to?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-when did william webb ellis die?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was george h w bush's education?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the capital of new york before albani?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what president was in office when veterans day became a holiday?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the 7 albums michael jackson sung?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what was the name of the ship hudson was on when he discovered hudson bay?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the population of north las vegas nevada?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what band did steve winwood sing for?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what movie did bryan singer direct patrick stewart and halle berry?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who plays ben in dani's house?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-who is the president of south africa?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what is the name of the bay on the spainsh north coast?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-which country is in both asia and africa?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
-what are the heaviest organs in the human body?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,,
+the biggest island in britain?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+who was president bill cliton's vice president?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+what age is justin bieber parents?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,YEAR
+what is greenland currency?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,CURRENCY
+what is wayne roones brother called?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PERSON
+which narrow body of water goes through sicily and italy?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,STRAIT
+when did henry s truman get married?,FALSE,FALSE,FALSE,FALSE,1,FALSE,TRUE,FALSE,POLITICS,DATE
+zip code of sta rosa laguna?,FALSE,FALSE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,ZIPCODE
+who is the first african american to win nobel prize?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,SCIENCE,SCIENTIFIC
+what is the slogan for north dakota?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,CULTURE,PHRASE
+michael jackson and lisa marie married?,FALSE,FALSE,TRUE,FALSE,2,FALSE,TRUE,FALSE,MUSIC,YES/NO
+largest cities in washington?,FALSE,TRUE,FALSE,TRUE,1,FALSE,TRUE,FALSE,GEOGRAPHY,CITY
+what secondary school did alexandra burke go to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SCHOOL
+who won champion league most?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,SOCCER CLUB
+who plays jake ryan in hannah montana?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,MOVIES,ACTOR
+what is the name of barbara windsors eastenders character?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,TELEVISION,CHARACTER
+what is michael jackson's oldest son name?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,PERSON
+where is the highest point in st lucia?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LOCATION
+what is the highest elevation of massachusetts?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,ELEVATION
+what religion was dany thomas?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,RELIGION
+what day did albert namatjira die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,ART,DATE
+what are the school colors of miami university?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,EDUCATION,COLOR
+when did arkansas becomes the twenty-fifth state?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,GEOGRAPHY,DATE
+who was the dominican republic first president?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PRESIDENT
+when did london become the uk capital?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,TRUE,GEOGRAPHY,DATE
+what was the occupation of gandhi?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,RELIGION,OCCUPATION
+who is frank lucas son mother?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,HISTORY,PERSON
+who was the first vice president of india?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PRESIDENT
+who won heisman award the years peyton manning was nominated?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,SPORTS,ATHLETE
+when did francis marion die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+who did john quincy adams run against fro the presidency?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PERSON
+what country is fred perry's headquarters?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,FASHION,COUNTRY
+what is the name of the airport in sydney australia?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,TRAVEL,NAME
+what is between germany and spain?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what is the name of jennifer nettles boyfriend?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,MUSIC,PERSON
+what is the post code of ibadan in oyo state of nigeria?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,ZIPCODE
+when did napoleon become dead?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+when was george bernard born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+who is adobe ceo?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TECHNOLOGY,PERSON
+what landform is made up of finland norway and sweden?,FALSE,FALSE,FALSE,FALSE,3,FALSE,FALSE,FALSE,GEOGRAPHY,MOUNTAINS
+where was hinduism begin?,FALSE,FALSE,FALSE,FALSE,0,FALSE,FALSE,FALSE,RELIGION,DATE
+first beatles album in us?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+what has the longest wavelengths the lowest frequencies and the lowest energies?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,ENERGY,WAVES
+schools clara barton attend during her childhood?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,SCHOOL
+what was the field called where vincent van gogh died?,FALSE,FALSE,FALSE,FALSE,1,TRUE,FALSE,FALSE,ART,PLACE
+what is the latitude and latitude of port albany?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,LOCATION
+what is the total population of timbuktu today?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,NUMBER
+which austalian city is most populous?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,CITY
+what is the highest point in france?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,NUMBER
+what are finlands largest rivers?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,RIVER
+what us presidents spoke at national ffa conventions?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,EDUCATION,PRESIDENT
+what was the year that gunsmoke was first broadcasted?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,TELEVISION,YEAR
+what public company has the most employees in the world?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,BUSINESS,COMPANY
+what country is switzerland next to?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+when did william webb ellis die?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,HISTORY,DATE
+what was george h w bush's education?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,POLITICS,PROFESSION
+what is the capital of new york before albani?,FALSE,TRUE,FALSE,TRUE,2,FALSE,FALSE,FALSE,GEOGRAPHY,PLACE
+what president was in office when veterans day became a holiday?,FALSE,FALSE,TRUE,FALSE,0,FALSE,FALSE,FALSE,HISTORY,PRESIDENT
+what are the 7 albums michael jackson sung?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,ALBUM
+what was the name of the ship hudson was on when he discovered hudson bay?,FALSE,FALSE,TRUE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,SHIP
+what is the population of north las vegas nevada?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,DEMOGRAPHICS,POPULATION
+what band did steve winwood sing for?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,BANDS
+what movie did bryan singer direct patrick stewart and halle berry?,FALSE,FALSE,TRUE,FALSE,3,FALSE,FALSE,FALSE,MOVIES,MOVIE
+who plays ben in dani's house?,FALSE,FALSE,FALSE,FALSE,2,FALSE,FALSE,FALSE,MOVIES,ACTOR
+who is the president of south africa?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,TRUE,POLITICS,PRESIDENT
+what is the name of the bay on the spainsh north coast?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,BAY
+which country is in both asia and africa?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
+what are the heaviest organs in the human body?,FALSE,TRUE,FALSE,FALSE,0,FALSE,FALSE,FALSE,SCIENCE,ORGAN

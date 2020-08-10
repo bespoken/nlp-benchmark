@@ -50,7 +50,7 @@ class AnnotationManager {
           question.addAnnotation(annotationField, annotationValue)
         }
       } else {
-        console.info('No annotations for: ' + question.question)
+        // console.info('No annotations for: ' + question.question)
       }
     }
   }
@@ -61,9 +61,11 @@ class AnnotationManager {
    */
   _readAnnotations (filename) {
     const annotationsData = fs.readFileSync(filename)
-    const annotations = parse(annotationsData, {
+    let annotations = parse(annotationsData, {
       columns: true
     })
+
+    annotations = annotations.filter(annotationSet => annotationSet.Topic && annotationSet.Topic.trim().length > 0)
 
     // Turn it into a map by question
     const annotationMap = _.keyBy(annotations, 'Question')

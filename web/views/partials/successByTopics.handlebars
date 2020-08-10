@@ -38,8 +38,8 @@
 
   function filterByTopics(resultsForPlatform, platform, topics) {
     return topics.map((topic) => {
-    
-      return resultsForPlatform[platform + _.upperCase(topic)].successPercentage
+      const resultsForTopic = resultsForPlatform[platform + _.upperCase(topic)]
+      return _.get(resultsForTopic, 'successPercentage')
     })
   }
 </script>

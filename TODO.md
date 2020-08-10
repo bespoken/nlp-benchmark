@@ -16,6 +16,7 @@
 ### For Final
 - [X] Figure out how to change handlebars root view directory
 - [ ] Add text around reports
+- [ ] Add protocol page
 - [ ] Add favicon
 - [ ] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
 - [ ] Add logos inside charts

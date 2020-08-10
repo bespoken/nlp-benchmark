@@ -1,23 +1,63 @@
-<div class='container-fluid' >
+<style>
+  #reports .row {
+    margin-bottom: 20px;
+  }
+
+  .text {
+    font-family: Open Sans;
+    font-size: 10pt;
+  }
+</style>
+<div id='reports' class='container-fluid' >
   <div class='row'>
-    <div>
+    <div class='col-12' >
       <h1 style='color: black; font-family: Khand; margin-top: 20px'>Bespoken NLP Benchmark</h1>
+      <div class='text' style='font-size: 12pt'>
+        We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br>
+        We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/'>Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br>
+        We ran the tests using our <a href='https://bespoken.io/test-robot'>Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>.
+        </ul>
+      </div>
     </div>
   </div>
   <div class='row' style="">
-    <div class='col-12 col-md-6' >
-      {{> successByPlatform }}
+    <div class='col-12 col-lg-6' >
+      <div>
+        {{> successByPlatform }}
+      </div>
+      <div class='text'>
+        The number of questions answered correctly by each platform.
+      </div>
     </div>
-    <div  class='col-12 col-md-6'>
-      {{> successByComplexity }}
+    <div class='col-12 col-lg-6'>
+      <div>
+        {{> successByComplexity }}
+      </div>
+      <div class='text'>
+        The number of questions answered correctly by each platform, grouped by simple versus complex questions.<br>
+        Complex questions are ones that involve comparitive, compositional, or temporal reasoning. More...
+      </div>
     </div>
   </div>
   <div class='row' style='margin-top: 20'>
-    <div class='col-12 col-md-6'>
-      {{> successByAnnotations }}
+    <div class='col-12 col-lg-6'>
+      <div>
+        {{> successByAnnotations }}
+      </div>
+      <div class='text'>
+        The number of questions answered correctly for each type of question.<br>
+        We classified questions as zero or more of the categories listed below. <br>
+        Hover for descriptions, and click here for more in-depth information...
+      </div>
     </div>
-    <div class='col-12 col-md-6'>
-      {{> successByTopics }}
+    <div class='col-12 col-lg-6'>
+      <div>
+        {{> successByTopics }}
+      </div>
+      <div class='text'>
+        The number of questions answered correctly for each topic.<br>
+        Click here for a complete breakdown across all topics.
+      </div>
     </div> 
   </div>
 </div>
