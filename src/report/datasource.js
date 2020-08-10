@@ -60,7 +60,8 @@ class DataSource {
         successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
       }
     })
-    console.info('SuccesBy: ' + JSON.stringify(successByPlatform, null, 2))
+
+    // console.info('SuccesBy: ' + JSON.stringify(successByPlatform, null, 2))
     return _.keyBy(successByPlatform, 'platform')
   }
 
@@ -87,7 +88,8 @@ class DataSource {
         successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
       }
     })
-    console.info('Success By Complexity: ' + JSON.stringify(results, null, 2))
+
+    // console.info('Success By Complexity: ' + JSON.stringify(results, null, 2))
     return _.keyBy(results, 'key')
   }
 
@@ -105,7 +107,6 @@ class DataSource {
     })
     const results = Object.keys(resultsMap).map(key => {
       const array = resultsMap[key]
-      console.info(JSON.stringify(array, null, 2))
       const successCount = parseInt(_.get(_.nth(array, 0), 'COUNT', 0))
       const failureCount = parseInt(_.get(_.nth(array, 1), 'COUNT', 0))
       return {
@@ -118,7 +119,7 @@ class DataSource {
       }
     })
 
-    console.info(JSON.stringify(results, null, 2))
+    // console.info(JSON.stringify(results, null, 2))
     return _.keyBy(results, 'key')
   }
 
@@ -134,6 +135,7 @@ class DataSource {
 
       // For each annotation, summarize how it did for a particular annotation
       Object.keys(this.annotationsByPlatform).forEach(key => {
+        console.info('Platform: ' + key)
         const resultsArray = this.annotationsByPlatform[key]
         const summaries = {}
         this.successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
@@ -169,7 +171,7 @@ class DataSource {
         successCount: 0
       }
     )
-    console.info('SuumaryByAnnotation: ' + JSON.stringify(summaryByAnnotation, null, 2))
+    console.info('SummaryByAnnotation: ' + JSON.stringify(summaryByAnnotation, null, 2))
     const totalCount = (summaryByAnnotation.successCount + summaryByAnnotation.failureCount)
     let successPercentage = 100
     if (totalCount > 0) {

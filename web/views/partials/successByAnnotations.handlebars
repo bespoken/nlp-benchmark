@@ -24,7 +24,7 @@
       for (const field of Object.keys(annotations)) {
          const fieldRow = $(`<tr class="dataRow"><td style='font-style: italic'>${annotations[field]}</td>`)
          
-         for (const platform of Object.keys(rawData)) {
+         for (const platform of ['alexa', 'siri', 'google']) {
             const summary = rawData[platform]
             
             const value = summary[field]
