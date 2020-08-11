@@ -1,5 +1,6 @@
 ![unit-test](https://github.com/bespoken/nlp-benchmark/workflows/unit-test/badge.svg)
 [![codecov](https://codecov.io/gh/bespoken/nlp-benchmark/branch/master/graph/badge.svg?token=WD9586ROEQ)](https://codecov.io/gh/bespoken/nlp-benchmark)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 # Bespoken NLP Benchmarking Project
 This is Bespoken's open-source NLP benchmarking project.

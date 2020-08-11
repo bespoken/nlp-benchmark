@@ -1,6 +1,7 @@
 const _ = require('lodash')
 const fs = require('fs')
 const stringify = require('csv-stringify/lib/sync')
+
 class QueryParser {
   async run () {
     const dataString = fs.readFileSync('datasets/snips/2016-12-built-in-intents/benchmark_data.json')
