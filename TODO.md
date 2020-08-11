@@ -18,6 +18,7 @@
 - [ ] Animation
 - [ ] links to underlying data
 - [ ] Add link to annotations file in question type section
+- [ ] Add how do we get in touch on lower-right panel of main page
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory

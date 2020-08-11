@@ -130,7 +130,6 @@ class DataSource {
 
     // For each annotation, summarize how it did for a particular annotation
     Object.keys(annotationsByPlatform).forEach(key => {
-      console.info('Platform: ' + key)
       const resultsArray = annotationsByPlatform[key]
       const summaries = {}
       this._successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
@@ -148,7 +147,6 @@ class DataSource {
   }
 
   _successByAnnotation (summaries, results, annotation) {
-    console.info('Results: ' + results.length)
     const summaryByAnnotation = _.reduce(results,
       (summary, row) => {
         if (row[annotation] === 'TRUE') {
@@ -166,7 +164,7 @@ class DataSource {
         successCount: 0
       }
     )
-    console.info('SummaryByAnnotation: ' + JSON.stringify(summaryByAnnotation, null, 2))
+
     const totalCount = (summaryByAnnotation.successCount + summaryByAnnotation.failureCount)
     let successPercentage = 100
     if (totalCount > 0) {

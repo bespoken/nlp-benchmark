@@ -33,7 +33,7 @@
   },
   "scripts": {
     "annotate": "node src/parse/annotation-manager.js annotate",
-    "format": "standard --fix",
+    "format": "standard",
     "parse-comqa": "node src/parse/comqa-parser.js parse",
     "parse-wikiqa": "node src/parse/wikiqa-parser.js parse",
     "process:alexa": "bbt process input/nlp-benchmark-alexa.json",
