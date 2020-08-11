@@ -11,6 +11,9 @@
       gtag('config', 'UA-99287066-6');
     </script>
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/web/images/favicon.ico" type="image/x-icon" />
+
     <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -44,11 +47,23 @@
         text-align: center;
       }
 
+      h1 a, h1 a:hover {
+        color: #007bff
+      }
+
       h2 {
         color: black;
         font-family: Roboto Condensed;
+        font-variant: small-caps;
         margin: 10 0 0 0;
         text-align: left;
+      }
+
+      h2 a, h2 a:hover {
+        border-width: 0;
+        color: black;
+        outline: none;
+        text-decoration: none;
       }
 
       p {
@@ -68,26 +83,37 @@
         font-family: Open Sans;
         font-size: 11pt;
       }
+
+      ul {
+        margin-top: 5;
+      }
     </style>
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
       window.addEventListener('load', () => {
         $('body').css('font-family', ChartHelper.defaultFont())
         $('body').css('font-size', ChartHelper.defaultFontSize())
+
         $('.title').css('font-family', ChartHelper.titleFont())
         $('.title').css('font-size', ChartHelper.titleFontSize())
         $('.title').css('font-weight', 'bold')
+
+        // Automatically add href to every a anchor
+        $('a[name]').each(function() {
+          this.href = '#' + this.name
+        })
+        
       })
     </script>
   </head>
   <body>
-    <div class='container-fluid' style='background-color: black;padding: 25 10 10 10;'>
+    <div class='container-fluid' style='background-color: black;padding: 10 10 10 10;'>
       <div class='row' style=''>
         <div class='col-1'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' height='90%' /></a></div>
         <div class='col-11'>
 
           <div class='row'>
-            <div class='col-10'><h1 style='color: white; font-family: Khand;margin:0'><a href='https://bespoken.io' style="text-decoration: none">Bespoken</a> NLP Benchmark</h1></div> 
+            <div class='col-10'><h1 style='color: #007bff; font-family: Khand;margin:0'><a href='/' style="text-decoration: none">Bespoken NLP Benchmark</a></h1></div> 
             <div class='col-1'></div>
           </div>
           <div class='row' >
@@ -95,11 +121,9 @@
            <div class='col-1'></div>
           </div>
         </div>
-      </div>
-
-     
-       
+      </div>  
     </div>
+
     {{{body}}}
     
   </body>

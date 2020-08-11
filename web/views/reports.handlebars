@@ -2,15 +2,19 @@
   #reports .row {
     margin-bottom: 20px;
   }
+
+  .caption {
+    font-size: 10pt;
+    font-weight: bold;
+  } 
 </style>
-<div id='reports' class='container-fluid' >
+<div id='reports' class='container-fluid'  >
   <div class='row'>
     <div class='col-12' >
-      <div class='text' style='font-size: 12pt'>
+      <div class='text' style='font-size: 12pt;margin-top: 10'>
         We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br>
         We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/'>Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br>
         We ran the tests using our <a href='https://bespoken.io/test-robot'>Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>.
-        </ul>
       </div>
     </div>
   </div>
@@ -19,7 +23,7 @@
       <div>
         {{> successByPlatform }}
       </div>
-      <div class='text'>
+      <div class='text caption'>
         The number of questions answered correctly by each platform.
       </div>
     </div>
@@ -27,7 +31,7 @@
       <div>
         {{> successByComplexity }}
       </div>
-      <div class='text'>
+      <div class='text caption'>
         The number of questions answered correctly by each platform, grouped by simple versus complex questions.<br>
         Complex questions are ones that involve comparitive, compositional, or temporal reasoning. More...
       </div>
@@ -38,7 +42,7 @@
       <div>
         {{> successByAnnotations }}
       </div>
-      <div class='text'>
+      <div class='text caption'>
         The number of questions answered correctly for each type of question.<br>
         We classified questions as zero or more of the categories listed below. <br>
         Hover for descriptions, and click here for more in-depth information...
@@ -48,10 +52,25 @@
       <div>
         {{> successByTopics }}
       </div>
-      <div class='text'>
+      <div class='text caption'>
         The number of questions answered correctly for each topic.<br>
         Click here for a complete breakdown across all topics.
       </div>
     </div> 
+  </div>
+  <div class='row' style='margin-top: 20' >
+    <div class='col-0 col-lg-3'></div>
+    <div class='col-12 col-lg-6' style='text-align: left'>
+      <h2 style='text-align: center'>What Is Next?</h2>
+      <p>
+        We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
+      </p>
+      <ul>
+        <li>ASR Benchmark - including Google Speech-To-Text, Twilio AutoPilot, Houndify, and others
+        <li>Personal Assistant Benchmark - questions related managing calendar, appointments, email, etc. - questions of a personal nature
+        <li>IVR Benchmark - performance of various IVR platforms</li>
+      </ul>
+    </div> 
+    <div class='col-0 col-lg-3'></div>
   </div>
 </div>
