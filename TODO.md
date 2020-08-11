@@ -1,7 +1,7 @@
 ## Core
 - [X] Explain comqa and wikianswers more
 - [X] roadmap
-- [ ] Run standard on all files as part of test/build
+- [X] Run standard on all files as part of test/build
 
 ## UI + Server
 ### For Teaser
@@ -11,7 +11,7 @@
 - [X] Cache queries
 - [X] Deploy server
 - [X] Add home button
-- [ ] Cache all data
+- [X] Cache all data
 - [ ] Add tooltips on question type table
 - [ ] add drilldown on topics
 - [ ] Make section at bottom of the page open sans

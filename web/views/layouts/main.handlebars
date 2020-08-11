@@ -91,13 +91,6 @@
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
       window.addEventListener('load', () => {
-        $('body').css('font-family', ChartHelper.defaultFont())
-        $('body').css('font-size', ChartHelper.defaultFontSize())
-
-        $('.title').css('font-family', ChartHelper.titleFont())
-        $('.title').css('font-size', ChartHelper.titleFontSize())
-        $('.title').css('font-weight', 'bold')
-
         // Automatically add href to every a anchor
         $('a[name]').each(function() {
           this.href = '#' + this.name

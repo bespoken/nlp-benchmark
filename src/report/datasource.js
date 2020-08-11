@@ -28,17 +28,15 @@ class DataSource {
   }
 
   async results () {
-    if (!this._results) {
-      this._results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE')
-      this._results.forEach(result => {
-        result.QUESTION = this._strip(result.UTTERANCE, 'alexa')
-        result.QUESTION = this._strip(result.QUESTION, 'hey siri')
-        result.QUESTION = this._strip(result.QUESTION, 'hey google')
-      })
+    let results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE')
+    results.forEach(result => {
+      result.QUESTION = this._strip(result.UTTERANCE, 'alexa')
+      result.QUESTION = this._strip(result.QUESTION, 'hey siri')
+      result.QUESTION = this._strip(result.QUESTION, 'hey google')
+    })
 
-      this._results = _.sortBy(this._results, ['QUESTION', 'PLATFORM'])
-    }
-    return this._results
+    results = _.sortBy(this._results, ['QUESTION', 'PLATFORM'])
+    return results
   }
 
   async successByPlatform () {
@@ -122,35 +120,34 @@ class DataSource {
   }
 
   async successByAnnotations () {
-    if (!this.annotationsByPlatform) {
-      const rawData = await this.query(`select *
-      from NLP_BENCHMARK`)
+    const rawData = await this.query(`select *
+    from NLP_BENCHMARK`)
 
-      // Get the results sorted by platform
-      this.annotationsByPlatform = _.groupBy(rawData, (row) => {
-        return row.PLATFORM
-      })
+    // Get the results sorted by platform
+    const annotationsByPlatform = _.groupBy(rawData, (row) => {
+      return row.PLATFORM
+    })
 
-      // For each annotation, summarize how it did for a particular annotation
-      Object.keys(this.annotationsByPlatform).forEach(key => {
-        console.info('Platform: ' + key)
-        const resultsArray = this.annotationsByPlatform[key]
-        const summaries = {}
-        this.successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
-        this.successByAnnotation(summaries, resultsArray, 'COMPARISON')
-        this.successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
-        this.successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
-        this.successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
-        this.successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
-        this.successByAnnotation(summaries, resultsArray, 'TEMPORAL')
-        _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
-        this.annotationsByPlatform[key] = summaries
-      })
-    }
-    return this.annotationsByPlatform
+    // For each annotation, summarize how it did for a particular annotation
+    Object.keys(annotationsByPlatform).forEach(key => {
+      console.info('Platform: ' + key)
+      const resultsArray = annotationsByPlatform[key]
+      const summaries = {}
+      this._successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
+      this._successByAnnotation(summaries, resultsArray, 'COMPARISON')
+      this._successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
+      this._successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
+      this._successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
+      this._successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
+      this._successByAnnotation(summaries, resultsArray, 'TEMPORAL')
+      _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
+      annotationsByPlatform[key] = summaries
+    })
+
+    return annotationsByPlatform
   }
 
-  successByAnnotation (summaries, results, annotation) {
+  _successByAnnotation (summaries, results, annotation) {
     console.info('Results: ' + results.length)
     const summaryByAnnotation = _.reduce(results,
       (summary, row) => {

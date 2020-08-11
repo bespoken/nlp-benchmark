@@ -8,7 +8,7 @@ class ComQAParser {
   }
 
   parse () {
-    this._read("datasets/ComQA/comqa_dev.json")
+    this._read('datasets/ComQA/comqa_dev.json')
 
     const questions = []
     for (const rawQuestion of this.rawQuestions) {
