@@ -10,7 +10,7 @@
 
       gtag('config', 'UA-99287066-6');
     </script>
-    
+
     <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
@@ -41,11 +41,32 @@
       }
 
       h1 {
-        text-align: center
+        text-align: center;
+      }
+
+      h2 {
+        color: black;
+        font-family: Roboto Condensed;
+        margin: 10 0 0 0;
+        text-align: left;
+      }
+
+      p {
+        margin: 10 0 0 0
+      }
+
+      .quote {
+        font-style: italic;
+        padding: 5 20 5 20;
       }
 
       table {
         margin: auto
+      }
+
+      .text {
+        font-family: Open Sans;
+        font-size: 11pt;
       }
     </style>
     <script>
@@ -60,7 +81,25 @@
     </script>
   </head>
   <body>
- 
+    <div class='container-fluid' style='background-color: black;padding: 25 10 10 10;'>
+      <div class='row' style=''>
+        <div class='col-1'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' height='90%' /></a></div>
+        <div class='col-11'>
+
+          <div class='row'>
+            <div class='col-10'><h1 style='color: white; font-family: Khand;margin:0'><a href='https://bespoken.io' style="text-decoration: none">Bespoken</a> NLP Benchmark</h1></div> 
+            <div class='col-1'></div>
+          </div>
+          <div class='row' >
+            <div class='col-10'><h2 style='color: white;font-weight: bold;font-size: 20pt;margin:0;text-align: center'> {{page}}</h2></div> 
+           <div class='col-1'></div>
+          </div>
+        </div>
+      </div>
+
+     
+       
+    </div>
     {{{body}}}
     
   </body>

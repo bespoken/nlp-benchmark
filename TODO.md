@@ -12,6 +12,7 @@
 - [X] Cache queries
 - [X] Deploy server
 - [ ] Finish annotations
+- [ ] Add home button
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory
@@ -24,6 +25,7 @@
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] add drilldown reports
 - [ ] links to underlying data
+
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

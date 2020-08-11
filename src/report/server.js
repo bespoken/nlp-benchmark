@@ -17,7 +17,13 @@ const dataSource = new DataSource()
 
 app.get('/', (req, res) => res.render('reports', {
   helpers: {
-    title: () => 'My Title'
+    page: () => 'OVERVIEW'
+  }
+}))
+
+app.get('/protocol', (req, res) => res.render('protocol', {
+  helpers: {
+    page: () => 'PROTOCOL'
   }
 }))
 
