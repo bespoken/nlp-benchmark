@@ -78,6 +78,7 @@ const ChartHelper = {
     Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
     Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
     Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
+    Chart.defaults.global.animation.duration = 3000
     return options
   },
 

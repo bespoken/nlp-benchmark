@@ -33,7 +33,11 @@ app.get('/topics', (req, res) => res.render('topics', {
   }
 }))
 
-app.get('/details', (req, res) => res.render('results'))
+app.get('/details', (req, res) => res.render('results', {
+  helpers: {
+    page: () => 'DETAILED RESULTS'
+  }
+}))
 
 app.get('/results', async (req, res) => {
   res.send(await cache('results'))

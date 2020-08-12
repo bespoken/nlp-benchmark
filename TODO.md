@@ -13,14 +13,15 @@
 - [X] Add home button
 - [X] Cache all data
 - [X] Add tooltips on question type table
-- [ ] add drilldown on topics
-- [ ] Make section at bottom of the page open sans
-- [ ] Animation
-- [ ] links to underlying data
+- [X] add drilldown on topics
+- [X] Make section at bottom of the page open sans
+- [X] Animation
+- [X] links to underlying data
 - [ ] Add one sentence subtitle
 - [ ] Add link to annotations file in question type section
 - [ ] Add how do we get in touch on lower-right panel of main page
-- [ ] Analysis
+- [ ] Summary Analysis - perhaps top-right?
+- [ ] Add tooltip for simple versus complex
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory
@@ -39,6 +40,11 @@
 - [ ] Complex = greather than 1 entity?
 - [ ] Update README
 - [ ] credit comqa for definitions
+- [ ] Invite corrections to classification
+- [ ] Add hover to columns on detailed results page
+- [ ] Add clickable truncate/expand to transcript/display on results
+- [ ] Cleaup annotations
+  - [ ] Demographic, Demographics
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

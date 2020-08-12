@@ -28,14 +28,27 @@ class DataSource {
   }
 
   async results () {
-    let results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE')
+    let results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE LIMIT 10')
     results.forEach(result => {
       result.QUESTION = this._strip(result.UTTERANCE, 'alexa')
       result.QUESTION = this._strip(result.QUESTION, 'hey siri')
       result.QUESTION = this._strip(result.QUESTION, 'hey google')
+
+      // For non-annotated rows, set the annotations to undefined
+      if (!result.TOPIC || result.TOPIC === null || result.TOPIC === '') {
+        result.ANSWER_TUPLE = undefined
+        result.ANSWER_TYPE = undefined
+        result.COMPOSITIONAL = undefined
+        result.COMPARISON = undefined
+        result.GRAMMATICAL_ERRORS = undefined
+        result.NAMED_ENTITIES = undefined
+        result.NO_ANSWER = undefined
+        result.TELEGRAPHIC = undefined
+        result.TEMPORAL = undefined
+      }
     })
 
-    results = _.sortBy(this._results, ['QUESTION', 'PLATFORM'])
+    results = _.sortBy(results, ['QUESTION', 'PLATFORM'])
     return results
   }
 
@@ -120,8 +133,7 @@ class DataSource {
   }
 
   async successByAnnotations () {
-    const rawData = await this.query(`select *
-    from NLP_BENCHMARK`)
+    const rawData = await this.results()
 
     // Get the results sorted by platform
     const annotationsByPlatform = _.groupBy(rawData, (row) => {
@@ -152,7 +164,7 @@ class DataSource {
         if (row[annotation] === 'TRUE') {
           if (row.SUCCESS === 'true') {
             summary.successCount++
-          } else {
+          } else if (row[annotation] === 'FALSE') {
             summary.failureCount++
           }
         }
