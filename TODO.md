@@ -12,13 +12,15 @@
 - [X] Deploy server
 - [X] Add home button
 - [X] Cache all data
-- [ ] Add tooltips on question type table
+- [X] Add tooltips on question type table
 - [ ] add drilldown on topics
 - [ ] Make section at bottom of the page open sans
 - [ ] Animation
 - [ ] links to underlying data
+- [ ] Add one sentence subtitle
 - [ ] Add link to annotations file in question type section
 - [ ] Add how do we get in touch on lower-right panel of main page
+- [ ] Analysis
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory

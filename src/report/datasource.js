@@ -101,6 +101,7 @@ class DataSource {
     const resultsMap = _.groupBy(rawData, (row) => {
       return row.PLATFORM + row.TOPIC
     })
+
     const results = Object.keys(resultsMap).map(key => {
       const array = resultsMap[key]
       const successCount = parseInt(_.get(_.nth(array, 0), 'COUNT', 0))
@@ -115,7 +116,6 @@ class DataSource {
       }
     })
 
-    // console.info(JSON.stringify(results, null, 2))
     return _.keyBy(results, 'key')
   }
 

@@ -27,6 +27,12 @@ app.get('/protocol', (req, res) => res.render('protocol', {
   }
 }))
 
+app.get('/topics', (req, res) => res.render('topics', {
+  helpers: {
+    page: () => 'TOPIC DRILLDOWN'
+  }
+}))
+
 app.get('/details', (req, res) => res.render('results'))
 
 app.get('/results', async (req, res) => {

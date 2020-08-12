@@ -1,10 +1,13 @@
-<canvas id="successByTopicsCanvas" ></canvas>
+<canvas id="topicsCanvas" height='3000'></canvas>
 <script>
   window.addEventListener('load', async () => {
-    const canvas = document.getElementById('successByTopicsCanvas').getContext('2d')
+    const canvas = document.getElementById('topicsCanvas').getContext('2d')
     const response = await axios.get('/successByTopics')
     const rawData = response.data
-    let topics = ['Geography', 'History', 'Music', 'Movies', 'Politics', 'Sports']
+
+    // Get the unique list of topics
+    const topics = _.uniqBy(_.values(rawData), 'topic').map(r => r.topic)
+    topics.sort((s1, s2) => _.toLower(s1) - _.toLower(s2))
     
     const chartData = {
       labels: topics,
@@ -31,12 +34,23 @@
     }
     const chartConfiguration = ChartHelper.bar('Success By Topic', chartData)
     _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.responsive', false)
+    _.set(chartConfiguration, 'options.scales.yAxes[0].display', true)
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.display', true)
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.display', true)
+    _.set(chartConfiguration, 'options.tooltips.callbacks', {
+      title: function(tooltipItem, data) {
+        const topic = tooltipItem[0].label
+        const key = _.keys(rawData).find(key => key.endsWith(topic))
+        const topicData = rawData[key]
+        const count = topicData.successCount + topicData.failureCount
+        
+        return count !== 1 ? `${topic} - ${count} Questions` : `${topic} - ${count} Question`
+      }
+    })
+    _.set(chartConfiguration, 'type', 'horizontalBar')
     //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
     window.successByComplexityChart = new Chart(canvas, chartConfiguration)
-  })
-
-  $('#successByTopicsCanvas').click(() => {
-    window.location = '/topics'
   })
 
   function filterByTopics(resultsForPlatform, platform, topics) {

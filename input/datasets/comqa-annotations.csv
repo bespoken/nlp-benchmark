@@ -683,7 +683,7 @@ where was jude watson born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,LITERATU
 what country are the jura mountains located in?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,COUNTRY
 when did canada join the unite nations?,FALSE,TRUE,FALSE,FALSE,2,FALSE,FALSE,TRUE,HISTORY,DATE
 where was alfred wegener born?,FALSE,FALSE,FALSE,FALSE,1,FALSE,FALSE,FALSE,METEOROLOGY,PLACE
-name of the current first minister of scotland?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,GOVERNMENT/ HISTORY,MINISTER
+name of the current first minister of scotland?,FALSE,TRUE,FALSE,TRUE,1,FALSE,FALSE,FALSE,HISTORY,MINISTER
 what is sidney crosby's mother's name?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,SPORTS,PERSON
 which states border virginia the west?,FALSE,TRUE,FALSE,FALSE,1,FALSE,FALSE,FALSE,GEOGRAPHY,STATES
 what makes michaelv jackson interested in music?,FALSE,FALSE,TRUE,FALSE,1,FALSE,FALSE,FALSE,MUSIC,SINGER

@@ -36,6 +36,18 @@ const ChartHelper = {
         },
         responsive: true,
         scales: {
+          offset: false,
+          xAxes: [{
+            gridLines: {
+              color: 'rgb(0,0,0)',
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false
+            },
+            ticks: {
+              padding: 10
+            }
+          }],
           yAxes: [{
             display: false,
             gridLines: {
@@ -50,17 +62,6 @@ const ChartHelper = {
               padding: 10,
               max: 100,
               stepSize: 50
-            }
-          }],
-          xAxes: [{
-            gridLines: {
-              color: 'rgb(0,0,0)',
-              display: false,
-              drawOnChartArea: false,
-              drawTicks: false
-            },
-            ticks: {
-              padding: 10
             }
           }]
         },
