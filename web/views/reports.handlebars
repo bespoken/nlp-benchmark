@@ -9,6 +9,13 @@
     text-align: left;
   }
 </style>
+<script>
+  window.addEventListener('load', () => {
+    $('h2').text(function () {
+      return _.startCase(this.innerText)
+    })
+  })
+</script>
 <div id='reports' class='container-fluid'  >
   <div class='row' >
     <div class='col-12 col-lg-12' style='font-family: roboto condensed;font-weight: bold;font-size: 16pt;margin-top: 10'>
@@ -18,17 +25,17 @@
   </div>
   <div class='row' >
     <div class='col-12 col-lg-6'>
-      <h2>What Did We Do?</h2>
+      <h2>What did we do?</h2>
       <div class='text' style='margin-top: 10;'>
         We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br><br>
 
         We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
 
-        We ran the tests using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>, see the detailed results by question <a href='/details'>here</a>.
+        Tests were run using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>, see the detailed results by question <a href='/details'>here</a>.
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>What Does It Mean?</h2>
+      <h2>What does it mean?</h2>
       <div class='text' style='margin-top: 10'>
         Our results speak for themselves - overall, we see that Google Assistant significantly outperforms Alexa and Siri, across pretty much every dimension we looked at.<br><br>
 
@@ -40,7 +47,7 @@
   </div>
   <div class='row' style="">
     <div class='col-12 col-lg-6' >
-      <h2>Success By Platform</h2>
+      <h2>Success by platform</h2>
       <div>
         {{> successByPlatform }}
       </div>
@@ -49,53 +56,53 @@
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>Success By Question Complexity</h2>
+      <h2>Success by question complexity</h2>
       <div>
         {{> successByComplexity }}
       </div>
       <div class='caption'>
-        The number of questions answered correctly by each platform, grouped by simple versus complex questions.<br>
+        The percentage of questions answered correctly by each platform, grouped by simple versus complex questions.<br>
         Complex questions are ones that involve comparative, compositional, or temporal reasoning.
       </div>
     </div>
   </div>
   <div class='row' style='margin-top: 20'>
     <div class='col-12 col-lg-6'>
-      <h2>Success By Question Type</h2>
+      <h2>Success by question type</h2>
       <div>
         {{> successByAnnotations }}
       </div>
       <div class='caption'>
-        The number of questions answered correctly for each type of question.<br>
+        The percentage of questions answered correctly for each type of question.<br>
         We classified questions as zero or more of the categories listed below. Click on any of the question types for more in-depth information.
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>Success By Question Topics</h2>
+      <h2>Success by question topics</h2>
       <div>
         {{> successByTopics }}
       </div>
       <div class='caption'>
-        The number of questions answered correctly for each topic.<br>
+        The percentage of questions answered correctly for each topic.<br>
         <a href='/topics'>Click here</a> for a complete breakdown across all topics.
       </div>
     </div> 
   </div>
   <div class='row' style='margin-top: 20' >
     <div class='col-12 col-lg-6 text' >
-      <h2>What Is Next?</h2>
+      <h2>What is next?</h2>
       <p>
         We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
       </p>
       <ul>
         <li>ASR Benchmark - including Google Speech-To-Text, Twilio AutoPilot, Houndify, and others
-        <li>Personal Assistant Benchmark - questions related managing calendar, appointments, email, etc. - questions of a personal nature
+        <li>Personal Assistant Benchmark - questions related to managing calendar appointments, email, etc.
         <li>IVR Benchmark - performance of various IVR platforms</li>
       </ul>
       <p>Have your own ideas for a benchmark? Ways that we can improve this? <a href='mailto:contact@bespoken.io'>Drop us a line.</a></p>
     </div> 
      <div class='col-12 col-lg-6 text' >
-      <h2>Who Are You?</h2>
+      <h2>Who are you?</h2>
       <p>
         Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
         Want to <a href='https://bespoken.io/customer-success/'>assess the performance</a> of your own voice assistant for Alexa, Google, IVR?<br><br>

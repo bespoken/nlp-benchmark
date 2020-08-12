@@ -4,9 +4,9 @@
       <div class='text' style='margin: 0 100 0 100; text-align:left'>
         <h2><a name='objective'>Benchmark Objective</a></h2>
         
-        <p>Our goal in runnin this benchmark was to provide accurate, automated data on how well various voice platforms perform.</p>
+        <p>Our goal in running this benchmark was to provide accurate, reliable data on how well various voice platforms perform.</p>
 
-        <p>This first test evaluates three platforms on how they do on Question and Answer queries.</p>
+        <p>This first test evaluates the three biggest voice assistant platforms on how they do on complex, general knowledge questions</p>
 
         <p>Our goal is to provide interesting insight into how the platforms work, as well as show off our technology and processes at Bespoken.</p>
 
@@ -19,20 +19,20 @@
           <li>MySQL and Metabase for reporting
         </ul>      
         <p>
-          All of this is public and open-source, part of our effort to "test in public". We want to show off not just our results, but also how we do our testing. We believe both are critical to successful automation.
+          All of this is public and open-source - part of our effort to "test in public". We want to show off not just our results, but also how we do our testing. We believe both are critical to successful automation.
         </p>
 
         <h2><a name='dataset'>Benchmark Dataset</a></h2>
       
-        <p>We leveraged the excellent <a href='http://qa.mpi-inf.mpg.de/comqa/'>ComQA</a> dataset for this, specifically their Dev dataset of questions. From their website:</p>
+        <p>We leveraged the excellent <a href='http://qa.mpi-inf.mpg.de/comqa/'>ComQA</a> dataset for this, specifically their Dev question dataset. From their website:</p>
         
         <p class='quote'>ComQA is a dataset of 11,214 questions, which were collected from <a href='http://www.answers.com/'>WikiAnswers</a>, a community question answering website. By collecting questions from such a site we ensure that the information needs are ones of interest to actual users. Moreover, questions posed there are often cannot be answered by commercial search engines or QA technology, making them more interesting for driving future research compared to those collected from an engine's query log. The dataset contains questions with various challenging phenomena such as the need for temporal reasoning, comparison (e.g., comparatives, superlatives, ordinals), compositionality (multiple, possibly nested, subquestions with multiple entities), and unanswerable questions (e.g., Who was the first human being on Mars?).</p>
         
         <p><a href='https://www.aclweb.org/anthology/N19-1027.pdf'>In their paper</a>, they elaborate further on each of these question categories. For example:</p>
         
-        <p class='quote'>A question is compositional if answering it requires answering more primitive questions and combining these. These can beintersection or nested questions. Intersection questions are ones where two or more subquestions can be answered independently, and their answers intersected (e.g., “Which films featuring Tom Hanks did Spielberg direct?”). In nested questions, the answer to one subquestion is necessary to answer another ("Who were the parents of the thirteenth president of the US?").</p>
+        <p class='quote'>A question is compositional if answering it requires answering more primitive questions and combining these. These can be intersection or nested questions. Intersection questions are ones where two or more sub-questions can be answered independently, and their answers intersected (e.g., “Which films featuring Tom Hanks did Spielberg direct?”). In nested questions, the answer to one subquestion is necessary to answer another ("Who were the parents of the thirteenth president of the US?").</p>
         
-        <p>Take a look at the detailed findings for the question types <a href='/questionTypes'>here</a> to see the results for the different platforms per question type, as well as in-depth explanations on each question type.</p>
+        <p>Take a look at the <a href='/details'>detailed results here</a> to see how we classified different questions.</p>
         
         <h2><a name='execution'>Benchmark Test Execution</a></h2>
         
@@ -44,9 +44,9 @@
           <li>Google Nest Home Hub</li>
         </ul>
         
-        <p>We used our <a href='https://bespoken.io/test-robot'>Bespoken Test Robots</a> to "talk" with these devices and record their audio and visual responses. With our Test Robots we are able to execute these tests in completely automated manner.</p>
+        <p>We used our <a href='https://bespoken.io/test-robot'>Bespoken Test Robots</a> to "talk" with these devices and record their audio and visual responses. With our Test Robots we are able to execute these tests in a completely automated manner.</p>
 
-        <p>For example, our Test Robot says: <i>"hey google when did bear bryant coach kentucky?"</i></p>
+        <p>For example, our Test Robot says: <i>"Hey Google, when did Bear Bryant coach Kentucky?"</i></p>
 
         <p><audio controls><source src='/web/media/Google-BearBryant.mp3' /></audio></p>
 
@@ -63,15 +63,15 @@
         <p>We performed this for every question in our dataset, across each of the devices listed above.</p>
         <h2><a name='results'>Benchmark Results</a></h2>
         
-        <p>The complete results are viewable <a href='/details'>here</a> - you can see what happened with each utterance in detail, as well as how the question is annotated.</p>
+        <p>The complete results are viewable <a href='/details'>here</a> - you can see what happened with each utterance in detail, as well as how the question was annotated.</p>
         
-        <p>You can also view what happened as part of the specific runs inside of Github. For example, here are is the run for the Nest Home Hub:</p>
+        <p>You can also view what happened as part of the specific runs inside of Github. For example, here is the run for the Nest Home Hub:</p>
 
         <p><a href='https://github.com/bespoken/nlp-benchmark/runs/916650714?check_suite_focus=true'><img src='/web/images/GithubActions-Google.png' height='400'/></a></p>
 
         <p>As you can see, <a href='https://github.com/bespoken/nlp-benchmark'>Github</a> is not just a great environment for maintaining our code, but also for actually executing our tests. We commonly use this with customers. It allows for easy collaboration, operations and reporting.</p>
       
-        <p>We can assist with your specialized testing and tuning needs at Bespoken - just reach out to <a href='mailto:contact@bespoken.io'>contact@bespoken.io</a> and we can show you to how to not just measure, measurably improve the performance of your voice experience.</p>
+        <p>We can assist with your specialized testing and tuning needs at Bespoken - just reach out to <a href='mailto:contact@bespoken.io'>contact@bespoken.io</a> and we can show you how to not just measure, but measurably improve, the performance of your voice experience.</p>
       </div>
     </div>
   </div>

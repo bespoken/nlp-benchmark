@@ -46,6 +46,7 @@
 - [ ] Add clickable truncate/expand to transcript/display on results
 - [ ] Cleaup annotations
   - [ ] Demographic, Demographics
+- [ ] Add sorting/filtering by column value on detailed results
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits
