@@ -5,7 +5,6 @@
   window.addEventListener('load', async () => {
     const response = await axios.get('/results')
     const results = response.data
-    console.info(JSON.stringify(results, null, 2))
     $('#resultsTable').bootstrapTable({
       columns: [{
         field: 'QUESTION',

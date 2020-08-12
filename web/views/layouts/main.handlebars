@@ -24,8 +24,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4/lodash.min.js"></script>
     <script src="/web/js/chart.js"></script>
+    <script src="/web/js/content.js"></script>
 
     <style>
       canvas {
@@ -79,10 +82,26 @@
         margin: auto
       }
 
-      .text {
+      .text, .tooltip {
         font-family: Open Sans;
         font-size: 11pt;
       }
+
+      .title {
+        font-family: Khand;
+        font-size: 16pt;
+        font-weight: bold;
+      }
+
+      .tooltip ul {
+        padding-left: 15;
+      }
+
+      .tooltip-inner {
+        max-width: 500;
+        width: 500;
+      }
+      
 
       ul {
         margin-top: 5;

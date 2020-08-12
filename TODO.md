@@ -35,6 +35,8 @@
 - [ ] Add CTA on main page
 - [ ] Add links to protocol and detailed results on the top?
 - [ ] Complex = greather than 1 entity?
+- [ ] Update README
+- [ ] credit comqa for definitions
 
 workflow-syntax-for-github-actions#jobsjob_idtimeout-minutes
 https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits

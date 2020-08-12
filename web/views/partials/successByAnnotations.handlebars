@@ -12,6 +12,18 @@
    </table>
 
 </div>
+<div id='infoModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style='margin-top: 100px'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style='padding-bottom: 0.5em;'>
+        <h5 class="title modal-title" id="modal-title" >Modal title</h5>
+      </div>
+      <div id='modal-body' class="text modal-body" style='padding-top: 0.5em;text-align: left'>
+        
+      </div>
+    </div>
+  </div>
+</div>
 <script>
    window.addEventListener('load', async () => {
       const response = await axios.get('/successByAnnotations')
@@ -22,16 +34,30 @@
       
       
       for (const field of Object.keys(annotations)) {
-         const fieldRow = $(`<tr class="dataRow"><td style='font-style: italic'>${annotations[field]}</td>`)
+         const fieldRow = $(`<tr class="dataRow">
+            <td style='font-style: italic' data-toggle='tooltip'>
+               <a href='' class='annotationLabel'>${annotations[field]}</a>
+            </td>`)
          
          for (const platform of ['alexa', 'siri', 'google']) {
             const summary = rawData[platform]
-            
-            const value = summary[field]
-            fieldRow.append(`<td>${value.successPercentage}%</td>`)
+            if (summary) {
+               const value = summary[field]
+               fieldRow.append(`<td>${value.successPercentage}%</td>`)
+            }
          }
          fieldRow.append('</tr>')
          table.append(fieldRow)
       }
+
+      // Add a tooltip to the annotation label
+      $('.annotationLabel').click(function() {
+         if (Content[this.innerText]) {
+            $('#modal-title').html(this.innerText)
+            $('#modal-body').html(Content[this.innerText])
+            $('#infoModal').modal({})
+         }
+         return false
+      })
    })
 </script>

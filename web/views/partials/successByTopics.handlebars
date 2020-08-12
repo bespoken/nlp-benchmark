@@ -5,7 +5,6 @@
     const response = await axios.get('/successByTopics')
     const rawData = response.data
     const topics = ['Geography', 'History', 'Music', 'Movies', 'Politics', 'Sports']
-    console.info(JSON.stringify(rawData, null, 2))
     
     const chartData = {
       labels: topics,
