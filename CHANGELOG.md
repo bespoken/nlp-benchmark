@@ -1,3 +1,7 @@
+## 0.2.1
+* Better layout
+* Close to first teaser version
+
 ## 0.2.0
 * First nearly complete UI prototype
 * Most annotations completed
