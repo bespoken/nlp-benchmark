@@ -28,7 +28,7 @@ class DataSource {
   }
 
   async results () {
-    let results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE LIMIT 10')
+    let results = await this.query('select * from NLP_BENCHMARK order by UTTERANCE')
     results.forEach(result => {
       result.QUESTION = this._strip(result.UTTERANCE, 'alexa')
       result.QUESTION = this._strip(result.QUESTION, 'hey siri')
