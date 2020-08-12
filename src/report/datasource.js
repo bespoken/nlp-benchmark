@@ -155,6 +155,7 @@ class DataSource {
       annotationsByPlatform[key] = summaries
     })
 
+    // console.info(JSON.stringify(annotationsByPlatform, null, 2))
     return annotationsByPlatform
   }
 
@@ -164,7 +165,7 @@ class DataSource {
         if (row[annotation] === 'TRUE') {
           if (row.SUCCESS === 'true') {
             summary.successCount++
-          } else if (row[annotation] === 'FALSE') {
+          } else if (row.SUCCESS === 'false') {
             summary.failureCount++
           }
         }

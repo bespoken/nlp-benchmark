@@ -17,11 +17,12 @@
 - [X] Make section at bottom of the page open sans
 - [X] Animation
 - [X] links to underlying data
-- [ ] Add one sentence subtitle
+- [XX] Add one sentence subtitle
 - [ ] Add link to annotations file in question type section
-- [ ] Add how do we get in touch on lower-right panel of main page
-- [ ] Summary Analysis - perhaps top-right?
+- [X] Add how do we get in touch on lower-right panel of main page
+- [X] Summary Analysis - perhaps top-right?
 - [ ] Add tooltip for simple versus complex
+- [ ] Add logo for bradley
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory

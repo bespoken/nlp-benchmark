@@ -1,3 +1,6 @@
+## 0.2.2
+* Fixed bug in question type report
+
 ## 0.2.1
 * Better layout
 * Close to first teaser version
