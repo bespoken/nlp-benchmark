@@ -66,7 +66,7 @@ const ChartHelper = {
           }]
         },
         title: {
-          display: true,
+          display: false,
           fontFamily: ChartHelper.titleFont(),
           fontSize: ChartHelper.titleFontSize(),
           text: title
