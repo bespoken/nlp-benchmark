@@ -71,8 +71,6 @@ async function cache (routine) {
   if (!cachedData[routine]) {
     console.info('Missed data from cache: ' + routine)
     cachedData[routine] = await dataSource[routine]()
-  } else {
-    console.info('Loading data from cache: ' + routine)
   }
 
   return cachedData[routine]
