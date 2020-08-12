@@ -1,3 +1,8 @@
+## 0.2.0
+* First nearly complete UI prototype
+* Most annotations completed
+* Fairly clean data
+
 ## 0.1.2
 * Siri support
 * First version with server
