@@ -17,7 +17,7 @@
 - [X] Make section at bottom of the page open sans
 - [X] Animation
 - [X] links to underlying data
-- [XX] Add one sentence subtitle
+- [X] Add one sentence subtitle
 - [ ] Add link to annotations file in question type section
 - [X] Add how do we get in touch on lower-right panel of main page
 - [X] Summary Analysis - perhaps top-right?
