@@ -1,3 +1,6 @@
+## 0.3.1
+* Configurable sponsor logo
+
 ## 0.3.0
 * Added watermarks
 * Revised fonts
