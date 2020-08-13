@@ -27,6 +27,10 @@
   "license": "ISC",
   "main": "index.js",
   "name": "nlp-benchmark",
+  "nodemonConfig": {
+    "ignore": ["test/*", "web/*"],
+    "delay": "2500"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/snipsco/nlu-benchmark.git"

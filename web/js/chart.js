@@ -70,6 +70,40 @@ const ChartHelper = {
           fontFamily: ChartHelper.titleFont(),
           fontSize: ChartHelper.titleFontSize(),
           text: title
+        },
+        watermark: {
+          // the image you would like to show
+          // alternatively, this can be of type "Image"
+          image: '/web/images/Logo-BlackText.png',
+
+          // x and y offsets of the image
+          x: 50,
+          y: 50,
+
+          // width and height to resize the image to
+          // image is not resized if these values are not set
+          width: 80,
+          height: 29,
+
+          // opacity of the image, from 0 to 1 (default: 1)
+          opacity: 0.8,
+
+          // x-alignment of the image (default: "left")
+          // valid values: "left", "middle", "right"
+          alignX: 'left',
+          // y-alignment of the image (default: "top")
+          // valid values: "top", "middle", "bottom"
+          alignY: 'top',
+
+          // if true, aligns the watermark to the inside of the chart area (where the lines are)
+          // (where the lines are)
+          // if false, aligns the watermark to the inside of the canvas
+          // see samples/alignToChartArea.html
+          alignToChartArea: false,
+
+          // determines whether the watermark is drawn on top of or behind the chart
+          // valid values: "front", "back"
+          position: 'back'
         }
       },
       type: 'bar'

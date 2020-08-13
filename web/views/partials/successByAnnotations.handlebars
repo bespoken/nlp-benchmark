@@ -1,8 +1,23 @@
+<style>
+   .annotationLabel, .annotationCell {
+      background-color: white;
+      color: #3f93b7;
+      font-weight: bold;
+   }
+
+   td.annotationCell {
+      border-style-bak: none;
+   }
+
+   a:hover.annotationLabel {
+      color: #3f93b7;
+   }
+</style>
 <div>
    <table id='annotationsTable' class='table' style='width: 100%;margin-top: 10px'>
       <thead class="thead-light">
-         <tr class="headerRow">
-            <th align="left"></th>
+         <tr class="headerRow" >
+            <th align="left"><image src='/web/images/Logo-BlackText.png' width='80'/></th>
             <th align="left">Amazon Alexa</th>
             <th align="left">Apple Siri</th>
             <th align="left">Google Assistant</th>
@@ -34,7 +49,7 @@
       
       for (const field of Object.keys(annotations)) {
          const fieldRow = $(`<tr class="dataRow">
-            <td style='font-style: italic' data-toggle='tooltip'>
+            <td data-toggle='tooltip' class='annotationCell'>
                <a href='' class='annotationLabel'>${annotations[field]}</a>
             </td>`)
          

@@ -1,3 +1,8 @@
+## 0.3.0
+* Added watermarks
+* Revised fonts
+* Revised spacing
+
 ## 0.2.2
 * Fixed bug in question type report
 

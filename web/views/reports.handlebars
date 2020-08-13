@@ -1,31 +1,30 @@
 <style>
   .caption {
+    color: #184160;
     font-size: 10pt;
     font-weight: bold;
     text-align: center;
+  }
+
+  h2 {
+    color: #184160
   } 
 
   .text {
+    color: #184160;
     text-align: left;
   }
 </style>
-<script>
-  window.addEventListener('load', () => {
-    $('h2').text(function () {
-      return _.startCase(this.innerText)
-    })
-  })
-</script>
 <div id='reports' class='container-fluid'  >
   <div class='row' >
-    <div class='col-12 col-lg-12' style='font-family: roboto condensed;font-weight: bold;font-size: 16pt;margin-top: 10'>
-      <i>"Hey (Alexa | Google | Siri), who knows the most?"</i><br>
+    <div class='col-12 col-lg-12' style='color: #184160;font-family: roboto condensed;font-weight: bold;font-size: 16pt;margin-top: 10'>
+      <i>Hey (Alexa | Google | Siri), who knows the most?</i><br>
       Measuring How Well The Major Voice Assistants Answer Complex Questions
     </div>
   </div>
   <div class='row' >
     <div class='col-12 col-lg-6'>
-      <h2>What did we do?</h2>
+      <h2>What We Did</h2>
       <div class='text' style='margin-top: 10;'>
         We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br><br>
 
@@ -35,7 +34,7 @@
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>What does it mean?</h2>
+      <h2>What It Means</h2>
       <div class='text' style='margin-top: 10'>
         Our results speak for themselves - overall, we see that Google Assistant significantly outperforms Alexa and Siri, across pretty much every dimension we looked at.<br><br>
 
@@ -47,7 +46,7 @@
   </div>
   <div class='row' style="">
     <div class='col-12 col-lg-6' >
-      <h2>Success by platform</h2>
+      <h2>Success By Platform</h2>
       <div>
         {{> successByPlatform }}
       </div>
@@ -56,7 +55,7 @@
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>Success by question complexity</h2>
+      <h2>Success By Question Complexity</h2>
       <div>
         {{> successByComplexity }}
       </div>
@@ -68,7 +67,7 @@
   </div>
   <div class='row' style='margin-top: 20'>
     <div class='col-12 col-lg-6'>
-      <h2>Success by question type</h2>
+      <h2>Success By Question Type</h2>
       <div>
         {{> successByAnnotations }}
       </div>
@@ -78,7 +77,7 @@
       </div>
     </div>
     <div class='col-12 col-lg-6'>
-      <h2>Success by question topics</h2>
+      <h2>Success By Question Topics</h2>
       <div>
         {{> successByTopics }}
       </div>
@@ -90,7 +89,7 @@
   </div>
   <div class='row' style='margin-top: 20' >
     <div class='col-12 col-lg-6 text' >
-      <h2>What is next?</h2>
+      <h2>What Is Next?</h2>
       <p>
         We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
       </p>
@@ -102,12 +101,11 @@
       <p>Have your own ideas for a benchmark? Ways that we can improve this? <a href='mailto:contact@bespoken.io'>Drop us a line.</a></p>
     </div> 
      <div class='col-12 col-lg-6 text' >
-      <h2>Who are you?</h2>
+      <h2>Who Are You?</h2>
       <p>
         Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
         Want to <a href='https://bespoken.io/customer-success/'>assess the performance</a> of your own voice assistant for Alexa, Google, IVR?<br><br>
         Better yet, <a href='https://bespoken.io/blog/the-mars-agency-case-study/' target='_blank'>not just assess but improve it?</a> Contact us - <a href='mailto:contact@bespoken.io'>contact@bespoken.io</a>
       </p>
-      
   </div>
 </div>
