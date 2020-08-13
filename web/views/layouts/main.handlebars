@@ -116,25 +116,32 @@
         $('a[name]').each(function() {
           this.href = '#' + this.name
         })
-        
+
+        const urlParams = new URLSearchParams(window.location.search)
+        if (urlParams.has('sponsorLogo')) {
+          $('#sponsorLogoSection').append(`<img src='${urlParams.get('sponsorLogo')}' height='80' />`)
+          $('#sponsorMessageSection').show()
+        }    
       })
+
+          
     </script>
   </head>
   <body style='margin-bottom: 50px'>
     <div class='container-fluid' style='background-color: #184160;padding: 20;'>
       <div class='row' style=''>
-        <div class='col-1'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' height='80' /></a></div>
-        <div class='col-11'>
+        <div class='col-3' style='text-align: left;'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' height='80' /></a></div>
+        <div class='col-6'>
 
           <div class='row'>
-            <div class='col-10'><h1 style='font-family: Khand;margin:0'><a href='/' style="text-decoration: none"><span style='color: #1ec9dd'>Bespoken</span> NLP Benchmark</a></h1></div> 
-            <div class='col-1'></div>
+            <div class='col-6' style='padding:0;white-space: nowrap'><h1 style='font-family: Khand;margin:0;flex-wrap: nowrap;'><a href='/' style="text-decoration: none"><font style='color: #1ec9dd'>Bespoken</font> NLP Benchmark</a></h1></div> 
           </div>
           <div class='row' >
-            <div class='col-10'><h2 style='color: white;font-weight: bold;font-size: 20pt;margin:0;text-align: center'> {{page}}</h2></div> 
-           <div class='col-1'></div>
+            <div class='col-6' style='padding:0'><h2 style='color: white;font-weight: bold;font-size: 20pt;margin:0;text-align: center;'> {{page}}</h2></div> 
           </div>
         </div>
+        <div class='col-3' id='sponsorLogoSection'></div>
+        
       </div>  
     </div>
 
