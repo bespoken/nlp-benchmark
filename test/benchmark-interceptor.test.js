@@ -83,4 +83,23 @@ describe('interceptor works correctly', () => {
     interceptor.interceptResult(record, result)
     expect(result.success).toBe(true)
   })
+
+  test('checks a question with an age as the answer', () => {
+    const question = new Question()
+    question.addAnswer('19 years')
+
+    expect(question.type()).toBe('AGE')
+    expect(question.answers[0].value).toBe(19)
+
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: 'teen on the website infoplease.com they say graduates high school at age 15 enters Morehouse College shortly thereafter receives ba in sociology from Morehouse College',
+      card: {
+        content: ['Martin Luther King, Jr., is born in teacher Alberta Atlanta to King and Baptist minister Michael Luther King. school at Graduates high age 15, enters Morehouse College shortly thereafter. Receives BA in sociology from Morehouse College at age 19.']
+      }
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
 })

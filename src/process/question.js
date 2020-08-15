@@ -66,7 +66,7 @@ class Answer {
 
   parse () {
     let value = this.raw
-    this.type = 'TEXT'
+    this.answerType = 'TEXT'
 
     if (value.includes('wikipedia')) {
       value = _.nth(value.split('/'), -1)
@@ -79,10 +79,14 @@ class Answer {
       value = value.replace(/\s+/g, ' ')
     } else if (value.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
       value = moment.utc(value).toISOString()
-      this.type = 'DATE'
+      this.answerType = 'DATE'
+    } else if (value.match(/([0-9]*) years/) !== null) {
+      value = value.match(/([0-9]*) years/)[1]
+      value = Util.toNumber(value)
+      this.answerType = 'AGE'
     } else if (Util.isNumber(value)) {
       value = Util.toNumber(value)
-      this.type = 'NUMBER'
+      this.answerType = 'NUMBER'
     }
     this.value = value
   }

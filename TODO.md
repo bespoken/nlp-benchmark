@@ -21,9 +21,11 @@
 - [ ] Add link to annotations file in question type section
 - [X] Add how do we get in touch on lower-right panel of main page
 - [X] Summary Analysis - perhaps top-right?
-- [ ] Update license
+- [X] Update license
 - [ ] Add tooltip for simple versus complex
-- [ ] Add logo for bradley
+- [X] Add logo for bradley
+- [ ] Fix mobile font
+- [ ] Rerun empty transcripts for Alexa?
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory

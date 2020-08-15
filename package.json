@@ -24,7 +24,7 @@
       "src/**/*.js"
     ]
   },
-  "license": "ISC",
+  "license": "MIT",
   "main": "index.js",
   "name": "nlp-benchmark",
   "nodemonConfig": {

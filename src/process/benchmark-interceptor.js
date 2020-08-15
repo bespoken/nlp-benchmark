@@ -111,6 +111,7 @@ class BenchmarkInterceptor extends Interceptor {
     const transcriptScore = this.search(transcript, answer)
     const displayScore = this.search(display, answer)
 
+    console.info('Display: ' + display)
     if (answer.includes(transcript)) {
       evaluation.score = 0
       evaluation.matchType = 'TRANSCRIPT_INCLUDES'
