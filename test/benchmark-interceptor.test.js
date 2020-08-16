@@ -84,6 +84,35 @@ describe('interceptor works correctly', () => {
     expect(result.success).toBe(true)
   })
 
+  test('checks a question with a name that is difficult to spell', () => {
+    const question = new Question('who was the 2009 president of poland')
+    question.addAnswer('https://en.wikipedia.org/wiki/lech_kaczy%c5%84ski')
+
+    expect(question.answers[0].value).toBe('kaczynski')
+    expect(question.answers[1].value).toBe('lech kaczynski')
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: 'in 2009 Poland president was left kachinsky'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
+
+  test('checks a question with a name that is has parentheses', () => {
+    const question = new Question('who was this writer?')
+    question.addAnswer('https://en.wikipedia.org/wiki/john_harington_(writer)')
+
+    expect(question.answers[0].value).toBe('harington')
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: 'it is harington'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
+
   test('checks a question with an age as the answer', () => {
     const question = new Question()
     question.addAnswer('19 years')

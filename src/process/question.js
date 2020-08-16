@@ -6,8 +6,9 @@ class Question {
   static fromJSON (json) {
     const question = new Question()
     Object.assign(question, json)
-    if (question.answers) {
-      question.answers = question.answers.map(json => new Answer(json))
+    if (json.answers) {
+      question.answers = []
+      json.answers.forEach(answer => question.addAnswer(answer))
     }
     return question
   }
@@ -35,7 +36,7 @@ class Question {
       return
     }
 
-    this.answers.push(new Answer(answer))
+    this.answers.push(new Answer(this, answer))
   }
 
   hasNoAnswer () {
@@ -59,7 +60,8 @@ class Question {
 }
 
 class Answer {
-  constructor (raw) {
+  constructor (question, raw) {
+    this.question = question
     this.raw = raw
     this.parse()
   }
@@ -69,14 +71,36 @@ class Answer {
     this.answerType = 'TEXT'
 
     if (value.includes('wikipedia')) {
+      // Get the last part of the path for Wikipedia answers
       value = _.nth(value.split('/'), -1)
+
+      // Decode the string
+      value = decodeURIComponent(value)
+
+      // Remove underscores
       value = value.split('_').join(' ')
+
+      // Remove any diacritical marks
+      value = _.deburr(value)
 
       // Clean any URL-encoded characters
       value = value.split(/%../).join(' ')
 
       // Remove sequential spaces
       value = value.replace(/\s+/g, ' ')
+
+      // Check if this is a name - we look for who in the question
+      if (this.question.question.includes('who')) {
+        // See if the answer is in two parts - first and last name
+        if (value.split(' ').length > 1) {
+          // remove parentheses at the end
+          if (value.toString().indexOf('(')) {
+            value = value.split('(')[0].trim()
+          }
+          const lastName = _.nth(value.split(' '), -1)
+          this.question.addAnswer(lastName)
+        }
+      }
     } else if (value.match(/[0-9]{4}-[0-9]{2}-[0-9]{2}/) !== null) {
       value = moment.utc(value).toISOString()
       this.answerType = 'DATE'
@@ -104,7 +128,7 @@ class Answer {
   }
 
   isDate () {
-    return this.type === 'DATE'
+    return this.answerType === 'DATE'
   }
 
   isNumber () {

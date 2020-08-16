@@ -74,6 +74,7 @@ class BenchmarkInterceptor extends Interceptor {
       let closest = {
         score: 1
       }
+
       for (const answer of answers) {
         const evaluation = this.checkAnswer(transcript, display, answer)
         // Save the closest answer
@@ -102,6 +103,15 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('IMAGE_URL', _.get(result, 'lastResponse.raw.imageURL'))
   }
 
+  shouldRerunInteraction (record, responses) {
+    const lastResponse = _.nth(responses, -1)
+    if (_.trim(lastResponse.transcript) === '') {
+      console.info('INTERCEPTOR RERUN ' + record.utterance)
+      return true
+    }
+    return false
+  }
+
   checkAnswer (transcript, display, answer) {
     const evaluation = {
       answer: answer.raw,
@@ -111,14 +121,14 @@ class BenchmarkInterceptor extends Interceptor {
     const transcriptScore = this.search(transcript, answer)
     const displayScore = this.search(display, answer)
 
-    console.info('Display: ' + display)
     if (answer.includes(transcript)) {
       evaluation.score = 0
       evaluation.matchType = 'TRANSCRIPT_INCLUDES'
     } else if (answer.includes(display)) {
       evaluation.score = 0
       evaluation.matchType = 'DISPLAY_INCLUDES'
-    } else if (transcriptScore < 0.2) {
+    } else if (transcriptScore < 0.4) {
+      // Transcript is more lenient because of the errors in ASR
       evaluation.score = transcriptScore
       evaluation.matchType = 'TRANSCRIPT_FUZZY'
     } else if (displayScore < 0.2) {

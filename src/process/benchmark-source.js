@@ -7,7 +7,7 @@ class QuerySource extends Source {
     const jobName = Config.get('job')
     let platform
     let utterancePrefix
-    let utteranceSuffix
+    let breakTime = 1
     if (jobName.includes('alexa')) {
       platform = 'alexa'
       utterancePrefix = 'alexa'
@@ -16,8 +16,8 @@ class QuerySource extends Source {
       utterancePrefix = 'hey google'
     } else if (jobName.includes('siri')) {
       platform = 'siri'
-      utterancePrefix = '<speak> hey siri <break time="3s"/> '
-      utteranceSuffix = '</speak>'
+      utterancePrefix = 'hey siri'
+      breakTime = 3
     }
 
     const questionsJSON = fs.readFileSync(Config.get('sourceFile'))
@@ -27,10 +27,7 @@ class QuerySource extends Source {
       const question = Question.fromJSON(questionJSON)
       const baseUtterance = question.question
 
-      let utterance = `${utterancePrefix} ${baseUtterance}`
-      if (utteranceSuffix) {
-        utterance += ' ' + utteranceSuffix
-      }
+      const utterance = `<speak> ${utterancePrefix} <break time="${breakTime}s" /> ${baseUtterance} </speak>`
       const record = new Record(utterance)
       record.meta = {
         question: question

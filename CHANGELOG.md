@@ -1,3 +1,11 @@
+## 0.4.0
+* Handling names - parse out last name
+* Handling ages
+* Handling URL encoding and removing diacritics from answers
+* Adding better answers to questions
+* Adding skip flag to questions that are too hard or don't make sense
+* Add selective reruns on specific records
+
 ## 0.3.1
 * Configurable sponsor logo
 

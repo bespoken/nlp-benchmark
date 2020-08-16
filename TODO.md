@@ -2,6 +2,7 @@
 - [X] Explain comqa and wikianswers more
 - [X] roadmap
 - [X] Run standard on all files as part of test/build
+- [ ] Increase delay on taking image to avoid this: https://bspk-test-robot.s3.us-east-1.amazonaws.com/bd91a55f-e89a-4374-93b6-4ea8b75b86ab.jpg
 
 ## UI + Server
 ### For Teaser

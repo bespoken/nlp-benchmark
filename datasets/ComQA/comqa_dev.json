@@ -302,7 +302,7 @@
   {
     "cluster_id": "cluster-508", 
     "questions": [
-      "who was the wife of 2nd us president?"
+      "who was the wife of 2nd US president?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/abigail_adams"
@@ -375,7 +375,7 @@
     "cluster_id": "cluster-1588", 
     "questions": [
       "who led the american nation during the great depression?", 
-      "who led the us during the great depression?"
+      "who led the US during the great depression?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/herbert_hoover"
@@ -396,7 +396,7 @@
       "when islam religion start?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/history_of_islam"
+      "610"
     ]
   }, 
   {
@@ -554,7 +554,8 @@
       "who is martin lawrence first wife?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/patricia_southall"
+      "https://en.wikipedia.org/wiki/patricia_southall",
+      "patricia smith"
     ]
   }, 
   {
@@ -758,7 +759,7 @@
   {
     "cluster_id": "cluster-4233", 
     "questions": [
-      "what largest us state is closer canada?"
+      "what largest US state is closer canada?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/alaska"
@@ -822,7 +823,7 @@
   {
     "cluster_id": "cluster-2566", 
     "questions": [
-      "who is the thirteenth president of the us?"
+      "who is the thirteenth president of the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/millard_fillmore"
@@ -975,7 +976,7 @@
   {
     "cluster_id": "cluster-652", 
     "questions": [
-      "who was elected president of the us in 1860?"
+      "who was elected president of the US in 1860?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/abraham_lincoln"
@@ -1002,6 +1003,7 @@
   }, 
   {
     "cluster_id": "cluster-1968", 
+    "skip": true,
     "questions": [
       "what school does ryan butler go to?"
     ], 
@@ -1021,8 +1023,8 @@
   {
     "cluster_id": "cluster-3977", 
     "questions": [
-      "what city was first capital of the us?", 
-      "what city was the first capital of the us?"
+      "what city was first capital of the US?", 
+      "what city was the first capital of the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/philadelphia"
@@ -1030,6 +1032,7 @@
   }, 
   {
     "cluster_id": "cluster-700", 
+    "skip": true,
     "questions": [
       "what is trinidad and tobago zip code?", 
       "trinidad and tobago zip code?"
@@ -1104,8 +1107,8 @@
   {
     "cluster_id": "cluster-1654", 
     "questions": [
-      "who was us president during the 14 amendment?", 
-      "who was president of the us for 14th amendment?"
+      "who was US president during the 14 amendment?", 
+      "who was president of the US for 14th amendment?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/andrew_johnson"
@@ -1117,7 +1120,7 @@
       "what is the currency in new mexico?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/mexican_peso"
+      "dollar"
     ]
   }, 
   {
@@ -1126,7 +1129,8 @@
       "what is the river that borders texas?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/red_river_of_the_south"
+      "https://en.wikipedia.org/wiki/red_river_of_the_south",
+      "rio grande"
     ]
   }, 
   {
@@ -1223,6 +1227,7 @@
   }, 
   {
     "cluster_id": "cluster-4055", 
+    "skip": true,
     "questions": [
       "who is constace marie married to?"
     ], 
@@ -1237,7 +1242,8 @@
       "what was taylor swifts second song?"
     ], 
     "answers": [
-      "mary's song (oh my my my)"
+      "mary's song (oh my my my)",
+      "Teardrops On My Guitar"
     ]
   }, 
   {
@@ -1266,7 +1272,8 @@
       "what is the name of the sea separating denmark and sweden?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/%c3%98resund"
+      "https://en.wikipedia.org/wiki/%c3%98resund",
+      "baltic sea"
     ]
   }, 
   {
@@ -1303,7 +1310,8 @@
       "where is the most extensive mountain system in the world?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/andes"
+      "https://en.wikipedia.org/wiki/andes",
+      "south america"
     ]
   }, 
   {
@@ -1352,7 +1360,9 @@
       "what are three biggest cities in rhode island?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/rhode_island"
+      "providence",
+      "warwick",
+      "cranston"
     ]
   }, 
   {
@@ -1440,7 +1450,7 @@
   {
     "cluster_id": "cluster-4035", 
     "questions": [
-      "what is the first city of the us?"
+      "what is the first city of the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/st._augustine,_florida"
@@ -1452,7 +1462,9 @@
       "which countries touch both the atlantic and the pacific oceans?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/united_states"
+      "https://en.wikipedia.org/wiki/united_states",
+      "chile",
+      "costa rica"
     ]
   }, 
   {
@@ -1545,7 +1557,8 @@
       "what was the ship charles darwin took?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/hms_beagle"
+      "https://en.wikipedia.org/wiki/hms_beagle",
+      "beagle"
     ]
   }, 
   {
@@ -1692,7 +1705,6 @@
       "who was the first african american woman to win the nobel peace prize?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/wangari_maathai"
     ]
   }, 
   {
@@ -1719,7 +1731,9 @@
       "who won the battle of saratoga freemans farm?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/kingdom_of_great_britain"
+      "https://en.wikipedia.org/wiki/kingdom_of_great_britain",
+      "england",
+      "britain"
     ]
   }, 
   {
@@ -1761,6 +1775,7 @@
   }, 
   {
     "cluster_id": "cluster-4230", 
+    "skip": true,
     "questions": [
       "who is congress of louisisana?"
     ], 
@@ -1895,7 +1910,7 @@
   {
     "cluster_id": "cluster-4021", 
     "questions": [
-      "what is the tallest masonry structure in the us?"
+      "what is the tallest masonry structure in the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/philadelphia_city_hall"
@@ -1904,8 +1919,8 @@
   {
     "cluster_id": "cluster-2522", 
     "questions": [
-      "who is the first secretary us?", 
-      "what was the name of the first secretary of the us?"
+      "who is the first secretary US?", 
+      "what was the name of the first secretary of the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/john_jay"
@@ -1990,7 +2005,7 @@
   {
     "cluster_id": "cluster-4148", 
     "questions": [
-      "what us president was the first born in ohio?"
+      "what US president was the first born in ohio?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/william_henry_harrison"
@@ -2161,7 +2176,7 @@
   {
     "cluster_id": "cluster-3265", 
     "questions": [
-      "first battle between the us and germany?"
+      "first battle between the US and germany?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/battle_of_the_atlantic"
@@ -2400,7 +2415,7 @@
   {
     "cluster_id": "cluster-2265", 
     "questions": [
-      "a counting of the people living in the us?"
+      "a counting of the people living in the US?"
     ], 
     "answers": [
       "324,118,787"
@@ -2808,7 +2823,7 @@
   {
     "cluster_id": "cluster-121", 
     "questions": [
-      "who is the forty-forth president of the us of america?"
+      "who is the forty-forth president of the US of america?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/barack_obama"
@@ -3233,7 +3248,7 @@
   {
     "cluster_id": "cluster-575", 
     "questions": [
-      "what is largest city in us by population?"
+      "what is largest city in US by population?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/new_york_city"
@@ -3695,7 +3710,7 @@
   {
     "cluster_id": "cluster-2100", 
     "questions": [
-      "what is the highest mountain in the us?"
+      "what is the highest mountain in the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/denali"
@@ -3752,7 +3767,7 @@
   {
     "cluster_id": "cluster-3234", 
     "questions": [
-      "who was the first us citizen in space?"
+      "who was the first US citizen in space?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/alan_shepard"
@@ -3797,7 +3812,7 @@
   {
     "cluster_id": "cluster-455", 
     "questions": [
-      "which us president is a former ffa member?"
+      "which US president is a former ffa member?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/jimmy_carter"
@@ -4012,7 +4027,7 @@
   {
     "cluster_id": "cluster-569", 
     "questions": [
-      "what us president was born in ohio?"
+      "what US president was born in ohio?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/rutherford_b._hayes", 
@@ -4515,7 +4530,7 @@
   {
     "cluster_id": "cluster-3765", 
     "questions": [
-      "what was the first battle between the us and the germans in world war 2?"
+      "what was the first battle between the US and the germans in world war 2?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/battle_of_the_atlantic"
@@ -4738,7 +4753,7 @@
   {
     "cluster_id": "cluster-4216", 
     "questions": [
-      "what countries was not an enemy of the us during world war 2?"
+      "what countries was not an enemy of the US during world war 2?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/greece", 
@@ -4905,7 +4920,7 @@
   {
     "cluster_id": "cluster-210", 
     "questions": [
-      "what language do people speak in the us?"
+      "what language do people speak in the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/spanish_language", 
@@ -6210,7 +6225,7 @@
   {
     "cluster_id": "cluster-63", 
     "questions": [
-      "who was the 16th us president?"
+      "who was the 16th US president?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/abraham_lincoln"
@@ -6705,7 +6720,7 @@
   {
     "cluster_id": "cluster-3343", 
     "questions": [
-      "which ocean is on the us eastern border?"
+      "which ocean is on the US eastern border?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/atlantic_ocean"
@@ -7766,7 +7781,7 @@
   {
     "cluster_id": "cluster-520", 
     "questions": [
-      "who made the first flag of the us?", 
+      "who made the first flag of the US?", 
       "who designed the first american flag?"
     ], 
     "answers": [
@@ -8540,7 +8555,7 @@
   {
     "cluster_id": "cluster-84", 
     "questions": [
-      "what southern canadian province shares the longest border with the us?"
+      "what southern canadian province shares the longest border with the US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/ontario"
@@ -8549,7 +8564,7 @@
   {
     "cluster_id": "cluster-2587", 
     "questions": [
-      "when did us go to war on iraq?"
+      "when did US go to war on iraq?"
     ], 
     "answers": [
       "2003"
@@ -8981,7 +8996,7 @@
   {
     "cluster_id": "cluster-594", 
     "questions": [
-      "first beatles album in us?"
+      "first beatles album in US?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/introducing..._the_beatles"
@@ -9064,8 +9079,8 @@
   {
     "cluster_id": "cluster-4177", 
     "questions": [
-      "who was the former president of us that was an ffa member?", 
-      "what us presidents spoke at national ffa conventions?"
+      "who was the former president of US that was an ffa member?", 
+      "what US presidents spoke at national ffa conventions?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/jimmy_carter"
