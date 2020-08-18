@@ -35,17 +35,18 @@
 - [X] Change all external links to open in new tab?
 - [X] Add CTA on main page
 - [ ] Review Siri
-- [ ] Add tooltip for simple versus complex
+- [X] Add tooltip for simple versus complex
 - [ ] Update summary text
-- [ ] Complex = greather than 1 entity?
 - [ ] Update README
 - [ ] Add link to annotations file in question type section
 - [ ] Add links to protocol and detailed results on the top?
+- [ ] credit comqa for definitions
 
 ### For Revision 1
+- [ ] ability to suggest alternative answers and revise answers 
+- [ ] add analysis for wikipedia, versus alexa answers, versus reference.com, etc.
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] Add link to a screenshot of metabase from the protocol page
-- [ ] credit comqa for definitions
 - [ ] Invite corrections to classification
 - [ ] Add hover to columns on detailed results page
 - [ ] Add clickable truncate/expand to transcript/display on results
