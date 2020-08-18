@@ -41,7 +41,7 @@
 
       .caption {
         color: #184160;
-        font-size: 10pt;
+        font-size: 2vmin;
         font-weight: bold;
         text-align: center;
       }
@@ -55,7 +55,19 @@
         text-align: center;
       }
 
+      .header img {
+        height: 100%;
+      }
+      
+      /* Special handling to force the logo to be a certain size on Firefox */
+      @supports (-moz-appearance:none) {
+        .header, .header img {
+          height: 80px;
+        }
+      }
+
       h1 {
+        font-size: 6.0vmin;
         text-align: center;
       }
 
@@ -66,6 +78,7 @@
       h2 {
         color: #184160;
         font-family: Roboto Condensed;
+        font-size: 4.0vmin;
         font-variant: small-caps;
         margin: 10 0 0 0;
         text-align: left;
@@ -86,19 +99,19 @@
         font-style: italic;
         padding: 5 20 5 20;
       }
-
+      
+      .subtitle {
+        font-size: 3.0vmin;
+      }
+      
       table {
         margin: auto
-      }
-
-      .subtitle {
-        font-size: 1.25rem;
       }
 
       .text, .tooltip {
         color: #184160;
         font-family: Open Sans;
-        font-size: 11pt;
+        font-size: 2.5vmin;
       }
 
       .title {
@@ -119,22 +132,7 @@
 
       ul {
         margin-top: 5;
-      }
-
-      @media (max-width: 768px) {  
-        .text {font-size:24px;} /*1rem = 16px*/
-      }
-
-      /* Large devices (desktops, 992px and up) */
-      @media (max-width: 992px) { 
-        .caption {font-size:1.25rem;}
-        h1 { font-size:3rem;}
-        h2 { font-size:3rem; margin-top:20px}
-        .subtitle { font-size:1.5rem;}
-        .text {font-size:2rem;} /*1rem = 16px*/
-      }
-      
-      
+      }      
     </style>
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
@@ -146,7 +144,7 @@
 
         const urlParams = new URLSearchParams(window.location.search)
         if (urlParams.has('sponsorLogo')) {
-          $('#sponsorLogoSection').append(`<img src='${urlParams.get('sponsorLogo')}' height='80' />`)
+          $('#sponsorLogoSection').append(`<img src='${urlParams.get('sponsorLogo')}' height='100%' />`)
           $('#sponsorMessageSection').show()
         }    
       })
@@ -156,8 +154,8 @@
   </head>
   <body style='margin-bottom: 50px'>
     <div class='container-fluid' style='background-color: #184160;padding: 20;'>
-      <div class='row' style=''>
-        <div class='col-3' style='text-align: left;'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' height='80' /></a></div>
+      <div class='row header' >
+        <div class='col-3' style='text-align: left;display:inline-flex'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' /></a></div>
         <div class='col-6'>
 
           <div class='row'>
