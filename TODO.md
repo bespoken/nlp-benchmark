@@ -42,6 +42,7 @@
 - [ ] Add links to protocol and detailed results on the top?
 - [ ] credit comqa for definitions
 - [ ] Add copyright notice to the page
+- [ ] Add interesting text
 
 ### For Revision 1
 - [ ] ability to suggest alternative answers and revise answers 
