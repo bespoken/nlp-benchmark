@@ -212,7 +212,8 @@ class BenchmarkInterceptor extends Interceptor {
             }
           }
 
-          score += lowestScore
+          // Double the difference - which means our default tolerance, .4, becomes 20% for a number
+          score += (lowestScore * 2)
         } else {
           // Do a fuzzy match on the indivudal word
           const results = fuse.search(expectedAnswerWord)

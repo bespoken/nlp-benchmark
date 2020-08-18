@@ -41,6 +41,7 @@
 - [ ] Add link to annotations file in question type section
 - [ ] Add links to protocol and detailed results on the top?
 - [ ] credit comqa for definitions
+- [ ] Add copyright notice to the page
 
 ### For Revision 1
 - [ ] ability to suggest alternative answers and revise answers 
