@@ -16,7 +16,7 @@ describe('souce loads records', () => {
     const source = new BenchmarkSource()
     const records = await source.loadAll()
     expect(records.length).toBe(2)
-    expect(records[0].utterance).toBe('hey google when did bear bryant coach kentucky?')
+    expect(records[0].utterance).toBe('<speak> hey google <break time=\"1s\" /> when did bear bryant coach kentucky? </speak>')
     expect(records[0].outputField('platform')).toBe('google')
   })
 

@@ -46,6 +46,7 @@
     "process:alexa": "bbt process input/nlp-benchmark-alexa.json",
     "process:google": "bbt process input/nlp-benchmark-google.json",
     "process:siri": "bbt process input/nlp-benchmark-siri.json",
+    "reprint": "bbt reprint",
     "reprocess:alexa": "bbt reprocess input/nlp-benchmark-alexa.json",
     "reprocess:google": "bbt reprocess input/nlp-benchmark-google.json",
     "reprocess:siri": "bbt reprocess input/nlp-benchmark-siri.json",

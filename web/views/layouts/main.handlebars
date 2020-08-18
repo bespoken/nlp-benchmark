@@ -39,6 +39,14 @@
         width: 800px;
       }
 
+      .caption {
+        color: #184160;
+        font-size: 10pt;
+        font-weight: bold;
+        text-align: center;
+      }
+
+
       div {
         margin-bottom: 0;
         margin-left: auto;
@@ -83,6 +91,10 @@
         margin: auto
       }
 
+      .subtitle {
+        font-size: 1.25rem;
+      }
+
       .text, .tooltip {
         color: #184160;
         font-family: Open Sans;
@@ -108,6 +120,21 @@
       ul {
         margin-top: 5;
       }
+
+      @media (max-width: 768px) {  
+        .text {font-size:24px;} /*1rem = 16px*/
+      }
+
+      /* Large devices (desktops, 992px and up) */
+      @media (max-width: 992px) { 
+        .caption {font-size:1.25rem;}
+        h1 { font-size:3rem;}
+        h2 { font-size:3rem; margin-top:20px}
+        .subtitle { font-size:1.5rem;}
+        .text {font-size:2rem;} /*1rem = 16px*/
+      }
+      
+      
     </style>
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
@@ -134,10 +161,11 @@
         <div class='col-6'>
 
           <div class='row'>
-            <div class='col-6' style='padding:0;white-space: nowrap'><h1 style='font-family: Khand;margin:0;flex-wrap: nowrap;'><a href='/' style="text-decoration: none"><font style='color: #1ec9dd'>Bespoken</font> NLP Benchmark</a></h1></div> 
+            <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
+            <div class='col-6' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none"><font style='color: #1ec9dd'>Bespoken</font> NLP Benchmark</a></h1></div> 
           </div>
           <div class='row' >
-            <div class='col-6' style='padding:0'><h2 style='color: white;font-weight: bold;font-size: 20pt;margin:0;text-align: center;'> {{page}}</h2></div> 
+            <div class='col-6' style='padding:0'><h2 style='color: white;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
           </div>
         </div>
         <div class='col-3' id='sponsorLogoSection' style='text-align: right;'></div>

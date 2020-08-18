@@ -33,6 +33,23 @@ class BenchmarkInterceptor extends Interceptor {
     }
   }
 
+  interceptRecord (record) {
+    let utterance = record.utterance
+    if (!utterance.includes('<speak>') && utterance.includes('alexa')) {
+      utterance = _.replace(utterance, 'alexa', '<speak> alexa <break time="1s" />')
+      utterance = utterance + ' </speak>'
+    } else if (!utterance.includes('<speak>') && utterance.includes('google')) {
+      utterance = _.replace(utterance, 'hey google', '<speak> hey google <break time="1s" />')
+      utterance = utterance + ' </speak>'
+    }
+
+    if (utterance.includes(' us ')) {
+      utterance = _.replace(utterance, ' us ', ' US ')
+    }
+    record.utterance = utterance
+    return true
+  }
+
   interceptResult (record, result) {
     // Get the original question this corresponds to
     let question = record.meta.question
@@ -41,6 +58,11 @@ class BenchmarkInterceptor extends Interceptor {
     if (record.rerun) {
       question = questions[question.question]
       if (!question) {
+        return false
+      }
+
+      if (question.skip) {
+        console.info('BMARK INTER skip question: ' + question.question)
         return false
       }
     }
@@ -105,11 +127,22 @@ class BenchmarkInterceptor extends Interceptor {
 
   shouldRerunInteraction (record, responses) {
     const lastResponse = _.nth(responses, -1)
-    if (_.trim(lastResponse.transcript) === '') {
-      console.info('INTERCEPTOR RERUN ' + record.utterance)
-      return true
+    // const card = _.join(_.get(lastResponse, 'card.content'))
+    let rerun = false
+
+    if (!lastResponse || _.trim(lastResponse.transcript) === '') {
+      rerun = true
+    // } else if (card.startsWith('What if')) {
+    //   rerun = true
+    // } else if (card.startsWith('What Should')) {
+    //   rerun = true
+    } else if (record.utterance.includes(' us ')) {
+      rerun = true
+    } else if (record.utterance.includes(' us?')) {
+      rerun = true
     }
-    return false
+
+    return rerun
   }
 
   checkAnswer (transcript, display, answer) {

@@ -59,6 +59,19 @@ describe('interceptor works correctly', () => {
     expect(result.success).toBe(true)
   })
 
+  test('does match a number value that is in letters', () => {
+    const question = new Question()
+    question.addAnswer('324 million')
+
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: '327 million'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
+
   test('does NOT match a number value that is close', () => {
     const question = new Question()
     question.addAnswer('15')
@@ -99,6 +112,19 @@ describe('interceptor works correctly', () => {
     expect(result.success).toBe(true)
   })
 
+  test('checks a question with a name that is difficult to spell', () => {
+    const question = new Question('where was beethoven born')
+    question.addAnswer('bonn')
+
+    const interceptor = new BenchmarkInterceptor()
+    const record = new Record('test utterance', undefined, { question: question })
+    const result = new Result(record, undefined, [{
+      transcript: 'bond'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
+
   test('checks a question with a name that is has parentheses', () => {
     const question = new Question('who was this writer?')
     question.addAnswer('https://en.wikipedia.org/wiki/john_harington_(writer)')
@@ -126,6 +152,28 @@ describe('interceptor works correctly', () => {
       transcript: 'teen on the website infoplease.com they say graduates high school at age 15 enters Morehouse College shortly thereafter receives ba in sociology from Morehouse College',
       card: {
         content: ['Martin Luther King, Jr., is born in teacher Alberta Atlanta to King and Baptist minister Michael Luther King. school at Graduates high age 15, enters Morehouse College shortly thereafter. Receives BA in sociology from Morehouse College at age 19.']
+      }
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+  })
+
+  test('checks that answers are not case-sensitive', () => {
+    const question = new Question()
+    question.addAnswer('Got to Be There')
+
+    const interceptor = new BenchmarkInterceptor()
+    let record = new Record('test utterance', undefined, { question: question })
+    let result = new Result(record, undefined, [{
+      transcript: 'got to be there'
+    }])
+    interceptor.interceptResult(record, result)
+    expect(result.success).toBe(true)
+
+    record = new Record('test utterance', undefined, { question: question })
+    result = new Result(record, undefined, [{
+      card: {
+        content: ['gOt to be theRe']
       }
     }])
     interceptor.interceptResult(record, result)

@@ -305,7 +305,8 @@
       "who was the wife of 2nd US president?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/abigail_adams"
+      "https://en.wikipedia.org/wiki/abigail_adams",
+      "abigail smith"
     ]
   }, 
   {
@@ -1816,7 +1817,8 @@
       "what was michael jacksons first album out?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/off_the_wall"
+      "https://en.wikipedia.org/wiki/off_the_wall",
+      "Got to Be There"
     ]
   }, 
   {
@@ -1855,6 +1857,7 @@
   }, 
   {
     "cluster_id": "cluster-2570", 
+    "skip": true,
     "questions": [
       "interesting facts on edgar allan poes death?"
     ], 
@@ -1886,7 +1889,8 @@
       "what instrument did frank sinatra play?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/piano"
+      "https://en.wikipedia.org/wiki/piano",
+      "ukulele"
     ]
   }, 
   {
@@ -2045,7 +2049,7 @@
       "lady gaga's latest cd title was?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/joanne_(album)"
+      "chromatica"
     ]
   }, 
   {
@@ -2297,7 +2301,7 @@
   {
     "cluster_id": "cluster-4126", 
     "questions": [
-      "when fa cup final 2010?"
+      "when FA cup final 2010?"
     ], 
     "answers": [
       "2010-05-15"
@@ -2418,7 +2422,8 @@
       "a counting of the people living in the US?"
     ], 
     "answers": [
-      "324,118,787"
+      "324,118,787",
+      "324 million"
     ]
   }, 
   {
@@ -2530,7 +2535,8 @@
       "what caused richard harris death?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/hodgkin's_lymphoma"
+      "https://en.wikipedia.org/wiki/hodgkin's_lymphoma",
+      "Hodgkin's disease"
     ]
   }, 
   {
@@ -2622,6 +2628,7 @@
   }, 
   {
     "cluster_id": "cluster-3373", 
+    "skip": true,
     "questions": [
       "who was silas wife?"
     ], 
@@ -2631,6 +2638,7 @@
   }, 
   {
     "cluster_id": "cluster-4208", 
+    "skip": true,
     "questions": [
       "who was the first president in asia?"
     ], 
@@ -2685,6 +2693,7 @@
   }, 
   {
     "cluster_id": "cluster-939", 
+    "skip": true,
     "questions": [
       "famous singers who were born in california?"
     ], 
@@ -2699,7 +2708,8 @@
       "where was karrem abdul-jabbar born?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/new_york_city"
+      "https://en.wikipedia.org/wiki/new_york_city",
+      "new york"
     ]
   }, 
   {
@@ -2808,7 +2818,8 @@
       "who invent jordan brand?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/nike,_inc."
+      "https://en.wikipedia.org/wiki/nike,_inc.",
+      "nike"
     ]
   }, 
   {
@@ -2891,8 +2902,9 @@
   }, 
   {
     "cluster_id": "cluster-4127", 
+    "skip": true,
     "questions": [
-      "when is ti's birthday?"
+      "when is TI's birthday?"
     ], 
     "answers": [
       "1980-09-25"
@@ -2904,7 +2916,7 @@
       "what is the longest river in northern ireland?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/river_shannon"
+      "Bann"
     ]
   }, 
   {
@@ -2931,7 +2943,7 @@
       "what is the main language for chile?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/chilean_spanish"
+      "https://en.wikipedia.org/wiki/spanish"
     ]
   }, 
   {
@@ -2984,7 +2996,8 @@
       "what is sean paul?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/actor"
+      "singer",
+      "rapper"
     ]
   }, 
   {
@@ -2999,6 +3012,7 @@
   }, 
   {
     "cluster_id": "cluster-4042", 
+    "skip": true,
     "questions": [
       "what is an coordnate from manchester?"
     ], 
@@ -3215,7 +3229,8 @@
       "where was robert e lees first battle?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/mexican%e2%80%93american_war"
+      "https://en.wikipedia.org/wiki/mexican%e2%80%93american_war",
+      "Battle of Cheat Mountain"
     ]
   }, 
   {
@@ -3242,7 +3257,8 @@
       "who was edna st vincent millay married to?"
     ], 
     "answers": [
-      "eugen jan boissevain"
+      "eugen jan boissevain",
+      "eugen"
     ]
   }, 
   {
@@ -3278,7 +3294,7 @@
       "who is the first chairman of sbi?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/arundhati_bhattacharya"
+      "John Mathai"
     ]
   }, 
   {
@@ -3306,7 +3322,7 @@
       "when did alexander die on?"
     ], 
     "answers": [
-      "-0322-06"
+      "323 BC"
     ]
   }, 
   {
@@ -3324,7 +3340,9 @@
       "what is the principal religion of russia?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/eastern_orthodox_church"
+      "https://en.wikipedia.org/wiki/eastern_orthodox_church",
+      "Russian Orthodoxy",
+      "Russian Orthodox Church"
     ]
   }, 
   {
@@ -3534,8 +3552,7 @@
       "what team does wayne rooney play for?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/everton", 
-      "https://en.wikipedia.org/wiki/manchester_united_f.c."
+      "Derby County Football Club"
     ]
   }, 
   {
@@ -3594,7 +3611,10 @@
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/rio_ferdinand", 
-      "https://en.wikipedia.org/wiki/alan_smith_(footballer,_born_1980)"
+      "https://en.wikipedia.org/wiki/alan_smith_(footballer,_born_1980)",
+      "Johnny Giles",
+      "Eric Cantona",
+      "Lee Sharpe"
     ]
   }, 
   {
@@ -3612,11 +3632,12 @@
       "what jay-z's newest album?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/magna_carta_holy_grail"
+      "everything is love"
     ]
   }, 
   {
-    "cluster_id": "cluster-4164", 
+    "cluster_id": "cluster-4164",
+    "skip": true, 
     "questions": [
       "what films has sam elliott acted in?"
     ], 
@@ -3685,7 +3706,8 @@
       "where was johnny wilkinson born?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/frimley"
+      "https://en.wikipedia.org/wiki/frimley",
+      "Friendly"
     ]
   }, 
   {
@@ -3779,7 +3801,8 @@
       "where is trinidad and toboago located?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/south_america"
+      "https://en.wikipedia.org/wiki/south_america",
+      "Caribbean"
     ]
   }, 
   {
@@ -3794,7 +3817,7 @@
   {
     "cluster_id": "cluster-1202", 
     "questions": [
-      "who was the first african american mlb player in the world?"
+      "who was the first african american MLB player in the world?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/jackie_robinson"
@@ -3812,7 +3835,7 @@
   {
     "cluster_id": "cluster-455", 
     "questions": [
-      "which US president is a former ffa member?"
+      "which US president is a former FFA member?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/jimmy_carter"
@@ -3884,7 +3907,7 @@
   {
     "cluster_id": "cluster-1517", 
     "questions": [
-      "when was st maria goretti born?"
+      "when was saint maria goretti born?"
     ], 
     "answers": [
       "1890-10-16"
@@ -3923,7 +3946,7 @@
       "who was the first person to develop the theory of evolution?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/jean-baptiste_lamarck"
+      "charles darwin"
     ]
   }, 
   {
@@ -3937,6 +3960,7 @@
   }, 
   {
     "cluster_id": "cluster-3382", 
+    "skip": true,
     "questions": [
       "who was born in california that is famous?"
     ], 
@@ -3950,7 +3974,7 @@
       "what is the smallest country in the greater antilles?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/cayman_islands"
+      "Puerto Rico"
     ]
   }, 
   {
@@ -3993,7 +4017,8 @@
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/university_of_cincinnati_college_of_law", 
-      "https://en.wikipedia.org/wiki/yale_college"
+      "https://en.wikipedia.org/wiki/yale_college",
+      "yale"
     ]
   }, 
   {
@@ -4126,7 +4151,8 @@
       "where was george lopez born?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/united_states"
+      "https://en.wikipedia.org/wiki/united_states",
+      "california"
     ]
   }, 
   {
@@ -4149,6 +4175,7 @@
   }, 
   {
     "cluster_id": "cluster-4184", 
+    "skip": true,
     "questions": [
       "what were the name of jane austens books that she wrote?"
     ], 
@@ -4229,7 +4256,8 @@
       "which side won during first battle of bull run?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/confederate_states_army"
+      "https://en.wikipedia.org/wiki/confederate_states_army",
+      "confederate"
     ]
   }, 
   {
@@ -4282,6 +4310,7 @@
   }, 
   {
     "cluster_id": "cluster-4237", 
+    "skip": true,
     "questions": [
       "great britain past leader?"
     ], 
@@ -4367,7 +4396,8 @@
       "who was the first team win in the nba finals?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/new_york_knicks"
+      "philadelphia warriors",
+      "minneapolis lakers"
     ]
   }, 
   {
@@ -4377,7 +4407,7 @@
       "highest population distribution in latin america?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/ecuador"
+      "brazil"
     ]
   }, 
   {
@@ -4410,6 +4440,7 @@
   }, 
   {
     "cluster_id": "cluster-4102", 
+    "skip": true,
     "questions": [
       "what kenny chesney albums hit the charts?"
     ], 
@@ -4575,7 +4606,8 @@
     ]
   }, 
   {
-    "cluster_id": "cluster-1713", 
+    "cluster_id": "cluster-1713",
+    "skip": true, 
     "questions": [
       "which movies has clint eastwood appeared?"
     ], 
@@ -4645,7 +4677,8 @@
       "which side won the first battle of bull run?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/confederate_states_army"
+      "https://en.wikipedia.org/wiki/confederate_states_army",
+      "confederate"
     ]
   }, 
   {
@@ -4685,7 +4718,7 @@
       "what nationality is richard harris?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/irish_people"
+      "irish"
     ]
   }, 
   {
@@ -4752,6 +4785,7 @@
   }, 
   {
     "cluster_id": "cluster-4216", 
+    "skip": true,
     "questions": [
       "what countries was not an enemy of the US during world war 2?"
     ], 
@@ -4806,7 +4840,8 @@
       "what was his first wife's name dr seuss?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/helen_palmer_(author)"
+      "https://en.wikipedia.org/wiki/helen_palmer_(author)",
+      "helen"
     ]
   }, 
   {
@@ -5460,6 +5495,7 @@
   }, 
   {
     "cluster_id": "cluster-4066", 
+    "skip": true,
     "questions": [
       "what was louis xvi background?"
     ], 
@@ -5482,7 +5518,8 @@
       "who did priness diana marry?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/charles,_prince_of_wales"
+      "https://en.wikipedia.org/wiki/charles,_prince_of_wales",
+      "charles"
     ]
   }, 
   {
@@ -5698,7 +5735,7 @@
       "what is the government and leader of algeria?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/abdelaziz_bouteflika"
+      "Abdelmadjid Tebboune"
     ]
   }, 
   {
@@ -5727,6 +5764,7 @@
   }, 
   {
     "cluster_id": "cluster-748", 
+    "skip": true,
     "questions": [
       "who is avi married to now?"
     ], 
@@ -5755,7 +5793,7 @@
   {
     "cluster_id": "cluster-742", 
     "questions": [
-      "who was before elizabeth ii?"
+      "who was before elizabeth the second?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/george_vi"
@@ -5805,11 +5843,12 @@
       "what is the largest mountain region in south america?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/aconcagua"
+      "andes"
     ]
   }, 
   {
     "cluster_id": "cluster-2205", 
+    "skip": true,
     "questions": [
       "what role did hernan cortes play in the fall of tenochtitlan and the rest of the aztecs empire?", 
       "what role did hernan cortes play in he fall of tenochtitlan?"
@@ -5875,6 +5914,7 @@
   }, 
   {
     "cluster_id": "cluster-4219", 
+    "skip": true,
     "questions": [
       "first president in maine?"
     ], 
@@ -5993,6 +6033,7 @@
   }, 
   {
     "cluster_id": "cluster-4123", 
+    "skip": true,
     "questions": [
       "who is the first malyalee governor in kerala?"
     ], 
@@ -6011,6 +6052,7 @@
   }, 
   {
     "cluster_id": "cluster-906", 
+    "skip": true,
     "questions": [
       "what is rihanna's current song on the radio?"
     ], 
@@ -6164,7 +6206,8 @@
       "what was the current population of japan?"
     ], 
     "answers": [
-      "126,045,211"
+      "126,045,211",
+      "126 million"
     ]
   }, 
   {
@@ -6291,7 +6334,7 @@
       "where did michael jackson get married the first time?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/personal_relationships_of_michael_jackson"
+      "Sydney, Australia"
     ]
   }, 
   {
@@ -6363,7 +6406,7 @@
       "who is bosnia leader?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/mladen_ivani%c4%87"
+      "Denis Zvizdic"
     ]
   }, 
   {
@@ -6434,7 +6477,7 @@
       "who is president of great britain?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/theresa_may"
+      "boris johnson"
     ]
   }, 
   {
@@ -6532,7 +6575,8 @@
       "what country are the jura mountains located in?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/switzerland"
+      "https://en.wikipedia.org/wiki/switzerland",
+      "france"
     ]
   }, 
   {
@@ -6619,7 +6663,7 @@
       "who is the prime minister of italy?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/paolo_gentiloni"
+      "Giuseppe Conte"
     ]
   }, 
   {
@@ -6662,6 +6706,7 @@
   }, 
   {
     "cluster_id": "cluster-4205", 
+    "skip": true,
     "questions": [
       "what is the largest city on australias north coast?"
     ], 
@@ -6970,7 +7015,7 @@
       "who won the second rugby world cup?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/australia_national_rugby_union_team"
+      "australia"
     ]
   }, 
   {
@@ -6990,7 +7035,7 @@
       "which is the first satellite to land on mars?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/viking_1"
+      "Mars 3"
     ]
   }, 
   {
@@ -7025,6 +7070,7 @@
   }, 
   {
     "cluster_id": "cluster-4004", 
+    "skip": true,
     "questions": [
       "what address does jordan jansen live at?"
     ], 
@@ -7034,6 +7080,7 @@
   }, 
   {
     "cluster_id": "cluster-551", 
+    "skip": true,
     "questions": [
       "what is saint anastasia's feast day?"
     ], 
@@ -7057,7 +7104,7 @@
       "who is the owner of leeds united?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/massimo_cellino"
+      "Andrea Radrizzani"
     ]
   }, 
   {
@@ -7103,7 +7150,8 @@
       "what do the madagascar people wear?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/lamba_(garment)"
+      "https://en.wikipedia.org/wiki/lamba_(garment)",
+      "llama"
     ]
   }, 
   {
@@ -7175,6 +7223,7 @@
   }, 
   {
     "cluster_id": "cluster-67", 
+    "skip": true,
     "questions": [
       "what were 2 early influences on einstein's life?"
     ], 
@@ -7230,6 +7279,7 @@
   }, 
   {
     "cluster_id": "cluster-3580", 
+    "skip": true,
     "questions": [
       "what movies has anthony hopkins starred in?"
     ], 
@@ -7702,7 +7752,7 @@
       "when was michael jackson first hit?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/got_to_be_there"
+      "1971"
     ]
   }, 
   {
@@ -7724,7 +7774,8 @@
     ]
   }, 
   {
-    "cluster_id": "cluster-1549", 
+    "cluster_id": "cluster-1549",
+    "skip": true, 
     "questions": [
       "what is the postal code for surulere in nigeria?"
     ], 
@@ -7935,7 +7986,7 @@
       "what team does blake griffin play for?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/los_angeles_clippers"
+      "Detroit Pistons"
     ]
   }, 
   {
@@ -8141,7 +8192,8 @@
       "when did kobe bryant win his first mvp?"
     ], 
     "answers": [
-      "2007-2008"
+      "2007-2008",
+      "2008"
     ]
   }, 
   {
@@ -8324,6 +8376,7 @@
   }, 
   {
     "cluster_id": "cluster-1013", 
+    "skip": true,
     "questions": [
       "who was the second indian women climbed mount everest?"
     ], 
@@ -8360,6 +8413,7 @@
   }, 
   {
     "cluster_id": "cluster-22", 
+    "skip": true,
     "questions": [
       "who was the first man ever to walk on earth?"
     ], 
@@ -8387,6 +8441,7 @@
   }, 
   {
     "cluster_id": "cluster-3904", 
+    "skip": true,
     "questions": [
       "what kind of food turkey europe eats?"
     ], 
@@ -8409,7 +8464,7 @@
       "which is the largest ethnic group in nigeria today?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/hausa_people"
+      "hausa"
     ]
   }, 
   {
@@ -8706,7 +8761,8 @@
     ]
   }, 
   {
-    "cluster_id": "cluster-4213", 
+    "cluster_id": "cluster-4213",
+    "skip": true, 
     "questions": [
       "michael jackson and lisa marie married?"
     ], 
@@ -8741,7 +8797,8 @@
       "who won champion league most?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/real_madrid_c.f."
+      "https://en.wikipedia.org/wiki/real_madrid_c.f.",
+      "real madrid"
     ]
   }, 
   {
@@ -8769,7 +8826,8 @@
       "what is michael jackson's oldest son name?"
     ], 
     "answers": [
-      "michael joseph jackson jr."
+      "michael joseph jackson jr.",
+      "prince"
     ]
   }, 
   {
@@ -8796,7 +8854,7 @@
       "what religion was dany thomas?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/catholicism"
+      "catholic"
     ]
   }, 
   {
@@ -8833,11 +8891,12 @@
       "who was the dominican republic first president?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/danilo_medina"
+      "Pedro Santana"
     ]
   }, 
   {
     "cluster_id": "cluster-470", 
+    "skip": true,
     "questions": [
       "when did london become the uk capital?"
     ], 
@@ -8941,6 +9000,7 @@
   }, 
   {
     "cluster_id": "cluster-4182", 
+    "skip": true,
     "questions": [
       "what is the post code of ibadan in oyo state of nigeria?"
     ], 
@@ -9032,6 +9092,7 @@
   },
   {
     "cluster_id": "cluster-3976", 
+    "skip": true,
     "questions": [
       "what is the latitude and latitude of port albany?"
     ], 
@@ -9151,7 +9212,8 @@
       "what president was in office when veterans day became a holiday?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/dwight_d._eisenhower"
+      "https://en.wikipedia.org/wiki/dwight_d._eisenhower",
+      "eisenhower"
     ]
   }, 
   {
@@ -9229,13 +9291,13 @@
       "who is the president of south africa?"
     ], 
     "answers": [
-      "https://en.wikipedia.org/wiki/jacob_zuma"
+      "Cyril Ramaphosa"
     ]
   }, 
   {
     "cluster_id": "cluster-4224", 
     "questions": [
-      "what is the name of the bay on the spainsh north coast?"
+      "what is the name of the bay on the spains north coast?"
     ], 
     "answers": [
       "https://en.wikipedia.org/wiki/bay_of_biscay"
