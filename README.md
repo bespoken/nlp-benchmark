@@ -14,17 +14,15 @@ This repository contains the following datasets:
 * WikiQA
 
 ## Benchmark Results
-Results are published on a monthly basis. The table below summarizes our tests and results to-date:
+Results are meant to published on a bi-monthly basis. The table below summarizes our tests and results to-date:
 
 | Date | Test Type | Data Set | Platforms | Results
 |---|---|---|---|---
 | 7/26/2020 | General Knowledge | ComQA | Alexa, Google Assistant, Siri | LINK TBA
-| 8/26/2020 | Speech Recognition | Commmon Voice | TBD | LINK TBA
+| 9/26/2020 | Speech Recognition | Commmon Voice | TBD | LINK TBA
 
-The detailed results are viewable here:  
-URL: https://metabase.bespoken.io  
-Username: guest@bespoken.io  
-Password: Bespoken2020  
+The published results are viewable here:  
+https://benchmark.bespoken.io
 
 ## Methodology
 ### General Knowledge
@@ -40,5 +38,5 @@ TBC
 ## Contact
 We appreciate all feedback. Open an issue to suggest additional datasets as well as improvements to our methodology.
 
-Contact us at [support@bespoken.io](mailto:support@bespoken.io)
+Contact us at [contact@bespoken.io](mailto:contact@bespoken.io).
 

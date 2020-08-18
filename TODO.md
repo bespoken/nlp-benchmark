@@ -34,9 +34,9 @@
 - [X] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
 - [X] Change all external links to open in new tab?
 - [X] Add CTA on main page
-- [ ] Review Siri
+- [X] Review Siri
 - [X] Add tooltip for simple versus complex
-- [ ] Update summary text
+- [X] Update summary text
 - [ ] Update README
 - [ ] Add link to annotations file in question type section
 - [ ] Add links to protocol and detailed results on the top?
