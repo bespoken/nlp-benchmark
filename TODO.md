@@ -25,8 +25,8 @@
 - [X] Update license
 - [ ] Add tooltip for simple versus complex
 - [X] Add logo for bradley
-- [ ] Fix mobile font
-- [ ] Rerun empty transcripts for Alexa?
+- [X] Fix mobile font
+- [X] Rerun empty transcripts for Alexa?
 
 ### For Final
 - [X] Figure out how to change handlebars root view directory
