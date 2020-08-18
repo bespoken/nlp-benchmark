@@ -13,6 +13,12 @@ This repository contains the following datasets:
 * Snips
 * WikiQA
 
+## Process
+We interact with the voice assistants using the Bespoken Test Robots - which allow us to interact exactly as a real person would with an actual device. [Read more here](https://bespoken.io/test-robot).
+
+For running the tests and collecting the results, we leverage our batch testing framework:  
+https://gitlab.com/bespoken/batch-tester
+
 ## Benchmark Results
 Results are meant to published on a bi-monthly basis. The table below summarizes our tests and results to-date:
 
@@ -29,8 +35,6 @@ https://benchmark.bespoken.io
 We classify answers as correct or not by the presence of the answer from the dataset.
 
 In the case where the dataset has multiple answers, if anyone is present we include it.
-
-Tests are executed using the Bespoken Test Robots - which allow us to interact exactly as a real person would with an actual device. [Read more here](https://bespoken.io/test-robot).
 
 ### Speech Recognition Accuracy
 TBC
