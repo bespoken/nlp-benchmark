@@ -19,11 +19,9 @@
 - [X] Animation
 - [X] links to underlying data
 - [X] Add one sentence subtitle
-- [ ] Add link to annotations file in question type section
 - [X] Add how do we get in touch on lower-right panel of main page
 - [X] Summary Analysis - perhaps top-right?
 - [X] Update license
-- [ ] Add tooltip for simple versus complex
 - [X] Add logo for bradley
 - [X] Fix mobile font
 - [X] Rerun empty transcripts for Alexa?
@@ -34,17 +32,16 @@
 - [X] Add protocol page
 - [X] Add favicon
 - [X] Add watermark - https://github.com/AlbinoDrought/chartjs-plugin-watermark#readme
-- [ ] Finish annotations
-- [ ] Cleaup annotations
-  - [ ] Demographic, Demographics
-  - [ ] Open-ended - handle differently?
-- [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
-- [ ] Add link to a screenshot of metabase from the protocol page
-- [ ] Change all external links to open in new tab?
+- [X] Change all external links to open in new tab?
 - [X] Add CTA on main page
-- [ ] Add links to protocol and detailed results on the top?
+- [ ] Review Siri
+- [ ] Add tooltip for simple versus complex
 - [ ] Complex = greather than 1 entity?
 - [ ] Update README
+- [ ] Add link to annotations file in question type section
+- [ ] Add links to protocol and detailed results on the top?
+- [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
+- [ ] Add link to a screenshot of metabase from the protocol page
 - [ ] credit comqa for definitions
 - [ ] Invite corrections to classification
 - [ ] Add hover to columns on detailed results page
