@@ -36,10 +36,13 @@
 - [X] Add CTA on main page
 - [ ] Review Siri
 - [ ] Add tooltip for simple versus complex
+- [ ] Update summary text
 - [ ] Complex = greather than 1 entity?
 - [ ] Update README
 - [ ] Add link to annotations file in question type section
 - [ ] Add links to protocol and detailed results on the top?
+
+### For Revision 1
 - [ ] wordcloud chart on topics - https://github.com/sgratzl/chartjs-chart-wordcloud
 - [ ] Add link to a screenshot of metabase from the protocol page
 - [ ] credit comqa for definitions

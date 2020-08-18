@@ -26,18 +26,7 @@
    </table>
 
 </div>
-<div id='infoModal' class="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style='margin-top: 100px'>
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style='padding-bottom: 0.5em;'>
-        <h5 class="title modal-title" id="modal-title" >Modal title</h5>
-      </div>
-      <div id='modal-body' class="text modal-body" style='padding-top: 0.5em;text-align: left'>
-        
-      </div>
-    </div>
-  </div>
-</div>
+
 <script>
    window.addEventListener('load', async () => {
       const response = await axios.get('/successByAnnotations')
@@ -67,9 +56,7 @@
       // Add a tooltip to the annotation label
       $('.annotationLabel').click(function() {
          if (Content[this.innerText]) {
-            $('#modal-title').html(this.innerText)
-            $('#modal-body').html(Content[this.innerText])
-            $('#infoModal').modal({})
+            showInfo(this.innerText)
          }
          return false
       })

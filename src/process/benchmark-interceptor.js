@@ -128,19 +128,19 @@ class BenchmarkInterceptor extends Interceptor {
   shouldRerunInteraction (record, responses) {
     const lastResponse = _.nth(responses, -1)
     // const card = _.join(_.get(lastResponse, 'card.content'))
-    const rerun = false
+    let rerun = false
 
-    // if (!lastResponse || _.trim(lastResponse.transcript) === '') {
+    if (!lastResponse || _.trim(lastResponse.transcript) === '') {
+      rerun = true
+    // } else if (card.startsWith('What if')) {
     //   rerun = true
-    // // } else if (card.startsWith('What if')) {
-    // //   rerun = true
-    // // } else if (card.startsWith('What Should')) {
-    // //   rerun = true
-    // } else if (record.utterance.includes(' us ')) {
+    // } else if (card.startsWith('What Should')) {
     //   rerun = true
-    // } else if (record.utterance.includes(' us?')) {
-    //   rerun = true
-    // }
+    } else if (record.utterance.includes(' us ')) {
+      rerun = true
+    } else if (record.utterance.includes(' us?')) {
+      rerun = true
+    }
 
     return rerun
   }
