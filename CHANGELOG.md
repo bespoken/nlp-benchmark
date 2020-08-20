@@ -1,3 +1,6 @@
+## 0.4.1
+* Added sponsorship stuff
+
 ## 0.4.0
 * Handling names - parse out last name
 * Handling ages
