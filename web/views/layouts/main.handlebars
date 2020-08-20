@@ -103,6 +103,12 @@
         font-style: italic;
         padding: 5 20 5 20;
       }
+
+      .sponsorLogoSection {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
       
       .subtitle {
         font-size: 3.0vmin;
@@ -145,12 +151,6 @@
         $('a[name]').each(function() {
           this.href = '#' + this.name
         })
-
-        const urlParams = new URLSearchParams(window.location.search)
-        if (urlParams.has('sponsorLogo')) {
-          $('#sponsorLogoSection').append(`<img src='${urlParams.get('sponsorLogo')}' height='100%' />`)
-          $('#sponsorMessageSection').show()
-        }    
       })
 
       function showInfo(key) {
@@ -163,20 +163,22 @@
     </script>
   </head>
   <body style='margin-bottom: 10px'>
-    <div class='container-fluid' style='background-color: #184160;padding: 20;'>
+    <div class='container-fluid ' style='background-color: #184160;padding: 20;'>
       <div class='row header' >
-        <div class='col-3' style='text-align: left;display:inline-flex'><a href='https://bespoken.io'><img src='/web/images/Logo-LlamaOnly.png' /></a></div>
+        <div class='col-3' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' style='padding: 5' /></a></div>
         <div class='col-6'>
 
           <div class='row'>
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-6' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none"><font style='color: #1ec9dd'>Bespoken</font> NLP Benchmark</a></h1></div> 
+            <div class='col-6' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">NLP Benchmark</a></h1></div> 
           </div>
           <div class='row' >
-            <div class='col-6' style='padding:0'><h2 style='color: white;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
+            <div class='col-6' style='padding:0'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
           </div>
         </div>
-        <div class='col-3' id='sponsorLogoSection' style='text-align: right;'></div>
+        <div class='col-3  d-flex align-items-center justify-content-end' id='sponsorLogoSection' style='display:inline-flex;text-align: right;'>
+          <a href='https://projectvoice.ai/' target='_blank' ><img src='/web/images/ProjectVoiceLogo.png' style='padding: 10' /></a>
+        </div>
         
       </div>  
     </div>

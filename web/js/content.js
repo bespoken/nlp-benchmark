@@ -1,30 +1,29 @@
 const Content = {
   'Answer Tuple': {
-    content: `Where an answer is a tuple of connected entities as opposed to a single entity.<br><br>  
+    content: `When an answer is a collection of related entities, rather than a single entity:<br><br>  
       
       <i>"When and where did George H. Bush go to college, and what did he study?"</i>`,
     title: 'Answer Tuple'
   },
 
   Comparison: {
-    content: `We consider three types of comparison questions: 
+    content: `There are three types of comparisons: 
       <ul>
-        <li>Comparatives - <i>"Which rivers in Europe are longer than the Rhine?"</i>
-        <li>Superlatives - <i>"What is the population of the largest city in Egypt?"</i>
-        <li>Ordinal - <i>"What was the name of Elvis’s first movie?"</i>
+        <li>Comparatives - <i>"Which players are taller than Wilt Chamberlain?"</i>
+        <li>Superlatives - <i>"What is largest country in Europe?"</i>
+        <li>Ordinal - <i>"What was the Pixies first album?"</i>
       </ul>`,
     title: 'Comparison Question'
   },
 
   Compositional: {
-    content: `A question is compositional if answering it requires answering more primitive
-      questions and combining these. These can be intersection or nested questions.<br><br>
+    content: `A question is compositional if combining answers to subquestions. These can be intersection or nested questions.<br><br>
       
       Intersection questions are ones where two or more subquestions can be answered independently, and their
-      answers intersected (<i>"Which films featuring Tom Hanks did Spielberg direct?"</i>).<br><br>
+      answers cross-referenced (<i>"Which films featuring Tom Hanks did Spielberg direct?"</i>).<br><br>
     
-      In nested questions, the answer to one subquestion is necessary to answer another (<i>"Who were the
-      parents of the thirteenth president of the US?</i>")`,
+      In nested questions, it is necessary to answer one question before the other (<i>"Who were the
+      parents of the lead singer of Thin Lizzy?</i>")`,
     title: 'Compositional Question'
   },
 
@@ -34,9 +33,11 @@ const Content = {
   },
 
   'Named Entities': {
-    content: `Some questions can be based on a false premise, and hence, are unanswerable.<br><br>
+    content: `The number of specific, named things in the question. Abraham Lincoln is a named entity - the 16th president is not.<br><br>
 
-      <i>"Who was the first human being on Mars?"</i>`,
+      The following example has two named entities:<br><br>
+
+      <i>"What river flows France and Germany"</i>`,
     title: 'Unanswerable Questions'
   },
 
@@ -55,14 +56,13 @@ const Content = {
   },
 
   Temporal: {
-    content: `These are questions that require temporal reasoning for deriving the answer, be it:
+    content: `These are questions that require considering time to answer them:
       <ul>
-        <li>Explicit - <i>"in 1998"</i>
-        <li>Implicit - <i>"during the WWI"</i>
-        <li>Relative - <i>"current"</i>
-        <li>Latent - <i>"who is the US president?"</i>
+        <li>Explicit - <i>"in 1975"</i>
+        <li>Implicit - <i>"during the second world war"</i>
+        <li>Relative - <i>"previous"</i>
       </ul>
-      Temporal questions also include those whose answer is an explicit temporal expression - 
+      Additionally, questions that have a date/time as an answer are considered temporal:<br><br> 
       <i>"When did Trenton become New Jersey’s capital?"</i>.`,
     title: 'Temporal Reasoning Questions'
   },
