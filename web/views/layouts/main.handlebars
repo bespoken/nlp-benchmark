@@ -57,6 +57,7 @@
 
       .footer {
         font-size: 2vmin;
+        margin-top: 15px;
       }
 
       .header img {
@@ -142,7 +143,27 @@
 
       ul {
         margin-top: 5;
-      }      
+      }     
+
+      .logo {
+        padding: 5;
+        max-width: 100%;
+      }
+
+      .sponsorLogo {
+        padding: 10;
+        max-width: 100%;
+      }
+       
+      @media only screen and (max-width: 1080px) {
+        .logo {
+          padding: 10;
+        }
+
+        .sponsorLogo {
+          padding: 20;
+        }
+      }
     </style>
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
@@ -165,19 +186,19 @@
   <body style='margin-bottom: 10px'>
     <div class='container-fluid ' style='background-color: #184160;padding: 20;'>
       <div class='row header' >
-        <div class='col-3' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' style='padding: 5' /></a></div>
-        <div class='col-6'>
+        <div class='col-4' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' class='logo' /></a></div>
+        <div class='col-4'>
 
           <div class='row'>
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-6' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">NLP Benchmark</a></h1></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">NLP Benchmark</a></h1></div> 
           </div>
           <div class='row' >
-            <div class='col-6' style='padding:0'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
           </div>
         </div>
-        <div class='col-3  d-flex align-items-center justify-content-end' id='sponsorLogoSection' style='display:inline-flex;text-align: right;'>
-          <a href='https://projectvoice.ai/' target='_blank' ><img src='/web/images/ProjectVoiceLogo.png' style='padding: 10' /></a>
+        <div class='col-4  d-flex align-items-center justify-content-end' id='sponsorLogoSection' style='display:inline-flex;text-align: right;'>
+          <a href='https://projectvoice.ai/' target='_blank' ><img class='sponsorLogo' src='/web/images/ProjectVoiceLogo.png' /></a>
         </div>
         
       </div>  
