@@ -23,6 +23,7 @@ const ChartHelper = {
           datalabels: {
             align: 'top',
             anchor: 'end',
+            display: true,
             font: {
               family: 'Roboto Condensed',
               size: 14,
@@ -70,6 +71,20 @@ const ChartHelper = {
           fontFamily: ChartHelper.titleFont(),
           fontSize: ChartHelper.titleFontSize(),
           text: title
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem, data) {
+              let label = data.datasets[tooltipItem.datasetIndex].label || ''
+
+              if (label) {
+                label += `: ${tooltipItem.value}%`
+              } else {
+                label = `${tooltipItem.label}: ${tooltipItem.value}%`
+              }
+              return label
+            }
+          }
         },
         watermark: {
           // the image you would like to show

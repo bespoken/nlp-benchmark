@@ -1,3 +1,11 @@
+## 0.4.3
+* Fixed bug in classifying NO_ANSWER questions for Siri
+* Fixed display issues on full-page topic chart
+* Add percentage signs to tooltips
+
+## 0.4.2
+* Fixed mobile display issues
+
 ## 0.4.1
 * Added sponsorship stuff
 

@@ -81,9 +81,11 @@ class BenchmarkInterceptor extends Interceptor {
 
     // Handle questions that don't have answers - e.g., who was the first man to walk on Mars?
     if (question.hasNoAnswer()) {
-      if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure', 'I don\'t understand', '')) {
+      // console.info('NO ANSWER' + question.question + ' t: ' + transcript)
+      if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure', 'I don\'t understand') || _.trim(transcript) === '') {
         result.success = true
       }
+      // console.info('NO ANSWER' + result.success)
 
     // I don't know or I'm not sure means definitely did not get it
     } else if (Util.includes(transcript, 'i don\'t know', 'I\'m not sure')) {
@@ -128,19 +130,19 @@ class BenchmarkInterceptor extends Interceptor {
   shouldRerunInteraction (record, responses) {
     const lastResponse = _.nth(responses, -1)
     // const card = _.join(_.get(lastResponse, 'card.content'))
-    let rerun = false
+    const rerun = false
 
-    if (!lastResponse || _.trim(lastResponse.transcript) === '') {
-      rerun = true
-    // } else if (card.startsWith('What if')) {
+    // if (!lastResponse || _.trim(lastResponse.transcript) === '') {
     //   rerun = true
-    // } else if (card.startsWith('What Should')) {
+    // // } else if (card.startsWith('What if')) {
+    // //   rerun = true
+    // // } else if (card.startsWith('What Should')) {
+    // //   rerun = true
+    // } else if (record.utterance.includes(' us ')) {
     //   rerun = true
-    } else if (record.utterance.includes(' us ')) {
-      rerun = true
-    } else if (record.utterance.includes(' us?')) {
-      rerun = true
-    }
+    // } else if (record.utterance.includes(' us?')) {
+    //   rerun = true
+    // }
 
     return rerun
   }
