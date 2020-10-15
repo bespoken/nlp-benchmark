@@ -1,4 +1,4 @@
-const ComQAParser = require('../src/parse/comqa-parser')
+const ComQAParser = require('../src/nlp/parse/comqa-parser')
 
 describe('ComQA parser works correctly', () => {
   test('parser runs and creates output', () => {
