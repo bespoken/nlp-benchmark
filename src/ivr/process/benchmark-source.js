@@ -1,8 +1,39 @@
-const { Source } = require('bespoken-batch-tester')
+const fs = require('fs')
+const parse = require('csv-parse/lib/sync')
+const { Config, Record, Source } = require('bespoken-batch-tester')
 
 class BenchmarkSource extends Source {
-  async loadAll () {
+  static fetchDataset () {
+    const sourceFile = process.env.DATASET_PATH
+    const data = fs.readFileSync(sourceFile, 'utf8')
+    const dataset = parse(data, {
+      delimiter: '\t',
+      columns: true
+    })
+    return dataset
+  }
 
+  async loadAll () {
+    const jobName = Config.get('job')
+    const number = Config.get('virtualDeviceConfig.phoneNumber')
+    const dataset = BenchmarkSource.fetchDataset()
+    const records = []
+
+    dataset.forEach(row => {
+      console.info(JSON.stringify(row))
+      const utterance = row.sentence
+      const record = new Record(utterance)
+      record.meta = {
+        platform: jobName.replace('ivr-benchmark-', ''),
+        number: number,
+        clipUrl: row.path
+      }
+      // Set raw utterance
+      // record.utterance = S3 pre-signed URL
+      records.push(record)
+    })
+
+    return records
   }
 }
 

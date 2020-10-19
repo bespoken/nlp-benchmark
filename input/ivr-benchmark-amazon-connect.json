@@ -1,7 +1,7 @@
 {
   "customer": "Bespoken",
   "interceptor": "src/ivr/process/benchmark-interceptor",
-  "job": "ivr-benchmark-twilio-autopilot",
+  "job": "ivr-benchmark-amazon-connect",
   "sequence": ["$DIAL"],
   "source": "src/ivr/process/benchmark-source",
   "sourceFile": "input/datasets/TBD",
