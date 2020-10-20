@@ -1,6 +1,7 @@
 const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
 const { Config, Record, Source } = require('bespoken-batch-tester')
+// const TTS = require('../../tts')
 
 class BenchmarkSource extends Source {
   static fetchDataset () {
@@ -19,19 +20,20 @@ class BenchmarkSource extends Source {
     const dataset = BenchmarkSource.fetchDataset()
     const records = []
 
-    dataset.forEach(row => {
-      console.info(JSON.stringify(row))
-      const utterance = row.sentence
+    for (const row in dataset) {
+      // const prefix = `Number: ${row + 1}. Expected Phrase:`
+      // const prefixAudio = await TTS.textToSpeechPolly(prefix)
+      const utterance = dataset[row].sentence
       const record = new Record(utterance)
       record.meta = {
         platform: jobName.replace('ivr-benchmark-', ''),
         number: number,
-        clipUrl: row.path
+        clipUrl: dataset[row].path
       }
       // Set raw utterance
       // record.utterance = S3 pre-signed URL
       records.push(record)
-    })
+    }
 
     return records
   }
