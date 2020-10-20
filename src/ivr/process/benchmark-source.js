@@ -1,23 +1,12 @@
-const fs = require('fs')
-const parse = require('csv-parse/lib/sync')
 const { Config, Record, Source } = require('bespoken-batch-tester')
+const { fetchDataset } = require('../../helper')
 // const TTS = require('../../tts')
 
 class BenchmarkSource extends Source {
-  static fetchDataset () {
-    const sourceFile = process.env.DATASET_PATH
-    const data = fs.readFileSync(sourceFile, 'utf8')
-    const dataset = parse(data, {
-      delimiter: '\t',
-      columns: true
-    })
-    return dataset
-  }
-
   async loadAll () {
     const jobName = Config.get('job')
     const number = Config.get('virtualDeviceConfig.phoneNumber')
-    const dataset = BenchmarkSource.fetchDataset()
+    const dataset = fetchDataset()
     const records = []
 
     for (const row in dataset) {
