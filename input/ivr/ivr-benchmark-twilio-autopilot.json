@@ -12,5 +12,5 @@
     "phoneNumber": "TBD",
     "repeatOnPhrase": "say that again"
   },
-  "virtualDeviceBaseURL": "https://virtual-device-robot-dev.bespoken.io"
+  "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }
