@@ -6,12 +6,12 @@ class AudioGenerator {
   static async mergeAudios (prefix, clip) {
     const ffmpegToken = Config.env('FFMPEG_TOKEN')
     const prefixMessage = await TTS.textToSpeechPolly(prefix)
-    const encodedPrefix = prefixMessage.toString('base64')
+    const encodedPrefix = Buffer.from(prefixMessage).toString('base64')
     const encodedClip = clip.toString('base64')
     const jsonData = {
-      command: 'ffmpeg -i prefix.mp3 -i clip.mp3 -filter_complex \'[0:0][1:0]concat=n=2:v=0:a=1[out]\' -map \'[out]\' -f wav -',
+      command: 'ffmpeg -i prefix.pcm -i clip.mp3 -filter_complex \'[0:0][1:0]concat=n=2:v=0:a=1[out]\' -map \'[out]\' -f wav -',
       input: {
-        'prefix.mp3': encodedPrefix,
+        'prefix.pcm': encodedPrefix,
         'clip.mp3': encodedClip
       }
     }

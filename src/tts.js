@@ -8,7 +8,7 @@ class TTS {
 
     const params = {
       Engine: 'standard',
-      OutputFormat: 'pcm',
+      OutputFormat: 'mp3',
       SampleRate: '16000',
       Text: text,
       TextType: 'text',
@@ -19,7 +19,12 @@ class TTS {
       params.TextType = 'ssml'
     }
 
-    const response = await polly.synthesizeSpeech(params).promise()
+    let response
+    try {
+      response = await polly.synthesizeSpeech(params).promise()
+    } catch (er) {
+      console.log(er)
+    }
     return response.AudioStream
   }
 }
