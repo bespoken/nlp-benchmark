@@ -1,6 +1,6 @@
 const { Config, Record, Source } = require('bespoken-batch-tester')
+const S3 = require('../../S3')
 const { fetchDataset } = require('../../helper')
-// const TTS = require('../../tts')
 
 class BenchmarkSource extends Source {
   async loadAll () {
@@ -10,17 +10,14 @@ class BenchmarkSource extends Source {
     const records = []
 
     for (const row in dataset) {
-      // const prefix = `Number: ${row + 1}. Expected Phrase:`
-      // const prefixAudio = await TTS.textToSpeechPolly(prefix)
-      const utterance = dataset[row].sentence
+      const clipUrl = dataset[row].path.replace('./input/audio/', '')
+      const utterance = S3.getUrl(clipUrl)
       const record = new Record(utterance)
       record.meta = {
         platform: jobName.replace('ivr-benchmark-', ''),
         number: number,
-        clipUrl: dataset[row].path
+        clipUrl: clipUrl
       }
-      // Set raw utterance
-      // record.utterance = S3 pre-signed URL
       records.push(record)
     }
 
