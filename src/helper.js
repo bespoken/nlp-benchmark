@@ -19,8 +19,9 @@ const generateUtterances = async () => {
   for (const row in dataset) {
     const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
     const path = dataset[row].path
-    const audioBuffer = await AudioGenerator.mergeAudios(prefix, path)
-    const fixedPath = path.replace('./input/audio/', '')
+    const audio = await AudioGenerator.mergeAudios(prefix, path)
+    const audioBuffer = Buffer.from(audio, 'base64')
+    const fixedPath = path.replace(/.\/input\/audio\/|.mp3/ig, '')
     await S3.upload(audioBuffer, fixedPath)
   }
 }

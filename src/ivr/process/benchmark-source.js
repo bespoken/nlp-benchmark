@@ -10,7 +10,7 @@ class BenchmarkSource extends Source {
     const records = []
 
     for (const row in dataset) {
-      const clipUrl = dataset[row].path.replace('./input/audio/', '')
+      const clipUrl = dataset[row].path.replace(/.\/input\/audio\/|.mp3/ig, '')
       const utterance = S3.getUrl(clipUrl)
       const record = new Record(utterance)
       record.meta = {
@@ -18,6 +18,8 @@ class BenchmarkSource extends Source {
         number: number,
         clipUrl: clipUrl
       }
+      const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
+      record.utterance = `${prefix} ${dataset[row].sentence}`
       records.push(record)
     }
 
