@@ -2,6 +2,7 @@ const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
 const _ = require('lodash')
 const AudioGenerator = require('./AudioGenerator')
+const S3 = require('./S3')
 
 const fetchDataset = () => {
   const sourceFile = process.env.DATASET_PATH
@@ -18,7 +19,8 @@ const generateUtterances = async () => {
   for (const row in dataset) {
     const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
     const path = dataset[row].path
-    await AudioGenerator.mergeAudios(prefix, path)
+    const audioBuffer = await AudioGenerator.mergeAudios(prefix, path)
+    await S3.upload(audioBuffer, path)
   }
 }
 

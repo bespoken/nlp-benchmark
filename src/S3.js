@@ -1,4 +1,4 @@
-import AWS from 'aws-sdk'
+const AWS = require('aws-sdk')
 
 class S3 {
   static async upload (buffer, name) {
