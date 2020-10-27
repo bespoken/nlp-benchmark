@@ -20,7 +20,8 @@ const generateUtterances = async () => {
     const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
     const path = dataset[row].path
     const audioBuffer = await AudioGenerator.mergeAudios(prefix, path)
-    await S3.upload(audioBuffer, path)
+    const fixedPath = path.replace('./input/audio/', '')
+    await S3.upload(audioBuffer, fixedPath)
   }
 }
 
