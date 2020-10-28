@@ -4,16 +4,16 @@ const { Config } = require('bespoken-batch-tester')
 const TTS = require('./tts')
 
 class AudioGenerator {
-  static async mergeAudios (prefix, clip) {
+  static async mergeAudios (prefix, recording) {
     const ffmpegToken = Config.env('FFMPEG_TOKEN')
     const prefixMessage = await TTS.textToSpeechPolly(prefix)
     const encodedPrefix = Buffer.from(prefixMessage).toString('base64')
-    const encodedClip = fs.readFileSync(clip).toString('base64')
+    const encodedRecording = fs.readFileSync(recording).toString('base64')
     const jsonData = {
-      command: 'ffmpeg -i prefix.pcm -i clip.mp3 -filter_complex \'[0:0][1:0]concat=n=2:v=0:a=1[out]\' -map \'[out]\' -f wav -',
+      command: 'ffmpeg -i prefix.pcm -i recording.wav -filter_complex \'[0:0][1:0]concat=n=2:v=0:a=1[out]\' -map \'[out]\' -f wav -',
       input: {
         'prefix.pcm': encodedPrefix,
-        'clip.mp3': encodedClip
+        'recording.wav': encodedRecording
       }
     }
 

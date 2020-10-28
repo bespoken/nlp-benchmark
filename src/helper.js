@@ -11,18 +11,32 @@ const fetchDataset = () => {
     delimiter: '\t',
     columns: true
   })
-  return dataset
+
+  // Generate a dataset combining the transcriptions for the same recordings
+  const reducedDataset = dataset.reduce((finalDataset, row) => {
+    if (Object.keys(finalDataset).includes(row.recordingid)) {
+      finalDataset[row.recordingid].fullTranscript += ` ${row.transcription}`
+    } else {
+      finalDataset[row.recordingid] = {
+        index: Object.keys(finalDataset).length
+      }
+      finalDataset[row.recordingid].fullTranscript = row.transcription
+    }
+    return finalDataset
+  }, Object.create(null))
+  return reducedDataset
 }
 
 const generateUtterances = async () => {
   const dataset = fetchDataset()
   for (const row in dataset) {
-    const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
-    const path = dataset[row].path
-    const audio = await AudioGenerator.mergeAudios(prefix, path)
+    const prefix = `Number: ${dataset[row].index + 1}. Expected Phrase:`
+    console.info(prefix)
+    const recording = `input/ivr/recordings/${row}.wav`
+    const audio = await AudioGenerator.mergeAudios(prefix, recording)
     const audioBuffer = Buffer.from(audio, 'base64')
-    const fixedPath = path.replace(/.\/input\/audio\/|.mp3/ig, '')
-    await S3.upload(audioBuffer, fixedPath)
+    await S3.upload(audioBuffer, row)
+    console.info(`DONE ${dataset[row].index + 1}`)
   }
 }
 
