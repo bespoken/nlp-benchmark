@@ -10,16 +10,15 @@ class BenchmarkSource extends Source {
     const records = []
 
     for (const row in dataset) {
-      const clipUrl = dataset[row].path.replace(/.\/input\/audio\/|.mp3/ig, '')
-      const utterance = S3.getUrl(clipUrl)
-      const record = new Record(utterance)
+      const recordingUrl = S3.getUrl(row)
+      const prefix = `Number: ${dataset[row].index + 1}. Expected Phrase:`
+      const record = new Record(`${prefix} ${dataset[row].fullTranscript}`)
+      record.utterance = recordingUrl
       record.meta = {
         platform: jobName.replace('ivr-benchmark-', ''),
         number: number,
-        clipUrl: clipUrl
+        recordingId: row
       }
-      const prefix = `Number: ${Number(row) + 1}. Expected Phrase:`
-      record.utterance = `${prefix} ${dataset[row].sentence}`
       records.push(record)
     }
 
