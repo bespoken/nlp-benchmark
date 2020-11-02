@@ -13,8 +13,8 @@
     ]
   },
   "virtualDeviceConfig": {
-    "phoneNumber": "TBD",
-    "repeatOnPhrase": "say your utterance now",
+    "phoneNumber": "+16504698776",
+    "repeatOnPhrase": "say that again",
     "recordCall": true
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"

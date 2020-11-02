@@ -10,14 +10,22 @@ class BenchmarkSource extends Source {
     const records = []
 
     for (const row in dataset) {
-      const recordingUrl = S3.getUrl(row)
       const prefix = `Number: ${dataset[row].index + 1}. Expected Phrase:`
       const record = new Record(`${prefix} ${dataset[row].fullTranscript}`)
-      record.utterance = recordingUrl
+      const platform = jobName.replace('ivr-benchmark-', '')
+      if (platform.includes('twilio')) {
+        // TODO: url should not have Number: {number}. Expected Phrase:
+        const recordingUrl = S3.getUrl(row)
+        record.utterance = recordingUrl
+      } else {
+        const recordingUrl = S3.getUrl(row)
+        record.utterance = recordingUrl
+      }
       record.meta = {
-        platform: jobName.replace('ivr-benchmark-', ''),
+        platform: platform,
         number: number,
-        recordingId: row
+        recordingId: row,
+        index: dataset[row].index + 1
       }
       records.push(record)
     }
