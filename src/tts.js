@@ -8,8 +8,8 @@ class TTS {
 
     const params = {
       Engine: 'standard',
-      OutputFormat: 'mp3',
-      SampleRate: '16000',
+      OutputFormat: 'pcm',
+      SampleRate: '8000',
       Text: text,
       TextType: 'text',
       VoiceId: 'Joey'
