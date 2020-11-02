@@ -6,25 +6,25 @@ class BenchmarkSource extends Source {
     const jobName = Config.get('job')
     const number = Config.get('virtualDeviceConfig.phoneNumber')
     const definedCrowd = new DefinedCrowd()
-    const dataset = definedCrowd.getDataset()
+    const dataset = await definedCrowd.getDataset()
     const records = []
 
     for (const i in dataset) {
       const record = new Record('')
       const platform = jobName.replace('ivr-benchmark-', '')
       if (platform.includes('twilio')) {
-        const recordingUrl = definedCrowd.getUrl(dataset[i])
+        const recordingUrl = await definedCrowd.getUrl(dataset[i])
         record.utterance = recordingUrl
       } else {
-        const prefix = `Number: ${i + 1}. Expected Phrase:`
-        const recordingUrl = definedCrowd.getUrl(dataset[i], prefix)
+        const prefix = `Number: ${Number(i) + 1}. Expected Phrase:`
+        const recordingUrl = await definedCrowd.getUrl(dataset[Number(i)], prefix)
         record.utterance = recordingUrl
       }
       record.meta = {
         platform: platform,
         number: number,
         recordingId: i,
-        index: i + 1
+        index: Number(i) + 1
       }
       records.push(record)
     }

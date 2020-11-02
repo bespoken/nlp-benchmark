@@ -66,7 +66,8 @@
     "reprocess:twilio": "bbt reprocess input/ivr/ivr-benchmark-twilio.json",
     "server": "node src/report/server.js",
     "test": "jest",
-    "watch": "nodemon src/report/server.js"
+    "watch": "nodemon src/report/server.js",
+    "defined-crowd-preprocess": "node src/ivr/parse/defined-crowd.js process"
   },
   "standard": {
     "env": [

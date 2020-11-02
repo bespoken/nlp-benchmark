@@ -1,0 +1,19 @@
+name: defined-crowd
+
+on: [workflow_dispatch]
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      FFMPEG_TOKEN: ${{ secrets.FFMPEG_TOKEN }}
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: npm install 
+
+    - name: Preprocess defined crowd recordings
+      run: npm run defined-crowd-preprocess

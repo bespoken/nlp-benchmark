@@ -26,6 +26,10 @@ jobs:
       MYSQL_USER: ${{ secrets.MYSQL_USER }}
       PLATFORM: ${{ github.event.inputs.platform }} 
       RUN_KEY: ${{ github.event.inputs.runKey }}
+      VIRTUAL_DEVICE_TOKEN: ${{ secrets.VIRTUAL_DEVICE_TOKEN }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      FFMPEG_TOKEN: ${{ secrets.FFMPEG_TOKEN }}
     steps:
     - uses: actions/checkout@v2
     
