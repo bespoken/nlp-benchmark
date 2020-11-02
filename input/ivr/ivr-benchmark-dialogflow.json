@@ -2,15 +2,20 @@
   "customer": "Bespoken",
   "interceptor": "src/ivr/process/benchmark-interceptor",
   "job": "ivr-benchmark-dialogflow",
-  "sequence": ["$DIAL"],
+  "sequence": [
+    "$DIAL"
+  ],
   "source": "src/ivr/process/benchmark-source",
   "sourceFile": "input/datasets/TBD",
   "virtualDevices": {
-    "<TwilioVirtualDeviceToken>": [""]
+    "<TwilioVirtualDeviceToken>": [
+      ""
+    ]
   },
   "virtualDeviceConfig": {
     "phoneNumber": "+16468382369",
-    "repeatOnPhrase": "say your utterance now"
+    "repeatOnPhrase": "say your utterance now",
+    "recordCall": true
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }

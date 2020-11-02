@@ -40,6 +40,24 @@ const generateUtterances = async () => {
   }
 }
 
+const addVirtualDeviceToken = (path) => {
+  const input = fs.readFileSync(path)
+  const data = JSON.parse(input)
+  const token = { [process.env.VIRTUAL_DEVICE_TOKEN]: data.virtualDevices['<TwilioVirtualDeviceToken>'] }
+  data.virtualDevices = { ...token }
+  const finalInput = JSON.stringify(data, null, 2)
+  fs.writeFileSync(path, finalInput)
+}
+
+const removeVirtualDeviceToken = (path) => {
+  const input = fs.readFileSync(path)
+  const data = JSON.parse(input)
+  const token = { '<TwilioVirtualDeviceToken>': data.virtualDevices[process.env.VIRTUAL_DEVICE_TOKEN] }
+  data.virtualDevices = { ...token }
+  const finalInput = JSON.stringify(data, null, 2)
+  fs.writeFileSync(path, finalInput)
+}
+
 module.exports = {
   fetchDataset
 }
@@ -48,4 +66,14 @@ if (_.nth(process.argv, 2) === 'generate') {
   generateUtterances().then(() => {
     console.log('DONE')
   }).catch(er => console.log(er))
+}
+
+if (_.nth(process.argv, 2) === 'addToken') {
+  const path = _.nth(process.argv, 3)
+  addVirtualDeviceToken(path)
+}
+
+if (_.nth(process.argv, 2) === 'removeToken') {
+  const path = _.nth(process.argv, 3)
+  removeVirtualDeviceToken(path)
 }
