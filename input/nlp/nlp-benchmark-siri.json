@@ -1,8 +1,8 @@
 {
   "customer": "Bespoken",
-  "interceptor": "src/process/benchmark-interceptor",
+  "interceptor": "src/nlp/process/benchmark-interceptor",
   "job": "nlp-benchmark-siri",
-  "source": "src/process/benchmark-source",
+  "source": "src/nlp/process/benchmark-source",
   "sourceFile": "input/datasets/comqa.json",
   "virtualDevices": {
     "robot-6": {

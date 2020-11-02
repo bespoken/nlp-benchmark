@@ -1,0 +1,5 @@
+transcriptionid	speaker_id	channel	start_time	end_time	transcription	nonnative	recordingid	domain	language
+1063837	customer	1	0:00:00.000	0:00:27.380	<non_speech> How much do I owe on a recent payment <non_speech> can you tell me the amount I owe on a recent payment I would like some information on the amount I owe on a recent payment	False	0114ab2f-97fa-4b40-b217-9bceaa687d4b	insurance	en-us
+1055243	customer	1	0:00:00.000	0:00:08.741	I would like to request to cancel my card	False	028835cb-3dc8-4ea6-a9b1-6b7e53bb1198	banking	en-us
+1055244	customer	1	0:00:11.993	0:00:22.320	Cancel my card please <non_speech> can I speak with a representative about canceling my card <non_speech>	False	028835cb-3dc8-4ea6-a9b1-6b7e53bb1198	banking	en-us
+1058074	customer	1	0:00:06.605	0:00:19.218	T. P. five one two three <non_speech> T. P. fifty-one twenty-three <non_speech>	False	03899c11-82eb-4ea6-bcab-d9d02e39df5d	banking	en-us

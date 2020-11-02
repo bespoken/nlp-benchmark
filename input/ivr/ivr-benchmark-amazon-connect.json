@@ -1,0 +1,21 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/ivr/process/benchmark-interceptor",
+  "job": "ivr-benchmark-amazon-connect",
+  "sequence": [
+    "$DIAL"
+  ],
+  "source": "src/ivr/process/benchmark-source",
+  "sourceFile": "input/datasets/TBD",
+  "virtualDevices": {
+    "<TwilioVirtualDeviceToken>": [
+      ""
+    ]
+  },
+  "virtualDeviceConfig": {
+    "phoneNumber": "+13605260332",
+    "repeatOnPhrase": "say that again",
+    "recordCall": true
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
+}

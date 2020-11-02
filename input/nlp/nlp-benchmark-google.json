@@ -1,0 +1,13 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/nlp/process/benchmark-interceptor",
+  "job": "nlp-benchmark-google",
+  "source": "src/nlp/process/benchmark-source",
+  "sourceFile": "input/datasets/comqa.json",
+  "virtualDevices": {
+    "robot-5": {
+      "tags": ["google"]
+    }
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-robot-dev.bespoken.io"
+}
