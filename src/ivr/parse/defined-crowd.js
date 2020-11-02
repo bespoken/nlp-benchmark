@@ -2,7 +2,6 @@ const _ = require('lodash')
 const S3 = require('../../S3')
 const TTS = require('../../tts')
 const fs = require('fs')
-const { Config } = require('bespoken-batch-tester')
 const { ffmpeg, pcmToWav, mergeAudios } = require('./../../helper')
 const parse = require('csv-parse/lib/sync')
 require('dotenv').config()
@@ -19,6 +18,7 @@ class DefinedCrowdRecording {
         const audio = await S3.get(dataset[row].key)
         const merged = await mergeAudios(prefixBuffer, audio)
         const mergedBuffer = Buffer.from(merged, 'base64')
+        // TODO
         await S3.upload(mergedBuffer, 'test.wav')
       }
       console.info(`DONE ${row + 1}`)
@@ -59,7 +59,7 @@ class DefinedCrowdRecording {
         const key = `${recordingId}-${i}.wav`
         const audioBuffer = Buffer.from(proccesedRecording[i].buffer, 'base64')
         console.log(`uploading ${key}`)
-        await S3.upload(audioBuffer, key)
+        await S3.upload(key, audioBuffer)
         finalDataset.push({
           key,
           transcript: reducedDataset[recordingId].transcripts[i].transcription,
@@ -69,7 +69,7 @@ class DefinedCrowdRecording {
         })
       }
     }
-    await S3.upload(JSON.stringify(finalDataset), 'proccesed-recordings.json')
+    await S3.upload('proccesed-recordings.json', JSON.stringify(finalDataset))
     console.log(finalDataset)
   }
 

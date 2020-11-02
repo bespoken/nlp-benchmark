@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk')
 
 class S3 {
-  static async upload (buffer, key) {
+  static async upload (key, buffer, bucket = 'ivr-benchmark-utterances') {
     const s3 = new AWS.S3()
     let contentType
     if (key.endsWith('jpg') || key.endsWith('jpeg')) {
@@ -19,27 +19,27 @@ class S3 {
     await s3
       .upload({
         Body: buffer,
-        Bucket: 'ivr-benchmark-utterances',
+        Bucket: bucket,
         Key: key,
         ContentType: contentType
       })
       .promise()
   }
 
-  static getUrl (name) {
+  static getUrl (name, bucket = 'ivr-benchmark-utterances') {
     const s3 = new AWS.S3()
     const url = s3.getSignedUrl('getObject', {
-      Bucket: 'ivr-benchmark-utterances',
+      Bucket: bucket,
       Expires: 7 * 24 * 60 * 60, // TODO: should be less than one day
       Key: name
     })
     return url
   }
 
-  static async get (key) {
+  static async get (key, bucket = 'ivr-benchmark-utterances') {
     const s3 = new AWS.S3()
     const object = await s3.getObject({
-      Bucket: 'ivr-benchmark-utterances',
+      Bucket: bucket,
       Key: key
     }).promise()
     return object.Body

@@ -1,8 +1,6 @@
 const fs = require('fs')
 const parse = require('csv-parse/lib/sync')
 const _ = require('lodash')
-const AudioGenerator = require('./AudioGenerator')
-const S3 = require('./S3')
 const { Config } = require('bespoken-batch-tester')
 const axios = require('axios')
 require('dotenv').config()
@@ -28,19 +26,6 @@ const fetchDataset = () => {
     return finalDataset
   }, Object.create(null))
   return reducedDataset
-}
-
-const generateUtterances = async () => {
-  const dataset = fetchDataset()
-  for (const row in dataset) {
-    const prefix = `Number: ${dataset[row].index + 1}. Expected Phrase:`
-    console.info(prefix)
-    const recording = `input/ivr/recordings/${row}.wav`
-    const audio = await AudioGenerator.mergeAudios(prefix, recording)
-    const audioBuffer = Buffer.from(audio, 'base64')
-    await S3.upload(audioBuffer, row)
-    console.info(`DONE ${dataset[row].index + 1}`)
-  }
 }
 
 const addVirtualDeviceToken = (path) => {
@@ -174,12 +159,6 @@ module.exports = {
   pcmToWav,
   ffmpeg,
   mergeAudios
-}
-
-if (_.nth(process.argv, 2) === 'generate') {
-  generateUtterances().then(() => {
-    console.log('DONE')
-  }).catch(er => console.log(er))
 }
 
 if (_.nth(process.argv, 2) === 'addToken') {

@@ -12,14 +12,14 @@ class BenchmarkInterceptor extends Interceptor {
     // $DIAL
     request[0].settings = {}
     if (request[1].text.startsWith('http')) {
-      request[0].settings.finishOnPhrase = 'say your utterance now'
+      request[0].settings.finishOnPhrase = 'utterance now'
     } else {
-      request[0].settings.finishOnPhrase = 'the test number'
+      request[0].settings.finishOnPhrase = 'test number'
     }
 
     if (!request[1].text.startsWith('http')) {
       request[1].settings = {}
-      request[1].settings.finishOnPhrase = 'the expected phrase'
+      request[1].settings.finishOnPhrase = 'expected phrase'
     }
   }
 
