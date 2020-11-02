@@ -10,7 +10,7 @@
   },
   "virtualDeviceConfig": {
     "phoneNumber": "+13605260332",
-    "repeatOnPhrase": "say that again"
+    "repeatOnPhrase": "say your utterance now"
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }
