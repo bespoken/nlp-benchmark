@@ -11,12 +11,21 @@ class BenchmarkInterceptor extends Interceptor {
   async interceptRequest (request, device) {
     // $DIAL
     request[0].settings = {}
-    request[0].settings.finishOnPhrase = 'the test number'
+    if (request[1].text.startsWith('http')) {
+      request[0].settings.finishOnPhrase = 'say your utterance now'
+    } else {
+      request[0].settings.finishOnPhrase = 'the test number'
+    }
 
     if (!request[1].text.startsWith('http')) {
       request[1].settings = {}
       request[1].settings.finishOnPhrase = 'the expected phrase'
     }
+  }
+
+  // TODO
+  async interceptResult (_record, _result) {
+    return true
   }
 }
 
