@@ -25,15 +25,16 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   // TODO
-  async interceptResult (record, _result) {
+  async interceptResult (record, result) {
     const platforms = {
       'twilio-autopilot': 'twilio',
       'amazon-connect': 'connect',
       dialogflow: 'dialogflow'
     }
     const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
-    const text = await S3.get(response, 'ivr-benchmark-responses')
-    console.info(JSON.stringify(text))
+    const buffer = await S3.get(response, 'ivr-benchmark-responses')
+    const text = Buffer.from(buffer).toString('utf-8')
+    result.addOutputField('Actual Transcript', text)
     return true
   }
 }
