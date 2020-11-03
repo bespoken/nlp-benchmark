@@ -24,7 +24,6 @@ class BenchmarkInterceptor extends Interceptor {
     }
   }
 
-  // TODO
   async interceptResult (record, result) {
     const platforms = {
       'twilio-autopilot': 'twilio',
@@ -34,8 +33,22 @@ class BenchmarkInterceptor extends Interceptor {
     const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
     const buffer = await S3.get(response, 'ivr-benchmark-responses')
     const text = Buffer.from(buffer).toString('utf-8')
-    result.addOutputField('Actual Transcript', text)
+    const expectedTranscript = this.cleanup(record.utteranceRaw)
+    const actualTranscript = this.cleanup(text)
+    result.addOutputField('Expected Transcript', expectedTranscript)
+    result.addOutputField('Actual Transcript', actualTranscript)
+    let failureReason = ''
+
+    if (expectedTranscript.toLowerCase() !== actualTranscript.toLowerCase()) {
+      failureReason = "Actual transcript didn't match"
+      result.success = false
+    }
+    result.addOutputField('Failure reason', failureReason)
     return true
+  }
+
+  cleanup (text) {
+    return text.replace(/<\w*>|["?.,]/ig, '').trim()
   }
 }
 

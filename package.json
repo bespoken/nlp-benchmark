@@ -63,7 +63,7 @@
     "postprocess:twilio-autopilot": "node src/helper.js removeToken input/ivr/ivr-benchmark-twilio-autopilot.json",
     "reprocess:amazon-connect": "bbt reprocess input/ivr/ivr-benchmark-amazon-connect.json",
     "reprocess:dialogflow": "bbt reprocess input/ivr/ivr-benchmark-dialogflow.json",
-    "reprocess:twilio-autopilot": "bbt reprocess input/ivr/ivr-benchmark-twilio.json",
+    "reprocess:twilio-autopilot": "bbt reprocess input/ivr/ivr-benchmark-twilio-autopilot.json",
     "server": "node src/report/server.js",
     "test": "jest",
     "watch": "nodemon src/report/server.js",
