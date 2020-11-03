@@ -25,24 +25,30 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   async interceptResult (record, result) {
+    let failureReason = ''
+    let buffer = ''
     const platforms = {
       'twilio-autopilot': 'twilio',
       'amazon-connect': 'connect',
       dialogflow: 'dialogflow'
     }
     const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
-    const buffer = await S3.get(response, 'ivr-benchmark-responses')
+    try {
+      buffer = await S3.get(response, 'ivr-benchmark-responses')
+    } catch (err) {
+      console.error(`S3 get: ${err.message}`)
+    }
     const text = Buffer.from(buffer).toString('utf-8')
     const expectedTranscript = this.cleanup(record.utteranceRaw)
     const actualTranscript = this.cleanup(text)
-    result.addOutputField('Expected Transcript', expectedTranscript)
-    result.addOutputField('Actual Transcript', actualTranscript)
-    let failureReason = ''
 
     if (expectedTranscript.toLowerCase() !== actualTranscript.toLowerCase()) {
-      failureReason = "Actual transcript didn't match"
+      failureReason = text ? "Actual transcript didn't match" : 'Actual transcript is empty'
       result.success = false
     }
+
+    result.addOutputField('Expected Transcript', expectedTranscript)
+    result.addOutputField('Actual Transcript', actualTranscript)
     result.addOutputField('Failure reason', failureReason)
     return true
   }
