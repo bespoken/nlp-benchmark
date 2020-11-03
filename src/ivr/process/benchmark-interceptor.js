@@ -39,11 +39,16 @@ class BenchmarkInterceptor extends Interceptor {
       console.error(`S3 get: ${err.message}`)
     }
     const text = Buffer.from(buffer).toString('utf-8')
-    const expectedTranscript = this.cleanup(record.utteranceRaw)
+    const rawTranscript = record.utteranceRaw.replace(/Number:.*Phrase:/gi).trim()
+    const [firstPart] = rawTranscript.split('<non_speech>').filter(piece => piece)
+    const expectedTranscript = this.cleanup(firstPart)
     const actualTranscript = this.cleanup(text)
 
     if (expectedTranscript.toLowerCase() !== actualTranscript.toLowerCase()) {
       failureReason = text ? "Actual transcript didn't match" : 'Actual transcript is empty'
+      if (rawTranscript.startsWith('<non_speech>')) {
+        failureReason = 'The recording has a silence at the beginning'
+      }
       result.success = false
     }
 
