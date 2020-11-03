@@ -8,8 +8,15 @@ class BenchmarkSource extends Source {
     const definedCrowd = new DefinedCrowd()
     const dataset = await definedCrowd.getDataset()
     const records = []
+    let rows = []
 
-    for (const i in dataset) {
+    if (process.env.LIMIT) {
+      rows = dataset.slice(0, process.env.LIMIT)
+    } else {
+      rows = dataset
+    }
+
+    for (const i in rows) {
       let record
       const platform = jobName.replace('ivr-benchmark-', '')
       if (platform.includes('twilio')) {

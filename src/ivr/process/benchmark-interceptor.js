@@ -1,4 +1,5 @@
 const { Interceptor, Config } = require('bespoken-batch-tester')
+const S3 = require('../../S3')
 
 class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
@@ -24,7 +25,15 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   // TODO
-  async interceptResult (_record, _result) {
+  async interceptResult (record, _result) {
+    const platforms = {
+      'twilio-autopilot': 'twilio',
+      'amazon-connect': 'connect',
+      dialogflow: 'dialogflow'
+    }
+    const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
+    const text = await S3.get(response, 'ivr-benchmark-responses')
+    console.info(JSON.stringify(text))
     return true
   }
 }

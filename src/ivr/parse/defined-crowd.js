@@ -117,7 +117,7 @@ module.exports = {
   DefinedCrowd
 }
 
-if (_.nth(process.argv, 2) === 'process') {
+if (_.nth(process.argv, 2) === 'parse') {
   const recording = new DefinedCrowd()
   recording.process().then(() => console.log('Done!'))
 }
