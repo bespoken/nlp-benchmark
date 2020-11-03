@@ -32,7 +32,7 @@ class BenchmarkSource extends Source {
       record.meta = {
         platform: platform,
         number: number,
-        recordingId: i,
+        recordingId: dataset[i].recording,
         index: Number(i) + 1
       }
       records.push(record)

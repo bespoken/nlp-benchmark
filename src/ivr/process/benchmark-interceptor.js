@@ -54,7 +54,7 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   cleanup (text) {
-    return text.replace(/<\w*>|["?.,]/ig, '').trim()
+    return text.replace(/Number:.*Phrase:|<\w*>|["?.,]/ig, '').trim()
   }
 }
 
