@@ -4,7 +4,7 @@ const S3 = require('../../S3')
 
 class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
-    if (record.meta.platform.includes('twilio')) {
+    if (record.meta.platform.match(/twilio|dialogflow/)) {
       Config.set('sequence', ['$DIAL', `${record.meta.index}`])
     }
     return true

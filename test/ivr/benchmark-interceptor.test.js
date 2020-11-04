@@ -29,10 +29,18 @@ describe('interceptor works correctly', () => {
       })
     })
 
-    test('connect or dialogflow', async () => {
+    test('sequence does not change', async () => {
       await interceptor.interceptRecord(record)
       const sequence = Config.get('sequence')
       expect(sequence).toHaveLength(1)
+    })
+
+    test('add index to sequence for dialogflow', async () => {
+      _.set(record, 'meta.platform', 'dialogflow')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('1')
     })
 
     test('add index to sequence for twilio-autopilot', async () => {
