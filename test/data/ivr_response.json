@@ -1,0 +1,9 @@
+{
+  "message": "https://ivr.results.com/1234",
+  "transcript": "got it thanks thanks your input was recorded goodbye",
+  "callEnded": true,
+  "status": "COMPLETED",
+  "debug": {
+    "rawTranscript": "got it thanks thanks your input was recorded goodbye"
+  }
+}
