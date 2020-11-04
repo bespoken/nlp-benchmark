@@ -1,4 +1,5 @@
 const { Interceptor, Config } = require('bespoken-batch-tester')
+// const { wordsToNumbers } = require('words-to-numbers')
 const S3 = require('../../S3')
 
 class BenchmarkInterceptor extends Interceptor {
@@ -63,7 +64,10 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   cleanup (text) {
-    return text.replace(/Number:.*Phrase:|<\w*>|["?.,]/ig, '').trim()
+    const cleanText = text.replace(/Number:.*Phrase:|<\w*>|["?.,]/ig, '')
+      .replace(/\s\s/gi, ' ')
+      .trim()
+    return cleanText
   }
 }
 

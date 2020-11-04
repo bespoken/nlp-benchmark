@@ -105,4 +105,16 @@ describe('interceptor works correctly', () => {
       expect(result.success).toEqual(false)
     })
   })
+
+  describe('cleanup text', () => {
+    test('text with prefix', () => {
+      const text = interceptor.cleanup('Number: 1. Expected Phrase: <non_speech> This is a <skip>test')
+      expect(text).toBe('This is a test')
+    })
+
+    test('text without prefix', () => {
+      const text = interceptor.cleanup('<non_speech> This is a <skip> test')
+      expect(text).toBe('This is a test')
+    })
+  })
 })

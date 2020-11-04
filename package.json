@@ -11,7 +11,8 @@
     "fuse.js": "^6.4.0",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
-    "promise-mysql": "^4.1.3"
+    "promise-mysql": "^4.1.3",
+    "words-to-numbers": "^1.5.1"
   },
   "description": "This repository analyzes the performance of popular NLP/Voice Assistant solutions using Bespoken's software and test robots",
   "devDependencies": {
