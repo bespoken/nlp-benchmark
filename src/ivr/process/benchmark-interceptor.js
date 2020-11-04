@@ -39,21 +39,25 @@ class BenchmarkInterceptor extends Interceptor {
       console.error(`S3 get: ${err.message}`)
     }
     const text = Buffer.from(buffer).toString('utf-8')
-    const rawTranscript = record.utteranceRaw.replace(/Number:.*Phrase:/gi).trim()
-    const [firstPart] = rawTranscript.split('<non_speech>').filter(piece => piece)
-    const expectedTranscript = this.cleanup(firstPart)
-    const actualTranscript = this.cleanup(text)
+    const rawResponse = record.utteranceRaw.replace(/Number:.*Phrase:/gi, '').trim()
+    const [firstPart] = rawResponse.split('<non_speech>').filter(piece => piece)
+    const expectedResponse = this.cleanup(firstPart)
+    const actualResponse = this.cleanup(text)
 
-    if (expectedTranscript.toLowerCase() !== actualTranscript.toLowerCase()) {
-      failureReason = text ? "Actual transcript didn't match" : 'Actual transcript is empty'
-      if (rawTranscript.startsWith('<non_speech>')) {
-        failureReason = 'The recording has a silence at the beginning'
+    if (expectedResponse.toLowerCase() !== actualResponse.toLowerCase()) {
+      failureReason = rawResponse.startsWith('<non_speech>')
+        ? 'The recording has a silence at the beginning'
+        : "Actual response didn't match"
+      if (!text) {
+        failureReason = result.lastResponse.transcript.includes('what did you say')
+          ? 'The call did not invoke the utterance'
+          : 'The actual response is empty'
       }
       result.success = false
     }
 
-    result.addOutputField('Expected Transcript', expectedTranscript)
-    result.addOutputField('Actual Transcript', actualTranscript)
+    result.addOutputField('Expected Response', expectedResponse)
+    result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Failure reason', failureReason)
     return true
   }
