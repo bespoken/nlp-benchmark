@@ -53,12 +53,12 @@ class BenchmarkInterceptor extends Interceptor {
           ? 'The call did not invoke the utterance'
           : 'The actual response is empty'
       }
-      result.success = false
     }
 
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Failure reason', failureReason)
+    result.success = !failureReason
     return true
   }
 

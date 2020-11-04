@@ -2,9 +2,11 @@ const _ = require('lodash')
 const { Config, Record, Result } = require('bespoken-batch-tester')
 const BenchmarkInterceptor = require('../../src/ivr/process/benchmark-interceptor')
 const lastResponse = require('../data/ivr_response.json')
+const S3 = require('../../src/S3')
+jest.mock('../../src/S3')
 
 describe('interceptor works correctly', () => {
-  let interceptor, record
+  let interceptor, record, result
   beforeEach(() => {
     Config.reset()
     interceptor = new BenchmarkInterceptor()
@@ -15,6 +17,7 @@ describe('interceptor works correctly', () => {
       recordingId: 'asdf1234ghjk5678',
       index: 1
     }
+    result = new Result(record, undefined, [_.cloneDeep(lastResponse)])
   })
 
   describe('sequence config', () => {
@@ -60,6 +63,46 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptRequest(request, null)
       expect(request[0].settings.finishOnPhrase).toBe('test number')
       expect(request[1].settings.finishOnPhrase).toBe('expected phrase')
+    })
+  })
+
+  describe('interceptResult', () => {
+    test('actual response matches the expected response', async () => {
+      S3.get.mockImplementation(() => 'this is a test')
+      await interceptor.interceptResult(record, result)
+      expect(result.success).toEqual(true)
+    })
+
+    test('actual response does not match the expected response', async () => {
+      S3.get.mockImplementation(() => 'this is')
+      await interceptor.interceptResult(record, result)
+      expect(result.outputFields['Failure reason']).toBe("Actual response didn't match")
+      expect(result.success).toEqual(false)
+    })
+
+    test('actual response is empty', async () => {
+      S3.get.mockImplementation(() => '')
+      await interceptor.interceptResult(record, result)
+      expect(result.outputFields['Failure reason']).toBe('The actual response is empty')
+      expect(result.success).toEqual(false)
+    })
+
+    test('utterance starts with <non_speech>', async () => {
+      S3.get.mockImplementation(() => 'this is')
+      record._utteranceRaw = '<non_speech>This is a test'
+      await interceptor.interceptResult(record, result)
+      expect(result.outputFields['Expected Response']).toBe('This is a test')
+      expect(result.outputFields['Actual Response']).toBe('this is')
+      expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
+      expect(result.success).toEqual(false)
+    })
+
+    test('utterance is not invoked', async () => {
+      S3.get.mockImplementation(() => '')
+      _.set(result, 'lastResponse.transcript', 'what did you sayFrom TuneIn')
+      await interceptor.interceptResult(record, result)
+      expect(result.outputFields['Failure reason']).toBe('The call did not invoke the utterance')
+      expect(result.success).toEqual(false)
     })
   })
 })
