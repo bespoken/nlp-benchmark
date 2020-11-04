@@ -1,5 +1,6 @@
 const { Interceptor, Config } = require('bespoken-batch-tester')
 // const { wordsToNumbers } = require('words-to-numbers')
+const speechScorer = require('word-error-rate')
 const S3 = require('../../S3')
 
 class BenchmarkInterceptor extends Interceptor {
@@ -56,8 +57,10 @@ class BenchmarkInterceptor extends Interceptor {
       }
     }
 
+    const wordErrorRate = speechScorer.wordErrorRate(expectedResponse, actualResponse)
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
+    result.addOutputField('Word Error Rate', Math.ceil(wordErrorRate * 100) / 100)
     result.addOutputField('Failure reason', failureReason)
     result.success = !failureReason
     return true
