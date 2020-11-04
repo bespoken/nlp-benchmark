@@ -1,5 +1,5 @@
 const { Interceptor, Config } = require('bespoken-batch-tester')
-// const { wordsToNumbers } = require('words-to-numbers')
+const { wordsToNumbers } = require('words-to-numbers')
 const speechScorer = require('word-error-rate')
 const S3 = require('../../S3')
 
@@ -67,10 +67,11 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   cleanup (text) {
-    const cleanText = text.replace(/Number:.*Phrase:|<\w*>|["?.,]/ig, '')
-      .replace(/\s\s/gi, ' ')
+    const wordsOnly = wordsToNumbers(text)
+    return wordsOnly.replace(/Number:.*Phrase:|<\w*>|["?.,-]/g, '')
+      .replace(/\s\s/g, ' ') // Remove double spaces
+      .replace(/(\d)\s+(?=\d)/g, '$1') // Remove space between numbers
       .trim()
-    return cleanText
   }
 }
 

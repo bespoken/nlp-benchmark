@@ -122,7 +122,9 @@ describe('interceptor works correctly', () => {
 
     test('text without prefix', () => {
       const text = interceptor.cleanup('<non_speech> This is a <skip> test')
+      const textWithNumbers = interceptor.cleanup("It's four two six seven seventy-five eighty-nine the account number")
       expect(text).toBe('This is a test')
+      expect(textWithNumbers).toBe("It's 42677589 the account number")
     })
   })
 })
