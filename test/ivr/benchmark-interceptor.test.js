@@ -106,7 +106,7 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptResult(record, result)
       expect(result.outputFields['Expected Response']).toBe('This is a test')
       expect(result.outputFields['Actual Response']).toBe('this is')
-      expect(result.outputFields['Starts With Non Speech']).toBe(true)
+      expect(result.outputFields['Starts With Non Speech']).toBe('YES')
       expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
       expect(result.success).toEqual(false)
 
@@ -115,7 +115,7 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptResult(record, result)
       expect(result.outputFields['Expected Response']).toBe('This is a test')
       expect(result.outputFields['Actual Response']).toBe('')
-      expect(result.outputFields['Starts With Non Speech']).toBe(true)
+      expect(result.outputFields['Starts With Non Speech']).toBe('YES')
       expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
       expect(result.success).toEqual(false)
     })

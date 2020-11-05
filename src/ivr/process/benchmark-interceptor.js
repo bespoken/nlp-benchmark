@@ -75,7 +75,7 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Word Error Rate', Math.ceil(wordErrorRate * 100) / 100)
-    result.addOutputField('Starts With Non Speech', recordingWithSilence)
+    result.addOutputField('Starts With Non Speech', recordingWithSilence ? 'YES' : 'NO')
 
     // Show metadata from tsv files
     const recordingRow = this.recordingInfo.find(({ recordingid }) => recordingid === record.meta.recordingId)
@@ -87,6 +87,7 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('Accent', speakerRow.accent)
     result.addOutputField('Ethnicity', speakerRow.ethnicity)
 
+    result.addOutputField('Audio URL', result.lastResponse.message)
     result.addOutputField('Failure reason', failureReason)
     result.success = !failureReason
     return true
