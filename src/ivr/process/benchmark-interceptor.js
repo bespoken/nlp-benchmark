@@ -48,13 +48,16 @@ class BenchmarkInterceptor extends Interceptor {
     const actualResponse = this.cleanup(text)
 
     if (expectedResponse.toLowerCase() !== actualResponse.toLowerCase()) {
-      failureReason = rawResponse.startsWith('<non_speech>')
-        ? 'The recording has a silence at the beginning'
-        : "Actual response didn't match"
-      if (!text) {
-        failureReason = result.lastResponse.transcript.includes('what did you say')
-          ? 'The call did not invoke the utterance'
-          : 'The actual response is empty'
+      const recordingWithSilence = rawResponse.startsWith('<non_speech>')
+      failureReason = "Actual response didn't match"
+      if (recordingWithSilence) {
+        failureReason = 'The recording has a silence at the beginning'
+      }
+      if (!text && !recordingWithSilence) {
+        failureReason = 'The actual response is empty'
+      }
+      if (!text && result.lastResponse.transcript.includes('what did you say')) {
+        failureReason = 'The call did not invoke the utterance'
       }
     }
 
@@ -69,7 +72,7 @@ class BenchmarkInterceptor extends Interceptor {
 
   cleanup (text) {
     const wordsOnly = wordsToNumbers(text).toString()
-    return wordsOnly.replace(/Number:.*Phrase:|<\w*>|["?.,-]/g, '')
+    return wordsOnly.replace(/Number:.*Phrase:|<\w*>|["?.,-]|\(background.*\)/g, '')
       .replace(/\s\s/g, ' ') // Remove double spaces
       .replace(/(\d)\s+(?=\d)/g, '$1') // Remove space between numbers
       .trim()

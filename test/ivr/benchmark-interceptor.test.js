@@ -103,11 +103,19 @@ describe('interceptor works correctly', () => {
       expect(result.outputFields['Actual Response']).toBe('this is')
       expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
       expect(result.success).toEqual(false)
+
+      S3.get.mockImplementation(() => '')
+      record._utteranceRaw = '<non_speech>This is a test'
+      await interceptor.interceptResult(record, result)
+      expect(result.outputFields['Expected Response']).toBe('This is a test')
+      expect(result.outputFields['Actual Response']).toBe('')
+      expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
+      expect(result.success).toEqual(false)
     })
 
     test('utterance is not invoked', async () => {
       S3.get.mockImplementation(() => '')
-      _.set(result, 'lastResponse.transcript', 'what did you sayFrom TuneIn')
+      _.set(result, 'lastResponse.transcript', 'what did you say')
       await interceptor.interceptResult(record, result)
       expect(result.outputFields['Failure reason']).toBe('The call did not invoke the utterance')
       expect(result.success).toEqual(false)
@@ -121,7 +129,7 @@ describe('interceptor works correctly', () => {
     })
 
     test('text without prefix', () => {
-      const text = interceptor.cleanup('<non_speech> This is a <skip> test')
+      const text = interceptor.cleanup('<non_speech> (background noise starts here) This is a <skip> test')
       const textWithNumbers = interceptor.cleanup("It's four two six seven seventy-five eighty-nine the account number")
       expect(text).toBe('This is a test')
       expect(textWithNumbers).toBe("It's 42677589 the account number")
