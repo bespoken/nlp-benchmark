@@ -75,6 +75,10 @@ describe('interceptor works correctly', () => {
   })
 
   describe('interceptResult', () => {
+    beforeEach(() => {
+      S3.get.mockReturnValueOnce('h1\th2\n1\t2').mockReturnValueOnce('h1\th2\n1\t2')
+    })
+
     test('actual response matches the expected response', async () => {
       S3.get.mockImplementation(() => 'this is a test')
       await interceptor.interceptResult(record, result)

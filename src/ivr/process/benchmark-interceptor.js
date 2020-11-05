@@ -2,6 +2,7 @@ const { Interceptor, Config } = require('bespoken-batch-tester')
 const { wordsToNumbers } = require('words-to-numbers')
 const speechScorer = require('word-error-rate')
 const S3 = require('../../S3')
+const { tsvToArray } = require('../../helper')
 
 class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
@@ -28,6 +29,15 @@ class BenchmarkInterceptor extends Interceptor {
 
   async interceptResult (record, result) {
     result.success = false
+    // Load data from tsv files
+    if (!this.recordingInfo) {
+      this.recordingInfo = await tsvToArray('metadata/en-us_recording_info.tsv')
+    }
+
+    if (!this.speakerInfo) {
+      this.speakerInfo = await tsvToArray('metadata/en-us_speaker_info.tsv')
+    }
+
     let failureReason = ''
     let buffer = ''
     const platforms = {
