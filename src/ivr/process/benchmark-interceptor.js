@@ -27,6 +27,7 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   async interceptResult (record, result) {
+    result.success = false
     let failureReason = ''
     let buffer = ''
     const platforms = {
@@ -67,7 +68,7 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   cleanup (text) {
-    const wordsOnly = wordsToNumbers(text)
+    const wordsOnly = wordsToNumbers(text).toString()
     return wordsOnly.replace(/Number:.*Phrase:|<\w*>|["?.,-]/g, '')
       .replace(/\s\s/g, ' ') // Remove double spaces
       .replace(/(\d)\s+(?=\d)/g, '$1') // Remove space between numbers
