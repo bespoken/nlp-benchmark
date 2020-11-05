@@ -57,8 +57,8 @@ class BenchmarkInterceptor extends Interceptor {
     const expectedResponse = this.cleanup(firstPart)
     const actualResponse = this.cleanup(text)
 
+    const recordingWithSilence = rawResponse.startsWith('<non_speech>')
     if (expectedResponse.toLowerCase() !== actualResponse.toLowerCase()) {
-      const recordingWithSilence = rawResponse.startsWith('<non_speech>')
       failureReason = "Actual response didn't match"
       if (recordingWithSilence) {
         failureReason = 'The recording has a silence at the beginning'
@@ -75,6 +75,18 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Word Error Rate', Math.ceil(wordErrorRate * 100) / 100)
+    result.addOutputField('Starts With Non Speech', recordingWithSilence)
+
+    // Show metadata from tsv files
+    const recordingRow = this.recordingInfo.find(({ recordingid }) => recordingid === record.meta.recordingId)
+    const { domain, left_channel_speaker: customerId } = recordingRow
+    const speakerRow = this.speakerInfo.find(({ speakerid }) => speakerid === customerId)
+    result.addOutputField('Domain', domain)
+    result.addOutputField('Gender', speakerRow.gender)
+    result.addOutputField('Age', speakerRow.age)
+    result.addOutputField('Accent', speakerRow.accent)
+    result.addOutputField('Ethnicity', speakerRow.ethnicity)
+
     result.addOutputField('Failure reason', failureReason)
     result.success = !failureReason
     return true

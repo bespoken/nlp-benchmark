@@ -76,7 +76,8 @@ describe('interceptor works correctly', () => {
 
   describe('interceptResult', () => {
     beforeEach(() => {
-      S3.get.mockReturnValueOnce('h1\th2\n1\t2').mockReturnValueOnce('h1\th2\n1\t2')
+      S3.get.mockReturnValueOnce('recordingid\tdomain\tleft_channel_speaker\nasdf1234ghjk5678\ttest\ttest1')
+        .mockReturnValueOnce('speakerid\th2\ntest1\t2')
     })
 
     test('actual response matches the expected response', async () => {
@@ -105,6 +106,7 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptResult(record, result)
       expect(result.outputFields['Expected Response']).toBe('This is a test')
       expect(result.outputFields['Actual Response']).toBe('this is')
+      expect(result.outputFields['Starts With Non Speech']).toBe(true)
       expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
       expect(result.success).toEqual(false)
 
@@ -113,6 +115,7 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptResult(record, result)
       expect(result.outputFields['Expected Response']).toBe('This is a test')
       expect(result.outputFields['Actual Response']).toBe('')
+      expect(result.outputFields['Starts With Non Speech']).toBe(true)
       expect(result.outputFields['Failure reason']).toBe('The recording has a silence at the beginning')
       expect(result.success).toEqual(false)
     })

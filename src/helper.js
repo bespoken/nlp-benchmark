@@ -157,7 +157,7 @@ const mergeAudios = async (audio1, audio2) => {
 
 const tsvToArray = async (key) => {
   const tsvFile = await S3.get(key, 'ivr-benchmark-defined-crowd')
-  const [headers, ...rows] = tsvFile.toString().split('\n').filter(row => row)
+  const [headers, ...rows] = tsvFile.toString().replace(/\r/g, '').split('\n').filter(row => row)
   const columns = headers.split('\t')
   const result = []
   rows.forEach(row => {
