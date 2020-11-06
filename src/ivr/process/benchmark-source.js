@@ -17,18 +17,10 @@ class BenchmarkSource extends Source {
     }
 
     for (const i in rows) {
-      let record
       const platform = jobName.replace('ivr-benchmark-', '')
-      if (platform.match(/twilio|dialogflow/)) {
-        record = new Record(dataset[i].transcript)
-        const recordingUrl = await definedCrowd.getUrl(dataset[i])
-        record.utterance = recordingUrl
-      } else {
-        const prefix = `Number: ${Number(i) + 1}. Expected Phrase:`
-        record = new Record(`${prefix} ${dataset[i].transcript}`)
-        const recordingUrl = await definedCrowd.getUrl(dataset[Number(i)], prefix)
-        record.utterance = recordingUrl
-      }
+      const record = new Record(dataset[i].transcript)
+      const recordingUrl = await definedCrowd.getUrl(dataset[i])
+      record.utterance = recordingUrl
       record.meta = {
         platform: platform,
         number: number,

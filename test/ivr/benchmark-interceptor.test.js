@@ -29,10 +29,11 @@ describe('interceptor works correctly', () => {
       })
     })
 
-    test('sequence does not change', async () => {
+    test('add index to sequence for amazon-connect', async () => {
       await interceptor.interceptRecord(record)
       const sequence = Config.get('sequence')
-      expect(sequence).toHaveLength(1)
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('1')
     })
 
     test('add index to sequence for dialogflow', async () => {
@@ -53,16 +54,7 @@ describe('interceptor works correctly', () => {
   })
 
   describe('interceptRequest', () => {
-    test('request from amazon-connect or dialogflow', async () => {
-      const request = [
-        { text: '$DIAL' },
-        { text: 'https://ivr-benchmark.audios.com/1234asdf' }
-      ]
-      await interceptor.interceptRequest(request, null)
-      expect(request[0].settings.finishOnPhrase).toBe('utterance now')
-    })
-
-    test('request from twilio-autopilot', async () => {
+    test('request from call', async () => {
       const request = [
         { text: '$DIAL' },
         { text: '1' },

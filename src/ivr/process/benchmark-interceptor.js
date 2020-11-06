@@ -6,25 +6,17 @@ const { tsvToArray } = require('../../helper')
 
 class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
-    if (record.meta.platform.match(/twilio|dialogflow/)) {
-      Config.set('sequence', ['$DIAL', `${record.meta.index}`])
-    }
+    Config.set('sequence', ['$DIAL', `${record.meta.index}`])
     return true
   }
 
   async interceptRequest (request, device) {
     // $DIAL
     request[0].settings = {}
-    if (request[1].text.startsWith('http')) {
-      request[0].settings.finishOnPhrase = 'utterance now'
-    } else {
-      request[0].settings.finishOnPhrase = 'test number'
-    }
+    request[0].settings.finishOnPhrase = 'test number'
 
-    if (!request[1].text.startsWith('http')) {
-      request[1].settings = {}
-      request[1].settings.finishOnPhrase = 'expected phrase'
-    }
+    request[1].settings = {}
+    request[1].settings.finishOnPhrase = 'expected phrase'
   }
 
   async interceptResult (record, result) {
