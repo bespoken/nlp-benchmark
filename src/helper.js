@@ -1,33 +1,9 @@
 const fs = require('fs')
-const parse = require('csv-parse/lib/sync')
 const _ = require('lodash')
 const { Config } = require('bespoken-batch-tester')
 const axios = require('axios')
 require('dotenv').config()
 const S3 = require('./S3')
-
-const fetchDataset = () => {
-  const sourceFile = process.env.DATASET_PATH
-  const data = fs.readFileSync(sourceFile, 'utf8')
-  const dataset = parse(data, {
-    delimiter: '\t',
-    columns: true
-  })
-
-  // Generate a dataset combining the transcriptions for the same recordings
-  const reducedDataset = dataset.reduce((finalDataset, row) => {
-    if (Object.keys(finalDataset).includes(row.recordingid)) {
-      finalDataset[row.recordingid].fullTranscript += ` ${row.transcription}`
-    } else {
-      finalDataset[row.recordingid] = {
-        index: Object.keys(finalDataset).length
-      }
-      finalDataset[row.recordingid].fullTranscript = row.transcription
-    }
-    return finalDataset
-  }, Object.create(null))
-  return reducedDataset
-}
 
 const addVirtualDeviceToken = (path) => {
   const input = fs.readFileSync(path)
@@ -132,7 +108,8 @@ const ffmpeg = async (payload) => {
         'Content-Type': 'application/json',
         'x-access-token': ffmpegToken
       },
-      responseType: 'json'
+      responseType: 'json',
+      maxBodyLength: Infinity
     })
 
     const { stdout } = response.data
@@ -168,7 +145,6 @@ const tsvToArray = async (key) => {
 }
 
 module.exports = {
-  fetchDataset,
   pcmToWav,
   ffmpeg,
   mergeAudios,
