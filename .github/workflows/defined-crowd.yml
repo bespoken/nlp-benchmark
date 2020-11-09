@@ -16,4 +16,4 @@ jobs:
       run: npm install 
 
     - name: Preprocess defined crowd recordings
-      run: npm run defined-crowd-preprocess
+      run: npm run defined-crowd-parse

@@ -11,7 +11,9 @@
     "fuse.js": "^6.4.0",
     "lodash": "^4.17.19",
     "moment": "^2.27.0",
-    "promise-mysql": "^4.1.3"
+    "promise-mysql": "^4.1.3",
+    "word-error-rate": "0.0.7",
+    "words-to-numbers": "git+https://github.com/moisesnandres/words-to-numbers.git"
   },
   "description": "This repository analyzes the performance of popular NLP/Voice Assistant solutions using Bespoken's software and test robots",
   "devDependencies": {
@@ -52,22 +54,22 @@
     "reprocess:alexa": "bbt reprocess input/nlp/nlp-benchmark-alexa.json",
     "reprocess:google": "bbt reprocess input/nlp/nlp-benchmark-google.json",
     "reprocess:siri": "bbt reprocess input/nlp/nlp-benchmark-siri.json",
-    "preprocess:amazonconnect": "node src/helper.js addToken input/ivr/ivr-benchmark-amazon-connect.json",
-    "process:amazonconnect": "bbt process input/ivr/ivr-benchmark-amazon-connect.json",
-    "postprocess:amazonconnect": "node src/helper.js removeToken input/ivr/ivr-benchmark-amazon-connect.json",
+    "preprocess:amazon-connect": "node src/helper.js addToken input/ivr/ivr-benchmark-amazon-connect.json",
+    "process:amazon-connect": "bbt process input/ivr/ivr-benchmark-amazon-connect.json",
+    "postprocess:amazon-connect": "node src/helper.js removeToken input/ivr/ivr-benchmark-amazon-connect.json",
     "preprocess:dialogflow": "node src/helper.js addToken input/ivr/ivr-benchmark-dialogflow.json",
     "process:dialogflow": "bbt process input/ivr/ivr-benchmark-dialogflow.json",
     "postprocess:dialogflow": "node src/helper.js removeToken input/ivr/ivr-benchmark-dialogflow.json",
-    "preprocess:twilio": "node src/helper.js addToken input/ivr/ivr-benchmark-twilio-autopilot.json",
-    "process:twilio": "bbt process input/ivr/ivr-benchmark-twilio-autopilot.json",
-    "postprocess:twilio": "node src/helper.js removeToken input/ivr/ivr-benchmark-twilio-autopilot.json",
-    "reprocess:amazonconnect": "bbt reprocess input/ivr/ivr-benchmark-amazon-connect.json",
+    "preprocess:twilio-autopilot": "node src/helper.js addToken input/ivr/ivr-benchmark-twilio-autopilot.json",
+    "process:twilio-autopilot": "bbt process input/ivr/ivr-benchmark-twilio-autopilot.json",
+    "postprocess:twilio-autopilot": "node src/helper.js removeToken input/ivr/ivr-benchmark-twilio-autopilot.json",
+    "reprocess:amazon-connect": "bbt reprocess input/ivr/ivr-benchmark-amazon-connect.json",
     "reprocess:dialogflow": "bbt reprocess input/ivr/ivr-benchmark-dialogflow.json",
-    "reprocess:twilio": "bbt reprocess input/ivr/ivr-benchmark-twilio.json",
+    "reprocess:twilio-autopilot": "bbt reprocess input/ivr/ivr-benchmark-twilio-autopilot.json",
     "server": "node src/report/server.js",
     "test": "jest",
     "watch": "nodemon src/report/server.js",
-    "defined-crowd-preprocess": "node src/ivr/parse/defined-crowd.js process"
+    "defined-crowd-parse": "node src/ivr/parse/defined-crowd.js parse"
   },
   "standard": {
     "env": [

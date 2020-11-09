@@ -5,15 +5,15 @@
   "sequence": [
     "$DIAL"
   ],
+  "sequential": true,
   "source": "src/ivr/process/benchmark-source",
-  "sourceFile": "input/datasets/TBD",
   "virtualDevices": {
     "<TwilioVirtualDeviceToken>": [
       ""
     ]
   },
   "virtualDeviceConfig": {
-    "phoneNumber": "+16468382369",
+    "phoneNumber": "+16152705147",
     "repeatOnPhrase": "say that again",
     "recordCall": true
   },

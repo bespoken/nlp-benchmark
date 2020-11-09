@@ -5,8 +5,8 @@
   "sequence": [
     "$DIAL"
   ],
+  "sequential": true,
   "source": "src/ivr/process/benchmark-source",
-  "sourceFile": "input/datasets/TBD",
   "virtualDevices": {
     "<TwilioVirtualDeviceToken>": [
       ""

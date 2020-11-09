@@ -1,7 +1,7 @@
 const BenchmarkSource = require('../../src/ivr/process/benchmark-source')
 const { Config } = require('bespoken-batch-tester')
 
-describe('souce loads records', () => {
+describe.skip('souce loads records', () => {
   const OLD_ENV = process.env
 
   beforeEach(() => {

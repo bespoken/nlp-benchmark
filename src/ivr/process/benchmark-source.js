@@ -8,22 +8,23 @@ class BenchmarkSource extends Source {
     const definedCrowd = new DefinedCrowd()
     const dataset = await definedCrowd.getDataset()
     const records = []
+    let rows = []
 
-    for (const i in dataset) {
-      const record = new Record('')
+    if (process.env.LIMIT) {
+      rows = dataset.slice(0, process.env.LIMIT)
+    } else {
+      rows = dataset
+    }
+
+    for (const i in rows) {
       const platform = jobName.replace('ivr-benchmark-', '')
-      if (platform.includes('twilio')) {
-        const recordingUrl = await definedCrowd.getUrl(dataset[i])
-        record.utterance = recordingUrl
-      } else {
-        const prefix = `Number: ${Number(i) + 1}. Expected Phrase:`
-        const recordingUrl = await definedCrowd.getUrl(dataset[Number(i)], prefix)
-        record.utterance = recordingUrl
-      }
+      const record = new Record(dataset[i].transcript)
+      const recordingUrl = await definedCrowd.getUrl(dataset[i])
+      record.utterance = recordingUrl
       record.meta = {
         platform: platform,
         number: number,
-        recordingId: i,
+        recordingId: dataset[i].recording,
         index: Number(i) + 1
       }
       records.push(record)

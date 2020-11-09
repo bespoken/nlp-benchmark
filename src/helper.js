@@ -4,6 +4,7 @@ const _ = require('lodash')
 const { Config } = require('bespoken-batch-tester')
 const axios = require('axios')
 require('dotenv').config()
+const S3 = require('./S3')
 
 const fetchDataset = () => {
   const sourceFile = process.env.DATASET_PATH
@@ -154,11 +155,24 @@ const mergeAudios = async (audio1, audio2) => {
   return await ffmpeg(jsonData)
 }
 
+const tsvToArray = async (key) => {
+  const tsvFile = await S3.get(key, 'ivr-benchmark-defined-crowd')
+  const [headers, ...rows] = tsvFile.toString().replace(/\r/g, '').split('\n').filter(row => row)
+  const columns = headers.split('\t')
+  const result = []
+  rows.forEach(row => {
+    const data = row.split('\t')
+    result.push(_.zipObject(columns, data))
+  })
+  return result
+}
+
 module.exports = {
   fetchDataset,
   pcmToWav,
   ffmpeg,
-  mergeAudios
+  mergeAudios,
+  tsvToArray
 }
 
 if (_.nth(process.argv, 2) === 'addToken') {
