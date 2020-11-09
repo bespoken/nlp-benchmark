@@ -6,13 +6,13 @@ const parse = require('csv-parse/lib/sync')
 require('dotenv').config()
 
 class DefinedCrowd {
-  constructor () {
-    this.languageCode = process.env.LANGUAGE_CODE || 'en-us'
+  constructor (locale) {
+    this.languageCode = process.env.LANGUAGE_CODE || locale
     this.executionPrefix = Date.now()
   }
 
   async getDataset () {
-    return JSON.parse(await S3.get('proccesed-recordings.json', 'ivr-benchmark-defined-crowd'))
+    return JSON.parse(await S3.get(`${this.languageCode}/proccesed-recordings.json`, 'ivr-benchmark-defined-crowd'))
   }
 
   async process () {

@@ -11,23 +11,27 @@ class BenchmarkInterceptor extends Interceptor {
   }
 
   async interceptRequest (request, device) {
+    const locale = device._configuration.locale || 'en-US'
+    const isEnglish = locale === 'en-US'
+
     // $DIAL
     request[0].settings = {}
-    request[0].settings.finishOnPhrase = 'test number'
+    request[0].settings.finishOnPhrase = isEnglish ? 'test number' : 'número del test'
 
     request[1].settings = {}
-    request[1].settings.finishOnPhrase = 'expected phrase'
+    request[1].settings.finishOnPhrase = isEnglish ? 'expected phrase' : 'frase esperada'
   }
 
   async interceptResult (record, result) {
     result.success = false
+    const locale = record.meta.locale || 'en-us'
     // Load data from tsv files
     if (!this.recordingInfo) {
-      this.recordingInfo = await tsvToArray('metadata/en-us_recording_info.tsv')
+      this.recordingInfo = await tsvToArray(`${locale}/metadata/${locale}_recording_info.tsv`)
     }
 
     if (!this.speakerInfo) {
-      this.speakerInfo = await tsvToArray('metadata/en-us_speaker_info.tsv')
+      this.speakerInfo = await tsvToArray(`${locale}/metadata/${locale}_speaker_info.tsv`)
     }
 
     let failureReason = ''
@@ -78,6 +82,7 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('Age', speakerRow.age)
     result.addOutputField('Accent', speakerRow.accent)
     result.addOutputField('Ethnicity', speakerRow.ethnicity)
+    result.addOutputField('Locale', locale)
 
     result.addOutputField('Audio URL', result.lastResponse.message)
     result.addOutputField('Failure reason', failureReason)

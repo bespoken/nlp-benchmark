@@ -60,7 +60,11 @@ describe('interceptor works correctly', () => {
         { text: '1' },
         { text: 'https://ivr-benchmark.audios.com/1234asdf' }
       ]
-      await interceptor.interceptRequest(request, null)
+
+      const device = {
+        _configuration: {}
+      }
+      await interceptor.interceptRequest(request, device)
       expect(request[0].settings.finishOnPhrase).toBe('test number')
       expect(request[1].settings.finishOnPhrase).toBe('expected phrase')
     })
