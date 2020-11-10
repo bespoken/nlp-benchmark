@@ -1,0 +1,24 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/ivr/process/benchmark-interceptor",
+  "job": "ivr-benchmark-amazon-connect-es",
+  "sequence": [
+    "$DIAL"
+  ],
+  "sequential": true,
+  "source": "src/ivr/process/benchmark-source",
+  "virtualDevices": {
+    "<TwilioVirtualDeviceToken>": [
+      ""
+    ]
+  },
+  "virtualDeviceConfig": {
+    "phoneNumber": "+17162475149",
+    "repeatOnPhrase": "disculpa",
+    "recordCall": true,
+    "speechModel": "default",
+    "locale": "es-ES",
+    "voiceId": "Enrique"
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
+}
