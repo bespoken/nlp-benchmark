@@ -52,13 +52,31 @@ describe('interceptor works correctly', () => {
       expect(sequence[1]).toBe('1')
     })
 
-    test('add index to sequence for twilio-autopilot in spanish', async () => {
-      _.set(record, 'meta.platform', 'twilio-autopilot')
+    test('add index to sequence for twilio in spanish', async () => {
+      _.set(record, 'meta.platform', 'twilio')
       _.set(record, 'meta.locale', 'es-es')
       await interceptor.interceptRecord(record)
       const sequence = Config.get('sequence')
       expect(sequence).toHaveLength(2)
       expect(sequence[1]).toBe('$1#')
+    })
+
+    test('add index to sequence for amazon-connect in spanish', async () => {
+      _.set(record, 'meta.platform', 'amazon-connect')
+      _.set(record, 'meta.locale', 'es-es')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('$1')
+    })
+
+    test('add index to sequence for dialogflow in spanish', async () => {
+      _.set(record, 'meta.platform', 'dialogflow')
+      _.set(record, 'meta.locale', 'es-es')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('1')
     })
   })
 
@@ -91,6 +109,19 @@ describe('interceptor works correctly', () => {
       device._configuration.locale = 'es-ES'
       await interceptor.interceptRequest(request, device)
       expect(request[0].settings.finishOnPhrase).toBe('número del test')
+      expect(request[1].settings.finishOnPhrase).toBe('frase esperada')
+    })
+
+    test('request from amazon-connect call in spanish', async () => {
+      Config.reset()
+      Config.loadFromJSON({
+        customer: 'ivr-benchmark',
+        job: 'amazon',
+        sequence: ['$DIAL']
+      })
+      device._configuration.locale = 'es-ES'
+      await interceptor.interceptRequest(request, device)
+      expect(request[0].settings.finishOnPhrase).toBe('número de la prueba')
       expect(request[1].settings.finishOnPhrase).toBe('frase esperada')
     })
 

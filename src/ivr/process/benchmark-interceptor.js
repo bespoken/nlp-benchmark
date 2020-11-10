@@ -8,8 +8,12 @@ class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
     const { platform, index, locale } = record.meta
     let sequenceIndex = `${index}`
-    if (platform.includes('twilio') && locale === 'es-es') {
-      sequenceIndex = `$${index}#`
+    if (locale === 'es-es') {
+      if (platform.includes('twilio')) {
+        sequenceIndex = `$${index}#`
+      } else if (platform.includes('amazon')) {
+        sequenceIndex = `$${index}`
+      }
     }
     Config.set('sequence', ['$DIAL', sequenceIndex])
     return true
@@ -25,6 +29,8 @@ class BenchmarkInterceptor extends Interceptor {
     if (job.includes('twilio')) {
       firstPhrase = 'prueba'
       secondPhrase = 'frase'
+    } else if (job.includes('amazon')) {
+      firstPhrase = 'número de la prueba'
     }
 
     // $DIAL
