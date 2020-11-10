@@ -6,20 +6,33 @@ const { tsvToArray } = require('../../helper')
 
 class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
-    Config.set('sequence', ['$DIAL', `${record.meta.index}`])
+    const { platform, index, locale } = record.meta
+    let sequenceIndex = `${index}`
+    if (platform.includes('twilio') && locale === 'es-es') {
+      sequenceIndex = `$${index}#`
+    }
+    Config.set('sequence', ['$DIAL', sequenceIndex])
     return true
   }
 
   async interceptRequest (request, device) {
     const locale = device._configuration.locale || 'en-US'
     const isEnglish = locale === 'en-US'
+    const job = Config.get('job')
+    let firstPhrase = 'número del test'
+    let secondPhrase = 'frase esperada'
+
+    if (job.includes('twilio')) {
+      firstPhrase = 'prueba'
+      secondPhrase = 'frase'
+    }
 
     // $DIAL
     request[0].settings = {}
-    request[0].settings.finishOnPhrase = isEnglish ? 'test number' : 'número del test'
+    request[0].settings.finishOnPhrase = isEnglish ? 'test number' : firstPhrase
 
     request[1].settings = {}
-    request[1].settings.finishOnPhrase = isEnglish ? 'expected phrase' : 'frase esperada'
+    request[1].settings.finishOnPhrase = isEnglish ? 'expected phrase' : secondPhrase
   }
 
   async interceptResult (record, result) {
@@ -39,7 +52,8 @@ class BenchmarkInterceptor extends Interceptor {
     const platforms = {
       'twilio-autopilot': 'twilio',
       'amazon-connect': 'connect',
-      dialogflow: 'dialogflow'
+      dialogflow: 'dialogflow',
+      twilio: 'twilio'
     }
     const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
     try {

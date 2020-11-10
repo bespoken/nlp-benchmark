@@ -1,0 +1,25 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/ivr/process/benchmark-interceptor",
+  "job": "ivr-benchmark-twilio-es",
+  "sequence": [
+    "$DIAL"
+  ],
+  "sequential": true,
+  "source": "src/ivr/process/benchmark-source",
+  "virtualDevices": {
+    "<TwilioVirtualDeviceToken>": [
+      ""
+    ]
+  },
+  "virtualDeviceConfig": {
+    "phoneNumber": "+19548006433",
+    "repeatOnPhrase": "disculpa",
+    "recordCall": true,
+    "speechModel": "default",
+    "locale": "es-ES",
+    "voiceId": "Enrique",
+    "maxAsyncE2EResponseWaitTime": 300000
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-twilio-dev.bespoken.io"
+}
