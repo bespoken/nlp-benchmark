@@ -10,22 +10,22 @@
       labels: domains.map((domain) => _.upperFirst(domain)),
       datasets: [
         {
-          backgroundColor: domains.map(t => ChartHelper.colorAmazon()),
+          backgroundColor: domains.map(t =>  window.datasets[0][2]),
           borderWidth: 0,
-          data: filterByDomains(rawData, 'AMAZON', domains),
-          label: 'Amazon Connect'
+          data: filterByDomains(rawData,  window.datasets[0][0], domains),
+          label:  window.datasets[0][1]
         },
         {
-          backgroundColor: domains.map(t => ChartHelper.colorDialogflow()),
+          backgroundColor: domains.map(t =>  window.datasets[1][2]),
           borderWidth: 0,
-          data: filterByDomains(rawData, 'DIALOGFLOW', domains),
-          label: 'Google Dialogflow'
+          data: filterByDomains(rawData,  window.datasets[1][0], domains),
+          label:  window.datasets[1][1]
         },
         {
-          backgroundColor: domains.map(t => ChartHelper.colorTwilio()),
+          backgroundColor: domains.map(t =>  window.datasets[2][2]),
           borderWidth: 0,
-          data: filterByDomains(rawData, 'TWILIO', domains),
-          label: 'Twilio Voice'
+          data: filterByDomains(rawData,  window.datasets[2][0], domains),
+          label:  window.datasets[2][1]
         }
       ]
     }

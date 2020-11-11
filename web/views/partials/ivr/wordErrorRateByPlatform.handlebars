@@ -5,11 +5,11 @@
     const rawData = response.data
 
     const chartData = {
-      labels: ['Amazon Connect', 'Google Dialogflow', 'Twilio Voice'],
+      labels: [window.datasets[0][1], window.datasets[1][1], window.datasets[2][1]],
       datasets: [{
-        backgroundColor: [ChartHelper.colorAmazon(), ChartHelper.colorDialogflow(), ChartHelper.colorTwilio()],
+        backgroundColor: [[window.datasets[0][2]], [window.datasets[1][2]], [window.datasets[2][2]]],
         borderWidth: 0,
-        data: [rawData.AMAZON.WER,  rawData.DIALOGFLOW.WER, rawData.TWILIO.WER]
+        data: [rawData[window.datasets[0][0]].WER,  rawData[window.datasets[1][0]].WER, rawData[window.datasets[2][0]].WER]
       }]
     }
     const options = ChartHelper.bar('Word Error Rate By Platform', chartData, false)

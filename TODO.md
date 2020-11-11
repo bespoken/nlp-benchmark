@@ -1,6 +1,7 @@
 # For IVR Reports
 - [X] Update colors by platform
 - [ ] Add optin monster
+- [ ] Fix labels on charts - show the name of the platform
 - [ ] Add anonymized version
 - [ ] Update text
 - [ ] Make sure main page works

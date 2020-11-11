@@ -10,22 +10,22 @@
       labels: groups,
       datasets: [
         {
-          backgroundColor: groups.map(t => ChartHelper.colorAmazon()),
+          backgroundColor: groups.map(t =>  window.datasets[0][2]),
           borderWidth: 0,
-          data: filterByEthnicity(rawData, 'AMAZON', groups),
-          label: 'Amazon Connect'
+          data: filterByEthnicity(rawData,  window.datasets[0][0], groups),
+          label:  window.datasets[0][1]
         },
         {
-          backgroundColor: groups.map(t => ChartHelper.colorDialogflow()),
+          backgroundColor: groups.map(t =>  window.datasets[1][2]),
           borderWidth: 0,
-          data: filterByEthnicity(rawData, 'DIALOGFLOW', groups),
-          label: 'Google Dialogflow'
+          data: filterByEthnicity(rawData,  window.datasets[1][0], groups),
+          label:  window.datasets[1][1]
         },
         {
-          backgroundColor: groups.map(t => ChartHelper.colorTwilio()),
+          backgroundColor: groups.map(t =>  window.datasets[2][2]),
           borderWidth: 0,
-          data: filterByEthnicity(rawData, 'TWILIO', groups),
-          label: 'Twilio Voice'
+          data: filterByEthnicity(rawData, window.datasets[2][0], groups),
+          label:  window.datasets[2][1]
         }
       ]
     }

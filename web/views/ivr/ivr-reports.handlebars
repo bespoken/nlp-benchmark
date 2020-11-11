@@ -9,18 +9,25 @@
   }
 </style>
 <script>
+  const pageType = '{{ pageType }}'
   document.addEventListener('om.Optin.success', function(event) {
-    window.alert('Success!')
-    // This event is passed the Campaign object
-    console.log(event.detail.Campaign);
-    // This event is passed the Optin object
-    console.log(event.detail.Optin);
-    // This event is passed the success response
-    console.log(event.detail.response);
+    Cookies.set('converted', 'true', { expires: 365 })
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!Cookies.get('converted') && pageType === 'detail' && !urlParams.has('secret')) {
+    window.location.href = '/ivr/summary'
+  }
+
+  if (pageType === 'summary') {
+    window.datasets = [['TWILIO', 'Vendor A', 'green'], ['AMAZON', 'Vendor B', 'red'], ['DIALOGFLOW', 'Vendor C', 'yellow']]
+  } else if (pageType === 'detail') {
+    window.datasets = [['AMAZON', 'Amazon Connect', ChartHelper.colorAmazon()], 
+      ['DIALOGFLOW', 'Google Dialogflow', ChartHelper.colorDialogflow()], 
+      ['TWILIO', 'Twilio Voice', ChartHelper.colorTwilio()]]
+  }
 </script>
 <div id='ivr-reports' class='container-fluid ivr'  >
-  <div id='new-user'>Welcome</div>
   <div class='row' >
     <div class='col-12 col-lg-12 subtitle' style='color: #184160;font-family: roboto condensed;font-weight: bold;margin-top: 10'>
       ASR Performance of the New-Generation of Call-Center Platforms
