@@ -16,6 +16,7 @@
     "phoneNumber": "+19548006433",
     "repeatOnPhrase": "disculpa",
     "recordCall": true,
+    "pauseDuration": "500m",
     "speechModel": "default",
     "locale": "es-ES",
     "voiceId": "Enrique",

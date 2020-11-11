@@ -16,6 +16,7 @@
     "phoneNumber": "+16173814618",
     "repeatOnPhrase": "disculpa",
     "recordCall": true,
+    "pauseDuration": "500m",
     "speechModel": "default",
     "locale": "es-ES",
     "voiceId": "Enrique"

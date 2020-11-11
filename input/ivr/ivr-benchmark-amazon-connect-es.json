@@ -16,6 +16,7 @@
     "phoneNumber": "+17162475149",
     "repeatOnPhrase": "disculpa",
     "recordCall": true,
+    "pauseDuration": "500m",
     "speechModel": "default",
     "locale": "es-US",
     "voiceId": "Miguel"
