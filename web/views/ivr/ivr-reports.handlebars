@@ -8,6 +8,17 @@
     text-align: left;
   }
 </style>
+<script>
+  document.addEventListener('om.Optin.success', function(event) {
+    window.alert('Success!')
+    // This event is passed the Campaign object
+    console.log(event.detail.Campaign);
+    // This event is passed the Optin object
+    console.log(event.detail.Optin);
+    // This event is passed the success response
+    console.log(event.detail.response);
+  });
+</script>
 <div id='ivr-reports' class='container-fluid ivr'  >
   <div id='new-user'>Welcome</div>
   <div class='row' >
