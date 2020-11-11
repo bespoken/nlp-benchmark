@@ -26,17 +26,17 @@ app.get('/nlp', (req, res) => res.render('nlp/nlp-reports', {
 
 app.get(['/', '/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'OVERVIEW',
+    page: () => 'ASR BENCHMARK',
     pageType: () => 'detail',
-    title: () => 'IVR ASR Benchmark'
+    title: () => 'Modern IVR'
   }
 }))
 
 app.get('/ivr/summary', (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'OVERVIEW',
+    page: () => 'ASR BENCHMARK',
     pageType: () => 'summary',
-    title: () => 'IVR ASR Benchmark'
+    title: () => 'Modern IVR'
   }
 }))
 
