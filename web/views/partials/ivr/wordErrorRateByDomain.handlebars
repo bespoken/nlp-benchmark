@@ -1,0 +1,44 @@
+<canvas id="werByDomainCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('werByDomainCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByDomain')
+    const rawData = response.data
+    let domains = ['banking', 'insurance', 'retail']
+    
+    const chartData = {
+      labels: domains.map((domain) => _.upperFirst(domain)),
+      datasets: [
+        {
+          backgroundColor: domains.map(t => ChartHelper.colorAlexa()),
+          borderWidth: 0,
+          data: filterByDomains(rawData, 'AMAZON', domains),
+          label: 'Amazon Connect'
+        },
+        {
+          backgroundColor: domains.map(t => ChartHelper.colorSiri()),
+          borderWidth: 0,
+          data: filterByDomains(rawData, 'DIALOGFLOW', domains),
+          label: 'Google Dialogflow'
+        },
+        {
+          backgroundColor: domains.map(t => ChartHelper.colorGoogle()),
+          borderWidth: 0,
+          data: filterByDomains(rawData, 'TWILIO', domains),
+          label: 'Twilio Voice'
+        }
+      ]
+    }
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Domain', chartData, false, 2)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.werByDomainChart = new Chart(canvas, chartConfiguration)
+  })
+
+  function filterByDomains(resultsForPlatform, platform, domains) {
+    return domains.map((domain) => {
+      return resultsForPlatform[platform].find(result => result.DOMAIN === domain).WER
+    })
+  }
+</script>

@@ -14,7 +14,7 @@
     }
     const options = ChartHelper.bar('Word Error Rate By Platform', chartData, false)
     const context = document.getElementById('werByPlatformCanvas').getContext('2d')
-    _.set(options, 'options.scales.yAxes[0].ticks.max', 1)
+    _.set(options, 'options.scales.yAxes[0].ticks.max', 0.6)
     window.werByPlatformChart = new Chart(context, options)
   })
 </script>

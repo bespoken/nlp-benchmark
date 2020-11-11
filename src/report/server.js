@@ -76,6 +76,10 @@ app.get('/ivr/werByPlatform', async (req, res) => {
   res.send(await cache('werByPlatform', ivrDataSource))
 })
 
+app.get('/ivr/werByDomain', async (req, res) => {
+  res.send(await cache('werByDomain', ivrDataSource))
+})
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // simple routine to cache data so we don't keep reloading it

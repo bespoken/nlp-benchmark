@@ -52,8 +52,23 @@ class DataSource {
     const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM 
       from IVR_BENCHMARK 
       group by PLATFORM order by PLATFORM desc`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
+    })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.keyBy(rawData, 'PLATFORM')
+    return resultsByPlatform
+  }
+
+  async werByDomain () {
+    const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM, DOMAIN 
+      from IVR_BENCHMARK 
+      group by PLATFORM, DOMAIN order by PLATFORM, DOMAIN desc`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
+    })
+    // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
     return resultsByPlatform
   }
 

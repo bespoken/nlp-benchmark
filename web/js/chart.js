@@ -1,7 +1,7 @@
 /* global Chart */
 
 const ChartHelper = {
-  bar: (title, data, percentage = true) => {
+  bar: (title, data, percentage = true, precision = 2) => {
     const options = {
       data: data,
       options: {
@@ -33,7 +33,7 @@ const ChartHelper = {
               if (percentage) {
                 return s + '%'
               } else {
-                return s
+                return s.toFixed(precision)
               }
             },
             textAlign: 'top'

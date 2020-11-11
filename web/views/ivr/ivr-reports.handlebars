@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class='row' >
-    <div class='col-12 col-lg-6'>
+    <div class='col-12'>
       <h2>What We Did</h2>
       <div class='text' style='margin-top: 10;'>
         We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br><br>
@@ -35,14 +35,25 @@
       </div>
     </div>
   </div>
-  <div class='row' style="">
+  <div class='row'>
     <div class='col-12' >
       <h2>Word Error Rate By Platform</h2>
       <div>
-        {{> wordErrorRateByPlatform }}
+        {{> ivr/wordErrorRateByPlatform }}
       </div>
       <div class='caption'>
         The Word Error Rate by Platform
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12' >
+      <h2>Word Error Rate By Domain</h2>
+      <div>
+        {{> ivr/wordErrorRateByDomain }}
+      </div>
+      <div class='caption'>
+        The Word Error Rate by Domain
       </div>
     </div>
   </div>
