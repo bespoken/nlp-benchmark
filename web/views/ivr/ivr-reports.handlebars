@@ -12,6 +12,7 @@
   const pageType = '{{ pageType }}'
   document.addEventListener('om.Optin.success', function(event) {
     Cookies.set('converted', 'true', { expires: 365 })
+    window.location.href = '/ivr/'
   });
 
   const urlParams = new URLSearchParams(window.location.search);
