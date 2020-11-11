@@ -3,8 +3,12 @@
 .env
 *code-workspace
 
+analysis
 coverage
 /data
 node_modules
 output
 
+.Rproj.user
+.Rhistory
+.RData

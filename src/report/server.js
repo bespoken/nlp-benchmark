@@ -1,4 +1,5 @@
-const DataSource = require('./datasource')
+const DataSource = require('./nlp-datasource')
+const IVRDataSource = require('./ivr-datasource')
 const express = require('express')
 const handlebars = require('express-handlebars')
 
@@ -13,9 +14,16 @@ app.set('view engine', 'handlebars')
 
 app.use('/web', express.static('web'))
 
-const dataSource = new DataSource()
+const nlpDataSource = new DataSource()
+const ivrDataSource = new IVRDataSource()
 
-app.get('/', (req, res) => res.render('reports', {
+app.get('/', (req, res) => res.render('nlp/reports', {
+  helpers: {
+    page: () => 'OVERVIEW'
+  }
+}))
+
+app.get('/ivr', (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
     page: () => 'OVERVIEW'
   }
@@ -63,11 +71,19 @@ app.get('/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics'))
 })
 
+// IVR reports
+app.get('/ivr/werByPlatform', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource))
+})
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // simple routine to cache data so we don't keep reloading it
 const cachedData = {}
-async function cache (routine) {
+async function cache (routine, dataSource) {
+  if (!dataSource) {
+    dataSource = nlpDataSource
+  }
   if (!cachedData[routine]) {
     console.info('Missed data from cache: ' + routine)
     cachedData[routine] = await dataSource[routine]()

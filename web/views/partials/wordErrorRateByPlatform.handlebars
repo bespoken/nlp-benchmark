@@ -1,0 +1,21 @@
+<canvas id="werByPlatformCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const response = await axios.get('/ivr/werByPlatform')
+    const rawData = response.data
+
+    const chartData = {
+      labels: ['AMAZON', 'DIALOG FLOW', 'TWILIO'],
+      datasets: [{
+        backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorSiri(), ChartHelper.colorGoogle()],
+        borderWidth: 0,
+        data: [rawData.AMAZON.WER,  rawData.DIALOGFLOW.WER, rawData.TWILIO.WER]
+      }]
+    }
+    const options = ChartHelper.bar('Word Error Rate By Platform', chartData, false)
+    const context = document.getElementById('werByPlatformCanvas').getContext('2d')
+    _.set(options, 'options.scales.yAxes[0].ticks.max', 1)
+    window.werByPlatformChart = new Chart(context, options)
+  })
+</script>
+

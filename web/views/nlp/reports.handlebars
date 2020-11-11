@@ -1,0 +1,78 @@
+<style>
+  h2 {
+    color: #184160
+  } 
+
+  .text {
+    color: #184160;
+    text-align: left;
+  }
+</style>
+<div id='reports' class='container-fluid'  >
+  <div class='row' >
+    <div class='col-12 col-lg-12 subtitle' style='color: #184160;font-family: roboto condensed;font-weight: bold;margin-top: 10'>
+      <i>Hey (Alexa | Google | Siri), who knows the most?</i><br>
+      Measuring How Well The Major Voice Assistants Answer Complex Questions
+    </div>
+  </div>
+  <div class='row' >
+    <div class='col-12 col-lg-6'>
+      <h2>What We Did</h2>
+      <div class='text' style='margin-top: 10;'>
+        We ran this benchmark using the following devices: Amazon Echo Show 5, Apple iPad Mini, Google Nest Home Hub.<br><br>
+
+        We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
+
+        Tests were run using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>, see the detailed results by question <a href='/details'>here</a>.
+      </div>
+    </div>
+    <div class='col-12'>
+      <h2>What It Means</h2>
+      <div class='text' style='margin-top: 10'>
+        All the assistants performed well considering the complexity of the benchmark. These are difficult questions that are meant to challenge the limits of the assistants, so their success rate is remarkable. Google's ability to consistently tackle complex queries is particularly impressive.<br><br>
+
+        At the same time, we can see there are areas where further progress is needed and still significant work to be done. We look forward to seeing how these platforms learn and improve over time.
+      </div>
+    </div>
+  </div>
+  <div class='row' style="">
+    <div class='col-12' >
+      <h2>Word Error Rate By Platform</h2>
+      <div>
+        {{> wordErrorRateByPlatform }}
+      </div>
+      <div class='caption'>
+        The Word Error Rate by Platform
+      </div>
+    </div>
+  </div>
+  <div class='row' style='margin-top: 20' >
+    <div class='col-12 text' >
+      <h2>What Is Next?</h2>
+      <p>
+        We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
+      </p>
+      <ul>
+        <li>ASR Benchmark - including Google Speech-To-Text, Twilio AutoPilot, Houndify, and others
+        <li>Personal Assistant Benchmark - questions related to managing calendar appointments, email, etc.
+        <li>IVR Benchmark - performance of various IVR platforms</li>
+      </ul>
+      <p>Have your own ideas for a benchmark? Ways that we can improve this? <a href='mailto:contact@bespoken.io'>Drop us a line.</a></p>
+    </div> 
+    <div class='col-12 text' >
+      <h2>Who Are You?</h2>
+      <p>
+        Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
+        Want to <a href='https://bespoken.io/customer-success/'  target='_blank'>assess the performance</a> of your own voice assistant for Alexa, Google, IVR?<br><br>
+        Moreover, <a href='https://bespoken.io/blog/the-mars-agency-case-study/' target='_blank'>our tools provide specific guidance on how to improve it</a>. Interested? Contact us - <a href='mailto:contact@bespoken.io' target='_blank'>contact@bespoken.io</a>
+      </p>
+    </div>
+  </div>
+  <div id='text' class='row' style='margin-top: 20;' >
+    <div class='col-2'></div>
+    <div class='col-8' style='font-weight: bold;font-size:1.5em;padding: 10;text-align:center' >
+      We put this together with our partner, Defined Crowd. Look for more original research from us soon!
+    </div>
+    <div class='col-2'></div>
+  </div>
+</div>

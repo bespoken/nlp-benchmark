@@ -26,7 +26,7 @@
         Tests were run using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>, see the detailed results by question <a href='/details'>here</a>.
       </div>
     </div>
-    <div class='col-12 col-lg-6'>
+    <div class='col-12'>
       <h2>What It Means</h2>
       <div class='text' style='margin-top: 10'>
         All the assistants performed well considering the complexity of the benchmark. These are difficult questions that are meant to challenge the limits of the assistants, so their success rate is remarkable. Google's ability to consistently tackle complex queries is particularly impressive.<br><br>
@@ -36,50 +36,18 @@
     </div>
   </div>
   <div class='row' style="">
-    <div class='col-12 col-lg-6' >
-      <h2>Success By Platform</h2>
+    <div class='col-12' >
+      <h2>Word Error Rate By Platform</h2>
       <div>
-        {{> successByPlatform }}
+        {{> wordErrorRateByPlatform }}
       </div>
       <div class='caption'>
-        The number of questions answered correctly by each platform.
+        The Word Error Rate by Platform
       </div>
     </div>
-    <div class='col-12 col-lg-6'>
-      <h2>Success By Question Complexity</h2>
-      <div>
-        {{> successByComplexity }}
-      </div>
-      <div class='caption'>
-        The percentage of simple versus complex questions answered correctly by each platform.<br>
-        Complex questions involve <a href='javascript:showInfo("comparison")' >comparisons</a>, <a href='javascript:showInfo("compositional")' >composition</a>, and/or <a href='javascript:showInfo("temporal")' >temporal reasoning</a>.
-      </div>
-    </div>
-  </div>
-  <div class='row' style='margin-top: 20'>
-    <div class='col-12 col-lg-6'>
-      <h2>Success By Question Type</h2>
-      <div>
-        {{> successByAnnotations }}
-      </div>
-      <div class='caption'>
-        The percentage of questions answered correctly for each type of question.<br>
-        We classified questions as zero or more of the categories listed below. Click on any of the question types for more in-depth information.
-      </div>
-    </div>
-    <div class='col-12 col-lg-6'>
-      <h2>Success By Question Topics</h2>
-      <div>
-        {{> successByTopics }}
-      </div>
-      <div class='caption'>
-        The percentage of questions answered correctly for each topic.<br>
-        <a href='/topics'>Click here</a> for a complete breakdown across all topics.
-      </div>
-    </div> 
   </div>
   <div class='row' style='margin-top: 20' >
-    <div class='col-12 col-lg-6 text' >
+    <div class='col-12 text' >
       <h2>What Is Next?</h2>
       <p>
         We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
@@ -91,7 +59,7 @@
       </ul>
       <p>Have your own ideas for a benchmark? Ways that we can improve this? <a href='mailto:contact@bespoken.io'>Drop us a line.</a></p>
     </div> 
-    <div class='col-12 col-lg-6 text' >
+    <div class='col-12 text' >
       <h2>Who Are You?</h2>
       <p>
         Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
@@ -103,14 +71,7 @@
   <div id='text' class='row' style='margin-top: 20;' >
     <div class='col-2'></div>
     <div class='col-8' style='font-weight: bold;font-size:1.5em;padding: 10;text-align:center' >
-      We put this together with our partner, Project Voice. Look for more original research from us soon!
-    </div>
-    <div class='col-2'></div>
-  </div>
-  <div id='sponsorMessageSection' class='row' style='margin-top: 20;' >
-    <div class='col-2'></div>
-    <div class='col-8' style='font-size:2em;padding: 10;text-align:center' >
-      <a href='https://thisweekinvoice.substack.com/subscribe?123' target='_blank'><img style='text-align: center' src='/web/images/ProjectVoice.jpg' width='100%'></img></a>
+      We put this together with our partner, Defined Crowd. Look for more original research from us soon!
     </div>
     <div class='col-2'></div>
   </div>

@@ -1,7 +1,7 @@
 /* global Chart */
 
 const ChartHelper = {
-  bar: (title, data) => {
+  bar: (title, data, percentage = true) => {
     const options = {
       data: data,
       options: {
@@ -30,7 +30,11 @@ const ChartHelper = {
               weight: 'bold'
             },
             formatter: (s) => {
-              return s + '%'
+              if (percentage) {
+                return s + '%'
+              } else {
+                return s
+              }
             },
             textAlign: 'top'
           }
@@ -76,7 +80,9 @@ const ChartHelper = {
           callbacks: {
             label: function (tooltipItem, data) {
               let label = data.datasets[tooltipItem.datasetIndex].label || ''
-
+              if (!percentage) {
+                return
+              }
               if (label) {
                 label += `: ${tooltipItem.value}%`
               } else {
