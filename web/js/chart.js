@@ -138,8 +138,11 @@ const ChartHelper = {
   },
 
   colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
+  colorAmazon: () => 'rgb(0, 171, 186)',
+  colorDialogflow: () => 'rgb(239, 108, 0)',
   colorGoogle: () => 'rgba(250, 189, 3, 1.0)',
   colorSiri: () => 'rgb(193, 193, 193)',
+  colorTwilio: () => 'rgb(242, 47, 70)',
   defaultFont: () => 'Roboto Condensed',
   defaultFontSize: () => 16,
   titleFont: () => 'Khand',

@@ -72,12 +72,24 @@ app.get('/successByTopics', async (req, res) => {
 })
 
 // IVR reports
-app.get('/ivr/werByPlatform', async (req, res) => {
-  res.send(await cache('werByPlatform', ivrDataSource))
+app.get('/ivr/werByAgeGroup', async (req, res) => {
+  res.send(await cache('werByAgeGroup', ivrDataSource))
 })
 
 app.get('/ivr/werByDomain', async (req, res) => {
   res.send(await cache('werByDomain', ivrDataSource))
+})
+
+app.get('/ivr/werByEthnicity', async (req, res) => {
+  res.send(await cache('werByEthnicity', ivrDataSource))
+})
+
+app.get('/ivr/werByGender', async (req, res) => {
+  res.send(await cache('werByGender', ivrDataSource))
+})
+
+app.get('/ivr/werByPlatform', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource))
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))

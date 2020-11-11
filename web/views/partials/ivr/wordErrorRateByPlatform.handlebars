@@ -5,9 +5,9 @@
     const rawData = response.data
 
     const chartData = {
-      labels: ['AMAZON', 'DIALOG FLOW', 'TWILIO'],
+      labels: ['Amazon Connect', 'Google Dialogflow', 'Twilio Voice'],
       datasets: [{
-        backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorSiri(), ChartHelper.colorGoogle()],
+        backgroundColor: [ChartHelper.colorAmazon(), ChartHelper.colorDialogflow(), ChartHelper.colorTwilio()],
         borderWidth: 0,
         data: [rawData.AMAZON.WER,  rawData.DIALOGFLOW.WER, rawData.TWILIO.WER]
       }]

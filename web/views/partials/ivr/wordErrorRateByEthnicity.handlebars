@@ -1,0 +1,46 @@
+<canvas id="werByEthnicityCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('werByEthnicityCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByEthnicity')
+    const rawData = response.data
+    let groups = ['White', 'Not White']
+    
+    const chartData = {
+      labels: groups,
+      datasets: [
+        {
+          backgroundColor: groups.map(t => ChartHelper.colorAmazon()),
+          borderWidth: 0,
+          data: filterByEthnicity(rawData, 'AMAZON', groups),
+          label: 'Amazon Connect'
+        },
+        {
+          backgroundColor: groups.map(t => ChartHelper.colorDialogflow()),
+          borderWidth: 0,
+          data: filterByEthnicity(rawData, 'DIALOGFLOW', groups),
+          label: 'Google Dialogflow'
+        },
+        {
+          backgroundColor: groups.map(t => ChartHelper.colorTwilio()),
+          borderWidth: 0,
+          data: filterByEthnicity(rawData, 'TWILIO', groups),
+          label: 'Twilio Voice'
+        }
+      ]
+    }
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Ethnicity', chartData, false, 2)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.werByDomainChart = new Chart(canvas, chartConfiguration)
+  })
+
+  function filterByEthnicity(resultsForPlatform, platform, groups) {
+    return groups.map((group) => {
+      return resultsForPlatform[platform].find(result => {
+        return result.ethnicity_group === group
+      }).WER
+    })
+  }
+</script>

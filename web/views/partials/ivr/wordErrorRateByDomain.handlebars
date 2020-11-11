@@ -10,19 +10,19 @@
       labels: domains.map((domain) => _.upperFirst(domain)),
       datasets: [
         {
-          backgroundColor: domains.map(t => ChartHelper.colorAlexa()),
+          backgroundColor: domains.map(t => ChartHelper.colorAmazon()),
           borderWidth: 0,
           data: filterByDomains(rawData, 'AMAZON', domains),
           label: 'Amazon Connect'
         },
         {
-          backgroundColor: domains.map(t => ChartHelper.colorSiri()),
+          backgroundColor: domains.map(t => ChartHelper.colorDialogflow()),
           borderWidth: 0,
           data: filterByDomains(rawData, 'DIALOGFLOW', domains),
           label: 'Google Dialogflow'
         },
         {
-          backgroundColor: domains.map(t => ChartHelper.colorGoogle()),
+          backgroundColor: domains.map(t => ChartHelper.colorTwilio()),
           borderWidth: 0,
           data: filterByDomains(rawData, 'TWILIO', domains),
           label: 'Twilio Voice'

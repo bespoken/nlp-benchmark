@@ -48,15 +48,21 @@ class DataSource {
     return results
   }
 
-  async werByPlatform () {
-    const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM 
-      from IVR_BENCHMARK 
-      group by PLATFORM order by PLATFORM desc`)
+  async werByAgeGroup () {
+    const rawData = await this.query(`select
+        case 
+          when age <= 35 then '<=35' 
+        else '>35' end age_group_35,
+          avg(WORD_ERROR_RATE) WER,
+          PLATFORM
+      from bespoken.IVR_BENCHMARK ib
+      group by platform, age_group_35
+      order by age_group_35, platform`)
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
-    const resultsByPlatform = _.keyBy(rawData, 'PLATFORM')
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
     return resultsByPlatform
   }
 
@@ -72,144 +78,51 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async successByComplexity () {
-    const rawData = await this.query(`select count(*) COUNT, PLATFORM, (COMPARISON = 'true' || COMPOSITIONAL = 'true' || TEMPORAL = 'true') COMPLEX, SUCCESS 
-      from NLP_BENCHMARK 
-      where SUCCESS in ('true', 'false')
-      group by PLATFORM, COMPLEX, SUCCESS 
-      order by PLATFORM, COMPLEX, SUCCESS desc`)
+  async werByEthnicity () {
+    const rawData = await this.query(`select
+        case when ethnicity = 'White American (Non-Hispanic)' then 'White' 
+          when ethnicity = 'Black and African American' then 'Not White'
+          when ethnicity = 'Identify as two or more races' then 'Not White'
+          when ethnicity = 'Latino and Hispanic American' then 'Not White' 
+          else 'Other' end ethnicity_group, 
+          avg(WORD_ERROR_RATE) WER,
+          PLATFORM
+      from bespoken.IVR_BENCHMARK ib
+      group by platform, ethnicity_group
+      order by ethnicity_group, platform;`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
+    })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
-    const resultsMap = _.groupBy(rawData, (row) => {
-      return row.PLATFORM + row.COMPLEX
-    })
-    const results = Object.keys(resultsMap).map(key => {
-      const array = resultsMap[key]
-      const successCount = parseInt(array[0].COUNT)
-      const failureCount = parseInt(array[1].COUNT)
-      return {
-        key: key,
-        platform: array[0].PLATFORM,
-        complex: array[0].COMPLEX,
-        successCount: successCount,
-        failureCount: failureCount,
-        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 2)
-      }
-    })
-
-    // console.info('Success By Complexity: ' + JSON.stringify(results, null, 2))
-    return _.keyBy(results, 'key')
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
+    return resultsByPlatform
   }
 
-  async successByTopics () {
-    let rawData = await this.query(`select count(*) COUNT, PLATFORM, TOPIC, SUCCESS 
-      from NLP_BENCHMARK 
-      where SUCCESS in ('true', 'false')
-      group by PLATFORM, TOPIC, SUCCESS 
-      order by PLATFORM, TOPIC, SUCCESS desc`)
+  async werByGender () {
+    const rawData = await this.query(`select gender,
+          avg(WORD_ERROR_RATE) WER,
+          PLATFORM
+      from bespoken.IVR_BENCHMARK ib
+      group by platform, gender
+      order by gender, platform;`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
+    })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+    const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
+    return resultsByPlatform
+  }
 
-    rawData = rawData.filter(row => row.TOPIC !== undefined && row.TOPIC !== null && row.TOPIC.length > 0)
-    const resultsMap = _.groupBy(rawData, (row) => {
-      return row.PLATFORM + row.TOPIC
+  async werByPlatform () {
+    const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM 
+      from IVR_BENCHMARK 
+      group by PLATFORM order by PLATFORM desc`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
     })
-
-    const results = Object.keys(resultsMap).map(key => {
-      const array = resultsMap[key]
-      const successCount = parseInt(_.get(_.nth(array, 0), 'COUNT', 0))
-      const failureCount = parseInt(_.get(_.nth(array, 1), 'COUNT', 0))
-      return {
-        key: key,
-        platform: array[0].PLATFORM,
-        topic: _.startCase(array[0].TOPIC),
-        successCount: successCount,
-        failureCount: failureCount,
-        successPercentage: _.round(successCount / (successCount + failureCount) * 100, 0)
-      }
-    })
-
-    return _.keyBy(results, 'key')
-  }
-
-  async successByAnnotations () {
-    const rawData = await this.results()
-
-    // Get the results sorted by platform
-    const annotationsByPlatform = _.groupBy(rawData, (row) => {
-      return row.PLATFORM
-    })
-
-    // For each annotation, summarize how it did for a particular annotation
-    Object.keys(annotationsByPlatform).forEach(key => {
-      const resultsArray = annotationsByPlatform[key]
-      const summaries = {}
-      this._successByAnnotation(summaries, resultsArray, 'ANSWER_TUPLE')
-      this._successByAnnotation(summaries, resultsArray, 'COMPARISON')
-      this._successByAnnotation(summaries, resultsArray, 'COMPOSITIONAL')
-      this._successByAnnotation(summaries, resultsArray, 'GRAMMATICAL_ERRORS')
-      this._successByAnnotation(summaries, resultsArray, 'NO_ANSWER')
-      this._successByAnnotation(summaries, resultsArray, 'TELEGRAPHIC')
-      this._successByAnnotation(summaries, resultsArray, 'TEMPORAL')
-      _.values(summaries).forEach(summary => { summary.platform = this._platformName(key) })
-      annotationsByPlatform[key] = summaries
-    })
-
-    // console.info(JSON.stringify(annotationsByPlatform, null, 2))
-    return annotationsByPlatform
-  }
-
-  _successByAnnotation (summaries, results, annotation) {
-    const summaryByAnnotation = _.reduce(results,
-      (summary, row) => {
-        if (row[annotation] === 'TRUE') {
-          if (row.SUCCESS === 'true') {
-            summary.successCount++
-          } else if (row.SUCCESS === 'false') {
-            summary.failureCount++
-          }
-        }
-        return summary
-      },
-      {
-        annotation: annotation,
-        failureCount: 0,
-        successCount: 0
-      }
-    )
-
-    const totalCount = (summaryByAnnotation.successCount + summaryByAnnotation.failureCount)
-    let successPercentage = 100
-    if (totalCount > 0) {
-      successPercentage = _.round(summaryByAnnotation.successCount / totalCount * 100, 2)
-    }
-    summaryByAnnotation.successPercentage = successPercentage
-    summaryByAnnotation.name = this._annotationName(annotation)
-    summaryByAnnotation.platform = this._platformName(annotation)
-    summaries[annotation] = summaryByAnnotation
-  }
-
-  _annotationName (name) {
-    name = _.replace(name, '_', ' ')
-    name = _.startCase(_.lowerCase(name))
-    return name
-  }
-
-  _platformName (name) {
-    if (name === 'alexa') {
-      return 'Amazon Alexa'
-    } else if (name === 'google') {
-      return 'Google Assistant'
-    } else if (name === 'siri') {
-      return 'Apple Siri'
-    }
-  }
-
-  _strip (utterance, phrase) {
-    if (utterance.includes(phrase)) {
-      utterance = utterance.split(phrase)[1]
-    }
-
-    // Remove HTML code
-    return utterance.replace(/<[^>]*>?/gm, '').trim()
+    // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+    const resultsByPlatform = _.keyBy(rawData, 'PLATFORM')
+    return resultsByPlatform
   }
 }
 
