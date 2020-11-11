@@ -8,6 +8,9 @@ require('dotenv').config()
 class DefinedCrowd {
   constructor (locale) {
     this.languageCode = process.env.LANGUAGE_CODE || locale
+    if (this.languageCode.startsWith('es')) {
+      this.languageCode = 'es-es'
+    }
     this.executionPrefix = Date.now()
   }
 
