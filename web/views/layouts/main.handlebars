@@ -46,7 +46,6 @@
         text-align: center;
       }
 
-
       div {
         margin-bottom: 0;
         margin-left: auto;
@@ -84,9 +83,10 @@
         color: #184160;
         font-family: Roboto Condensed;
         font-size: 4.0vmin;
-        font-variant: small-caps;
+        font-weight: bold;
         margin: 10 0 0 0;
         text-align: left;
+        text-transform: capitalize;
       }
 
       h2 a, h2 a:hover {
@@ -94,6 +94,11 @@
         color: #184160;
         outline: none;
         text-decoration: none;
+      }
+      
+      .ivr .row {
+        margin-left: 100px;
+        margin-right: 100px;
       }
 
       p {
@@ -191,7 +196,7 @@
 
           <div class='row'>
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">NLP Benchmark</a></h1></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
           </div>
           <div class='row' >
             <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 

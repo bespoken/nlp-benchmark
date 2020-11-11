@@ -17,15 +17,17 @@ app.use('/web', express.static('web'))
 const nlpDataSource = new DataSource()
 const ivrDataSource = new IVRDataSource()
 
-app.get('/', (req, res) => res.render('nlp/reports', {
+app.get('/nlp', (req, res) => res.render('nlp/nlp-reports', {
   helpers: {
-    page: () => 'OVERVIEW'
+    page: () => 'OVERVIEW',
+    title: () => 'NLP Benchmark'
   }
 }))
 
-app.get('/ivr', (req, res) => res.render('ivr/ivr-reports', {
+app.get(['/', '/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'OVERVIEW'
+    page: () => 'OVERVIEW',
+    title: () => 'IVR ASR Benchmark'
   }
 }))
 
