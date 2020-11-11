@@ -15,7 +15,8 @@ describe('interceptor works correctly', () => {
       platform: 'amazon-connect',
       number: '+12345678900',
       recordingId: 'asdf1234ghjk5678',
-      index: 1
+      index: 1,
+      locale: 'en-US'
     }
     result = new Result(record, undefined, [_.cloneDeep(lastResponse)])
   })
@@ -67,7 +68,7 @@ describe('interceptor works correctly', () => {
       await interceptor.interceptRecord(record)
       const sequence = Config.get('sequence')
       expect(sequence).toHaveLength(2)
-      expect(sequence[1]).toBe('$1')
+      expect(sequence[1]).toBe('1')
     })
 
     test('add index to sequence for dialogflow in spanish', async () => {

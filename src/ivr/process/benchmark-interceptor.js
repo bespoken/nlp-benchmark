@@ -8,12 +8,8 @@ class BenchmarkInterceptor extends Interceptor {
   async interceptRecord (record) {
     const { platform, index, locale } = record.meta
     let sequenceIndex = `${index}`
-    if (locale === 'es-es') {
-      if (platform.includes('twilio')) {
-        sequenceIndex = `$${index}#`
-      } else if (platform.includes('amazon')) {
-        sequenceIndex = `$${index}`
-      }
+    if (locale.startsWith('es') && platform.includes('twilio')) {
+      sequenceIndex = `$${index}#`
     }
     Config.set('sequence', ['$DIAL', sequenceIndex])
     return true
@@ -44,13 +40,17 @@ class BenchmarkInterceptor extends Interceptor {
   async interceptResult (record, result) {
     result.success = false
     const locale = record.meta.locale || 'en-us'
+    let S3path = locale
+    if (S3path.startsWith('es')) {
+      S3path = 'es-es'
+    }
     // Load data from tsv files
     if (!this.recordingInfo) {
-      this.recordingInfo = await tsvToArray(`${locale}/metadata/${locale}_recording_info.tsv`)
+      this.recordingInfo = await tsvToArray(`${S3path}/metadata/${S3path}_recording_info.tsv`)
     }
 
     if (!this.speakerInfo) {
-      this.speakerInfo = await tsvToArray(`${locale}/metadata/${locale}_speaker_info.tsv`)
+      this.speakerInfo = await tsvToArray(`${S3path}/metadata/${S3path}_speaker_info.tsv`)
     }
 
     let failureReason = ''

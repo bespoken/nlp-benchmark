@@ -17,8 +17,8 @@
     "repeatOnPhrase": "disculpa",
     "recordCall": true,
     "speechModel": "default",
-    "locale": "es-ES",
-    "voiceId": "Enrique"
+    "locale": "es-US",
+    "voiceId": "Miguel"
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }
