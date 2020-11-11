@@ -99,6 +99,10 @@ app.get('/ivr/werByGender', async (req, res) => {
   res.send(await cache('werByGender', ivrDataSource))
 })
 
+app.get('/ivr/werByNoisy', async (req, res) => {
+  res.send(await cache('werByNoisy', ivrDataSource))
+})
+
 app.get('/ivr/werByPlatform', async (req, res) => {
   res.send(await cache('werByPlatform', ivrDataSource))
 })

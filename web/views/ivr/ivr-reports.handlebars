@@ -30,7 +30,7 @@
 </script>
 <div id='ivr-reports' class='container-fluid ivr'  >
   <div class='row' >
-    <div class='col-12 col-lg-12 subtitle' style='color: #184160;font-family: roboto condensed;font-weight: bold;margin-top: 10'>
+    <div class='col-12 col-lg-12 subtitle' style='color: #184160;font-family: roboto condensed;font-size:24pt;font-weight: bold;margin-top: 10'>
       ASR Performance of the New-Generation of Call-Center Platforms
     </div>
   </div>
@@ -77,6 +77,17 @@
       </div>
       <div class='caption'>
         The Word Error Rate by Domain
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12' >
+      <h2>Word Error Rate By Background Noise</h2>
+      <div>
+        {{> ivr/wordErrorRateByNoisy }}
+      </div>
+      <div class='caption'>
+        The Word Error Rate by Noisy Environment
       </div>
     </div>
   </div>
