@@ -80,13 +80,11 @@ const ChartHelper = {
           callbacks: {
             label: function (tooltipItem, data) {
               let label = data.datasets[tooltipItem.datasetIndex].label || ''
-              if (!percentage) {
-                return
-              }
+              const value = percentage ? `${tooltipItem.value}%` : tooltipItem.value
               if (label) {
-                label += `: ${tooltipItem.value}%`
+                label += `: ${value}`
               } else {
-                label = `${tooltipItem.label}: ${tooltipItem.value}%`
+                label = `${tooltipItem.label}: ${value}`
               }
               return label
             }

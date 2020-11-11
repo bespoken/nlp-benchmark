@@ -4,7 +4,7 @@
 - [ ] Fix labels on charts - show the name of the platform
 - [X] Add anonymized version
 - [ ] Update text
-- [ ] Make defined crowd logo bigger
+- [X] Make defined crowd logo bigger
 - [ ] Add chart for noisy versus not noisy
 - [ ] Make sure main page works
 - [ ] Fix old reports
