@@ -74,7 +74,9 @@ class BenchmarkInterceptor extends Interceptor {
     const actualResponse = this.cleanup(text)
 
     const recordingWithSilence = rawResponse.startsWith('<non_speech>')
-    if (expectedResponse.toLowerCase() !== actualResponse.toLowerCase()) {
+    let wordErrorRate = 0
+    if (!actualResponse.toLowerCase().startsWith(expectedResponse.toLowerCase()) && expectedResponse !== '') {
+      wordErrorRate = speechScorer.wordErrorRate(expectedResponse, actualResponse)
       failureReason = "Actual response didn't match"
       if (recordingWithSilence) {
         failureReason = 'The recording has a silence at the beginning'
@@ -87,7 +89,6 @@ class BenchmarkInterceptor extends Interceptor {
       }
     }
 
-    const wordErrorRate = speechScorer.wordErrorRate(expectedResponse, actualResponse)
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Word Error Rate', Math.ceil(wordErrorRate * 100) / 100)
