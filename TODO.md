@@ -1,13 +1,15 @@
 # For IVR Reports
 - [X] Update colors by platform
 - [X] Add optin monster
-- [ ] Fix labels on charts - show the name of the platform
+- [X] Fix labels on charts - show the name of the platform
 - [X] Add anonymized version
-- [ ] Update text
 - [X] Make defined crowd logo bigger
-- [ ] Add chart for noisy versus not noisy
+- [X] Add chart for noisy versus not noisy
+- [X] Change smallcaps text
 - [ ] Make sure main page works
 - [ ] Fix old reports
+- [ ] Update text
+  * Add protocol
+  * Add CTAs
 - [ ] Add separate google analytics site?
-- [ ] Add new main page navigation
-- [X] Change smallcaps text
+- [ ] Add new main page navigation?

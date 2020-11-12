@@ -48,7 +48,7 @@ class DataSource {
     return results
   }
 
-  async werByAgeGroup () {
+  async werByAgeGroup (language = 'en') {
     const rawData = await this.query(`select
         case 
           when age <= 35 then '<=35' 
@@ -56,8 +56,19 @@ class DataSource {
           avg(WORD_ERROR_RATE) WER,
           PLATFORM
       from bespoken.IVR_BENCHMARK ib
+      where lang = '${language}' 
       group by platform, age_group_35
       order by age_group_35, platform`)
+    console.info(`select
+    case 
+      when age <= 35 then '<=35' 
+    else '>35' end age_group_35,
+      avg(WORD_ERROR_RATE) WER,
+      PLATFORM
+  from bespoken.IVR_BENCHMARK ib
+  where lang = '${language}' 
+  group by platform, age_group_35
+  order by age_group_35, platform`)
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)
     })
@@ -66,9 +77,10 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async werByDomain () {
+  async werByDomain (language = 'en') {
     const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM, DOMAIN 
       from IVR_BENCHMARK 
+      where lang = '${language}' 
       group by PLATFORM, DOMAIN order by PLATFORM, DOMAIN desc`)
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)
@@ -78,7 +90,7 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async werByEthnicity () {
+  async werByEthnicity (language = 'en') {
     const rawData = await this.query(`select
         case when ethnicity = 'White American (Non-Hispanic)' then 'White' 
           when ethnicity = 'Black and African American' then 'Not White'
@@ -88,6 +100,7 @@ class DataSource {
           avg(WORD_ERROR_RATE) WER,
           PLATFORM
       from bespoken.IVR_BENCHMARK ib
+      where lang = '${language}' 
       group by platform, ethnicity_group
       order by ethnicity_group, platform;`)
     rawData.forEach(row => {
@@ -98,11 +111,12 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async werByGender () {
+  async werByGender (language = 'en') {
     const rawData = await this.query(`select gender,
           avg(WORD_ERROR_RATE) WER,
           PLATFORM
       from bespoken.IVR_BENCHMARK ib
+      where lang = '${language}' 
       group by platform, gender
       order by gender, platform;`)
     rawData.forEach(row => {
@@ -113,9 +127,10 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async werByNoisy () {
+  async werByNoisy (language = 'en') {
     const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM, STARTS_WITH_NON_SPEECH 
       from IVR_BENCHMARK 
+      where lang = '${language}' 
       group by PLATFORM, STARTS_WITH_NON_SPEECH order by PLATFORM, STARTS_WITH_NON_SPEECH desc`)
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)
@@ -125,9 +140,10 @@ class DataSource {
     return resultsByPlatform
   }
 
-  async werByPlatform () {
+  async werByPlatform (language = 'en') {
     const rawData = await this.query(`select avg(WORD_ERROR_RATE) WER, count(*) COUNT, PLATFORM 
       from IVR_BENCHMARK 
+      where lang = '${language}'
       group by PLATFORM order by PLATFORM desc`)
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)

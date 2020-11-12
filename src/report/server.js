@@ -103,22 +103,27 @@ app.get('/ivr/werByNoisy', async (req, res) => {
   res.send(await cache('werByNoisy', ivrDataSource))
 })
 
-app.get('/ivr/werByPlatform', async (req, res) => {
-  res.send(await cache('werByPlatform', ivrDataSource))
+app.get('/ivr/werByPlatformEnglish', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource, 'en'))
+})
+
+app.get('/ivr/werByPlatformSpanish', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource, 'es'))
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // simple routine to cache data so we don't keep reloading it
 const cachedData = {}
-async function cache (routine, dataSource) {
+async function cache (routine, dataSource, parameter = undefined) {
   if (!dataSource) {
     dataSource = nlpDataSource
   }
-  if (!cachedData[routine]) {
-    console.info('Missed data from cache: ' + routine)
-    cachedData[routine] = await dataSource[routine]()
+  const key = routine + parameter
+  if (!cachedData[key]) {
+    console.info('Missed data from cache: ' + key)
+    cachedData[key] = await dataSource[routine](parameter)
   }
 
-  return cachedData[routine]
+  return cachedData[key]
 }
