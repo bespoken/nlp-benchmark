@@ -80,13 +80,11 @@ const ChartHelper = {
           callbacks: {
             label: function (tooltipItem, data) {
               let label = data.datasets[tooltipItem.datasetIndex].label || ''
-              if (!percentage) {
-                return
-              }
+              const value = percentage ? `${tooltipItem.value}%` : tooltipItem.value
               if (label) {
-                label += `: ${tooltipItem.value}%`
+                label += `: ${value}`
               } else {
-                label = `${tooltipItem.label}: ${tooltipItem.value}%`
+                label = `${tooltipItem.label}: ${value}`
               }
               return label
             }
@@ -133,7 +131,7 @@ const ChartHelper = {
     Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
     Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
     Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
-    Chart.defaults.global.animation.duration = 3000
+    Chart.defaults.global.animation.duration = 2000
     return options
   },
 

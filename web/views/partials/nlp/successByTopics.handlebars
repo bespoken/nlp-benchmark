@@ -2,7 +2,7 @@
 <script>
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('successByTopicsCanvas').getContext('2d')
-    const response = await axios.get('/successByTopics')
+    const response = await axios.get('/nlp/successByTopics')
     const rawData = response.data
     let topics = ['Geography', 'History', 'Music', 'Movies', 'Politics', 'Sports']
     

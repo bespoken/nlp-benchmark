@@ -8,7 +8,6 @@ require('dotenv').config()
 const app = express()
 const port = 3000
 
-app.engine('handlebars', handlebars())
 app.set('views', './web/views/')
 app.set('view engine', 'handlebars')
 
@@ -17,68 +16,92 @@ app.use('/web', express.static('web'))
 const nlpDataSource = new DataSource()
 const ivrDataSource = new IVRDataSource()
 
-app.get('/nlp', (req, res) => res.render('nlp/nlp-reports', {
+var hbs = handlebars.create({
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+    company: () => 'Bespoken'
+  }
+})
+app.engine('handlebars', hbs.engine)
+
+app.get(['/', '/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   helpers: {
     page: () => 'OVERVIEW',
+    sponsorLogo: 'ProjectVoiceLogo.png',
+    sponsorURL: 'https://projectvoice.ai/',
     title: () => 'NLP Benchmark'
   }
 }))
 
-app.get(['/', '/ivr'], (req, res) => res.render('ivr/ivr-reports', {
+app.get(['/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'OVERVIEW',
+    company: () => 'Bespoken and DefinedCrowd',
+    page: () => 'ASR PERFORMANCE',
     pageType: () => 'detail',
-    title: () => 'IVR ASR Benchmark'
+    sponsorLogo: 'DefinedCrowd.svg',
+    sponsorURL: 'https://definedcrowd.com',
+    title: () => 'IVR Benchmark'
   }
 }))
 
 app.get('/ivr/summary', (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'OVERVIEW',
+    page: () => 'ASR BENCHMARK',
     pageType: () => 'summary',
-    title: () => 'IVR ASR Benchmark'
+    sponsorLogo: 'DefinedCrowd.svg',
+    sponsorURL: 'https://definedcrowd.com',
+    title: () => 'Modern IVR'
   }
 }))
 
-app.get('/protocol', (req, res) => res.render('protocol', {
+app.get('/nlp/protocol', (req, res) => res.render('nlp/nlp-protocol', {
   helpers: {
-    page: () => 'TEST PROTOCOL'
+    page: () => 'TEST PROTOCOL',
+    sponsorLogo: 'ProjectVoiceLogo.png',
+    sponsorURL: 'https://projectvoice.ai/',
+    title: () => 'NLP Benchmark'
   }
 }))
 
-app.get('/topics', (req, res) => res.render('topics', {
+app.get('/nlp/topics', (req, res) => res.render('nlp/topics', {
   helpers: {
-    page: () => 'TOPIC DRILLDOWN'
+    page: () => 'TOPIC DRILLDOWN',
+    sponsorLogo: 'ProjectVoiceLogo.png',
+    sponsorURL: 'https://projectvoice.ai/',
+    title: () => 'NLP Benchmark'
   }
 }))
 
-app.get('/details', (req, res) => res.render('results', {
+app.get('/nlp/details', (req, res) => res.render('nlp/results', {
   helpers: {
-    page: () => 'DETAILED RESULTS'
+    page: () => 'DETAILED RESULTS',
+    sponsorLogo: 'ProjectVoiceLogo.png',
+    sponsorURL: 'https://projectvoice.ai/',
+    title: () => 'NLP Benchmark'
   }
 }))
 
-app.get('/results', async (req, res) => {
+app.get('/nlp/results', async (req, res) => {
   res.send(await cache('results'))
 })
 
-app.get('/successByTopics', async (req, res) => {
+app.get('/nlp/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics'))
 })
 
-app.get('/successByPlatform', async (req, res) => {
+app.get('/nlp/successByPlatform', async (req, res) => {
   res.send(await cache('successByPlatform'))
 })
 
-app.get('/successByComplexity', async (req, res) => {
+app.get('/nlp/successByComplexity', async (req, res) => {
   res.send(await cache('successByComplexity'))
 })
 
-app.get('/successByAnnotations', async (req, res) => {
+app.get('/nlp/successByAnnotations', async (req, res) => {
   res.send(await cache('successByAnnotations'))
 })
 
-app.get('/successByTopics', async (req, res) => {
+app.get('/nlp/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics'))
 })
 
@@ -99,22 +122,31 @@ app.get('/ivr/werByGender', async (req, res) => {
   res.send(await cache('werByGender', ivrDataSource))
 })
 
-app.get('/ivr/werByPlatform', async (req, res) => {
-  res.send(await cache('werByPlatform', ivrDataSource))
+app.get('/ivr/werByNoisy', async (req, res) => {
+  res.send(await cache('werByNoisy', ivrDataSource))
+})
+
+app.get('/ivr/werByPlatformEnglish', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource, 'en'))
+})
+
+app.get('/ivr/werByPlatformSpanish', async (req, res) => {
+  res.send(await cache('werByPlatform', ivrDataSource, 'es'))
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 
 // simple routine to cache data so we don't keep reloading it
 const cachedData = {}
-async function cache (routine, dataSource) {
+async function cache (routine, dataSource, parameter = undefined) {
   if (!dataSource) {
     dataSource = nlpDataSource
   }
-  if (!cachedData[routine]) {
-    console.info('Missed data from cache: ' + routine)
-    cachedData[routine] = await dataSource[routine]()
+  const key = routine + parameter
+  if (!cachedData[key]) {
+    console.info('Missed data from cache: ' + key)
+    cachedData[key] = await dataSource[routine](parameter)
   }
 
-  return cachedData[routine]
+  return cachedData[key]
 }
