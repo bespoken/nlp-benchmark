@@ -59,16 +59,7 @@ class DataSource {
       where lang = '${language}' 
       group by platform, age_group_35
       order by age_group_35, platform`)
-    console.info(`select
-    case 
-      when age <= 35 then '<=35' 
-    else '>35' end age_group_35,
-      avg(WORD_ERROR_RATE) WER,
-      PLATFORM
-  from bespoken.IVR_BENCHMARK ib
-  where lang = '${language}' 
-  group by platform, age_group_35
-  order by age_group_35, platform`)
+
     rawData.forEach(row => {
       row.WER = _.round(row.WER, 2)
     })
