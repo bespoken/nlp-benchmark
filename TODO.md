@@ -16,3 +16,4 @@
 - [ ] Add new main page navigation?
 - [X] Update page title depending on which page the user is on
 - [ ] Update CTA text
+- [ ] Invite definedcrowd to google analytics and optinmonster
