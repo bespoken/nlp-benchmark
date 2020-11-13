@@ -1,5 +1,5 @@
 <html>
-  <title>Bespoken NLP Benchmark</title>
+  <title>{{ title }} - {{ company }}</title>
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99287066-6"></script>
@@ -107,8 +107,14 @@
       }
       
       .ivr .row {
+        margin-bottom: 20px;
         margin-left: 100px;
         margin-right: 100px;
+      }
+
+      .ivr canvas {
+        height: 300px;
+        margin-top: 20px;
       }
 
       p {
@@ -224,7 +230,7 @@
     <!-- footer -->
     <div class='container-fluid footer'>
       <div class='row'>
-        <div class='col-12' style='font-style: italic'>Copyright © 2020 Bespoken. All Rights Reserved</div>
+        <div class='col-12' style='font-style: italic'>Copyright © 2020 {{ company }}. All Rights Reserved</div>
       </div>
     </div>
     <!-- for showing popup informational dialog on the page -->

@@ -6,10 +6,13 @@
 - [X] Make defined crowd logo bigger
 - [X] Add chart for noisy versus not noisy
 - [X] Change smallcaps text
-- [ ] Make sure main page works
-- [ ] Fix old reports
+- [X] Make sure main page works
+- [X] Fix old reports
+- [ ] Add audio sample of noisy audio
+- [ ] Test CTA
 - [ ] Update text
-  * Add protocol
-  * Add CTAs
-- [ ] Add separate google analytics site?
+- [ ] Add protocol page
+  * Check state on old protocol page
 - [ ] Add new main page navigation?
+- [X] Update page title depending on which page the user is on
+- [ ] Update CTA text

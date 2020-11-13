@@ -50,11 +50,9 @@
     <div class='col-12'>
       <h2>What It Means</h2>
       <div class='text' style='margin-top: 10'>
-        The results speak for themselves - these are tough scenarios, and they demonstrate that Speech Recognition, despite what you may read is far from a solved problem.
+        The results speak for themselves - these are tough scenarios, and they demonstrate that Speech Recognition, despite what you may read, is far from a solved problem.
 
         It's critical to thorughly evaluate vendors before making a decision - DefinedCrowd and Bespoken can help.
-
-        INCLUDE AUDIO SAMPLE WITH BACKGROUND TALKING?
       </div>
     </div>
   </div>
@@ -65,7 +63,9 @@
         {{> ivr/wordErrorRateByPlatformEnglish }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Platform - English Only
+        We see here significant variation between platforms. 
+        And the Word Error Rates are high - these are tough, real-world scenarios, the type customers are in everyday:
+        pauses and hesitations, background noise, spotty connections, poor enunciation, etc.
       </div>
     </div>
   </div>
@@ -76,7 +76,9 @@
         {{> ivr/wordErrorRateByPlatformSpanish }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Platform - Spanish Only
+        Interestingly, on Spanish we see the performance almost exactly inverted. 
+        This is not particularly surprising, as there are significant variations within platforms between support for languages and locales.
+        That means that because a platform does well with one language and locale does NOT mean it will excel at others. Testing, with real data, is the key to find the right solution.
       </div>
     </div>
   </div>
@@ -87,7 +89,9 @@
         {{> ivr/wordErrorRateByDomain }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Domain
+        Similar to the significant variations we see by language, we see the same based on the industry and domain we are working within.
+        ASR systems will bias towards the domains they know best and have been trained on most intensively.
+        So if your provider has not been trained and tuned for your specific domain, your performance will be negatively impacted, and vice-versa.
       </div>
     </div>
   </div>
@@ -98,7 +102,9 @@
         {{> ivr/wordErrorRateByNoisy }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Noisy Environment
+        As mentioned at the outset - these are tough, real-world scenarios. 
+        Background noise really challenges speech recognition systems - and we can see reflected here how dramatic the impact is on it.<br>
+        INSERT AUDIO SAMPLE HERE 
       </div>
     </div>
   </div>
@@ -109,7 +115,8 @@
         {{> ivr/wordErrorRateByEthnicity }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Ethnicity
+        Also unsurprising - race and ethnicity have a big impact as well. 
+        Between white and non-white speakers, we see non-white speakers being understood significantly worse, almost dramatically so in scenarios.
       </div>
     </div>
   </div>
@@ -120,7 +127,8 @@
         {{> ivr/wordErrorRateByAgeGroup }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Age Group
+        We see less of an impact by age - this is an area that represents significant progress for ASR/NLP platforms.
+        This is good news and shows how these systems have evolved over time to better serve real-world scenarios.
       </div>
     </div>
   </div>
@@ -131,7 +139,7 @@
         {{> ivr/wordErrorRateByGender }}
       </div>
       <div class='caption'>
-        The Word Error Rate by Gender
+        The impact by gender is also minimal - this is also good news.
       </div>
     </div>
   </div>
@@ -139,29 +147,40 @@
     <div class='col-12 text' >
       <h2>What Is Next?</h2>
       <p>
-        We plan to produce these benchmarks on a routine basis, both refreshing these results as well as doing additional studies. Here is what we currently have planned:
+        Follow along as we expand on this benchmark to cover:
       </p>
       <ul>
-        <li>ASR Benchmark - including Google Speech-To-Text, Twilio AutoPilot, Houndify, and others
-        <li>Personal Assistant Benchmark - questions related to managing calendar appointments, email, etc.
-        <li>IVR Benchmark - performance of various IVR platforms</li>
+        <li>Tuning and training the ASR behavior using Bespoken's testing and training tools - we typically see huge improvements using simple techniques
+        <li>Expanding the domains and languages that we include in our testing</li>
+        <li>Testing additional platforms such as IBM Watson, Genesys, Azure Communication Services and Moreover/li>
       </ul>
-      <p>Have your own ideas for a benchmark? Ways that we can improve this? <a href='mailto:contact@bespoken.io'>Drop us a line.</a></p>
+      <p>We welcome your input to - if you have ideas on what we should include in the benchmark, or how we can improve it - <a href='mailto:contact@bespoken.io'>drop us a line.</a></p>
     </div> 
-    <div class='col-12 text' >
+  </div>
+  <div class='row'>
+    <div class='col-12'>
       <h2>Who Are You?</h2>
+    </div>
+    <div class='col-12 col-lg-6 text' >
+      <img src='/web/images/DefinedCrowd-Black.svg' style='height: 100px' class='logo' />
+      <h3>
+        Training Data for Smarter AI
+      </h3>
       <p>
-        Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
+        World-class AI training data sourced by humans and perfected by machines.
+        High-quality, off-the-shelf datasets available in various languages and domains.
+      </p>
+    </div>
+    <div class='col-12 col-lg-6 text' >
+       <img src='/web/images/Logo-BlackText.png' style='height: 100px;padding: 10' />
+      <h3>
+        Automated Testing, Training and Monitoring for Voice and Chat
+      </h3>
+      <p>
+        We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
         Want to <a href='https://bespoken.io/customer-success/'  target='_blank'>assess the performance</a> of your own voice assistant for Alexa, Google, IVR?<br><br>
         Moreover, <a href='https://bespoken.io/blog/the-mars-agency-case-study/' target='_blank'>our tools provide specific guidance on how to improve it</a>. Interested? Contact us - <a href='mailto:contact@bespoken.io' target='_blank'>contact@bespoken.io</a>
       </p>
     </div>
-  </div>
-  <div id='text' class='row' style='margin-top: 20;' >
-    <div class='col-2'></div>
-    <div class='col-8' style='font-weight: bold;font-size:1.5em;padding: 10;text-align:center' >
-      We put this together with our partner, Defined Crowd. Look for more original research from us soon!
-    </div>
-    <div class='col-2'></div>
   </div>
 </div>

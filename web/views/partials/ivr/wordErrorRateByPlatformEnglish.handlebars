@@ -1,4 +1,4 @@
-<canvas id="werByPlatformEnglishCanvas" ></canvas>
+<canvas id="werByPlatformEnglishCanvas" class='ivr-canvas'></canvas>
 <script>
   window.addEventListener('load', async () => {
     const response = await axios.get('/ivr/werByPlatformEnglish')
@@ -14,7 +14,9 @@
     }
     const options = ChartHelper.bar('Word Error Rate By Platform (English)', chartData, false)
     const context = document.getElementById('werByPlatformEnglishCanvas').getContext('2d')
-    _.set(options, 'options.scales.yAxes[0].ticks.max', 0.6)
+    _.set(options, 'options.scales.yAxes[0].ticks.max', 0.45)
+    _.set(options, 'options.watermark.alignX', 'right')
+    _.set(options, 'options.watermark.y', 20)
     window.werByPlatformChart = new Chart(context, options)
   })
 </script>

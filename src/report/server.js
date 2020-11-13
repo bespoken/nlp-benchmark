@@ -8,7 +8,6 @@ require('dotenv').config()
 const app = express()
 const port = 3000
 
-app.engine('handlebars', handlebars())
 app.set('views', './web/views/')
 app.set('view engine', 'handlebars')
 
@@ -16,6 +15,14 @@ app.use('/web', express.static('web'))
 
 const nlpDataSource = new DataSource()
 const ivrDataSource = new IVRDataSource()
+
+var hbs = handlebars.create({
+  // Specify helpers which are only registered on this instance.
+  helpers: {
+    company: () => 'Bespoken'
+  }
+})
+app.engine('handlebars', hbs.engine)
 
 app.get(['/', '/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   helpers: {
@@ -28,11 +35,12 @@ app.get(['/', '/nlp'], (req, res) => res.render('nlp/nlp-reports', {
 
 app.get(['/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'ASR BENCHMARK',
+    company: () => 'Bespoken and DefinedCrowd',
+    page: () => 'ASR PERFORMANCE',
     pageType: () => 'detail',
     sponsorLogo: 'DefinedCrowd.svg',
     sponsorURL: 'https://definedcrowd.com',
-    title: () => 'Modern IVR'
+    title: () => 'IVR Benchmark'
   }
 }))
 
