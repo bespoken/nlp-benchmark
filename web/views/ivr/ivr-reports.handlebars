@@ -9,7 +9,7 @@
   }
 </style>
 <script>
-  const pageType = '{{ pageType }}'
+  window.pageType = '{{ pageType }}'
   document.addEventListener('om.Optin.success', function(event) {
     Cookies.set('converted', 'true', { expires: 365 })
     window.location.href = '/ivr/'
@@ -20,9 +20,9 @@
     window.location.href = '/ivr/summary'
   }
 
-  if (pageType === 'summary') {
-    window.datasets = [['TWILIO', 'Vendor A', 'green'], ['AMAZON', 'Vendor B', 'red'], ['DIALOGFLOW', 'Vendor C', 'yellow']]
-  } else if (pageType === 'detail') {
+  if (window.pageType === 'summary') {
+    window.datasets = [['TWILIO', 'Vendor A', '#3324de'], ['AMAZON', 'Vendor B', '#9024de'], ['DIALOGFLOW', 'Vendor C', '#24bfde']]
+  } else if (window.pageType === 'detail') {
     window.datasets = [['AMAZON', 'Amazon Connect', ChartHelper.colorAmazon()], 
       ['DIALOGFLOW', 'Google Dialogflow', ChartHelper.colorDialogflow()], 
       ['TWILIO', 'Twilio Voice', ChartHelper.colorTwilio()]]
@@ -31,8 +31,8 @@
 <div id='ivr-reports' class='container-fluid ivr'  >
   <div class='row' style='margin-bottom: 5px' >
     <div class='col-12 col-lg-12 subtitle' style='color: #184160;font-family: roboto condensed;font-size:24pt;font-weight: bold;margin-top: 10'>
-      <h1>ASR Performance Benchmark<h1> 
-      <h2 style='text-align: center'>The New Generation of Digital Contact Center Platforms</h2>
+      <h1 style='font-family: Khand;font-weight: bold;margin-bottom: 0'>ASR Performance Benchmark</h1> 
+      <h2 style='text-align: center;font-family: Roboto Condensed;font-weight:500;margin-top: 0'>The New Generation of Digital Contact Center Platforms</h2>
     </div>
   </div>
   <div class='row' >
@@ -105,7 +105,7 @@
       <div class='caption'>
         As mentioned at the outset - these are tough, real-world scenarios. 
         Background noise really challenges speech recognition systems - and we can see reflected here how dramatic the impact is on it.<br>
-        INSERT AUDIO SAMPLE HERE 
+        For example, <a href='/web/media/Frozen-BackgroundNoise.wav' target='_blank'>click here to listen</a> to this clip where the caller appears to have the TV on in the background. It's challenging, but also typical. 
       </div>
     </div>
   </div>

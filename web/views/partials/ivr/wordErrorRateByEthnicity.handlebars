@@ -4,28 +4,14 @@
     const canvas = document.getElementById('werByEthnicityCanvas').getContext('2d')
     const response = await axios.get('/ivr/werByEthnicity')
     const rawData = response.data
-    let groups = ['White', 'Not White']
     
     const chartData = {
-      labels: groups,
+      labels: ['White', 'Not White'],
       datasets: [
         {
-          backgroundColor: groups.map(t =>  window.datasets[0][2]),
+          backgroundColor: ['#c23ab0', '#903ac2'],
           borderWidth: 0,
-          data: filterByEthnicity(rawData,  window.datasets[0][0], groups),
-          label:  window.datasets[0][1]
-        },
-        {
-          backgroundColor: groups.map(t =>  window.datasets[1][2]),
-          borderWidth: 0,
-          data: filterByEthnicity(rawData,  window.datasets[1][0], groups),
-          label:  window.datasets[1][1]
-        },
-        {
-          backgroundColor: groups.map(t =>  window.datasets[2][2]),
-          borderWidth: 0,
-          data: filterByEthnicity(rawData, window.datasets[2][0], groups),
-          label:  window.datasets[2][1]
+          data: [rawData['White'][0].WER, rawData['Not White'][0].WER]
         }
       ]
     }

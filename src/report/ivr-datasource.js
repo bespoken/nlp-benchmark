@@ -97,6 +97,26 @@ class DataSource {
           when ethnicity = 'Identify as two or more races' then 'Not White'
           when ethnicity = 'Latino and Hispanic American' then 'Not White' 
           else 'Other' end ethnicity_group, 
+          avg(WORD_ERROR_RATE) WER
+      from bespoken.IVR_BENCHMARK ib
+      where lang = '${language}' 
+      group by ethnicity_group
+      order by ethnicity_group;`)
+    rawData.forEach(row => {
+      row.WER = _.round(row.WER, 2)
+    })
+    // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
+    const resultsByPlatform = _.groupBy(rawData, 'ethnicity_group')
+    return resultsByPlatform
+  }
+
+  async werByEthnicityAndPlatform (language = 'en') {
+    const rawData = await this.query(`select
+        case when ethnicity = 'White American (Non-Hispanic)' then 'White' 
+          when ethnicity = 'Black and African American' then 'Not White'
+          when ethnicity = 'Identify as two or more races' then 'Not White'
+          when ethnicity = 'Latino and Hispanic American' then 'Not White' 
+          else 'Other' end ethnicity_group, 
           avg(WORD_ERROR_RATE) WER,
           PLATFORM
       from bespoken.IVR_BENCHMARK ib

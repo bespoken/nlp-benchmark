@@ -9,6 +9,9 @@
 - [X] Make sure main page works
 - [X] Fix old reports
 - [ ] Add audio sample of noisy audio
+- [ ] change title font
+- [ ] shrink or remove x mark on CTA
+- [ ] mention insight that the configuration of the platforms is as impactful as anything else
 - [ ] Test CTA
 - [ ] Update text
 - [ ] Add protocol page

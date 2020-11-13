@@ -32,6 +32,8 @@
     const chartConfiguration = ChartHelper.bar('Word Error Rate by Background Noise', chartData, false, 2)
     _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
     _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    _.set(chartConfiguration, 'options.watermark.alignX', 'right')
+    _.set(chartConfiguration, 'options.watermark.y', 20)
     //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
     window.werByDomainChart = new Chart(canvas, chartConfiguration)
   })
