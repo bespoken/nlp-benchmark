@@ -15,7 +15,8 @@
   "virtualDeviceConfig": {
     "phoneNumber": "+13605260332",
     "repeatOnPhrase": "say that again",
-    "recordCall": true
+    "recordCall": true,
+    "pauseDuration": "500m"
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }

@@ -5,29 +5,56 @@ const S3 = require('../../S3')
 const { tsvToArray } = require('../../helper')
 
 class BenchmarkInterceptor extends Interceptor {
+  async interceptPreProcess (job) {
+    this.run = job.run
+  }
+
   async interceptRecord (record) {
-    Config.set('sequence', ['$DIAL', `${record.meta.index}`])
+    const { platform, index, locale } = record.meta
+    let sequenceIndex = `${index}`
+    if (locale.startsWith('es') && platform.includes('twilio')) {
+      sequenceIndex = `$${index}#`
+    }
+    Config.set('sequence', ['$DIAL', sequenceIndex])
     return true
   }
 
   async interceptRequest (request, device) {
+    const locale = device._configuration.locale || 'en-US'
+    const isEnglish = locale === 'en-US'
+    const job = Config.get('job')
+    let firstPhrase = 'número del test'
+    let secondPhrase = 'frase esperada'
+
+    if (job.includes('twilio')) {
+      firstPhrase = 'prueba'
+      secondPhrase = 'frase'
+    } else if (job.includes('amazon')) {
+      firstPhrase = 'número de la prueba'
+    }
+
     // $DIAL
     request[0].settings = {}
-    request[0].settings.finishOnPhrase = 'test number'
+    request[0].settings.finishOnPhrase = isEnglish ? 'test number' : firstPhrase
 
     request[1].settings = {}
-    request[1].settings.finishOnPhrase = 'expected phrase'
+    request[1].settings.finishOnPhrase = isEnglish ? 'expected phrase' : secondPhrase
   }
 
   async interceptResult (record, result) {
     result.success = false
+    const locale = record.meta.locale || 'en-us'
+    let S3path = locale
+    if (S3path.startsWith('es')) {
+      S3path = 'es-es'
+    }
     // Load data from tsv files
     if (!this.recordingInfo) {
-      this.recordingInfo = await tsvToArray('metadata/en-us_recording_info.tsv')
+      this.recordingInfo = await tsvToArray(`${S3path}/metadata/${S3path}_recording_info.tsv`)
     }
 
     if (!this.speakerInfo) {
-      this.speakerInfo = await tsvToArray('metadata/en-us_speaker_info.tsv')
+      this.speakerInfo = await tsvToArray(`${S3path}/metadata/${S3path}_speaker_info.tsv`)
     }
 
     let failureReason = ''
@@ -35,9 +62,14 @@ class BenchmarkInterceptor extends Interceptor {
     const platforms = {
       'twilio-autopilot': 'twilio',
       'amazon-connect': 'connect',
-      dialogflow: 'dialogflow'
+      dialogflow: 'dialogflow',
+      twilio: 'twilio'
     }
-    const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
+    let response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
+    if (record.rerun) {
+      response = `${this.run}/${response}`
+    }
+    console.log(`S3 get ${response}`)
     try {
       buffer = await S3.get(response, 'ivr-benchmark-responses')
     } catch (err) {
@@ -50,7 +82,9 @@ class BenchmarkInterceptor extends Interceptor {
     const actualResponse = this.cleanup(text)
 
     const recordingWithSilence = rawResponse.startsWith('<non_speech>')
-    if (expectedResponse.toLowerCase() !== actualResponse.toLowerCase()) {
+    let wordErrorRate = 0
+    if (!actualResponse.toLowerCase().startsWith(expectedResponse.toLowerCase()) && expectedResponse !== '') {
+      wordErrorRate = speechScorer.wordErrorRate(expectedResponse, actualResponse)
       failureReason = "Actual response didn't match"
       if (recordingWithSilence) {
         failureReason = 'The recording has a silence at the beginning'
@@ -63,7 +97,6 @@ class BenchmarkInterceptor extends Interceptor {
       }
     }
 
-    const wordErrorRate = speechScorer.wordErrorRate(expectedResponse, actualResponse)
     result.addOutputField('Expected Response', expectedResponse)
     result.addOutputField('Actual Response', actualResponse)
     result.addOutputField('Word Error Rate', Math.ceil(wordErrorRate * 100) / 100)
@@ -78,6 +111,7 @@ class BenchmarkInterceptor extends Interceptor {
     result.addOutputField('Age', speakerRow.age)
     result.addOutputField('Accent', speakerRow.accent)
     result.addOutputField('Ethnicity', speakerRow.ethnicity)
+    result.addOutputField('Locale', locale)
 
     result.addOutputField('Audio URL', result.lastResponse.message)
     result.addOutputField('Failure reason', failureReason)

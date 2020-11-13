@@ -6,16 +6,21 @@ const parse = require('csv-parse/lib/sync')
 require('dotenv').config()
 
 class DefinedCrowd {
-  constructor () {
+  constructor (locale) {
+    this.languageCode = process.env.LANGUAGE_CODE || locale
+    if (this.languageCode.startsWith('es')) {
+      this.languageCode = 'es-es'
+    }
     this.executionPrefix = Date.now()
   }
 
   async getDataset () {
-    return JSON.parse(await S3.get('proccesed-recordings.json', 'ivr-benchmark-defined-crowd'))
+    return JSON.parse(await S3.get(`${this.languageCode}/proccesed-recordings.json`, 'ivr-benchmark-defined-crowd'))
   }
 
   async process () {
-    const sourceFile = await S3.get('en-us_transcriptions.tsv', 'ivr-benchmark-defined-crowd')
+    const transcriptions = `${this.languageCode}/transcriptions/${this.languageCode}_transcriptions.tsv`
+    const sourceFile = await S3.get(transcriptions, 'ivr-benchmark-defined-crowd')
     const dataset = parse(sourceFile, {
       delimiter: '\t',
       columns: true
@@ -38,16 +43,16 @@ class DefinedCrowd {
 
     const finalDataset = []
     for (const recordingId in reducedDataset) {
-      const recordingKey = `recordings/${recordingId}.wav`
-      console.log(`starting processing ${recordingKey}`)
+      const recordingKey = `${this.languageCode}/recordings/${recordingId}.wav`
+      console.info(`Defined Crowd: processing ${recordingKey}`)
       const recording = await S3.get(recordingKey, 'ivr-benchmark-defined-crowd')
       const proccesedRecording = await this.processRecording(recording, reducedDataset[recordingId].transcripts)
-      console.log(`starting uploading files ${proccesedRecording.length}`)
+      console.info(`Defined Crowd: uploading files ${proccesedRecording.length}`)
 
       for (const i in proccesedRecording) {
-        const key = `processed/${recordingId}-${i}.wav`
+        const key = `${this.languageCode}/processed/${recordingId}-${i}.wav`
         const audioBuffer = Buffer.from(proccesedRecording[i].buffer, 'base64')
-        console.log(`uploading ${key}`)
+        console.info(`Defined Crowd: uploading ${key} audio`)
         await S3.upload(key, audioBuffer, 'ivr-benchmark-defined-crowd')
         finalDataset.push({
           key,
@@ -58,8 +63,8 @@ class DefinedCrowd {
         })
       }
     }
-    console.log('uploading proccesed-recordings.json')
-    await S3.upload('proccesed-recordings.json', JSON.stringify(finalDataset), 'ivr-benchmark-defined-crowd')
+    console.info('Defined Crowd: uploading proccesed-recordings.json')
+    await S3.upload(`${this.languageCode}/proccesed-recordings.json`, JSON.stringify(finalDataset), 'ivr-benchmark-defined-crowd')
   }
 
   async processRecording (fileBuffer, transcripts) {

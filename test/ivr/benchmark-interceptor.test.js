@@ -15,7 +15,8 @@ describe('interceptor works correctly', () => {
       platform: 'amazon-connect',
       number: '+12345678900',
       recordingId: 'asdf1234ghjk5678',
-      index: 1
+      index: 1,
+      locale: 'en-US'
     }
     result = new Result(record, undefined, [_.cloneDeep(lastResponse)])
   })
@@ -51,18 +52,91 @@ describe('interceptor works correctly', () => {
       expect(sequence).toHaveLength(2)
       expect(sequence[1]).toBe('1')
     })
+
+    test('add index to sequence for twilio in spanish', async () => {
+      _.set(record, 'meta.platform', 'twilio')
+      _.set(record, 'meta.locale', 'es-es')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('$1#')
+    })
+
+    test('add index to sequence for amazon-connect in spanish', async () => {
+      _.set(record, 'meta.platform', 'amazon-connect')
+      _.set(record, 'meta.locale', 'es-es')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('1')
+    })
+
+    test('add index to sequence for dialogflow in spanish', async () => {
+      _.set(record, 'meta.platform', 'dialogflow')
+      _.set(record, 'meta.locale', 'es-es')
+      await interceptor.interceptRecord(record)
+      const sequence = Config.get('sequence')
+      expect(sequence).toHaveLength(2)
+      expect(sequence[1]).toBe('1')
+    })
   })
 
   describe('interceptRequest', () => {
-    test('request from call', async () => {
-      const request = [
-        { text: '$DIAL' },
-        { text: '1' },
-        { text: 'https://ivr-benchmark.audios.com/1234asdf' }
-      ]
-      await interceptor.interceptRequest(request, null)
+    const request = [
+      { text: '$DIAL' },
+      { text: '1' },
+      { text: 'https://ivr-benchmark.audios.com/1234asdf' }
+    ]
+
+    const device = {
+      _configuration: {}
+    }
+
+    beforeEach(() => {
+      Config.loadFromJSON({
+        customer: 'ivr-benchmark',
+        job: 'test',
+        sequence: ['$DIAL']
+      })
+    })
+
+    test('request from call in english', async () => {
+      await interceptor.interceptRequest(request, device)
       expect(request[0].settings.finishOnPhrase).toBe('test number')
       expect(request[1].settings.finishOnPhrase).toBe('expected phrase')
+    })
+
+    test('request from call in spanish', async () => {
+      device._configuration.locale = 'es-ES'
+      await interceptor.interceptRequest(request, device)
+      expect(request[0].settings.finishOnPhrase).toBe('número del test')
+      expect(request[1].settings.finishOnPhrase).toBe('frase esperada')
+    })
+
+    test('request from amazon-connect call in spanish', async () => {
+      Config.reset()
+      Config.loadFromJSON({
+        customer: 'ivr-benchmark',
+        job: 'amazon',
+        sequence: ['$DIAL']
+      })
+      device._configuration.locale = 'es-ES'
+      await interceptor.interceptRequest(request, device)
+      expect(request[0].settings.finishOnPhrase).toBe('número de la prueba')
+      expect(request[1].settings.finishOnPhrase).toBe('frase esperada')
+    })
+
+    test('request from twilio call in spanish', async () => {
+      Config.reset()
+      Config.loadFromJSON({
+        customer: 'ivr-benchmark',
+        job: 'twilio',
+        sequence: ['$DIAL']
+      })
+      device._configuration.locale = 'es-ES'
+      await interceptor.interceptRequest(request, device)
+      expect(request[0].settings.finishOnPhrase).toBe('prueba')
+      expect(request[1].settings.finishOnPhrase).toBe('frase')
     })
   })
 

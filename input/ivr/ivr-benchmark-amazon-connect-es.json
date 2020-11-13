@@ -1,7 +1,7 @@
 {
   "customer": "Bespoken",
   "interceptor": "src/ivr/process/benchmark-interceptor",
-  "job": "ivr-benchmark-twilio-autopilot",
+  "job": "ivr-benchmark-amazon-connect-es",
   "sequence": [
     "$DIAL"
   ],
@@ -13,10 +13,13 @@
     ]
   },
   "virtualDeviceConfig": {
-    "phoneNumber": "+16504698776",
-    "repeatOnPhrase": "say that again",
+    "phoneNumber": "+17162475149",
+    "repeatOnPhrase": "disculpa",
     "recordCall": true,
-    "pauseDuration": "500m"
+    "pauseDuration": "500m",
+    "speechModel": "default",
+    "locale": "es-US",
+    "voiceId": "Miguel"
   },
   "virtualDeviceBaseURL": "https://virtual-device-twilio.bespoken.io/"
 }
