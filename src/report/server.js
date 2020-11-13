@@ -46,11 +46,12 @@ app.get(['/ivr'], (req, res) => res.render('ivr/ivr-reports', {
 
 app.get('/ivr/summary', (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
-    page: () => 'ASR BENCHMARK',
+    company: () => 'Bespoken and DefinedCrowd',
+    page: () => 'ASR PERFORMANCE',
     pageType: () => 'summary',
     sponsorLogo: 'DefinedCrowd.svg',
     sponsorURL: 'https://definedcrowd.com',
-    title: () => 'Modern IVR'
+    title: () => 'IVR Benchmark'
   }
 }))
 
