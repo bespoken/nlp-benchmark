@@ -5,6 +5,10 @@ const S3 = require('../../S3')
 const { tsvToArray } = require('../../helper')
 
 class BenchmarkInterceptor extends Interceptor {
+  async interceptPreProcess (job) {
+    this.run = job.run
+  }
+
   async interceptRecord (record) {
     const { platform, index, locale } = record.meta
     let sequenceIndex = `${index}`
@@ -61,7 +65,11 @@ class BenchmarkInterceptor extends Interceptor {
       dialogflow: 'dialogflow',
       twilio: 'twilio'
     }
-    const response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
+    let response = `${platforms[record.meta.platform]}-${record.meta.index}.txt`
+    if (record.rerun) {
+      response = `${this.run}/${response}`
+    }
+    console.log(`S3 get ${response}`)
     try {
       buffer = await S3.get(response, 'ivr-benchmark-responses')
     } catch (err) {
