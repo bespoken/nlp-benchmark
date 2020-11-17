@@ -6,6 +6,7 @@
 analysis
 coverage
 /data
+.history
 node_modules
 output
 

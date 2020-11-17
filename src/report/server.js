@@ -55,6 +55,17 @@ app.get('/ivr/summary', (req, res) => res.render('ivr/ivr-reports', {
   }
 }))
 
+app.get('/ivr/protocol', (req, res) => res.render('ivr/ivr-protocol', {
+  helpers: {
+    company: () => 'Bespoken and DefinedCrowd',
+    page: () => 'ASR PERFORMANCE',
+    pageType: () => 'summary',
+    sponsorLogo: 'DefinedCrowd.svg',
+    sponsorURL: 'https://definedcrowd.com',
+    title: () => 'IVR Benchmark'
+  }
+}))
+
 app.get('/nlp/protocol', (req, res) => res.render('nlp/nlp-protocol', {
   helpers: {
     page: () => 'TEST PROTOCOL',
