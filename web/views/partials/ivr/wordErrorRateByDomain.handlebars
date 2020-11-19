@@ -1,0 +1,44 @@
+<canvas id="werByDomainCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('werByDomainCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByDomain')
+    const rawData = response.data
+    let domains = ['banking', 'insurance', 'retail']
+    
+    const chartData = {
+      labels: domains.map((domain) => _.upperFirst(domain)),
+      datasets: [
+        {
+          backgroundColor: domains.map(t =>  window.datasets[0][2]),
+          borderWidth: 0,
+          data: filterByDomains(rawData,  window.datasets[0][0], domains),
+          label:  window.datasets[0][1]
+        },
+        {
+          backgroundColor: domains.map(t =>  window.datasets[1][2]),
+          borderWidth: 0,
+          data: filterByDomains(rawData,  window.datasets[1][0], domains),
+          label:  window.datasets[1][1]
+        },
+        {
+          backgroundColor: domains.map(t =>  window.datasets[2][2]),
+          borderWidth: 0,
+          data: filterByDomains(rawData,  window.datasets[2][0], domains),
+          label:  window.datasets[2][1]
+        }
+      ]
+    }
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Domain', chartData, false, 2)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.werByDomainChart = new Chart(canvas, chartConfiguration)
+  })
+
+  function filterByDomains(resultsForPlatform, platform, domains) {
+    return domains.map((domain) => {
+      return resultsForPlatform[platform].find(result => result.DOMAIN === domain).WER
+    })
+  }
+</script>

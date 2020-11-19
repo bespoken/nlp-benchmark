@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const DataSource = require('../src/report/datasource')
+const DataSource = require('../src/report/nlp-datasource')
 
 require('dotenv').config()
 
@@ -30,7 +30,7 @@ describeIf('datasource works correctly', () => {
     const dataSource = new DataSource()
     const results = await dataSource.successByAnnotations()
     console.info(JSON.stringify(results, null, 2))
-    expect(_.keys(results).length).toBe(2)
+    expect(_.keys(results).length).toBe(3)
     expect(_.keys(results.alexa).length).toBe(7)
     expect(results.alexa.NO_ANSWER.successCount).toBeDefined()
     expect(results.alexa.NO_ANSWER.successPercentage).toBeDefined()

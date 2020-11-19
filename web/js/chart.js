@@ -1,7 +1,7 @@
 /* global Chart */
 
 const ChartHelper = {
-  bar: (title, data) => {
+  bar: (title, data, percentage = true, precision = 2) => {
     const options = {
       data: data,
       options: {
@@ -30,7 +30,11 @@ const ChartHelper = {
               weight: 'bold'
             },
             formatter: (s) => {
-              return s + '%'
+              if (percentage) {
+                return s + '%'
+              } else {
+                return s.toFixed(precision)
+              }
             },
             textAlign: 'top'
           }
@@ -76,11 +80,11 @@ const ChartHelper = {
           callbacks: {
             label: function (tooltipItem, data) {
               let label = data.datasets[tooltipItem.datasetIndex].label || ''
-
+              const value = percentage ? `${tooltipItem.value}%` : tooltipItem.value
               if (label) {
-                label += `: ${tooltipItem.value}%`
+                label += `: ${value}`
               } else {
-                label = `${tooltipItem.label}: ${tooltipItem.value}%`
+                label = `${tooltipItem.label}: ${value}`
               }
               return label
             }
@@ -127,13 +131,16 @@ const ChartHelper = {
     Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
     Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
     Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
-    Chart.defaults.global.animation.duration = 3000
+    Chart.defaults.global.animation.duration = 2000
     return options
   },
 
   colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
+  colorAmazon: () => 'rgb(0, 171, 186)',
+  colorDialogflow: () => 'rgb(239, 108, 0)',
   colorGoogle: () => 'rgba(250, 189, 3, 1.0)',
   colorSiri: () => 'rgb(193, 193, 193)',
+  colorTwilio: () => 'rgb(242, 47, 70)',
   defaultFont: () => 'Roboto Condensed',
   defaultFontSize: () => 16,
   titleFont: () => 'Khand',

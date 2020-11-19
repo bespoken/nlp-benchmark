@@ -13,7 +13,7 @@
 </style>
 <script>
   window.addEventListener('load', async () => {
-    const response = await axios.get('/results')
+    const response = await axios.get('/nlp/results')
     const results = response.data
     results.forEach(result => {
       result.ANSWER_TUPLE = toYesNo(result.ANSWER_TUPLE)

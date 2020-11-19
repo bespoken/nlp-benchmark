@@ -23,7 +23,7 @@
 
         We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
 
-        Tests were run using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/protocol'>here</a>, see the detailed results by question <a href='/details'>here</a>.
+        Tests were run using our <a href='https://bespoken.io/test-robot' target="_blank">Bespoken Test Robots - if you can talk to it, we can test it.</a> Read more about our test protocol <a href='/nlp/protocol'>here</a>, see the detailed results by question <a href='/nlp/details'>here</a>.
       </div>
     </div>
     <div class='col-12 col-lg-6'>
@@ -39,7 +39,7 @@
     <div class='col-12 col-lg-6' >
       <h2>Success By Platform</h2>
       <div>
-        {{> successByPlatform }}
+        {{> nlp/successByPlatform }}
       </div>
       <div class='caption'>
         The number of questions answered correctly by each platform.
@@ -48,7 +48,7 @@
     <div class='col-12 col-lg-6'>
       <h2>Success By Question Complexity</h2>
       <div>
-        {{> successByComplexity }}
+        {{> nlp/successByComplexity }}
       </div>
       <div class='caption'>
         The percentage of simple versus complex questions answered correctly by each platform.<br>
@@ -60,7 +60,7 @@
     <div class='col-12 col-lg-6'>
       <h2>Success By Question Type</h2>
       <div>
-        {{> successByAnnotations }}
+        {{> nlp/successByAnnotations }}
       </div>
       <div class='caption'>
         The percentage of questions answered correctly for each type of question.<br>
@@ -70,11 +70,11 @@
     <div class='col-12 col-lg-6'>
       <h2>Success By Question Topics</h2>
       <div>
-        {{> successByTopics }}
+        {{> nlp/successByTopics }}
       </div>
       <div class='caption'>
         The percentage of questions answered correctly for each topic.<br>
-        <a href='/topics'>Click here</a> for a complete breakdown across all topics.
+        <a href='/nlp/topics'>Click here</a> for a complete breakdown across all topics.
       </div>
     </div> 
   </div>

@@ -1,0 +1,48 @@
+<canvas id="werByNoisyCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('werByNoisyCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByNoisy')
+    const rawData = response.data
+    let groupValues = ['YES', 'NO']
+    let groupLabels = ['Noisy', 'Not Noisy']
+    const chartData = {
+      labels: groupLabels,
+      datasets: [
+        {
+          backgroundColor: groupValues.map(t => window.datasets[0][2]),
+          borderWidth: 0,
+          data: filterByNoisy(rawData, window.datasets[0][0], groupValues),
+          label:  window.datasets[0][1]
+        },
+        {
+          backgroundColor: groupValues.map(t =>  window.datasets[1][2]),
+          borderWidth: 0,
+          data: filterByNoisy(rawData,  window.datasets[1][0], groupValues),
+          label:  window.datasets[1][1]
+        },
+        {
+          backgroundColor: groupValues.map(t =>  window.datasets[2][2]),
+          borderWidth: 0,
+          data: filterByNoisy(rawData,  window.datasets[2][0], groupValues),
+          label:  window.datasets[2][1]
+        }
+      ]
+    }
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Background Noise', chartData, false, 2)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    _.set(chartConfiguration, 'options.watermark.alignX', 'right')
+    _.set(chartConfiguration, 'options.watermark.y', 20)
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.werByDomainChart = new Chart(canvas, chartConfiguration)
+  })
+
+  function filterByNoisy(resultsForPlatform, platform, groups) {
+    return groups.map((group) => {
+      return resultsForPlatform[platform].find(result => {
+        return result.STARTS_WITH_NON_SPEECH === group
+      }).WER
+    })
+  }
+</script>

@@ -29,7 +29,7 @@
 
 <script>
    window.addEventListener('load', async () => {
-      const response = await axios.get('/successByAnnotations')
+      const response = await axios.get('/nlp/successByAnnotations')
       const rawData = response.data
       const table = $('#annotationsTable')
       // Create a list of annotations by key and name - e.g, { TELEGRAPHIC: "Telegraphic" }
