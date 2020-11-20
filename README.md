@@ -33,11 +33,10 @@ https://benchmark.bespoken.io
 We classify answers as correct or not by the presence of the answer from the dataset.
 
 In the case where the dataset has multiple answers, if anyone is present we include it.
-![NLP Protocol](/web/images/ProtocolDiagram.png)
 [Read more here](https://benchmark.bespoken.io/nlp/protocol)
 ### Speech Recognition Accuracy
 We take datasets from DefinedCrowd and run them through the various platforms using our Virtual Devices for IVR:
-![IVR Protocol](/web/images/IVRBenchmarkProtocol.png)
+<div><img src='/web/images/IVRBenchmarkProtocol.png' height='400' /></div>
 
 [Read more here](https://benchmark.bespoken.io/ivr/protocol)
 
