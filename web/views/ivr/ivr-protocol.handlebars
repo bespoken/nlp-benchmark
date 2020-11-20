@@ -29,11 +29,11 @@
 
         <p>The flow works as follows:</p>
         <ul>
-          <li>DefinedData audio utterances in English and Spanish are loaded from S3 by Bespoken</li>
+          <li>DefinedData audio utterances in English and Spanish are loaded from S3 by Bespoken along with their transcripts</li>
           <li>The Bespoken Performance Tester calls the platform being tested and "speaks" the utterance,
             in exactly the way a user would. This is true end-to-end testing, done at scale.</li>
-          <li>The resulting transcript from the voice platform is compared to the expected transcript.</li>
-          <li>Word Error Rate and other analytics are calculated and stored in MySQL for reporting.</li>
+          <li>Each platform being tested provides us with their own call transcript, this is compared to the transcript we have from step 1.</li>
+          <li>The Word Error Rate and other analytics are calculated and stored in MySQL for reporting.</li>
         </ul>
         <p>Tests are run with Github, as part of our <a href='https://github.com/bespoken/nlp-benchmark'>Bespoken
             Benchmark project</a>.</p>
