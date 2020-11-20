@@ -9,6 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
       MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
       MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
