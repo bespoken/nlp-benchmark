@@ -22,8 +22,8 @@ Results are meant to published on a bi-monthly basis. The table below summarizes
 
 | Date | Test Type | Data Set | Platforms | Results
 |---|---|---|---|---
-| 7/26/2020 | General Knowledge | ComQA | Alexa, Google Assistant, Siri | LINK TBA
-| 11/20/2020 | Speech Recognition | DefinedCrowd | Amazon Connect, Google Dialogflow, Twilio Voice | LINK TBA
+| 7/26/2020 | General Knowledge | ComQA | Alexa, Google Assistant, Siri | [Link](https://benchmark.bespoken.io)
+| 11/20/2020 | Speech Recognition | DefinedCrowd | Amazon Connect, Google Dialogflow, Twilio Voice | [Link](https://benchmark.bespoken.io/ivr)
 
 The published results are viewable here:  
 https://benchmark.bespoken.io
