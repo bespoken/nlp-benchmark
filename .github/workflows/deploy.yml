@@ -9,7 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       MYSQL_DATABASE: ${{ secrets.MYSQL_DATABASE }}
       MYSQL_HOST: ${{ secrets.MYSQL_HOST }}
       MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
@@ -22,7 +21,7 @@ jobs:
         echo 'MySQL: ' $MYSQL_HOST
         
     # Need to parse the github ref, which is in the form refs/heads/TAG_NAME - this little action does that
-    - uses: olegtarasov/get-tag@v2
+    - uses: little-core-labs/get-git-tag@v3.0.1
       id: tagName
         
     - name: Create docker image
