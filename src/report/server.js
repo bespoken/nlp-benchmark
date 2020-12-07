@@ -119,11 +119,19 @@ app.get('/nlp/successByTopics', async (req, res) => {
 
 // IVR reports
 app.get('/ivr/werByAgeGroup', async (req, res) => {
-  res.send(await cache('werByAgeGroup', ivrDataSource))
+  res.send(await cache('werByAgeGroup', ivrDataSource, 'en'))
+})
+
+app.get('/ivr/werByAgeGroupSpanish', async (req, res) => {
+  res.send(await cache('werByAgeGroup', ivrDataSource, 'es'))
 })
 
 app.get('/ivr/werByDomain', async (req, res) => {
-  res.send(await cache('werByDomain', ivrDataSource))
+  res.send(await cache('werByDomain', ivrDataSource, 'en'))
+})
+
+app.get('/ivr/werByDomainSpanish', async (req, res) => {
+  res.send(await cache('werByDomain', ivrDataSource, 'es'))
 })
 
 app.get('/ivr/werByEthnicity', async (req, res) => {

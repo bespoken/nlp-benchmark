@@ -1,10 +1,10 @@
-<canvas id="werByDomainCanvas" ></canvas>
+<canvas id="werByDomainSpanishCanvas" ></canvas>
 <script>
   window.addEventListener('load', async () => {
-    const canvas = document.getElementById('werByDomainCanvas').getContext('2d')
-    const response = await axios.get('/ivr/werByDomain')
+    const canvas = document.getElementById('werByDomainSpanishCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByDomainSpanish')
     const rawData = response.data
-    let domains = ['banking', 'insurance', 'retail']
+    let domains = ['insurance', 'retail', 'telco']
     
     const chartData = {
       labels: domains.map((domain) => _.upperFirst(domain)),
@@ -29,9 +29,10 @@
         }
       ]
     }
-    const chartConfiguration = ChartHelper.bar('Word Error Rate by Domain (English)', chartData, true, 2)
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Domain (Spanish)', chartData, true, 2)
     _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
     _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.40)
     //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
     window.werByDomainChart = new Chart(canvas, chartConfiguration)
   })

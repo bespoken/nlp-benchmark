@@ -31,7 +31,7 @@ const ChartHelper = {
             },
             formatter: (s) => {
               if (percentage) {
-                return s + '%'
+                return s.toFixed(precision) + '%'
               } else {
                 return s.toFixed(precision)
               }
