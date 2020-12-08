@@ -24,7 +24,7 @@ var hbs = handlebars.create({
 })
 app.engine('handlebars', hbs.engine)
 
-app.get(['/', '/nlp'], (req, res) => res.render('nlp/nlp-reports', {
+app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   helpers: {
     page: () => 'OVERVIEW',
     sponsorLogo: 'ProjectVoiceLogo.png',
@@ -33,7 +33,7 @@ app.get(['/', '/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   }
 }))
 
-app.get(['/ivr'], (req, res) => res.render('ivr/ivr-reports', {
+app.get(['/', '/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
     company: () => 'Bespoken and DefinedCrowd',
     page: () => 'ASR PERFORMANCE',

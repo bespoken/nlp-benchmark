@@ -1,3 +1,8 @@
+## 0.5.2
+* Added menu to access other reports
+* Make IVR report the default
+* Fixed issue with displaying percentages on IVR report
+
 ## 0.5.1
 * Added more audio samples and better report
 
