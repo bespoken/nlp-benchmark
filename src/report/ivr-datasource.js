@@ -61,7 +61,7 @@ class DataSource {
       order by age_group_35, platform`)
 
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
@@ -74,7 +74,7 @@ class DataSource {
       where lang = '${language}' 
       group by PLATFORM, DOMAIN order by PLATFORM, DOMAIN desc`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
@@ -94,7 +94,7 @@ class DataSource {
       group by ethnicity_group
       order by ethnicity_group;`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'ethnicity_group')
@@ -115,7 +115,7 @@ class DataSource {
       group by platform, ethnicity_group
       order by ethnicity_group, platform;`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
@@ -131,7 +131,7 @@ class DataSource {
       group by platform, gender
       order by gender, platform;`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
@@ -144,7 +144,7 @@ class DataSource {
       where lang = '${language}' 
       group by PLATFORM, STARTS_WITH_NON_SPEECH order by PLATFORM, STARTS_WITH_NON_SPEECH desc`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.groupBy(rawData, 'PLATFORM')
@@ -157,11 +157,15 @@ class DataSource {
       where lang = '${language}'
       group by PLATFORM order by PLATFORM desc`)
     rawData.forEach(row => {
-      row.WER = _.round(row.WER, 2)
+      row.WER = this._werFormat(row.WER)
     })
     // console.info('RAWDATA: ' + JSON.stringify(rawData, null, 2))
     const resultsByPlatform = _.keyBy(rawData, 'PLATFORM')
     return resultsByPlatform
+  }
+
+  _werFormat (n) {
+    return _.round(n * 100, 2)
   }
 }
 

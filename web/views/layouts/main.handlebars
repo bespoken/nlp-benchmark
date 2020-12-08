@@ -141,6 +141,17 @@
         font-family: 'Open Sans';
       }
 
+      .menu {
+        background-color-bak: #f4a82d;
+        background-color:  #1ec9dd;
+        font-family: khand;
+      }
+
+      .menu span, .menu a, .menu a:hover {
+        color: white;
+        text-decoration: none;
+      }
+
       p {
         margin: 10 0 0 0
       }
@@ -242,7 +253,7 @@
     </script>
   </head>
   <body style='margin-bottom: 10px'>
-    <div class='container-fluid ' style='background-color: #184160;padding: 20;'>
+    <div class='container-fluid ' style='background-color: #184160;padding: 10;'>
       <div class='row header' >
         <div class='col-4' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' class='logo' /></a></div>
         <div class='col-4'>
@@ -254,14 +265,21 @@
           <div class='row' >
             <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
           </div>
+          
         </div>
         <div class='col-4  d-flex align-items-center justify-content-end' id='sponsorLogoSection' style='display:inline-flex;text-align: right;'>
           <a href='{{sponsorURL}}' target='_blank' ><img class='sponsorLogo' src='/web/images/{{sponsorLogo}}' style='padding: 0' /></a>
         </div>
         
       </div>  
+      
     </div>
-
+    <div class='container-fluid menu'>
+      <div class='row' >
+        <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:</span>&nbsp;
+           <span class='menu-options'><a href='/ivr'>IVR ASR</a> &nbsp; | &nbsp; <a href='/nlp'>Virtual Assistant</a></span></div> 
+      </div>
+    </div>
     {{{body}}}
 
     <!-- footer -->

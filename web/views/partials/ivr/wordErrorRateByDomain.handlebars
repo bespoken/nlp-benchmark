@@ -31,7 +31,7 @@
     }
     const chartConfiguration = ChartHelper.bar('Word Error Rate by Domain (English)', chartData, true, 2)
     _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
-    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 0.6)
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 60)
     //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
     window.werByDomainChart = new Chart(canvas, chartConfiguration)
   })
