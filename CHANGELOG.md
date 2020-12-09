@@ -1,3 +1,6 @@
+## 0.5.3
+* Tweaking mobile appearance
+
 ## 0.5.2
 * Added menu to access other reports
 * Make IVR report the default
