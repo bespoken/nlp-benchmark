@@ -26,7 +26,7 @@
   });
 
   const urlParams = new URLSearchParams(window.location.search);
-  if (!Cookies.get('converted') && pageType === 'detail' && !urlParams.has('secret')) {
+  if (!Cookies.get('converted') && pageType === 'detail' && !urlParams.has('full')) {
     window.location.href = '/ivr/summary'
   }
 
