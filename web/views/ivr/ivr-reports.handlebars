@@ -107,7 +107,7 @@
         Someone <i>might</i> say these tests are almost unfair. But what is unfair is not taking into account that your users are not calling from an ivory tower. They are calling from their cars, from their kitches and family rooms, on their speakers, with their kids around. And they still need help and service.
         <br>
         <br>
-        The state of the art of Speech Recognition has advanced rapidly, but it still takes careful testing, training and tuning to deliver optimal performance.
+        If there is just ONE thing you are going to take from this report, it is that speech recognition is not a STATIC, ONE-SIZE-FITS-ALL space. Though the state of the art of Speech Recognition has advanced rapidly, it still takes careful testing, training and tuning to deliver maximum performance. 
     </div>
   </div>
   <div class='row'>
@@ -130,11 +130,12 @@
         {{> ivr/wordErrorRateByPlatformSpanish }}
       </div>
       <div class='caption'>
-        Interestingly, on Spanish we see the performance of the vendors is very different - it's not exactly flipped, but there is significant variation. 
-        This is not surprising, as there are significant variations within platforms between support for languages and locales.
+        Interestingly, on Spanish we see the performance of the vendors is very different - it's not exactly flipped, but the second-place and third-place vendors have swapped positions. 
+        This is not surprising, as there are significant variations within platforms in their support for specific languages and locales.
         The conclusion? Just because a platform does well with one language and locale on CANNOT assume it will excel at others. Testing, with real data, is the key to find the right solution.
         <br><br>
         And overall, it is worth noting the performance in Spanish is generally better. That is because the audio in this dataset is generally "cleaner" - better connections with less background noise.
+        
       </div>
     </div>
   </div>
@@ -163,7 +164,8 @@
         Similar to the significant variations we see by language, we see the same based on the industry and domain we are working within.
         This holds true across both English and Spanish. <br><br>
         ASR systems will bias towards the domains they know best and have been trained on most intensively.
-        So if your provider has not been trained and tuned for your specific domain, your performance will be negatively impacted, and vice-versa.
+        So if your provider has not been trained and tuned for your specific domain, your performance will be negatively impacted, and vice-versa.<br><br>
+        For example, in the banking domain, the word "checking" is used routinely. In hospitality, users will commonly say "check-in". Just on the pure sound of the words, they are easily confused - and that is where the bias of the specific platform will creep in. These issues are eminently solvable, but they do require attention and care.
       </div>
     </div>
   </div>
@@ -175,7 +177,7 @@
       </div>
       <div class='caption'>
         As mentioned at the outset - these are tough, real-world scenarios. 
-        Background noise really challenges speech recognition systems - and we can see reflected here how dramatic the impact is on it.<br>
+        Background noise really challenges speech recognition systems - and we can see reflected here how dramatic the impact is on it.<br><br>
         For example, <a href='/web/media/Frozen-BackgroundNoise.wav' target='_blank'>click here to listen</a> to this clip where the caller appears to have the TV on in the background. It's difficult, but also commonplace. 
       </div>
     </div>
@@ -187,11 +189,11 @@
         {{> ivr/wordErrorRateByEthnicity }}
       </div>
       <div class='caption'>
-        Also unsurprising - race and ethnicity have a big impact as well. 
-        Between white and non-white speakers, we see non-white speakers being understood significantly worse, almost dramatically so in scenarios.<br><br>
+        Also unsurprising - race and ethnicity have a big impact. 
+        Between white and non-white speakers, we see non-white speakers being understood significantly worse, almost dramatically so.<br><br>
         A couple additional notes to keep in mind with this chart: 
         <ul>
-          <li>The data presented here is for only for the English dataset, as we do not have Ethnicity information for the Spanish-language dataset.</li>
+          <li>The data presented here is for only for the English dataset, as we do not have Ethnicity classifications for the Spanish-language dataset.</li>
           <li>We roll up between white and non-White, as well as across vendors, because our goal is not to fuel incendiary headlines.</li>
         </ul>
         Instead, we want to point out that these systems are imperfect. That they perform better for particular audiences is CRITICAL to bear in mind when working with them.
@@ -217,7 +219,7 @@
         {{> ivr/wordErrorRateByAgeGroupSpanish }}
       </div>
       <div class='caption'>
-        In our Spanish dataset, we see there is an impact based on age - for older users, the platforms do not perform as well. Depending on the demographics of your users, this could be a very significant finding.
+        But even though age is not a factor for English dataset, it is for our Spanish dataset. For older users, the platforms do not perform as well. Depending on the demographics of your users, this could be a very significant finding.
       </div>
     </div>
   </div>
@@ -243,8 +245,8 @@
   <div class='row two-col two-col-caption'>
     <div class='col-12' >
       <div class='caption'>
-        The impact by gender is minimal across both languages - this is good to see!
-        Historically, this has been a challenge for ASR/IVR systems - it is, of course, critical to ensure that your ENTIRE audience has a great experience.
+        The impact by gender is minimal across both languages - this is great to see!
+        Historically, this has been a challenge for ASR/IVR systems - and at least for these platforms and datasets, it appears to have been overcome.
       </div>
     </div>
   </div>
