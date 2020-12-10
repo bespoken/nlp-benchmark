@@ -1,0 +1,46 @@
+<canvas id="werByGenderSpanishCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('werByGenderSpanishCanvas').getContext('2d')
+    const response = await axios.get('/ivr/werByGenderSpanish')
+    const rawData = response.data
+    let groups = ['Female', 'Male']
+    
+    const chartData = {
+      labels: groups,
+      datasets: [
+        {
+          backgroundColor: groups.map(t => window.datasets[0][2]),
+          borderWidth: 0,
+          data: filterByGender(rawData, window.datasets[0][0], groups),
+          label:  window.datasets[0][1]
+        },
+        {
+          backgroundColor: groups.map(t => window.datasets[1][2]),
+          borderWidth: 0,
+          data: filterByGender(rawData, window.datasets[1][0], groups),
+          label: window.datasets[1][1]
+        },
+        {
+          backgroundColor: groups.map(t =>  window.datasets[2][2]),
+          borderWidth: 0,
+          data: filterByGender(rawData, window.datasets[2][0], groups),
+          label: window.datasets[2][1]
+        }
+      ]
+    }
+    const chartConfiguration = ChartHelper.bar('Word Error Rate by Gender (Spanish)', chartData, true, 2)
+    _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
+    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.max', 60)
+    //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    window.werByGenderChart = new Chart(canvas, chartConfiguration)
+  })
+
+  function filterByGender(resultsForPlatform, platform, groups) {
+    return groups.map((group) => {
+      return resultsForPlatform[platform].find(result => {
+        return result.gender === group
+      }).WER
+    })
+  }
+</script>

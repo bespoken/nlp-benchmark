@@ -138,27 +138,30 @@
       </div>
     </div>
   </div>
-  <div class='row'>
+  <div class='row two-col two-col-header' >
     <div class='col-12' >
-      <h2>Word Error Rate By Domain (English)</h2>
+      <h2 >Word Error Rate By Domain</h2>
+    </div>
+  </div>
+  <div class='row two-col two-col-data'>
+    <div class='col-lg-6 col-12' >
+      <h3>Word Error Rate By Domain (English)</h3>
       <div>
         {{> ivr/wordErrorRateByDomain }}
       </div>
-      <div class='caption'>
-        Similar to the significant variations we see by language, we see the same based on the industry and domain we are working within.
-        ASR systems will bias towards the domains they know best and have been trained on most intensively.
-        So if your provider has not been trained and tuned for your specific domain, your performance will be negatively impacted, and vice-versa.
-      </div>
     </div>
-  </div>
-  <div class='row'>
-    <div class='col-12' >
-      <h2>Word Error Rate By Domain (Spanish)</h2>
+    <div class='col-lg-6 col-12' >
+      <h3>Word Error Rate By Domain (Spanish)</h3>
       <div>
         {{> ivr/wordErrorRateByDomainSpanish }}
       </div>
+    </div>
+  </div>
+  <div class='row two-col two-col-caption'>
+    <div class='col-12' >
       <div class='caption'>
         Similar to the significant variations we see by language, we see the same based on the industry and domain we are working within.
+        This holds true across both English and Spanish. <br><br>
         ASR systems will bias towards the domains they know best and have been trained on most intensively.
         So if your provider has not been trained and tuned for your specific domain, your performance will be negatively impacted, and vice-versa.
       </div>
@@ -185,7 +188,13 @@
       </div>
       <div class='caption'>
         Also unsurprising - race and ethnicity have a big impact as well. 
-        Between white and non-white speakers, we see non-white speakers being understood significantly worse, almost dramatically so in scenarios.
+        Between white and non-white speakers, we see non-white speakers being understood significantly worse, almost dramatically so in scenarios.<br><br>
+        A couple additional notes to keep in mind with this chart: 
+        <ul>
+          <li>The data presented here is for only for the English dataset, as we do not have Ethnicity information for the Spanish-language dataset.</li>
+          <li>We roll up between white and non-White, as well as across vendors, because our goal is not to fuel incendiary headlines.</li>
+        </ul>
+        Instead, we want to point out that these systems are imperfect. That they perform better for particular audiences is CRITICAL to bear in mind when working with them.
       </div>
     </div>
   </div>
@@ -196,7 +205,7 @@
         {{> ivr/wordErrorRateByAgeGroup }}
       </div>
       <div class='caption'>
-        We see less of an impact by age in the English dataset - this is an area that represents significant progress for ASR/NLP platforms.
+        We see minimal impact by age in the English dataset - this is an area that represents significant progress for ASR/NLP platforms.
         This is good news and shows how these systems have evolved over time to better serve real-world scenarios.
       </div>
     </div>
@@ -208,19 +217,34 @@
         {{> ivr/wordErrorRateByAgeGroupSpanish }}
       </div>
       <div class='caption'>
-        In our Spanish dataset, we see there is an impact based on age - for older users, the systems do not perform as well. Depending on the demographics of your users, this could be a very significant finding.
+        In our Spanish dataset, we see there is an impact based on age - for older users, the platforms do not perform as well. Depending on the demographics of your users, this could be a very significant finding.
       </div>
     </div>
   </div>
-  <div class='row'>
+  <div class='row two-col two-col-header'>
     <div class='col-12' >
-      <h2>Word Error Rate By Gender (English)</h2>
+      <h2>Word Error Rate By Gender</h2>
+    </div>
+  </div>
+  <div class='row two-col two-col-data'>
+    <div class='col-lg-6 col-12' >
+      <h3>Word Error Rate By Gender (English)</h3>
       <div>
         {{> ivr/wordErrorRateByGender }}
       </div>
+    </div>
+    <div class='col-lg-6 col-12' >
+      <h3>Word Error Rate By Gender (Spanish)</h3>
+      <div>
+        {{> ivr/wordErrorRateByGenderSpanish }}
+      </div>
+    </div>
+  </div>
+  <div class='row two-col two-col-caption'>
+    <div class='col-12' >
       <div class='caption'>
-        The impact by gender is also minimal - this is also good news.
-        Historically, this has been a challenge for ASR/IVR systems - it's critical to ensure that your ENTIRE audience has a great experience.
+        The impact by gender is minimal across both languages - this is good to see!
+        Historically, this has been a challenge for ASR/IVR systems - it is, of course, critical to ensure that your ENTIRE audience has a great experience.
       </div>
     </div>
   </div>
@@ -231,9 +255,9 @@
         Follow along as we expand on this benchmark to cover:
       </p>
       <ul>
-        <li>Tuning and training the ASR behavior using Bespoken's testing and training tools - we typically see huge improvements using simple techniques
+        <li>Tuning and training the ASR behavior using Bespoken's software - we typically see huge improvements using simple techniques
         <li>Expanding the domains and languages that we include in our testing</li>
-        <li>Testing additional platforms such as IBM Watson, Genesys, Azure Communication Services and Moreover/li>
+        <li>Testing additional platforms such as IBM Watson, Genesys, Azure Communication Services and More
       </ul>
       <p>We welcome your input to - if you have ideas on what we should include in the benchmark, or how we can improve it - <a href='mailto:contact@bespoken.io'>drop us a line.</a></p>
     </div> 
@@ -243,11 +267,11 @@
       <h2>Who Are You?</h2>
     </div>
   </div> 
-  <div class='row' style='margin-bottom:0px'>
-    <div class='col-3' >
-      <img src='/web/images/Logo-BlackText.png' style='width: 100%;padding: 10' />
+  <div class='row' style='margin-bottom:0px;'>
+    <div class='col-12' style="background: #184160; text-align: center;" >
+      <img src='/web/images/Logo-WhiteText.png' style='height: 80px;padding: 10' />
     </div>
-    <div class='col-9 text tagline' style='margin-top: auto;margin-bottom: auto;' >
+    <div class='col-12 text tagline' style='background: #184160; color:white;margin-top: auto;margin-bottom: auto;text-align: center;' >
       <h3>
         Testing, Training, Tuning and Monitoring
       </h3>
@@ -260,7 +284,9 @@
     <div class='col-12 text' >
       <p>
         We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
-        <a href='mailto:contact@bespoken.io' target='_blank'>Contact us</a> for a free baseline assessment of YOUR performance and a roadmap to improve it. 
+        We test, train and monitor their systems to rapidly improve performance. See our <a href='https://bespoken.io/blog/testing-tuning-and-monitoring-for-conversational-ivr/'>recent case study</a> for more details on the profound impact our tools and team can have.<br><br>
+        
+        Then <a href='mailto:contact@bespoken.io' target='_blank'>contact us</a> for a free baseline assessment of YOUR AI-based system and a roadmap to improve it. 
       </p>
     </div>
   </div>
