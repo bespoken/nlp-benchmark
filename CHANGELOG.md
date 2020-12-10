@@ -1,3 +1,6 @@
+## 0.5.6
+* Tweaking the report layout
+
 ## 0.5.5
 * More tweaking of language
 
