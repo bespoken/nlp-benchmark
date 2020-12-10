@@ -1,3 +1,6 @@
+## 0.5.5
+* More tweaking of language
+
 ## 0.5.4
 * Revisions based on feedback from DefinedCrowd
 * Combining English and Spanish charts into one row where results are similar
