@@ -1,3 +1,8 @@
+## 0.5.4
+* Revisions based on feedback from DefinedCrowd
+* Combining English and Spanish charts into one row where results are similar
+* Providing additional explanation on results
+
 ## 0.5.3
 * Tweaking mobile appearance
 
