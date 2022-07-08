@@ -20,23 +20,10 @@
 </style>
 <script>
   window.pageType = '{{ pageType }}'
-  document.addEventListener('om.Optin.success', function(event) {
-    Cookies.set('converted', 'true', { expires: 365 })
-    window.location.href = '/ivr/'
-  });
-
-  const urlParams = new URLSearchParams(window.location.search);
-  if (!Cookies.get('converted') && pageType === 'detail' && !urlParams.has('full')) {
-    window.location.href = '/ivr/summary'
-  }
-
-  if (window.pageType === 'summary') {
-    window.datasets = [['TWILIO', 'Vendor A', '#3324de'], ['AMAZON', 'Vendor B', '#9024de'], ['DIALOGFLOW', 'Vendor C', '#24bfde']]
-  } else if (window.pageType === 'detail') {
-    window.datasets = [['AMAZON', 'Amazon Connect', ChartHelper.colorAmazon()], 
-      ['DIALOGFLOW', 'Google Dialogflow', ChartHelper.colorDialogflow()], 
-      ['TWILIO', 'Twilio Voice', ChartHelper.colorTwilio()]]
-  }
+  window.datasets = [['AMAZON', 'Amazon Connect', ChartHelper.colorAmazon()], 
+    ['DIALOGFLOW', 'Google Dialogflow', ChartHelper.colorDialogflow()], 
+    ['TWILIO', 'Twilio Voice', ChartHelper.colorTwilio()]]
+  
 </script>
 <div id='ivr-reports' class='container-fluid ivr'  >
   <div class='row' style='margin-bottom: 5px' >
