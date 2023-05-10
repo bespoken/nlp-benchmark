@@ -2,7 +2,7 @@
 <script>
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('successByTopicsCanvas').getContext('2d')
-    const response = await axios.get('/nlp-new/successByTopics')
+    const response = await axios.get('/nlp-2023/successByTopics')
     const rawData = response.data
     let topics = ['Geography', 'History', 'Music', 'Movies', 'Politics', 'Sports']
     
@@ -16,16 +16,16 @@
           label: 'Amazon Alexa'
         },
         {
-          backgroundColor: topics.map(t => ChartHelper.colorSiri()),
-          borderWidth: 0,
-          data: filterByTopics(rawData, 'openai', topics),
-          label: 'OpenAI chatGPT'
-        },
-        {
           backgroundColor: topics.map(t => ChartHelper.colorGoogle()),
           borderWidth: 0,
           data: filterByTopics(rawData, 'google', topics),
           label: 'Google Assistant'
+        },
+        {
+          backgroundColor: topics.map(t => ChartHelper.colorOpenAI()),
+          borderWidth: 0,
+          data: filterByTopics(rawData, 'openai', topics),
+          label: 'OpenAI ChatGPT'
         }
       ]
     }

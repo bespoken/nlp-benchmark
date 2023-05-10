@@ -1,5 +1,5 @@
 const DataSource = require('./nlp-datasource')
-const NLPDataSource = require('./nlp-datasource-new')
+const NLPDataSource = require('./nlp-2023-datasource')
 const IVRDataSource = require('./ivr-datasource')
 const express = require('express')
 const handlebars = require('express-handlebars')
@@ -35,12 +35,12 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   }
 }))
 
-app.get(['/nlp-new'], (req, res) => res.render('nlp-new/nlp-reports', {
+app.get(['/nlp-2023'], (req, res) => res.render('nlp-2023/nlp-reports', {
   helpers: {
-    page: () => 'OVERVIEW',
-    sponsorLogo: 'ProjectVoiceLogo.png',
-    sponsorURL: 'https://projectvoice.ai/',
-    title: () => 'NLP Benchmark'
+    page: () => 'Updated for 2023',
+    //sponsorLogo: 'ProjectVoiceLogo.png',
+    //sponsorURL: 'https://projectvoice.ai/',
+    title: () => 'LLM/NLP Benchmark'
   }
 }))
 
@@ -129,28 +129,28 @@ app.get('/nlp/successByTopics', async (req, res) => {
 })
 
 // NLP new reports
-app.get('/nlp-new/results', async (req, res) => {
-  res.send(await cache('results', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/results', async (req, res) => {
+  res.send(await cache('results', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-new/successByTopics', async (req, res) => {
-  res.send(await cache('successByTopics', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/successByTopics', async (req, res) => {
+  res.send(await cache('successByTopics', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-new/successByPlatform', async (req, res) => {
-  res.send(await cache('successByPlatform', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/successByPlatform', async (req, res) => {
+  res.send(await cache('successByPlatform', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-new/successByComplexity', async (req, res) => {
-  res.send(await cache('successByComplexity', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/successByComplexity', async (req, res) => {
+  res.send(await cache('successByComplexity', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-new/successByAnnotations', async (req, res) => {
-  res.send(await cache('successByAnnotations', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/successByAnnotations', async (req, res) => {
+  res.send(await cache('successByAnnotations', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-new/successByTopics', async (req, res) => {
-  res.send(await cache('successByTopics', nlpNewDataSource, 'new'))
+app.get('/nlp-2023/successByTopics', async (req, res) => {
+  res.send(await cache('successByTopics', nlpNewDataSource, '2023'))
 })
 
 // IVR reports

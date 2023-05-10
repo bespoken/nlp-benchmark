@@ -2,7 +2,7 @@
 <script>
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('successByComplexityCanvas').getContext('2d')
-    const response = await axios.get('/nlp-new/successByComplexity')
+    const response = await axios.get('/nlp-2023/successByComplexity')
     const rawData = response.data
 
     const chartData = {
@@ -15,16 +15,16 @@
           label: 'Amazon Alexa'
         },
         {
-          backgroundColor: [ChartHelper.colorSiri(), ChartHelper.colorSiri()],
-          borderWidth: 0,
-          data: [rawData.openai0.successPercentage, rawData.openai1.successPercentage],
-          label: 'OpenAI chatGPT'
-        },
-        {
           backgroundColor: [ChartHelper.colorGoogle(), ChartHelper.colorGoogle()],
           borderWidth: 0,
           data: [rawData.google0.successPercentage, rawData.google1.successPercentage],
           label: 'Google Assistant'
+        },
+        {
+          backgroundColor: [ChartHelper.colorOpenAI(), ChartHelper.colorOpenAI()],
+          borderWidth: 0,
+          data: [rawData.openai0.successPercentage, rawData.openai1.successPercentage],
+          label: 'OpenAI chatGPT'
         }
       ]
     }

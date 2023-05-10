@@ -19,8 +19,8 @@
          <tr class="headerRow" >
             <th align="left"><image src='/web/images/Logo-BlackText.png' width='80'/></th>
             <th align="left">Amazon Alexa</th>
-            <th align="left">OpenAI chatGPT</th>
             <th align="left">Google Assistant</th>
+            <th align="left">OpenAI ChatGPT</th>
          </tr>
       </thead>
    </table>
@@ -29,7 +29,7 @@
 
 <script>
    window.addEventListener('load', async () => {
-      const response = await axios.get('/nlp-new/successByAnnotations')
+      const response = await axios.get('/nlp-2023/successByAnnotations')
       const rawData = response.data
       const table = $('#annotationsTable')
       // Create a list of annotations by key and name - e.g, { TELEGRAPHIC: "Telegraphic" }

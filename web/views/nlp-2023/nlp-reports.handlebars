@@ -1,0 +1,127 @@
+<style>
+  h2 {
+    color: #184160
+  } 
+
+  .text {
+    color: #184160;
+    text-align: left;
+  }
+</style>
+<div id='reports' class='container-fluid nlp-2023'  style="max-width: 1300px" >
+  <div class='row' style="margin-top: 0px" >
+    <div class='col-12 subtitle' style='color: #184160;font-family: roboto condensed;font-weight: bold;margin-top: 10'>
+      <i>Hey (Alexa | ChatGPT | Google), who knows the most?</i><br>
+      Measuring How Well The Major Voice Assistants Answer Complex Questions
+    </div>
+  </div>
+  <div class='row' >
+    <div class='col-12'>
+      <h2>What We Did</h2>
+      <div class='text' style='margin-top: 10;'>
+        We ran this benchmark using the following services: Amazon Alexa, OpenAI ChatGPT, and Google Assistant.<br><br>
+
+        We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
+
+        Tests were run using our <a href='https://bespoken.io/accuracy-testing/' target="_blank">Bespoken Accuracy Testing</a>. Read more about our test protocol <a href='/nlp/protocol'>here</a>, see the detailed results by question <a href='/nlp/details'>here</a>.
+      </div>
+    </div>
+  </div>
+  <div class='row' style="">
+    <div class='col-12' >
+      <h2>Success By Platform</h2>
+      <div>
+        {{> nlp-2023/successByPlatform }}
+      </div>
+      <div class='caption'>
+        The number of questions answered correctly by each platform.
+      </div>
+    </div>
+    <div class='col-12'>
+      <div class='text' style='margin-top: 10'>
+        We ran this test initially in 2020 with Alexa, Google and Siri. <a href='/nlp'>Click here to view those results</a><br><br>
+        
+        This time around, all the AIs performed even better, especially considering the complexity of the benchmark. These are difficult questions that are meant to challenge the limits of the assistants, so their success rate is remarkable.<br><br>
+
+        And of course, ChatGPT, which has made huge splash with the public, also had a big impact in these results. It outperformed both Google and Alexa in terms of overall knowledge.
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12'>
+      <h2>Success By Question Type</h2>
+      <div>
+        {{> nlp-2023/successByAnnotations }}
+      </div>
+      <div class='caption'>
+        The percentage of questions answered correctly for each type of question. Click on any of the question types for more in-depth information.
+      </div>
+      <div class="text" style="margin-top: 10">
+        Perhaps most significantly, ChatGPT performed radically better at the "No Answer" questions - that is: when the questions were not answerable, it correctly declined to answer.<br><br>
+        
+        An example of such a question is "What day did the first man land on Mars?" - these are essentially "trick questions", ones that anecdotally have been shown to cause problems for these assistants.
+
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-12'>
+      <h2>Success By Question Complexity</h2>
+      <div>
+        {{> nlp-2023/successByComplexity }}
+      </div>
+      <div >
+        The percentage of simple versus complex questions answered correctly by each platform.<br>
+        Complex questions involve <a href='javascript:showInfo("comparison")' >comparisons</a>, <a href='javascript:showInfo("compositional")' >composition</a>, and/or <a href='javascript:showInfo("temporal")' >temporal reasoning</a>.<br>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  
+  <div class='row'>
+    <div class='col-12'>
+      <h2>Success By Question Topics</h2>
+      <div>
+        {{> nlp-2023/successByTopics }}
+      </div>
+      <div class='caption'>
+        The percentage of questions answered correctly for each topic.<br>
+        <a href='/nlp-2023/topics'>Click here</a> for a complete breakdown across all topics.
+      </div>
+    </div> 
+  </div>
+  <div class='row' style='margin-top: 20' >
+    <div class='col-12 text' >
+      <h2>How Can This Help Me?</h2>
+      <p>
+        We know that many of our customers are out there right now planning their strategy for Large Language Models and figuring out how they can take advantage of this promising new technoloy.
+      </p>
+      <p>
+        At Bespoken, we have believed since our inception that testing is critical to working with AI.<br>
+        And large-language models have only made this more true - as they make development easier, they push more of the burden to QA.<br>
+
+      </p>
+      <div>
+        <img src="/web/images/LLM-Workflow.png" style="width: 100%"/>
+      </div>
+      <div class="caption">The LLM Feedback Loop</div>
+      <div class="text">
+        Bespoken tests models from LLM vendors for accuracy, functionality, and monitors them continuously for safety.
+
+        This virtuous, constant cycle is essential for AI.
+
+      </div>
+    </div> 
+  </div>
+  <div class='row' >
+    <div class='col-12 text' >
+      <h2>Who Are You?</h2>
+      <p>
+        Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
+        Want to <a href='https://bespoken.io/customer-success/'  target='_blank'>assess the performance</a> of your own bot for IVR, chat or virtual agent?<br><br>
+        Moreover, <a href='https://bespoken.io/blog/the-mars-agency-case-study/' target='_blank'>our tools provide specific guidance on how to improve it</a>. Interested? Contact us - <a href='mailto:contact@bespoken.io' target='_blank'>contact@bespoken.io</a>
+      </p>
+    </div>
+  </div>
+  
+</div>
