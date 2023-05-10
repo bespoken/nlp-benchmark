@@ -1,0 +1,30 @@
+{
+    "questions": [
+        {
+            "question": "what are the two newest member countries of the united nations?",
+            "answers": [
+              "https://en.wikipedia.org/wiki/south_sudan"
+            ]
+          },
+          {
+            "question": "who did great britain take india from?",
+            "answers": [
+              "https://en.wikipedia.org/wiki/east_india_company"
+            ]
+          },
+          {
+            "question": "when did mount vesuvius erupted for the first time?",
+            "answers": [
+              "https://en.wikipedia.org/wiki/mount_vesuvius"
+            ]
+          },
+          {
+            "question": "what countries share a border with the united arab emirates?",
+            "answers": [
+              "https://en.wikipedia.org/wiki/qatar",
+              "https://en.wikipedia.org/wiki/saudi_arabia",
+              "https://en.wikipedia.org/wiki/oman"
+            ]
+          }
+    ]
+  }

@@ -1,0 +1,64 @@
+<style>
+   .annotationLabel, .annotationCell {
+      background-color: white;
+      color: #3f93b7;
+      font-weight: bold;
+   }
+
+   td.annotationCell {
+      border-style-bak: none;
+   }
+
+   a:hover.annotationLabel {
+      color: #3f93b7;
+   }
+</style>
+<div>
+   <table id='annotationsTable' class='table' style='width: 100%;margin-top: 10px'>
+      <thead class="thead-light">
+         <tr class="headerRow" >
+            <th align="left"><image src='/web/images/Logo-BlackText.png' width='80'/></th>
+            <th align="left">Amazon Alexa</th>
+            <th align="left">OpenAI chatGPT</th>
+            <th align="left">Google Assistant</th>
+         </tr>
+      </thead>
+   </table>
+
+</div>
+
+<script>
+   window.addEventListener('load', async () => {
+      const response = await axios.get('/nlp-new/successByAnnotations')
+      const rawData = response.data
+      const table = $('#annotationsTable')
+      // Create a list of annotations by key and name - e.g, { TELEGRAPHIC: "Telegraphic" }
+      const annotations = _.mapValues(_.find(rawData), 'name')
+      
+      
+      for (const field of Object.keys(annotations)) {
+         const fieldRow = $(`<tr class="dataRow">
+            <td data-toggle='tooltip' class='annotationCell'>
+               <a href='' class='annotationLabel'>${annotations[field]}</a>
+            </td>`)
+         
+         for (const platform of ['alexa', 'openai', 'google']) {
+            const summary = rawData[platform]
+            if (summary) {
+               const value = summary[field]
+               fieldRow.append(`<td>${value.successPercentage}%</td>`)
+            }
+         }
+         fieldRow.append('</tr>')
+         table.append(fieldRow)
+      }
+
+      // Add a tooltip to the annotation label
+      $('.annotationLabel').click(function() {
+         if (Content[this.innerText]) {
+            showInfo(this.innerText)
+         }
+         return false
+      })
+   })
+</script>

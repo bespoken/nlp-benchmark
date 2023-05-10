@@ -1,4 +1,5 @@
 const DataSource = require('./nlp-datasource')
+const NLPDataSource = require('./nlp-datasource-new')
 const IVRDataSource = require('./ivr-datasource')
 const express = require('express')
 const handlebars = require('express-handlebars')
@@ -14,6 +15,7 @@ app.set('view engine', 'handlebars')
 app.use('/web', express.static('web'))
 
 const nlpDataSource = new DataSource()
+const nlpNewDataSource = new NLPDataSource()
 const ivrDataSource = new IVRDataSource()
 
 var hbs = handlebars.create({
@@ -25,6 +27,15 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine)
 
 app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
+  helpers: {
+    page: () => 'OVERVIEW',
+    sponsorLogo: 'ProjectVoiceLogo.png',
+    sponsorURL: 'https://projectvoice.ai/',
+    title: () => 'NLP Benchmark'
+  }
+}))
+
+app.get(['/nlp-new'], (req, res) => res.render('nlp-new/nlp-reports', {
   helpers: {
     page: () => 'OVERVIEW',
     sponsorLogo: 'ProjectVoiceLogo.png',
@@ -115,6 +126,31 @@ app.get('/nlp/successByAnnotations', async (req, res) => {
 
 app.get('/nlp/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics'))
+})
+
+// NLP new reports
+app.get('/nlp-new/results', async (req, res) => {
+  res.send(await cache('results', nlpNewDataSource, 'new'))
+})
+
+app.get('/nlp-new/successByTopics', async (req, res) => {
+  res.send(await cache('successByTopics', nlpNewDataSource, 'new'))
+})
+
+app.get('/nlp-new/successByPlatform', async (req, res) => {
+  res.send(await cache('successByPlatform', nlpNewDataSource, 'new'))
+})
+
+app.get('/nlp-new/successByComplexity', async (req, res) => {
+  res.send(await cache('successByComplexity', nlpNewDataSource, 'new'))
+})
+
+app.get('/nlp-new/successByAnnotations', async (req, res) => {
+  res.send(await cache('successByAnnotations', nlpNewDataSource, 'new'))
+})
+
+app.get('/nlp-new/successByTopics', async (req, res) => {
+  res.send(await cache('successByTopics', nlpNewDataSource, 'new'))
 })
 
 // IVR reports

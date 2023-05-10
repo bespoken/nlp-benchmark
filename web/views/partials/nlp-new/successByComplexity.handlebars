@@ -1,0 +1,36 @@
+<canvas id="successByComplexityCanvas" ></canvas>
+<script>
+  window.addEventListener('load', async () => {
+    const canvas = document.getElementById('successByComplexityCanvas').getContext('2d')
+    const response = await axios.get('/nlp-new/successByComplexity')
+    const rawData = response.data
+
+    const chartData = {
+      labels: ['Simple Questions', 'Complex Questions'],
+      datasets: [
+        {
+          backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorAlexa()],
+          borderWidth: 0,
+          data: [rawData.alexa0.successPercentage, rawData.alexa1.successPercentage],
+          label: 'Amazon Alexa'
+        },
+        {
+          backgroundColor: [ChartHelper.colorSiri(), ChartHelper.colorSiri()],
+          borderWidth: 0,
+          data: [rawData.openai0.successPercentage, rawData.openai1.successPercentage],
+          label: 'OpenAI chatGPT'
+        },
+        {
+          backgroundColor: [ChartHelper.colorGoogle(), ChartHelper.colorGoogle()],
+          borderWidth: 0,
+          data: [rawData.google0.successPercentage, rawData.google1.successPercentage],
+          label: 'Google Assistant'
+        }
+      ]
+    }
+    const options = ChartHelper.bar('Success By Question Complexity', chartData)
+    _.set(options, 'options.scales.yAxes[0].ticks.max', 80)
+    
+    window.successByComplexityChart = new Chart(canvas, options)
+  })
+</script>

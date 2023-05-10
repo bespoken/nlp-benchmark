@@ -1,0 +1,13 @@
+{
+  "customer": "Bespoken",
+  "interceptor": "src/nlp/process/benchmark-interceptor",
+  "job": "nlp-benchmark-openai",
+  "source": "src/nlp/process/benchmark-source",
+  "sourceFile": "input/datasets/comqa.json",
+  "virtualDevices": {
+    "new-device": {
+      "tags": ["openai"]
+    }
+  },
+  "virtualDeviceBaseURL": "https://virtual-device-robot-dev.bespoken.io"
+}

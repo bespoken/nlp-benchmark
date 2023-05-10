@@ -1,0 +1,115 @@
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.css">
+<link href="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.css" rel="stylesheet">
+
+<script src="https://unpkg.com/jquery-resizable-columns@0.2.3/dist/jquery.resizableColumns.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.17.1/dist/extensions/resizable/bootstrap-table-resizable.min.js"></script>
+
+<style>
+  #resultsTable td {
+    font-family: Open Sans;
+    font-size: 9pt;
+  }
+</style>
+<script>
+  window.addEventListener('load', async () => {
+    const response = await axios.get('/nlp/results')
+    const results = response.data
+    results.forEach(result => {
+      result.ANSWER_TUPLE = toYesNo(result.ANSWER_TUPLE)
+      result.COMPARISON = toYesNo(result.COMPARISON)
+      result.COMPOSITIONAL = toYesNo(result.COMPOSITIONAL)
+      result.GRAMMATICAL_ERRORS = toYesNo(result.GRAMMATICAL_ERRORS)
+      result.NO_ANSWER = toYesNo(result.NO_ANSWER)
+      result.SUCCESS = toYesNo(result.SUCCESS)
+      result.TELEGRAPHIC = toYesNo(result.TELEGRAPHIC)
+      result.TEMPORAL = toYesNo(result.TEMPORAL)
+    })
+    $('#resultsTable').bootstrapTable({
+      columns: [{
+        field: 'QUESTION',
+        title: 'Question'
+      }, 
+      {
+        field: 'PLATFORM',
+        title: 'Platform'
+      },
+      {
+        field: 'SUCCESS',
+        title: 'Correct'
+      }, 
+      {
+        field: 'TRANSCRIPT',
+        title: 'Transcript'
+      },
+      {
+        field: 'DISPLAY',
+        title: 'Display'
+      },
+      {
+        field: 'ANSWERS',
+        title: 'Valid Answers'
+      },
+      {
+        field: 'ANSWER_TYPE',
+        title: 'Answer Type'
+      },
+      {
+        field: 'GRAMMATICAL_ERRORS',
+        title: 'Has Grammatical Errors?'
+      },
+      {
+        field: 'NO_ANSWER',
+        title: 'Has No Answer?'
+      },
+      {
+        field: 'ANSWER_TUPLE',
+        title: 'Is Answer Tuple'
+      },
+      {
+        field: 'COMPARISON',
+        title: 'Is Comparison'
+      },
+      {
+        field: 'COMPOSITIONAL',
+        title: 'Is Compositional'
+      },
+      {
+        field: 'TELEGRAPHIC',
+        title: 'Is Telegraphic?'
+      },
+      {
+        field: 'TEMPORAL',
+        title: 'Is Temporal'
+      },
+      {
+        field: 'NAMED_ENTITIES',
+        title: 'Named Entities #'
+      },
+      {
+        field: 'TOPIC',
+        title: 'Topic'
+      }],
+      data: results,
+      search: true,
+      searchAlign: 'left'
+    })
+  })
+
+  function toYesNo(value) {
+    if (_.toUpper(value) === 'TRUE') {
+      return 'Yes'
+    } else if (_.toUpper(value) === 'FALSE') {
+      return 'No'
+    }
+  }
+</script>
+
+<div class='container-fluid' >
+  <div class='row'>
+    <div class='col-12'>
+      <table id='resultsTable' data-height='580' data-virtual-scroll="true">
+      </table>
+    </div>
+  </div>
+</div>
