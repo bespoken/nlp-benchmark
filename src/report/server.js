@@ -35,7 +35,7 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   }
 }))
 
-app.get(['/nlp-2023'], (req, res) => res.render('nlp-2023/nlp-reports', {
+app.get(['/', '/nlp-2023'], (req, res) => res.render('nlp-2023/nlp-reports', {
   helpers: {
     page: () => 'Updated for 2023',
     //sponsorLogo: 'ProjectVoiceLogo.png',
@@ -44,7 +44,7 @@ app.get(['/nlp-2023'], (req, res) => res.render('nlp-2023/nlp-reports', {
   }
 }))
 
-app.get(['/', '/ivr'], (req, res) => res.render('ivr/ivr-reports', {
+app.get(['/ivr'], (req, res) => res.render('ivr/ivr-reports', {
   helpers: {
     company: () => 'Bespoken and DefinedCrowd',
     page: () => 'ASR PERFORMANCE',

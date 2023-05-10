@@ -37,8 +37,8 @@
     _.set(chartConfiguration, 'options.plugins.datalabels.display', false)
     _.set(chartConfiguration, 'options.responsive', false)
     _.set(chartConfiguration, 'options.scales.yAxes[0].display', true)
-    _.set(chartConfiguration, 'options.scales.xAxes[0].ticks.display', false)
-    _.set(chartConfiguration, 'options.scales.yAxes[0].ticks.display', true)
+    _.set(chartConfiguration, 'options.scales.x.ticks.display', false)
+    _.set(chartConfiguration, 'options.scales.y.ticks.display', true)
     
     _.set(chartConfiguration, 'options.tooltips.callbacks.title', function(tooltipItem, data) {
       const topic = tooltipItem[0].label

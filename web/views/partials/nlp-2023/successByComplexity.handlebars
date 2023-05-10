@@ -29,7 +29,7 @@
       ]
     }
     const options = ChartHelper.bar('Success By Question Complexity', chartData)
-    _.set(options, 'options.scales.yAxes[0].ticks.max', 80)
+    _.set(options, 'options.scales.y.ticks.max', 80)
     
     window.successByComplexityChart = new Chart(canvas, options)
   })

@@ -11,14 +11,8 @@
 }
 
 canvas {
-    border-color: black;
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 2px;
-    padding: 0;
-    margin: auto;
-    display: block;
-    width: 800px;
+    height: 35vh;
+    width: 90%;
 }
 
 .caption {
@@ -142,6 +136,17 @@ h2 a:hover {
 .menu a:hover {
     color: white;
     text-decoration: none;
+}
+
+.nlp-2023 .report {
+    border-color: #184160;
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 10;
+    margin: auto;
+    
+    width: 100%;
 }
 
 .nlp-2023 .caption {

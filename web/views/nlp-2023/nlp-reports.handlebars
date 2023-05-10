@@ -29,13 +29,16 @@
   </div>
   <div class='row' style="">
     <div class='col-12' >
-      <h2>Success By Platform</h2>
-      <div>
-        {{> nlp-2023/successByPlatform }}
-      </div>
-      <div class='caption'>
-        The number of questions answered correctly by each platform.
-      </div>
+        <div class="report">
+            <h2>Success By Platform</h2>
+                <div>
+                    {{> nlp-2023/successByPlatform }}
+                </div>
+                <div class='caption'>
+                    The number of questions answered correctly by each platform.
+                </div>
+        </div>
+      
     </div>
     <div class='col-12'>
       <div class='text' style='margin-top: 10'>
@@ -49,12 +52,15 @@
   </div>
   <div class='row'>
     <div class='col-12'>
-      <h2>Success By Question Type</h2>
-      <div>
-        {{> nlp-2023/successByAnnotations }}
-      </div>
-      <div class='caption'>
-        The percentage of questions answered correctly for each type of question. Click on any of the question types for more in-depth information.
+      <div class="report">
+        <h2>Success By Question Type</h2>
+        <div>
+            {{> nlp-2023/successByAnnotations }}
+        </div>
+        <div class='caption'>
+            The percentage of questions answered correctly for each type of question. Click on any of the question types for more in-depth information.
+        </div>
+        
       </div>
       <div class="text" style="margin-top: 10">
         Perhaps most significantly, ChatGPT performed radically better at the "No Answer" questions - that is: when the questions were not answerable, it correctly declined to answer.<br><br>
@@ -66,28 +72,33 @@
   </div>
   <div class='row'>
     <div class='col-12'>
-      <h2>Success By Question Complexity</h2>
-      <div>
-        {{> nlp-2023/successByComplexity }}
-      </div>
-      <div >
-        The percentage of simple versus complex questions answered correctly by each platform.<br>
-        Complex questions involve <a href='javascript:showInfo("comparison")' >comparisons</a>, <a href='javascript:showInfo("compositional")' >composition</a>, and/or <a href='javascript:showInfo("temporal")' >temporal reasoning</a>.<br>
-        <br><br>
-      </div>
+        <div class="report">
+            <h2>Success By Question Complexity</h2>
+            <div>
+                {{> nlp-2023/successByComplexity }}
+            </div>
+            <div >
+                The percentage of simple versus complex questions answered correctly by each platform.<br>
+                Complex questions involve <a href='javascript:showInfo("comparison")' >comparisons</a>, <a href='javascript:showInfo("compositional")' >composition</a>, and/or <a href='javascript:showInfo("temporal")' >temporal reasoning</a>.<br>
+            </div>
+        </div>
+      
     </div>
   </div>
   
   <div class='row'>
     <div class='col-12'>
-      <h2>Success By Question Topics</h2>
-      <div>
-        {{> nlp-2023/successByTopics }}
-      </div>
-      <div class='caption'>
-        The percentage of questions answered correctly for each topic.<br>
-        <a href='/nlp-2023/topics'>Click here</a> for a complete breakdown across all topics.
-      </div>
+        <div class="report">
+            <h2>Success By Question Topics</h2>
+            <div>
+                {{> nlp-2023/successByTopics }}
+            </div>
+            <div class='caption'>
+                The percentage of questions answered correctly for each topic.<br>
+                <a href='/nlp-2023/topics'>Click here</a> for a complete breakdown across all topics.
+            </div>       
+        </div>
+     
     </div> 
   </div>
   <div class='row' style='margin-top: 20' >

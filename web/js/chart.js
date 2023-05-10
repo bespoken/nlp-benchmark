@@ -41,9 +41,9 @@ const ChartHelper = {
         },
         responsive: true,
         scales: {
-          offset: false,
-          xAxes: [{
-            gridLines: {
+          x: {
+            display: true,
+            grid: {
               color: 'rgb(0,0,0)',
               display: false,
               drawOnChartArea: false,
@@ -52,12 +52,12 @@ const ChartHelper = {
             ticks: {
               padding: 10
             }
-          }],
-          yAxes: [{
-            display: false,
-            gridLines: {
+          },
+          y: {
+            display: true,
+            grid: {
               color: 'rgb(0,0,0)',
-              display: true,
+              display: false,
               drawOnChartArea: false,
               drawTicks: false
             },
@@ -68,7 +68,7 @@ const ChartHelper = {
               max: 100,
               stepSize: 50
             }
-          }]
+          }
         },
         title: {
           display: false,
@@ -128,10 +128,11 @@ const ChartHelper = {
       type: 'bar'
     }
 
-    Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
-    Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
-    Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
-    Chart.defaults.global.animation.duration = 2000
+    Chart.defaults.plugins.legend.display = false
+    //Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
+    //Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
+    //Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
+    //Chart.defaults.global.animation.duration = 2000
     return options
   },
 
@@ -168,45 +169,45 @@ const ChartHelper = {
 // Got this code from here:
 // https://stackoverflow.com/questions/42585861/chart-js-increase-spacing-between-legend-and-chart
 // To increase the distance between the chart area and the legend
-Chart.NewLegend = Chart.Legend.extend({
-  afterFit: function () {
-    this.height = this.height + 10
-  }
-})
+// Chart.NewLegend = Chart.Legend.extend({
+//   afterFit: function () {
+//     this.height = this.height + 10
+//   }
+// })
 
-Chart.plugins.register(ChartDataLabels)
+Chart.register(ChartDataLabels)
 
 // Register the legend plugin
-Chart.plugins.register({
-  beforeInit: function (chartInstance) {
-    var legendOpts = chartInstance.options.legend
+// Chart.plugins.register({
+//   beforeInit: function (chartInstance) {
+//     var legendOpts = chartInstance.options.legend
 
-    if (legendOpts) {
-      ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
-    }
-  },
-  beforeUpdate: function (chartInstance) {
-    var legendOpts = chartInstance.options.legend
+//     if (legendOpts) {
+//       ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
+//     }
+//   },
+//   beforeUpdate: function (chartInstance) {
+//     var legendOpts = chartInstance.options.legend
 
-    if (legendOpts) {
-      legendOpts = Chart.helpers.configMerge(Chart.defaults.global.legend, legendOpts)
+//     if (legendOpts) {
+//       legendOpts = Chart.helpers.configMerge(Chart.defaults.global.legend, legendOpts)
 
-      if (chartInstance.newLegend) {
-        chartInstance.newLegend.options = legendOpts
-      } else {
-        ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
-      }
-    } else {
-      Chart.layoutService.removeBox(chartInstance, chartInstance.newLegend)
-      delete chartInstance.newLegend
-    }
-  },
-  afterEvent: function (chartInstance, e) {
-    var legend = chartInstance.newLegend
-    if (legend) {
-      legend.handleEvent(e)
-    }
-  }
-})
+//       if (chartInstance.newLegend) {
+//         chartInstance.newLegend.options = legendOpts
+//       } else {
+//         ChartHelper.createNewLegendAndAttach(chartInstance, legendOpts)
+//       }
+//     } else {
+//       Chart.layoutService.removeBox(chartInstance, chartInstance.newLegend)
+//       delete chartInstance.newLegend
+//     }
+//   },
+//   afterEvent: function (chartInstance, e) {
+//     var legend = chartInstance.newLegend
+//     if (legend) {
+//       legend.handleEvent(e)
+//     }
+//   }
+// })
 
 window.ChartHelper = ChartHelper
