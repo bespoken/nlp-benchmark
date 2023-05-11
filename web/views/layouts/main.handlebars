@@ -1,16 +1,15 @@
 <html>
   <title>{{ title }} - {{ company }}</title>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99287066-6"></script>
+   <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78ZJXQQS7Y"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-      gtag('config', 'UA-99287066-6');
+        gtag('config', 'G-78ZJXQQS7Y');
     </script>
-
     <!-- favicon -->
     <link rel="shortcut icon" href="/web/images/favicon.ico" type="image/x-icon" />
 
@@ -35,9 +34,13 @@
     <script src="/web/js/content.js"></script>
     <!--<script src="/web/js/chartjs-plugin-watermark.min.js"></script>-->
 
-    <style>
-      
-    </style>
+    <meta property='og:title' content='{{ title }}' />
+    <meta id='metaURL' property='og:url' content='https://benchmark.bespoken.io' />      
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="/web/images/MainGraph.jpg" />
+    <meta property="og:type" content="article" />
+
+
     <script>
       // We set certain style programmatically because they are shared between charts generated in JS and HTML
       window.addEventListener('load', () => {
@@ -45,6 +48,8 @@
         $('a[name]').each(function() {
           this.href = '#' + this.name
         })
+
+        $('#metaURL').attr('content', window. location. href)
       })
 
       function showInfo(key) {

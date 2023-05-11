@@ -14,4 +14,6 @@ COPY web/ ./web/
 
 COPY *.json ./
 
-RUN npm install
+RUN npm install pnpm -g
+
+RUN pnpm install
