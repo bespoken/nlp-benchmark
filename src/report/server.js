@@ -35,9 +35,9 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
   }
 }))
 
-app.get(['/', '/nlp-2023'], (req, res) => res.render('nlp-2023/nlp-reports', {
+app.get(['/', '/llm'], (req, res) => res.render('llm/llm-report', {
   helpers: {
-    description: 'Bespoken LLM/NLP Benchmark 2023 - Alexa, ChatGPT and Google Compared',
+    description: 'Bespoken LLM/NLP Benchmark - Alexa, ChatGPT and Google Compared',
     page: () => 'Updated for 2023',
     //sponsorLogo: 'ProjectVoiceLogo.png',
     //sponsorURL: 'https://projectvoice.ai/',

@@ -1,3 +1,55 @@
+<script>
+    $(document).ready(() => {
+        $('#submit-form').on('click', async () => {
+            $('.message').hide()
+            const firstName = validate('first-name', 'First Name')
+            const lastName = validate('last-name', 'Last Name')
+            const company = validate('company-name', 'Company')
+            const email = validate('email', 'Email')
+            
+            if (firstName && lastName && company && email) {
+                try {
+                    const response = await axios.post('https://utils-api-dev.bespoken.io/utils-server/generateBespokenLead', {
+                        firstNameCTA: firstName,
+                        lastNameCTA: lastName,
+                        emailNameCTA: email,
+                        companyCTA: company,
+                        messageCTA: 'Please setup a meeting with me, Kirk and Pier!',
+                        page: 'Benchmark',
+                        providers: 'salesforce'
+                    })
+                    console.info('posted data: ' + JSON.stringify(response.data, null, 2))
+                } catch (e) {
+                    if (e.response?.data?.includes('duplicate')) {
+                        console.warn('Duplicated record - ignoring')
+                    } else {
+                        $('.error').text('Submission failed! Please try again later, or just email us directly at <a href="mailto:contact@bespoken.io">contact@bespoken.io</a>')
+                        $('.error').show()
+                        console.error(e.toString())
+                        return
+                    }
+                    
+                }
+                $('.success').text('Your information has been submitted - we will be in touch shortly!')
+                $('.success').show()
+            }
+            console.info('printing stuff.')
+        })
+
+        
+        
+    })
+
+    function validate(field, display) {
+        const value = $(`input[name="${field}"]`).val()
+        if (value.trim() === '') {
+            $('.error').text(`${display} must be entered`)
+            $('.error').show()
+            return undefined
+        }
+        return value.trim()
+    }
+</script>
 <style>
   h2 {
     color: #184160
@@ -23,7 +75,7 @@
 
         We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">Dev Dataset from ComQA</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
 
-        Tests were run using our <a href='https://bespoken.io/accuracy-testing/' target="_blank">Bespoken Accuracy Testing</a>. Read more about our test protocol <a href='/nlp/protocol'>here</a>, see the detailed results by question <a href='/nlp/details'>here</a>.
+        Tests were run using our <a href='https://bespoken.io/accuracy-testing/' target="_blank">Bespoken Accuracy Testing</a>. Read more about our test protocol <a href='/llm/protocol'>here</a>, see the detailed results by question <a href='/nlp/details'>here</a>.
       </div>
     </div>
   </div>
@@ -108,31 +160,73 @@
         We know that many of our customers are out there right now planning their strategy for Large Language Models and figuring out how they can take advantage of this promising new technoloy.
       </p>
       <p>
-        At Bespoken, we have believed since our inception that testing is critical to working with AI.<br>
+        At Bespoken, we have believed since our inception that testing is critical to working with AI.<br><br>
         And large-language models have only made this more true - as they make development easier, they push more of the burden to QA.<br>
-
       </p>
       <div>
         <img src="/web/images/LLM-Workflow.png" style="width: 100%"/>
       </div>
       <div class="caption">The LLM Feedback Loop</div>
-      <div class="text">
-        Bespoken tests models from LLM vendors for accuracy, functionality, and monitors them continuously for safety.
+      <div class="text mt-2">
+        Bespoken tests models from LLM vendors for accuracy, functionality, and monitors them continuously for safety. This virtuous, constant cycle is essential for AI.<br><br>
 
-        This virtuous, constant cycle is essential for AI.
-
+       
       </div>
-    </div> 
+    </div>
   </div>
+  
   <div class='row' >
     <div class='col-12 text' >
       <h2>Who Are You?</h2>
-      <p>
+      <p style="margin-bottom: 0px">
         Thanks for asking! We are Bespoken, the world leader in automated testing, training and monitoring for voice. We work with companies like Mercedes-Benz, Roku, Spotify and others to ensure their users have delightful voice experiences.<br><br>
-        Want to <a href='https://bespoken.io/customer-success/'  target='_blank'>assess the performance</a> of your own bot for IVR, chat or virtual agent?<br><br>
-        Moreover, <a href='https://bespoken.io/blog/the-mars-agency-case-study/' target='_blank'>our tools provide specific guidance on how to improve it</a>. Interested? Contact us - <a href='mailto:contact@bespoken.io' target='_blank'>contact@bespoken.io</a>
+        Want to <a href='https://bespoken.io/customer-success/'  target='_blank'>assess the performance</a> of your own bot for IVR, chat or virtual agent? Ensure that it is operating safely?<br><br>
+        Just fill out the fields below. We will get in touch shortly:
       </p>
-    </div>
+     </div>
   </div>
+  <div class="row signup" style="width: inherited; margin-top: 0px;padding: 10px">
+    <div class="col-12">
+        <div class="report" style="display: grid;grid-template-columns: repeat(12, auto);padding: 10 5 10 5;align-items: center">
+            <div class="label" style="grid-column: span 12; margin-top: 0;font-weight: bold;">
+                Learn More - talk to the experts at Bespoken, see how Accuracy Testing can make your LLM safer and smarter
+            </div> 
+            
+            <div class="message success"  style="grid-column: span 12;display:none;color: rgb(12, 12, 109);font-weight: bold;" >
+                
+            </div>
+            <div class="message error"  style="grid-column: span 12;display:none;color: red;font-weight: bold;" >
+                
+            </div>
+            <div class="label" style="margin-top: 5px">
+                First Name
+            </div> 
+            <div class="field">
+                <input type="text" name="first-name" placeholder="Jane"/>
+            </div> 
+            <div class="label">
+                Last Name
+            </div> 
+            <div class="field">
+                <input type="text" name="last-name" placeholder="Doe"/>
+            </div> 
+            <div class="label">
+                Company
+            </div> 
+            <div class="field">
+                <input type="text" name="company-name" placeholder="Acme Enterprises"/>
+            </div> 
+            <div class="label">
+                Email
+            </div> 
+            <div class="field">
+                <input type="text" name="email" placeholder="jane@acme.com"/>
+            </div> 
+            <div class="" style="grid-column: span 12; justify-content: center;">
+                <button id='submit-form' style="width: 20vw;border-radius: 8px;background-color:#ffab41;border-color:transparent;color: white">Submit</button>
+            </div> 
+            
+        </div>
+    </div>
   
 </div>
