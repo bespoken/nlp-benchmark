@@ -2,7 +2,7 @@
 <script>
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('topicsCanvas').getContext('2d')
-    const response = await axios.get('/nlp-2023/successByTopics')
+    const response = await axios.get('/llm/successByTopics')
     const rawData = response.data
 
     // Get the unique list of topics

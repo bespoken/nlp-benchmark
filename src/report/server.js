@@ -38,7 +38,6 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
 app.get(['/', '/llm'], (req, res) => res.render('llm/llm-report', {
   helpers: {
     description: 'Bespoken LLM/NLP Benchmark - Alexa, ChatGPT and Google Compared',
-    page: () => 'Updated for 2023',
     //sponsorLogo: 'ProjectVoiceLogo.png',
     //sponsorURL: 'https://projectvoice.ai/',
     title: () => 'LLM/NLP Benchmark'
@@ -130,27 +129,36 @@ app.get('/nlp/successByTopics', async (req, res) => {
 })
 
 // NLP new reports
-app.get('/nlp-2023/results', async (req, res) => {
+app.get('/llm/results', async (req, res) => {
   res.send(await cache('results', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-2023/successByTopics', async (req, res) => {
+app.get('/llm/topics', (req, res) => res.render('llm/topics', {
+    helpers: {
+      page: () => 'TOPIC DRILLDOWN',
+      //sponsorLogo: 'ProjectVoiceLogo.png',
+      //sponsorURL: 'https://projectvoice.ai/',
+      title: () => 'LLM Benchmark'
+    }
+  }))
+
+app.get('/llm/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-2023/successByPlatform', async (req, res) => {
+app.get('/llm/successByPlatform', async (req, res) => {
   res.send(await cache('successByPlatform', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-2023/successByComplexity', async (req, res) => {
+app.get('/llm/successByComplexity', async (req, res) => {
   res.send(await cache('successByComplexity', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-2023/successByAnnotations', async (req, res) => {
+app.get('/llm/successByAnnotations', async (req, res) => {
   res.send(await cache('successByAnnotations', nlpNewDataSource, '2023'))
 })
 
-app.get('/nlp-2023/successByTopics', async (req, res) => {
+app.get('/llm/successByTopics', async (req, res) => {
   res.send(await cache('successByTopics', nlpNewDataSource, '2023'))
 })
 

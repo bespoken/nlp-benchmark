@@ -2,7 +2,7 @@
 <script>
   window.addEventListener('load', async () => {
     const canvas = document.getElementById('successByComplexityCanvas').getContext('2d')
-    const response = await axios.get('/nlp-2023/successByComplexity')
+    const response = await axios.get('/llm/successByComplexity')
     const rawData = response.data
 
     const chartData = {

@@ -54,7 +54,7 @@ const ChartHelper = {
             }
           },
           y: {
-            display: true,
+            display: false,
             grid: {
               color: 'rgb(0,0,0)',
               display: false,

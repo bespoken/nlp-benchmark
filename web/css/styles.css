@@ -17,6 +17,7 @@ canvas {
 
 .caption {
     color: #184160;
+    font-family: Open Sans;
     font-size: 12pt;
     font-weight: bold;
     text-align: left;
@@ -36,7 +37,7 @@ div {
 }
 
 .header img {
-    height: 100;
+    height: 80;
     padding-top: 20px;
 }
 
@@ -142,7 +143,7 @@ h2 a:hover {
     margin-bottom: 5px;
 }
 
-.nlp-2023 .report {
+.llm .report {
     border-color: #184160;
     border-radius: 15px;
     border-style: solid;
@@ -152,24 +153,28 @@ h2 a:hover {
     width: 100%;
 }
 
-.nlp-2023 .caption {
+.llm .caption {
     font-size: 10pt;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-.nlp-2023 .row {
+.llm .row {
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 20px;
 }
 
-.nlp-2023 h2 {
+.llm h2 {
     font-size: 16pt;
 }
 
-.nlp-2023 .text {
+.llm ul {
+    margin-bottom: 0px;
+}
+
+.llm .text {
     font-size: 12pt;
 }
 
@@ -252,7 +257,7 @@ table {
 }
 
 .title {
-    font-family: Khand;
+    font-family: Poppins;
     font-size: 4.0vmin;
     font-weight: bold;
 }
@@ -282,6 +287,10 @@ ul {
 }
 
 @media only screen and (max-width: 1080px) {
+    canvas {
+        height: 20vh;
+    }
+
     .ivr .row {
         margin-bottom: 20px;
         margin-left: 20px;

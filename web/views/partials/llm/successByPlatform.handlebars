@@ -1,7 +1,7 @@
 <canvas id="successByPlatformCanvas" ></canvas>
 <script>
   window.addEventListener('load', async () => {
-    const response = await axios.get('/nlp-2023/successByPlatform')
+    const response = await axios.get('/llm/successByPlatform')
     const rawData = response.data
 
     const chartData = {

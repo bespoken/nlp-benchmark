@@ -16,7 +16,7 @@
     <link href='/web/css/styles.css' rel='stylesheet' type='text/css'>
 
     <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,700' rel='stylesheet' type='text/css'>
     
@@ -67,14 +67,15 @@
         <div class='col-4' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' class='logo' /></a></div>
         <div class='col-4'>
 
-          <div class='row'>
+          <div class='row' style="height:100%">
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap;align-items: center'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
           </div>
-          <div class='row' >
-            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
-          </div>
-          
+          {{#if page}}
+            <div class='row' >
+                <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><h2 style='color: #1ec9dd;font-weight: bold;margin:0;text-align: center;'> {{page}}</h2></div> 
+            </div>
+          {{/if}}
         </div>
         <div class='col-4  d-flex align-items-center justify-content-end' id='sponsorLogoSection' style='display:inline-flex;text-align: right;'>
           {{#if sponsorLogo}}<a href='{{sponsorURL}}' target='_blank' ><img class='sponsorLogo' src='/web/images/{{sponsorLogo}}' style='padding: 0' /></a>{{/if}}
@@ -85,8 +86,8 @@
     </div>
     <div class='container-fluid menu' style='margin-bottom: 10px'>
       <div class='row' >
-        <div class='col-4 menu' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:</span>&nbsp;
-           <span class='menu-options'><a href='/ivr'>IVR</a> &nbsp; | &nbsp; <a href='/nlp'>NLP 2020</a> &nbsp; | &nbsp; <a href='/nlp-2023'>NLP 2023</a></span></div> 
+        <div class='col-4 menu' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:&nbsp; &nbsp; </span>&nbsp;
+           <span class='menu-options'><a href='/ivr'>IVR</a> &nbsp; | &nbsp; <a href='/llm'>LLM</a> &nbsp; | &nbsp; <a href='/nlp'>Virtual Assistant</a> </span></div> 
       </div>
     </div>
     {{{body}}}
