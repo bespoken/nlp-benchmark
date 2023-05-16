@@ -24,6 +24,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
@@ -37,7 +38,7 @@
     <meta property='og:title' content='{{ title }}' />
     <meta id='metaURL' property='og:url' content='https://benchmark.bespoken.io' />      
     <meta property="og:description" content="{{ description }}" />
-    <meta property="og:image" content="/web/images/MainGraph.jpg" />
+    <meta property="og:image" content="/web/images/MainGraph.png" />
     <meta property="og:type" content="article" />
 
 
@@ -69,7 +70,7 @@
 
           <div class='row' style="height:100%">
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap;align-items: center'><h1 style='font-family: Khand;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap;align-items: center'><h1 style='font-family: Poppins;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
           </div>
           {{#if page}}
             <div class='row' >
@@ -86,7 +87,7 @@
     </div>
     <div class='container-fluid menu' style='margin-bottom: 10px'>
       <div class='row' >
-        <div class='col-4 menu' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:&nbsp; &nbsp; </span>&nbsp;
+        <div class='col-4 menu' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:&nbsp; </span>&nbsp;
            <span class='menu-options'><a href='/ivr'>IVR</a> &nbsp; | &nbsp; <a href='/llm'>LLM</a> &nbsp; | &nbsp; <a href='/nlp'>Virtual Assistant</a> </span></div> 
       </div>
     </div>

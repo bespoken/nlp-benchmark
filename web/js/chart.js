@@ -1,5 +1,15 @@
+const Utils = {
+    getImage: function (url) {
+        const img = new Image();
+        img.id = 'Test IMage' + Math.random()
+        img.loading = 'eager'
+        img.src = url
+        //img.width = '100px'
+        //img.height = '100px'
+        return img;
+    }
+}
 /* global Chart */
-
 const ChartHelper = {
   bar: (title, data, percentage = true, precision = 2) => {
     const options = {
@@ -10,38 +20,48 @@ const ChartHelper = {
             top: 0
           }
         },
-        legend: {
-          display: (data.datasets.length > 1), // Show the legend if there is more than one dataset
-          labels: {
-            padding: 10
-          },
-          position: 'top'
-        },
         maintainAspectRatio: false,
         plugins: {
+          annotation: {
+            annotations: addAnnotations(data)
+          },
           // Change options for ALL labels of THIS CHART
           datalabels: {
             align: 'top',
             anchor: 'end',
             display: true,
             font: {
-              family: 'Roboto Condensed',
-              size: 14,
+              family: 'Poppins',
+              size: 16,
               weight: 'bold'
             },
             formatter: (s) => {
-              if (percentage) {
+                console.info('percentage: ' + s + '' + s.toFixed(precision) + '%')
+               if (percentage) {
                 return s.toFixed(precision) + '%'
               } else {
                 return s.toFixed(precision)
               }
             },
             textAlign: 'top'
-          }
+          },
+          legend: {
+            display: (data.datasets.length > 1), // Show the legend if there is more than one dataset
+            labels: {
+              padding: 10
+            },
+            position: 'top'
+          },
         },
+        resizeDelay: 1,
         responsive: true,
         scales: {
           x: {
+            border: {
+                color: 'black',
+                width: 2,
+                z: 1
+            },
             display: true,
             grid: {
               color: 'rgb(0,0,0)',
@@ -50,6 +70,12 @@ const ChartHelper = {
               drawTicks: false
             },
             ticks: {
+              font: {
+                color: 'black',
+                family: 'Poppins',
+                size: '16 pt',
+                weight: 'bold',
+              },
               padding: 10
             }
           },
@@ -129,6 +155,7 @@ const ChartHelper = {
     }
 
     Chart.defaults.plugins.legend.display = false
+    Chart.defaults.color = 'black'
     //Chart.defaults.global.defaultFontFamily = ChartHelper.defaultFont()
     //Chart.defaults.global.defaultFontSize = ChartHelper.defaultFontSize()
     //Chart.defaults.global.defaultFontColor = 'rgb(0,0,0)'
@@ -136,16 +163,16 @@ const ChartHelper = {
     return options
   },
 
-  colorAlexa: () => 'rgba(93, 188, 210, 1.0)',
+  colorAlexa: () => 'rgb(66, 133, 243)',
   colorAmazon: () => 'rgb(0, 171, 186)',
   colorDialogflow: () => 'rgb(239, 108, 0)',
-  colorGoogle: () => 'rgba(250, 189, 3, 1.0)',
-  colorOpenAI: () => 'rgb(113, 166, 151)',
+  colorGoogle: () => 'rgb(255, 215, 0)',
+  colorOpenAI: () => 'rgb(75, 213, 159)',
   colorSiri: () => 'rgb(193, 193, 193)',
   colorTwilio: () => 'rgb(242, 47, 70)',
   defaultFont: () => 'Roboto Condensed',
   defaultFontSize: () => 16,
-  titleFont: () => 'Khand',
+  titleFont: () => 'Poppins',
   titleFontSize: () => 20,
 
   createNewLegendAndAttach: (chartInstance, legendOpts) => {
@@ -166,6 +193,36 @@ const ChartHelper = {
 
 }
 
+function addAnnotations(data) {
+    if (!data.labels.includes('OpenAI ChatGPT')) {
+        return
+    }
+    return {
+        alexa: addImage('Amazon Alexa', 50, '/web/images/Alexa-inverted.png'),
+        google: addImage('Google Assistant', 55, '/web/images/GoogleAssistant-inverted.png'),
+        chatGPT: addImage('OpenAI ChatGPT', 60, '/web/images/OpenAI-inverted.png')      
+    }
+}
+function addImage(dataPoint, y, url) {
+    return {
+        type: 'label',
+        //borderColor: (ctx) => ctx.chart.data.datasets[0].backgroundColor,
+        width: 80,
+        height: 80,
+        borderRadius: 1,
+        borderWidth: 0,
+        content: Utils.getImage(url),
+        opacity: 1.0,
+        // position: {
+        //     x: 'center',
+        //     y: 'end'
+        // },
+        xValue: dataPoint,
+        //yOffset: 30,
+        yValue: y,
+        z: 100
+    }
+}
 // Got this code from here:
 // https://stackoverflow.com/questions/42585861/chart-js-increase-spacing-between-legend-and-chart
 // To increase the distance between the chart area and the legend
@@ -175,6 +232,7 @@ const ChartHelper = {
 //   }
 // })
 
+//Chart.register(ChartDataLabels)
 Chart.register(ChartDataLabels)
 
 // Register the legend plugin

@@ -14,7 +14,7 @@
     }
     const options = ChartHelper.bar('Word Error Rate By Platform (English)', chartData, true)
     const context = document.getElementById('werByPlatformEnglishCanvas').getContext('2d')
-    _.set(options, 'options.scales.yAxes[0].ticks.max', 45)
+    _.set(options, 'options.scales.y.ticks.max', 45)
     if (window.pageType === 'summary') {
       _.set(options, 'options.watermark.alignX', 'left')
       _.set(options, 'options.watermark.y', 20)

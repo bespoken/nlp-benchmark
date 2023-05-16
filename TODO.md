@@ -4,4 +4,5 @@
 - [ ] Work on text
 - [X] Fix mobile
 - [X] Remove faint axes line
-- [ ] Captions are not uniform
+- [X] Captions are not uniform
+- [ ] Expand on what humility index is

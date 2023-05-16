@@ -121,6 +121,10 @@ h2 a:hover {
     font-size: 16pt;
     font-family: 'Open Sans';
 }
+.ivr .report {
+    margin: 20px;
+}
+
 .menu {
     background-color-bak: #f4a82d;
     background-color: #1ec9dd;
@@ -167,7 +171,8 @@ h2 a:hover {
 }
 
 .llm h2 {
-    font-size: 16pt;
+    text-align: center;
+    font-size: 20pt;
 }
 
 .llm ul {

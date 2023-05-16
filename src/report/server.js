@@ -37,10 +37,10 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
 
 app.get(['/', '/llm'], (req, res) => res.render('llm/llm-report', {
   helpers: {
-    description: 'Bespoken LLM/NLP Benchmark - Alexa, ChatGPT and Google Compared',
+    description: 'Bespoken LLM Benchmark - Alexa, ChatGPT and Google Compared',
     //sponsorLogo: 'ProjectVoiceLogo.png',
     //sponsorURL: 'https://projectvoice.ai/',
-    title: () => 'LLM/NLP Benchmark'
+    title: () => 'LLM Benchmark'
   }
 }))
 

@@ -50,7 +50,7 @@
     })
     _.set(chartConfiguration, 'type', 'horizontalBar')
     _.unset(chartConfiguration, 'options.watermark')
-    window.successByComplexityChart = new Chart(canvas, chartConfiguration)
+    window.successByTopicsChart = new Chart(canvas, chartConfiguration, false, 0)
   })
 
   function filterByTopics(resultsForPlatform, platform, topics) {
