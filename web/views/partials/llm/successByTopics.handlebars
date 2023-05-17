@@ -32,6 +32,7 @@
     const chartConfiguration = ChartHelper.bar('Success By Topic', chartData, true, 0)
     _.set(chartConfiguration, 'options.plugins.datalabels.font.size', '10')
     //_.set(chartConfiguration, 'options.legend.labels.padding', '30')
+    _.set(chartConfiguration, 'options.scales.y.max', 95)
     window.successByComplexityChart = new Chart(canvas, chartConfiguration)
   })
 

@@ -160,6 +160,10 @@ h2 a:hover {
     width: 100%;
 }
 
+.llm .report h2 {
+    margin-bottom: 0px;
+}
+
 .llm .caption {
     font-size: 10pt;
     margin-left: auto;
