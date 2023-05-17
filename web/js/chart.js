@@ -23,7 +23,8 @@ const ChartHelper = {
         maintainAspectRatio: false,
         plugins: {
           annotation: {
-            annotations: addAnnotations(data)
+            annotations: addAnnotations(data),
+            clip: false
           },
           // Change options for ALL labels of THIS CHART
           datalabels: {
@@ -196,6 +197,12 @@ function addAnnotations(data) {
     if (!data.labels.includes('OpenAI ChatGPT')) {
         return
     }
+
+    console.info('widnow width: ' + $(window).width())
+    if ($(window).width() < 1024) {
+        return
+    }
+
     return {
         alexa: addImage('Amazon Alexa', 50, '/web/images/Alexa-inverted.png'),
         google: addImage('Google Assistant', 55, '/web/images/GoogleAssistant-inverted.png'),
@@ -205,6 +212,7 @@ function addAnnotations(data) {
 function addImage(dataPoint, y, url) {
     return {
         type: 'label',
+        //drawTime: 'afterDraw',
         //borderColor: (ctx) => ctx.chart.data.datasets[0].backgroundColor,
         width: 80,
         height: 80,

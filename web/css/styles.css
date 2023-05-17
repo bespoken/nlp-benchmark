@@ -300,7 +300,7 @@ ul, .llm ul {
     max-width: 100%;
 }
 
-@media only screen and (max-width: 1080px) {
+@media only screen and (orientation: portrait) and (max-width: 1024) {
     canvas {
         height: 20vh;
     }
