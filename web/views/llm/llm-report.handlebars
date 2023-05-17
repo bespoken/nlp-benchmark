@@ -62,19 +62,19 @@
 </style>
 <div id='reports' class='container-fluid llm'  style="max-width: 1300px" >
   <div class='row' style="margin-top: 0px" >
-    <div class='col-12 subtitle' style='color: #184160;font-family: roboto condensed;font-weight: bold;margin-top: 10'>
-      <i>Hey ChatGPT, are you the smartest?</i><br>
-      ChatGPT Outperforms Alexa And Google Assistant Generally,
-      <br>Far Outperforms On The "Humility Index"
+    <div class='col-12 subtitle' style='color: #184160;font-family: Poppins;margin-top: 10'>
+      <span style='color: rgb(75, 213, 159);font-size: 24pt; font-weight: 600'>Hey ChatGPT, are you the smartest?<br></span>
+      <span style='font-size: 18pt;font-weight: bold;line-height: 125%'>ChatGPT Outperforms Alexa And Google Assistant Generally,
+      <br>Far Outperforms On The "Humility Index"</span>
     </div>
   </div>
-    <div class='row' >
+   <div class='row' style="margin-top: 10">
     <div class='col-12'>
       <div class='text' style='margin-top: 10;'>
         We ran this benchmark using the following services: Amazon Alexa, OpenAI ChatGPT, and Google Assistant. We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">ComQA dataset</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
 
         Highlights of our findings:
-        <ul>
+        <ul style="line-height: 175%">
             <li>ChatGPT outperformed outperformed Google and Alexa on answering general knowledge question. </li>
             <li>ChatGPT did far, far better at declining to answer when there is no answer (i.e., nonsensical and/or trick questions)</li>
             <li>We plan to expand these benchmarks for other platforms - email us (<a href='mailto:contact@bespoken.io'>contact@bespoken.io</a>) to include yours, or for testing on your own in-house bot/LLM</li>
@@ -84,7 +84,7 @@
       </div>
     </div>
   </div>
-  <div class='row' style="">
+  <div class='row' style="margin-top: 0px;">
     <div class='col-12' >
         <div class="report">
             <h2>Success By Platform</h2>
@@ -161,18 +161,18 @@
     <div class='col-12 text' >
       <h2>How Can This Help Me?</h2>
       <p>
-        We know that many of our customers are out there right now planning their strategy for Large Language Models and figuring out how they can take advantage of this promising new technoloy.
+        We know that many of our customers are out there right now formulating their strategies for Large Language Models and figuring out how they can best take advantage of this promising new technoloy.
       </p>
       <p>
         At Bespoken, we have believed since our inception that testing is critical to working with AI.<br><br>
-        And large-language models have only made this more true - as they make development easier, they push more of the burden to QA.<br>
+        And large-language models have only made this more true - as they make development easier, they push more of the burden to QA:
       </p>
       <div>
         <img src="/web/images/LLM-Workflow-V2.png" style="width: 100%"/>
       </div>
       <div class="caption">The LLM Feedback Loop</div>
       <div class="text mt-2">
-        Bespoken tests models from LLM vendors for accuracy, functionality, and monitors them continuously for safety. This virtuous, constant cycle is essential for AI.
+        Bespoken tests models from LLM providers and vendors for accuracy, functionality, and monitors them continuously for safety. This virtuous, constant cycle is essential for AI.
         <uL>
             <li>This process started during initial development of the model - we help to ensure it is performing properly with the vendor</li>
             <li>During user acceptance testing, separate datasets are again used to asses the model's performance</li>
@@ -192,10 +192,11 @@
      </div>
   </div>
   <div class="row signup" style="width: inherited; margin-top: 0px;padding: 10px">
-    <div class="col-12">
+    <div class="col-12" style="margin-top: 0px;">
         <div class="report" style="display: grid;grid-template-columns: repeat(12, auto);padding: 10 5 10 5;align-items: center">
-            <div class="label" style="grid-column: span 12; margin-top: 0;font-weight: bold;">
-                Learn More - talk to the experts at Bespoken, see how Accuracy Testing can make your LLM safer and smarter
+            <div class="label" style="grid-column: span 12; margin-top: 0;font-weight: 600;text-align: center">
+                <span style="font-size: 20pt">Learn More - talk to the experts at Bespoken<br></span>
+                See how Accuracy Testing can make your LLM safer and smarter
             </div> 
             
             <div class="message success"  style="grid-column: span 12;display:none;color: rgb(12, 12, 109);font-weight: bold;" >
@@ -228,7 +229,7 @@
             <div class="field">
                 <input type="text" name="email" placeholder="jane@acme.com"/>
             </div> 
-            <div class="" style="grid-column: span 12; justify-content: center;">
+            <div class="" style="grid-column: span 12; justify-content: center;margin-top: 20px">
                 <button id='submit-form' style="width: 20vw;border-radius: 8px;background-color:#ffab41;border-color:transparent;color: white">Submit</button>
             </div> 
             

@@ -37,7 +37,7 @@ app.get(['/nlp'], (req, res) => res.render('nlp/nlp-reports', {
 
 app.get(['/', '/llm'], (req, res) => res.render('llm/llm-report', {
   helpers: {
-    description: 'Bespoken LLM Benchmark - Alexa, ChatGPT and Google Compared',
+    description: 'Bespoken LLM Benchmark - Amazon Alexa, Google Assistant and OpenAI ChatGPT Compared',
     //sponsorLogo: 'ProjectVoiceLogo.png',
     //sponsorURL: 'https://projectvoice.ai/',
     title: () => 'LLM Benchmark'

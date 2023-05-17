@@ -15,10 +15,12 @@
 
     <link href='/web/css/styles.css' rel='stylesheet' type='text/css'>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,700' rel='stylesheet' type='text/css'>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -64,13 +66,15 @@
   </head>
   <body style='margin-bottom: 10px'>
     <div class='container-fluid ' style='background-color: #184160;padding: 10;'>
-      <div class='row header' >
-        <div class='col-4' style='text-align: left;display:inline-flex;'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' class='logo' /></a></div>
+      <div class='row header'>
+        <div class='col-4' style='text-align: left;display:inline-flex;margin-bottom: auto;margin-top: auto'><a href='https://bespoken.io'><img src='/web/images/Logo-WhiteText.png' class='logo' /></a></div>
         <div class='col-4'>
 
           <div class='row' style="height:100%">
             <!-- got this display and justify from here - https://stackoverflow.com/a/50598356 -  to force centering without wrapping -->
-            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap;align-items: center'><h1 style='font-family: Poppins;margin:0;'><a href='/' style="text-decoration: none">{{title}}</a></h1></div> 
+            <div class='col-4' style='padding:0;display: flex;justify-content: center;white-space: nowrap;align-items: center'>
+                <h1 style='font-family: Poppins;margin:0;'><a href='/' style="text-decoration: none;color: white">{{title}}</a></h1>
+            </div> 
           </div>
           {{#if page}}
             <div class='row' >
@@ -87,7 +91,7 @@
     </div>
     <div class='container-fluid menu' style='margin-bottom: 10px'>
       <div class='row' >
-        <div class='col-4 menu' style='padding:0;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:&nbsp; </span>&nbsp;
+        <div class='col-4 menu' style='padding:3;display: flex;justify-content: center;white-space: nowrap'><span class='menu-title'>Our Benchmarks:&nbsp; </span>&nbsp;
            <span class='menu-options'><a href='/ivr'>IVR</a> &nbsp; | &nbsp; <a href='/llm'>LLM</a> &nbsp; | &nbsp; <a href='/nlp'>Virtual Assistant</a> </span></div> 
       </div>
     </div>
