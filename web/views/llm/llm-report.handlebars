@@ -23,9 +23,12 @@
                     if (e.response?.data?.includes('duplicate')) {
                         console.warn('Duplicated record - ignoring')
                     } else {
-                        $('.error').text('Submission failed! Please try again later, or just email us directly at <a href="mailto:contact@bespoken.io">contact@bespoken.io</a>')
+                        $('.error').html('Submission failed! Please try again later, or just email us directly at <a href="mailto:contact@bespoken.io">contact@bespoken.io</a>')
                         $('.error').show()
                         console.error(e.toString())
+                        if (e.response?.data) {
+                            console.error(e.response?.data)
+                        }
                         return
                     }
                     
