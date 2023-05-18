@@ -1,6 +1,9 @@
 <canvas id="successByPlatformCanvas" ></canvas>
 <script>
   window.addEventListener('load', async () => {
+    drawChart()
+  })
+  async function drawChart() {
     const response = await axios.get('/llm/successByPlatform')
     const rawData = response.data
 
@@ -16,6 +19,6 @@
     const context = document.getElementById('successByPlatformCanvas').getContext('2d')
     _.set(options, 'options.scales.y.max', 90)
     window.successByPlatformChart = new Chart(context, options)
-  })
+  }
 </script>
 

@@ -10,7 +10,8 @@
         backgroundColor: [ChartHelper.colorAlexa(), ChartHelper.colorSiri(), ChartHelper.colorGoogle()],
         borderWidth: 0,
         data: [rawData.alexa.successPercentage,  rawData.siri.successPercentage, rawData.google.successPercentage]
-      }]
+      }],
+      plugins: [ChartDataLabels]
     }
     const options = ChartHelper.bar('Success By Platform', chartData)
     const context = document.getElementById('successByPlatformCanvas').getContext('2d')

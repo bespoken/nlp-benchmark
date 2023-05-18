@@ -15,6 +15,7 @@ const ChartHelper = {
     const options = {
       data: data,
       options: {
+        //animation: false,
         layout: {
           padding: {
             top: 0
@@ -151,6 +152,7 @@ const ChartHelper = {
           position: 'back'
         }
       },
+      //plugins: [ChartDataLabels],
       type: 'bar'
     }
 
@@ -195,11 +197,6 @@ const ChartHelper = {
 
 function addAnnotations(data) {
     if (!data.labels.includes('OpenAI ChatGPT')) {
-        return
-    }
-
-    console.info('widnow width: ' + $(window).width())
-    if ($(window).width() < 1024) {
         return
     }
 
