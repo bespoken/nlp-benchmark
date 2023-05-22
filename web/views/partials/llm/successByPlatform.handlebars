@@ -17,7 +17,7 @@
     }
     const options = ChartHelper.bar('Success By Platform', chartData)
     const context = document.getElementById('successByPlatformCanvas').getContext('2d')
-    _.set(options, 'options.scales.y.max', 90)
+    _.set(options, 'options.scales.y.max', 95)
     window.successByPlatformChart = new Chart(context, options)
   }
 </script>

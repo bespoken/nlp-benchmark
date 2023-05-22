@@ -68,7 +68,7 @@
     <div class='col-12 subtitle' style='color: #184160;font-family: Poppins;margin-top: 10'>
       <span style='color: rgb(75, 213, 159);font-size: 24pt; font-weight: 600'>Hey ChatGPT, are you the smartest?<br></span>
       <span style='font-size: 18pt;font-weight: bold;line-height: 125%'>ChatGPT Outperforms Alexa And Google Assistant Generally,
-      <br>Far Outperforms On The "Humility Index"</span>
+      <br>All Virtual Agents Struggle With False Information</span>
     </div>
   </div>
    <div class='row' style="margin-top: 10">
@@ -76,11 +76,11 @@
       <div class='text' style='margin-top: 10;'>
         We ran this benchmark using the following services: Amazon Alexa, OpenAI ChatGPT, and Google Assistant. We leveraged the <a href='http://qa.mpi-inf.mpg.de/comqa/' target="_blank">ComQA dataset</a> - a set of complex questions derived from the crowd-sourced WikiAnswers website.<br><br>
 
-        Highlights of our findings:
+        Highlights of our report:
         <ul style="line-height: 175%">
             <li>ChatGPT outperformed outperformed Google and Alexa on answering general knowledge question. </li>
-            <li>ChatGPT did far, far better at declining to answer when there is no answer (i.e., nonsensical and/or trick questions)</li>
-            <li>We plan to expand these benchmarks for other platforms - email us (<a href='mailto:contact@bespoken.io'>contact@bespoken.io</a>) to include yours, or for testing on your own in-house bot/LLM</li>
+            <li>All the agents struggled with declining to answer questions when there is no answer (i.e., nonsensical and/or trick questions)</li>
+            <li>This is just the start - we plan to expand these benchmarks for other platforms - email us (<a href='mailto:contact@bespoken.io'>contact@bespoken.io</a>) with ideas or for customized testing on your own in-house bot/LLM</li>
         </ul>
         <br>
         Read on below for the details!
@@ -123,9 +123,12 @@
         
       </div>
       <div class="text" style="margin-top: 10">
-        Perhaps most significantly, ChatGPT performed radically better at the "No Answer" questions - that is: when the questions were not answerable, it correctly declined to answer.<br><br>
+        We would highlight the fairly lackluster performance of all the agents on "No Answer" questions - that is: when the questions were not answerable, does it correctly decline to answer.<br><br>
         
-        An example of such a question is "What day did the first man land on Mars?" - these are essentially "trick questions", ones that anecdotally have been shown to cause problems for these assistants.
+        An example of such a question is "What day did the first man land on Mars?" - these are essentially "trick questions", ones that anecdotally have been shown to cause problems for these assistants.<br><br>
+        
+        Interally, we have dubbed this the Humility Index - how effective are these engines at knowing when they do NOT know. As you can see, this is a struggle for the current generation of AIs.
+        What's more, this is a critical consideration for any business thinking about adopting this technology - how to measure it AND how to mitigate it.
 
       </div>
     </div>
