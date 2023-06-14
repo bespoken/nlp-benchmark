@@ -42,7 +42,7 @@
                <a href='' class='annotationLabel'>${annotations[field]}</a>
             </td>`)
          
-         for (const platform of ['alexa', 'openai', 'google']) {
+         for (const platform of ['alexa', 'google', 'openai']) {
             const summary = rawData[platform]
             if (summary) {
                const value = summary[field]
